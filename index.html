@@ -1,12 +1,319 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages</title>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering">
+  <meta name="keywords" content="Data Science and Engineering, Professional Enterprise Application, Multi-modal Agent, Human Computer Interaction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering</title>
+  <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=zaishuo"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'zaishuo');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="static/images/favicon.png">
+
+  <link rel="stylesheet" href="./stylesheets/layout.css">
+  <link rel="stylesheet" href="./stylesheets/index.css">
+  <link rel="stylesheet" href="./bowe_componets/css/bootstrap.table.min.css">
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script> -->
+  <style>
+    pre {
+      max-height: 500px; /* Adjust as needed */
+      overflow: auto;
+    }
+  </style>
+  <style>
+    .highlight-quote {
+      background-color: #f9f9f9; /* Light background color */
+      border-left: 4px solid #007BFF; /* Blue left border */
+      padding: 10px 15px; /* Padding inside the block */
+      margin: 15px 0; /* Margin around the block */
+      color: #333; /* Text color */
+    }
+    .highlight-quote-title {
+      font-weight: bold; /* Bold font for title */
+      margin-top: 0; /* Remove top margin */
+      margin-bottom: 10px; /* Space between title and content */
+      color: #007BFF; /* Same color as the border */
+    }
+    .highlight-quote-content {
+      font-style: italic; /* Italic font style for content */
+    }
+    .highlight-quote-content pre {
+      overflow: auto; /* Ensure the content is scrollable if it's too wide */
+    }
+  </style>
+  <style>
+    .two-column-container {
+      display: flex;
+      gap: 10px; /* Optional: space between columns */
+    }
+    .two-column {
+      flex: 1;
+      background-color: #f9f9f9;
+      padding: 10px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .two-column pre {
+      max-height: 200px;
+      max-width: 100%;
+      overflow: auto; /* Ensure the code block is scrollable if it's too wide */
+      box-sizing: border-box;
+    }
+    .two-column boldtitle {
+      font-weight: bold;
+      font-size: 1.5em; /* Adjust as needed */
+      margin: 10px 0; /* Optional: add some margin */
+    }
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* Optional: space between images */
+    }
+    .right-column img {
+      flex: 1;
+      width: 100%;
+      object-fit: contain;
+    }
+</style>
 </head>
+
 <body>
-    <h1>Welcome to My GitHub Pages</h1>
-    <p>This is my first GitHub Pages website.</p>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://x-lance.sjtu.edu.cn/">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://github.com/xlang-ai/Spider2-V">
+              Spider2-V
+            </a>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              Spider2-V: How Far Are Multimodal Agents From Automating Data Science and Engineering Workflows?
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://rhythmcao.github.io">Ruisheng Cao</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=4xNsDNgAAAAJ&hl=en">Hanchong Zhang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/htc981">Tiancheng Huang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/Narcisssk">Zhangyi Kang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/YuuXiin">Yuxin Zhang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=XCIZlWIAAAAJ&hl=en">Liangtai Sun</a><sup>1</sup>,</span>
+              <br>
+              <span class="author-block">
+                <a href="https://github.com/daqige">Hanqi Li</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://github.com/miaoyuxun">Yuxun Miao</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Shuai Fan</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://coai-sjtu.github.io/">Lu Chen</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://x-lance.github.io/kaiyu/">Kai Yu</a><sup>1</sup>,</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>X-LANCE Shanghai Jiao Tong University,</span>
+              <span class="author-block"><sup>2</sup>AISPEECH,</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2505.19754" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/X-LANCE/NeuSym-RAG"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Data</span>
+                  </a>
+                </span>
+                <!-- Virtual Machine Link. -->
+                <!--<span class="link-block">
+                  <a href="https://huggingface.co/datasets/xlangai/ubuntu_spider2v/tree/main"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-desktop"></i>
+                    </span>
+                    <span>VM Snapshots</span>
+                  </a>
+                </span> -->
+                <!-- Tool Documents Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://drive.usercontent.google.com/download?id=1aGaHXDkBeoUZ9EOIPj7iIRFra_2FjJoZ&export=download&authuser=0&confirm=t" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-robot"></i>
+                    </span>
+                    <span>Tool Docs</span>
+                  </a>
+                </span> -->
+                <!-- Twitter Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://twitter.com/TianbaoX/status/1778781521253667267" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                    </span>
+                    <span>Twitter</span>
+                  </a>
+                </span> -->
+                <!-- Data Viewer. -->
+                <span class="link-block">
+                  <a href="explorer.html" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-search"></i>
+                    </span>
+                    <span>Task Viewer</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#leaderboard" class="button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-trophy"></i>
+                    </span>
+                    <span>Leaderboard</span>
+                  </a>
+                </span>
+
+                <!-- Slides Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://docs.google.com/presentation/d/1-r889Nb9n7SeZqrj-ryNqJLoMzp7aGNU2ihO8nUdEcE/edit?usp=sharing"
+                    target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-google"></i>
+                    </span>
+                    <span>Slides</span>
+                  </a>
+                </span> -->
+                <!-- Discord Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://discord.gg/4Gnw7eTEZR" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-discord"></i>
+                    </span>
+                    <span>Discord</span>
+                  </a>
+                </span> -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-wdith">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <md-block>
+              The increasing number of academic papers poses significant challenges for researchers to efficiently acquire key details. While retrieval augmented generation (RAG) shows great promise in large language model (LLM) based automated question answering, previous works often isolate neural and symbolic retrieval despite their complementary strengths. Moreover, conventional single-view chunking neglects the rich structure and layout of PDFs, e.g., sections and tables. In this work, we propose NeuSym-RAG, a hybrid neural symbolic retrieval framework which combines both paradigms in an interactive process. By leveraging multi-view chunking and schema-based parsing, NeuSym-RAG organizes semi-structured PDF content into both the relational database and vectorstore, enabling LLM agents to iteratively gather context until sufficient to generate answers. Experiments on three full PDF-based QA datasets, including a self-annotated one AIRQA-REAL, show that NeuSym-RAG stably defeats both the vector-based RAG and various structured baselines, highlighting its capacity to unify both retrieval schemes and utilize multiple views. 
+            </md-block>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
 </body>
+
+
+
+
+
 </html>
