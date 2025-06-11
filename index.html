@@ -111,7 +111,7 @@
       width: 100%;
       object-fit: contain;
     }
-  </style>
+</style>
   <style>
     .highlight-box {
       background-color: #f8f9fa;
@@ -493,6 +493,55 @@
     }
   </style>
   <link rel="stylesheet" href="static/css/academic.css">
+  <style>
+    .container {
+      max-width: 1152px;  /* Bulma's is-max-desktop width */
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .card {
+      background-color: #fff;
+      border-radius: 0.25rem;
+      box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+      color: #4a4a4a;
+      max-width: 100%;
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .method-content {
+      padding: 1.5rem;
+      background-color: #fff;
+      border-radius: 0.25rem;
+      box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+      margin-bottom: 1.5rem;
+    }
+
+    .task-demo {
+      background-color: #fff;
+      border-radius: 0.25rem;
+      box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+      margin: 1.5rem 0;
+      padding: 1.5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        padding: 0 0.75rem;
+      }
+      
+      .card-content,
+      .method-content,
+      .task-demo {
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -705,16 +754,16 @@
         <img src="static/images/overview.png" alt="Overall Framework" class="responsive-image">
         <md-block>
           The entire workflow proceeds as follows: 
-          - **Parsing**: Firstly, we parse the raw PDF file into a pipeline of functions to segment it in multi-view, extract non-textual elements, and store them in a schema-constrained database (DB).
-          - **Encoding**: Next, we identify those encodable columns in the DB, and utilize embedding models for different modalities to obtain and insert vectors of cell values into the vectorstore (VS).
-          - **Interaction**: Finally, we build an iterative Q&A agent which can predict executable actions to retrieve context from the backend environment (either DB or VS) and answer the input question.
+            - **Parsing**: Firstly, we parse the raw PDF file into a pipeline of functions to segment it in multi-view, extract non-textual elements, and store them in a schema-constrained database (DB).
+            - **Encoding**: Next, we identify those encodable columns in the DB, and utilize embedding models for different modalities to obtain and insert vectors of cell values into the vectorstore (VS).
+            - **Interaction**: Finally, we build an iterative Q&A agent which can predict executable actions to retrieve context from the backend environment (either DB or VS) and answer the input question.
         </md-block>
         
         <div class="method-tabs">
           <ul>
             <li class="is-active"><a data-tab="parsing">Multiview Document Parsing</a></li>
-            <li class="is-active"><a data-tab="encoding">Multimodal Vector Encoding</a></li>
-            <li class="is-active"><a data-tab="interaction">Iterative Agent Interaction</a></li>
+            <li><a data-tab="encoding">Multimodal Vector Encoding</a></li>
+            <li><a data-tab="interaction">Iterative Agent Interaction</a></li>
           </ul>
         </div>
   
@@ -777,57 +826,60 @@
         - 3. The evaluation metrics
       </md-block>
     </div>
-    <div class="container-t">
-      <div class="infoCard">
-        <div class="infoBody">
-          <div class="tabs is-centered example_lst1">
-            <ul>
-              <li class="is-active"><a title="Data Format">Data Format</a></li>
-              <li><a title="Interaction">Interaction</a></li>
-              <li><a title="Evaluation">Evaluation</a></li>
-            </ul>
-          </div>
+    <div class="container">
+      <div class="card">
+        <div class="card-content">
+          <div class="infoCard">
+            <div class="infoBody">
+              <div class="tabs">
+                <ul>
+                  <li class="is-active"><a data-tab="data-format">Data Format</a></li>
+                  <li><a data-tab="interaction">Interaction</a></li>
+                  <li><a data-tab="evaluation">Evaluation</a></li>
+                  <li><a data-tab="prompt">Prompt</a></li>
+                </ul>
+              </div>
 
-          <div title="Data Format" class="lib_examples" id="TaskPanel1" style="display: block;">
-            <md-block>
-              AirQA-Real uses a structured JSON format to represent questions and their metadata. Each question entry contains core fields for the question content, reference fields for source papers, and evaluation fields for assessment.
-            </md-block>
-            <div class="code-section">
-              <pre class="line-numbers"><code class="language-json">{
-  // Core Fields
-  "uuid": "966deaf9-83fe-5f5b-8b30-06c8e350375a",
-  "question": "In the paper proposing Voila-A, which baselines do the main experimental results demonstrate that Voila-A outperform?",
-  "answer_format": "Your answer should be a single python list of strings, each string is a baseline name. e.g. [\"baseline1_name\", \"baseline2_name\"]. Note that for the names, the abbreviation is enough.",
-  "tags": ["comprehensive", "text", "objective"],
+              <div title="Data Format" class="lib_examples" id="TaskPanel1">
+                <md-block>
+                  AirQA-Real uses a structured JSON format to represent questions and their metadata. Each question entry contains core fields for the question content, reference fields for source papers, and evaluation fields for assessment.
+                </md-block>
+                <div class="code-section">
+                  <pre class="line-numbers"><code class="language-json">{
+    // Core Fields
+    "uuid": "966deaf9-83fe-5f5b-8b30-06c8e350375a",
+    "question": "In the paper proposing Voila-A, which baselines do the main experimental results demonstrate that Voila-A outperform?",
+    "answer_format": "Your answer should be a single python list of strings, each string is a baseline name. e.g. [\"baseline1_name\", \"baseline2_name\"]. Note that for the names, the abbreviation is enough.",
+    "tags": ["comprehensive", "text", "objective"],
 
-  // Reference Fields
-  "anchor_pdf": ["Voila-A: Aligning Vision-Language Models with User's Gaze Attention"],
-  "reference_pdf": [],
-  "conference": [],
+    // Reference Fields
+    "anchor_pdf": ["Voila-A: Aligning Vision-Language Models with User's Gaze Attention"],
+    "reference_pdf": [],
+    "conference": [],
 
-  // Evaluation Fields
-  "evaluator": {
-    "eval_func": "eval_structured_object_exact_match",
-    "eval_kwargs": {
-      "gold": ["Otter", "Kosmos-2"],
-      "ignore_order": true,
-      "lowercase": true
-    }
-  },
-  "state": {
-    "gui-gpt-4o-2024-11-20": false
-  },
-  "annotator": "kangzhangyi"
-}</code></pre>
-            </div>
-          </div>
+    // Evaluation Fields
+    "evaluator": {
+      "eval_func": "eval_structured_object_exact_match",
+      "eval_kwargs": {
+        "gold": ["Otter", "Kosmos-2"],
+        "ignore_order": true,
+        "lowercase": true
+      }
+    },
+    "state": {
+      "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "kangzhangyi"
+  }</code></pre>
+                </div>
+              </div>
 
-          <div title="Interaction" class="lib_examples" id="TaskPanel2" style="display: none;">
-            <md-block>
-              NeuSym-RAG follows a thought-action-observation loop for answering questions. The agent analyzes questions, retrieves relevant content from both vectorstore and database, and generates answers through iterative interactions.
-            </md-block>
-            <div class="code-section">
-              <pre class="line-numbers"><code class="language-python"># Turn 1: Initial System Setup
+              <div title="Interaction" class="lib_examples" id="TaskPanel2" style="display: none;">
+                <md-block>
+                  NeuSym-RAG follows a thought-action-observation loop for answering questions. The agent analyzes questions, retrieves relevant content from both vectorstore and database, and generates answers through iterative interactions.
+                </md-block>
+                <div class="code-section">
+                  <pre class="line-numbers"><code class="language-python"># Turn 1: Initial System Setup
 """
 System initializes the agent with:
 - Task description and requirements
@@ -836,14 +888,7 @@ System initializes the agent with:
 - Available actions and their specifications
 """
 
-# Turn 2: User Question
-"""
-[Question]: In the paper proposing Voila-A, which baselines do the main experimental results demonstrate that Voila-A outperform?
-[Answer Format]: Your answer should be a single python list of strings, each string is a baseline name.
-[Conference]: neurips2024
-"""
-
-# Turn 3: First Thought-Action-Observation Cycle
+## Turn 1:
 # Thought
 """
 To answer the question, we need to find the paper that proposes Voila-A 
@@ -861,7 +906,7 @@ RetrieveFromDatabase(sql="SELECT paper_id, title FROM metadata WHERE conference_
   "title": "Voila-A: Aligning Vision-Language Models with User's Gaze Attention"
 }
 
-# Turn 4: Second Thought-Action-Observation Cycle
+## Turn 2:
 # Thought
 """
 Now that we have the `paper_id` of the paper proposing Voila-A, 
@@ -879,7 +924,7 @@ RetrieveFromDatabase(sql="SELECT section_title, section_content FROM sections WH
   "section_content": "... In Figure 5, we observe a notable superiority of VOILA over both Otter and Kosmos-2 on the VOILA-COCO-TESTSET. ... In real gaze scenarios, as illustrated in Figure 6, VOILA outperforms the two baseline models as well. ..."
 }
 
-# Turn 5: Final Thought-Action-Observation Cycle
+## Turn 3:
 # Thought
 """
 From the experiment section, we can see that Voila-A outperforms 
@@ -892,57 +937,128 @@ GenerateAnswer(answer=['Otter', 'Kosmos-2'])
 
 # Observation
 ['Otter', 'Kosmos-2']</code></pre>
-            </div>
-          </div>
+                </div>
+              </div>
 
-          <div title="Evaluation" class="lib_examples" id="TaskPanel3" style="display: none;">
-            <md-block>
-              AirQA-Real employs two types of evaluation methods: objective and subjective. Objective evaluation uses automated metrics like exact match and custom evaluation functions, while subjective evaluation relies on human assessment of answer quality. For this example, we use objective evaluation with exact match criteria.
-            </md-block>
-            <div class="code-section">
-              <pre class="line-numbers"><code class="language-json">{
-  "evaluator": {
-    "eval_func": "eval_structured_object_exact_match",
-    "eval_kwargs": {
-      "gold": ["Otter", "Kosmos-2"],
-      "ignore_order": true,
-      "lowercase": true
+              <div title="Evaluation" class="lib_examples" id="TaskPanel3" style="display: none;">
+                <md-block>
+                  AirQA-Real employs two types of evaluation methods: objective and subjective. Objective evaluation uses automated metrics like exact match and custom evaluation functions, while subjective evaluation relies on human assessment of answer quality. For this example, we use objective evaluation with exact match criteria.
+                </md-block>
+                <div class="code-section">
+                  <pre class="line-numbers"><code class="language-json">{
+    "evaluator": {
+      "eval_func": "eval_structured_object_exact_match",
+      "eval_kwargs": {
+        "gold": ["Otter", "Kosmos-2"],
+        "ignore_order": true,
+        "lowercase": true
+      }
     }
-  }
-}</code></pre>
-            </div>
-            <div class="evaluation-cards">
-              <div class="eval-card">
-                <div class="eval-header">Evaluation Method</div>
-                <div class="eval-content">
-                  <div class="method-type">Objective Evaluation</div>
-                  <div class="method-desc">Exact match with configurable parameters</div>
+  }</code></pre>
+                </div>
+                <div class="evaluation-cards">
+                  <div class="eval-card">
+                    <div class="eval-header">Evaluation Method</div>
+                    <div class="eval-content">
+                      <div class="method-type">Objective Evaluation</div>
+                      <div class="method-desc">Exact match with configurable parameters</div>
+                    </div>
+                  </div>
+                  <div class="eval-card">
+                    <div class="eval-header">Parameters</div>
+                    <div class="eval-content">
+                      <div class="param-item">
+                        <span class="param-name">ignore_order</span>
+                        <span class="param-value">true</span>
+                        <span class="param-desc">Order of items doesn't matter</span>
+                      </div>
+                      <div class="param-item">
+                        <span class="param-name">lowercase</span>
+                        <span class="param-value">true</span>
+                        <span class="param-desc">Case-insensitive comparison</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="eval-card">
+                    <div class="eval-header">Result</div>
+                    <div class="eval-content success">
+                      ✓ Answer matches ground truth
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="eval-card">
-                <div class="eval-header">Parameters</div>
-                <div class="eval-content">
-                  <div class="param-item">
-                    <span class="param-name">ignore_order</span>
-                    <span class="param-value">true</span>
-                    <span class="param-desc">Order of items doesn't matter</span>
-                  </div>
-                  <div class="param-item">
-                    <span class="param-name">lowercase</span>
-                    <span class="param-value">true</span>
-                    <span class="param-desc">Case-insensitive comparison</span>
-                  </div>
-                </div>
-              </div>
-              <div class="eval-card">
-                <div class="eval-header">Result</div>
-                <div class="eval-content success">
-                  ✓ Answer matches ground truth
+
+              <div title="Prompt" class="lib_examples" id="TaskPanel4" style="display: none;">
+                <md-block>
+                  The system prompt defines the agent's capabilities and interaction framework for answering questions about PDF files through a hybrid retrieval approach.
+                </md-block>
+                <div class="code-section">
+                  <pre class="line-numbers"><code class="language-python"># System Prompt Components
+
+## 1. Agent Role and Task Description
+"""
+You are an intelligent agent with expertise in:
+- Retrieving useful context from both DuckDB database and Milvus vectorstore
+- Answering user questions through SQL execution and similarity search
+- Interacting with the hybrid environment across multiple turns
+"""
+
+## 2. Action and Observation Space
+"""
+Available Actions:
+1. RetrieveFromDatabase(sql: str)
+   - Execute SQL queries on DuckDB database
+   - Returns query results or error messages
+
+2. ClassicRetrieve(query: str, limit: int = 5)
+   - Perform similarity search in Milvus vectorstore
+   - Returns top-k relevant entries
+
+3. GenerateAnswer(answer: Any)
+   - Generate final answer in specified format
+   - No observation for this terminal action
+"""
+
+## 3. Interaction Framework
+"""
+Each interaction turn follows the format:
+[Thought]: Reasoning process and action planning
+[Action]: Execute one of the available actions
+[Observation]: Results or error message from action
+
+The interaction loop continues until:
+1. Sufficient information is gathered
+2. GenerateAnswer action is taken
+3. Maximum turns (20) is reached
+"""
+
+## 4. Suggestions for Effective Interaction
+"""
+1. Explore multiple retrieval strategies:
+   - Try different (table, column) pairs
+   - Query various embedding models
+
+2. Combine structured and unstructured data:
+   - Use SQL for precise facts
+   - Use similarity search for semantic relationships
+
+3. Iterate and refine:
+   - Try alternative queries if results are unsatisfactory
+   - Validate findings before final answer
+
+4. Ensure confidence:
+   - Only generate answer when information is sufficient
+   - Verify answer format matches requirements
+"""</code></pre>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="task-demo">
+        <!-- Task demonstration content -->
       </div>
     </div>
   </section>
