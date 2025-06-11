@@ -772,10 +772,9 @@
       <h2 class="title is-3">Task Demonstration</h2>
       <md-block>
         We present a real example from AirQA-Real to showcase:
-        - 1. The question and answer format
-        - 2. The retrieval process
-        - 3. The interaction trajectory
-        - 4. The evaluation metrics
+        - 1. The data format and question types
+        - 2. The interaction trajectory
+        - 3. The evaluation metrics
       </md-block>
     </div>
     <div class="container-t">
@@ -783,108 +782,138 @@
         <div class="infoBody">
           <div class="tabs is-centered example_lst1">
             <ul>
-              <li class="is-active"><a title="Question">Question</a></li>
-              <li><a title="Retrieval">Retrieval</a></li>
+              <li class="is-active"><a title="Data Format">Data Format</a></li>
               <li><a title="Interaction">Interaction</a></li>
               <li><a title="Evaluation">Evaluation</a></li>
             </ul>
           </div>
 
-          <div title="Question" class="lib_examples" id="TaskPanel1" style="display: block;">
-            <div class="highlight-quote">
-              <h3 class="highlight-quote-title">Question</h3>
-              <div class="highlight-quote-content">
-                In the paper proposing Voila-A, which baselines do the main experimental results demonstrate that Voila-A outperform?
+          <div title="Data Format" class="lib_examples" id="TaskPanel1" style="display: block;">
+            <md-block>
+              AirQA-Real uses a structured JSON format to represent questions and their metadata. Each question entry contains:
+            </md-block>
+            <div class="format-overview">
+              <div class="format-item">
+                <div class="format-header">Core Fields</div>
+                <ul>
+                  <li><code>uuid</code>: Unique identifier for the question</li>
+                  <li><code>question</code>: The actual question text</li>
+                  <li><code>answer_format</code>: Expected format of the answer</li>
+                  <li><code>tags</code>: Question attributes (e.g., comprehensive, text, objective)</li>
+                </ul>
+              </div>
+              <div class="format-item">
+                <div class="format-header">Reference Fields</div>
+                <ul>
+                  <li><code>anchor_pdf</code>: Primary source paper</li>
+                  <li><code>reference_pdf</code>: Additional reference papers</li>
+                  <li><code>conference</code>: Publication venue</li>
+                </ul>
+              </div>
+              <div class="format-item">
+                <div class="format-header">Evaluation Fields</div>
+                <ul>
+                  <li><code>evaluator</code>: Evaluation function and parameters</li>
+                  <li><code>state</code>: Evaluation status for different models</li>
+                </ul>
               </div>
             </div>
-            <div class="question-metadata">
-              <div class="metadata-item">
-                <span class="metadata-label">Answer Format:</span>
-                <span class="metadata-value">A Python list of baseline names (e.g., ["baseline1", "baseline2"])</span>
-              </div>
-              <div class="metadata-item">
-                <span class="metadata-label">Tags:</span>
-                <span class="metadata-tags">
-                  <span class="tag">comprehensive</span>
-                  <span class="tag">text</span>
-                  <span class="tag">objective</span>
-                </span>
-              </div>
-              <div class="metadata-item">
-                <span class="metadata-label">Source Paper:</span>
-                <span class="metadata-value">Voila-A: Aligning Vision-Language Models with User's Gaze Attention</span>
-              </div>
-            </div>
-          </div>
 
-          <div title="Retrieval" class="lib_examples" id="TaskPanel2" style="display: none;">
-            <h3 class="title is-5">Retrieval Process</h3>
-            <p>
-              The NeuSym-RAG framework follows these steps to retrieve relevant information:
-            </p>
-            <ol>
-              <li>Parse the question to identify key terms (Voila-A, baselines, experimental results)</li>
-              <li>Search the vectorstore for relevant sections in the experimental results</li>
-              <li>Query the database for specific baseline comparisons</li>
-              <li>Combine retrieved information for answer generation</li>
-            </ol>
-            <div class="highlight-quote">
-              <h3 class="highlight-quote-title">Retrieved Context</h3>
-              <div class="highlight-quote-content">
-                "In our experiments, Voila-A demonstrates superior performance compared to baseline models including Otter and Kosmos-2 across multiple metrics."
-              </div>
-            </div>
-          </div>
-
-          <div title="Interaction" class="lib_examples" id="TaskPanel3" style="display: none;">
-            <h3 class="title is-5">Interaction Trajectory</h3>
-            <div class="interaction-timeline">
-              <div class="timeline-item">
-                <div class="timeline-header">Thought</div>
-                <div class="timeline-content">
-                  From the experiment section, we can see that Voila-A outperforms several baselines. We can extract the names of these baselines from the text. The relevant baselines mentioned are Otter and Kosmos-2.
+            <div class="example-question">
+              <h3 class="title is-5">Example Question</h3>
+              <div class="highlight-quote">
+                <h3 class="highlight-quote-title">Question</h3>
+                <div class="highlight-quote-content">
+                  In the paper proposing Voila-A, which baselines do the main experimental results demonstrate that Voila-A outperform?
                 </div>
               </div>
-              <div class="timeline-item">
-                <div class="timeline-header">Action</div>
-                <div class="timeline-content">
-                  GenerateAnswer(answer=['Otter', 'Kosmos-2'])
+              <div class="question-metadata">
+                <div class="metadata-item">
+                  <span class="metadata-label">Answer Format:</span>
+                  <span class="metadata-value">A Python list of baseline names (e.g., ["baseline1", "baseline2"])</span>
                 </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-header">Observation</div>
-                <div class="timeline-content">
-                  ['Otter', 'Kosmos-2']
+                <div class="metadata-item">
+                  <span class="metadata-label">Tags:</span>
+                  <span class="metadata-tags">
+                    <span class="tag">comprehensive</span>
+                    <span class="tag">text</span>
+                    <span class="tag">objective</span>
+                  </span>
+                </div>
+                <div class="metadata-item">
+                  <span class="metadata-label">Source Paper:</span>
+                  <span class="metadata-value">Voila-A: Aligning Vision-Language Models with User's Gaze Attention</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div title="Evaluation" class="lib_examples" id="TaskPanel4" style="display: none;">
-            <h3 class="title is-5">Evaluation Metrics</h3>
-            <div class="evaluation-metrics">
-              <div class="metric-card">
-                <div class="metric-header">Evaluation Function</div>
-                <div class="metric-content">eval_structured_object_exact_match</div>
-              </div>
-              <div class="metric-card">
-                <div class="metric-header">Ground Truth</div>
-                <div class="metric-content">['Otter', 'Kosmos-2']</div>
-              </div>
-              <div class="metric-card">
-                <div class="metric-header">Evaluation Parameters</div>
-                <div class="metric-content">
-                  <ul>
-                    <li>ignore_order: true</li>
-                    <li>lowercase: true</li>
-                  </ul>
+          <div title="Interaction" class="lib_examples" id="TaskPanel2" style="display: none;">
+            <md-block>
+              NeuSym-RAG follows a thought-action-observation loop for answering questions. The agent:
+              1. Analyzes the question and determines required information
+              2. Retrieves relevant content from both vectorstore and database
+              3. Processes the information and generates the answer
+            </md-block>
+            
+            <div class="interaction-example">
+              <h3 class="title is-5">Example Interaction</h3>
+              <div class="interaction-timeline">
+                <div class="timeline-item">
+                  <div class="timeline-header">Thought</div>
+                  <div class="timeline-content">
+                    From the experiment section, we can see that Voila-A outperforms several baselines. We can extract the names of these baselines from the text. The relevant baselines mentioned are Otter and Kosmos-2.
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-header">Action</div>
+                  <div class="timeline-content">
+                    GenerateAnswer(answer=['Otter', 'Kosmos-2'])
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-header">Observation</div>
+                  <div class="timeline-content">
+                    ['Otter', 'Kosmos-2']
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="highlight-quote">
-              <h3 class="highlight-quote-title">Evaluation Result</h3>
-              <div class="highlight-quote-content">
-                The answer is considered correct as it exactly matches the ground truth list of baseline names, regardless of order and case sensitivity.
+          </div>
+
+          <div title="Evaluation" class="lib_examples" id="TaskPanel3" style="display: none;">
+            <md-block>
+              AirQA-Real uses a combination of objective and subjective metrics to evaluate answers:
+              - Objective metrics: Exact match, partial match, or custom evaluation functions
+              - Subjective metrics: Human evaluation of answer quality and completeness
+            </md-block>
+
+            <div class="evaluation-example">
+              <h3 class="title is-5">Example Evaluation</h3>
+              <div class="evaluation-metrics">
+                <div class="metric-card">
+                  <div class="metric-header">Evaluation Function</div>
+                  <div class="metric-content">eval_structured_object_exact_match</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-header">Ground Truth</div>
+                  <div class="metric-content">['Otter', 'Kosmos-2']</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-header">Evaluation Parameters</div>
+                  <div class="metric-content">
+                    <ul>
+                      <li>ignore_order: true</li>
+                      <li>lowercase: true</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="highlight-quote">
+                <h3 class="highlight-quote-title">Evaluation Result</h3>
+                <div class="highlight-quote-content">
+                  The answer is considered correct as it exactly matches the ground truth list of baseline names, regardless of order and case sensitivity.
+                </div>
               </div>
             </div>
           </div>
