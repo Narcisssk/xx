@@ -820,7 +820,7 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3">Task Demonstration</h2>
       <md-block>
-        We demonstrate NeuSym-RAG's capabilities through a real example from the AirQA-Real dataset, showing how the agent processes questions, retrieves information, and generates answers.
+        We demonstrate NeuSym-RAG's capabilities through a real example </a>966deaf9-83fe-5f5b-8b30-06c8e350375a</a> from the AirQA-Real dataset, showing how the agent processes questions, retrieves information, and generates answers.
       </md-block>
 
       <div class="tabs">
@@ -837,17 +837,39 @@
           AirQA-Real uses a structured JSON format to represent questions and their metadata. Each question entry contains core fields for the question content, reference fields for source papers, and evaluation fields for assessment.
         </md-block>
         <div class="code-section">
-          <pre class="line-numbers"><code class="language-json">{
-    "uuid": "unique_identifier",
-    "question": "In the paper proposing Voila-A, which baselines do the main experimental results demonstrate that Voila-A outperform?",
-    "answer_format": "Your answer should be a single python list of strings, each string is a baseline name.",
-    "tags": ["experiment", "comparison"],
-    "anchor_pdf": "voila-a.pdf",
-    "reference_pdf": null,
-    "conference": "neurips2024",
-    "evaluator": "exact_match",
-    "state": "completed"
-  }</code></pre>
+          <pre class="line-numbers"><code class="language-json">
+{
+  "uuid": "966deaf9-83fe-5f5b-8b30-06c8e350375a",
+  "question": "In the paper proposing Voila-A, which baselines do the main experimental results demonstrate that Voila-A outperform?",
+  "answer_format": "Your answer should be a single python list of strings, each string is a baseline name.e.g. [\"baseline1_name\", \"baseline2_name\"]. Note that for the names, the abbreviation is enough.",
+  "tags": [
+      "comprehensive",
+      "text",
+      "objective"
+  ],
+  "anchor_pdf": [
+      "Voila-A: Aligning Vision-Language Models with User's Gaze Attention"
+  ],
+  "reference_pdf": [],
+  "conference": [],
+  "reasoning_steps": [],
+  "evaluator": {
+      "eval_func": "eval_structured_object_exact_match",
+      "eval_kwargs": {
+          "gold": [
+              "Otter",
+              "Kosmos-2"
+          ],
+          "ignore_order": true,
+          "lowercase": true
+      }
+  },
+  "state": {
+      "gui-gpt-4o-2024-11-20": false
+  },
+  "annotator": "kangzhangyi"
+}
+          </code></pre>
         </div>
       </div>
 
@@ -857,79 +879,79 @@
         </md-block>
         <div class="code-section">
           <pre class="line-numbers"><code class="language-python"># [System Prompt]: Defines the agent's role and describes the task to tackle, clarifying the context of the task.
-            """
-            You are an intelligent agent with expertise in **retrieving useful context from both the DuckDB database and the Milvus vectorstore through SQL execution and similarity search** and **answering user questions**. You will be given a natural language question concerning PDF files, along with the schema of both the database and the vectorstore. Your ultimate goal is to answer the input question with pre-defined answer format. The DuckDB database contains all parsed content of raw PDF files, while the Milvus vectorstore encodes specific column cells from the database as vectors. You can predict executable actions, interact with the hybrid environment (including database and vectorstore) across multiple turns, and retrieve necessary context until you are confident in resolving the question.
-            """
-            
-            # [Action and Observation Space Prompt]: Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type. The detailed specification varies depending on the action format.
-            """
-            ### Action Type
-            RetrieveFromDatabase
-            
-            ### Description
-            Generate an SQL query to retrieve the desired information from the DuckDB database. Please refer to the concrete database schema to produce a valid and executable SQL.
-            
-            ### Observation
-            The observation space is the execution result of the SQL query. You do not need to worry about the actual execution, we will perform it for you. If the SQL failed to execute, we will return the error message. Extremely long SQL output will be truncated.
-            
-            ### Syntax and Parameters (MARKDOWN Format)
-            RetrieveFromDatabase(sql: str)
-            - sql: str, required. The concrete DuckDB SQL query to execute and retrieve results.
-            
-            ### Use Cases
-            
-            #### Case 1
-            Get the abstract of the paper with paper_id '12345678' from the metadata table in the DuckDB database.
-            
-            [Action]: RetrieveFromDatabase(sql="SELECT abstract FROM metadata WHERE paper_id = '12345678';")
-            
-            ...
-            
-            """
-            
-            # [Interaction Framework Prompt]: Outlines the main interaction procedure and template.
-            """
-            The main interaction procedure proceeds like this:
-            
-            ----
-            
-            [Thought]: ... reasoning process, why to take this action ...
-            [Action]: ... which action to take, please strictly conform to the action specification ...
-            [Observation]: ... execution results or error message after taking the action ...
-            
-            ... # more interleaved triplets of ([Thought], [Action], [Observation])
-            
-            [Thought]: ... reasoning process to produce the final answer ...
-            [Action]: ... the terminate action `GenerateAnswer`, there is no further observation ...
-            
-            ----
-            
-            In general, the main interaction loop consists of an interleaved of triplets ([Thought], [Action], [Observation]), except the last `GenerateAnswer` action which does not have "[Observation]:". You need to predict the "[Thought]: ..." followed by the "[Action]: ..." for each turn, and we will execute your action in the environment and provide the "[Observation]: ..." for the previous action.
-            """
-            
-            # [Hint Prompt]: Provides hints or suggestions to help the agent refine its planning and reasoning process.
-            """
-            1. Explore multiple retrieval strategies. For example:
-               - Experiment with different (table, column) pairs to extract diverse types of information.
-               - Query various embedding models (collections) to find the most relevant context.
-            
-            ...
-            
-            4. Ensure confidence. That is, only make a final decision when you are confident that the retrieved information fully addresses the user’s query.
-            """
-            
-            # [Task Prompt]: Defines the task input, usually including the input question, required answer format, retrieved context, database schema, vectorstore schema and operators.
-            """
-            Each task consists of the following parts:
-            
-            [Question]: User question regarding the PDF, e.g., Is there any ...?
-            [Answer Format]: it describes the format of the final answer, e.g., the answer is "Yes" or "No" without punctuation.
-            [Anchor PDF]: Optional, a python str or list, the PDF(s) you must use to answer the question.
-            [Reference PDF]: Optional, a python str or list, the PDF(s) you may use to answer the question.
-            [Conference]: Optional, a python str or list, the conference(s) and year(s) of the relevant papers for retrieval.
-            [Database Schema]: A detailed serialized schema of the DuckDB database for reference when generating SQL queries. It includes 1) tables, 2) columns and their data types, 3) descriptions for these schema items, and 4) primary key and foreign key constraints.
-            [Vectorstore Schema]: A detailed serialized schema of the Milvus vectorstore for reference when generating executable retrieval actions with specific parameters. It includes 1) collections, 2) fields, 3) encodable (table, column) pairs in the relational database where the vectorized content originates, and 4) grammar for valid filter rules.
-            """</code></pre>
+"""
+You are an intelligent agent with expertise in **retrieving useful context from both the DuckDB database and the Milvus vectorstore through SQL execution and similarity search** and **answering user questions**. You will be given a natural language question concerning PDF files, along with the schema of both the database and the vectorstore. Your ultimate goal is to answer the input question with pre-defined answer format. The DuckDB database contains all parsed content of raw PDF files, while the Milvus vectorstore encodes specific column cells from the database as vectors. You can predict executable actions, interact with the hybrid environment (including database and vectorstore) across multiple turns, and retrieve necessary context until you are confident in resolving the question.
+"""
+
+# [Action and Observation Space Prompt]: Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type. The detailed specification varies depending on the action format.
+"""
+### Action Type
+RetrieveFromDatabase
+
+### Description
+Generate an SQL query to retrieve the desired information from the DuckDB database. Please refer to the concrete database schema to produce a valid and executable SQL.
+
+### Observation
+The observation space is the execution result of the SQL query. You do not need to worry about the actual execution, we will perform it for you. If the SQL failed to execute, we will return the error message. Extremely long SQL output will be truncated.
+
+### Syntax and Parameters (MARKDOWN Format)
+RetrieveFromDatabase(sql: str)
+- sql: str, required. The concrete DuckDB SQL query to execute and retrieve results.
+
+### Use Cases
+
+#### Case 1
+Get the abstract of the paper with paper_id '12345678' from the metadata table in the DuckDB database.
+
+[Action]: RetrieveFromDatabase(sql="SELECT abstract FROM metadata WHERE paper_id = '12345678';")
+
+...
+
+"""
+
+# [Interaction Framework Prompt]: Outlines the main interaction procedure and template.
+"""
+The main interaction procedure proceeds like this:
+
+----
+
+[Thought]: ... reasoning process, why to take this action ...
+[Action]: ... which action to take, please strictly conform to the action specification ...
+[Observation]: ... execution results or error message after taking the action ...
+
+... # more interleaved triplets of ([Thought], [Action], [Observation])
+
+[Thought]: ... reasoning process to produce the final answer ...
+[Action]: ... the terminate action `GenerateAnswer`, there is no further observation ...
+
+----
+
+In general, the main interaction loop consists of an interleaved of triplets ([Thought], [Action], [Observation]), except the last `GenerateAnswer` action which does not have "[Observation]:". You need to predict the "[Thought]: ..." followed by the "[Action]: ..." for each turn, and we will execute your action in the environment and provide the "[Observation]: ..." for the previous action.
+"""
+
+# [Hint Prompt]: Provides hints or suggestions to help the agent refine its planning and reasoning process.
+"""
+1. Explore multiple retrieval strategies. For example:
+    - Experiment with different (table, column) pairs to extract diverse types of information.
+    - Query various embedding models (collections) to find the most relevant context.
+
+...
+
+4. Ensure confidence. That is, only make a final decision when you are confident that the retrieved information fully addresses the user’s query.
+"""
+
+# [Task Prompt]: Defines the task input, usually including the input question, required answer format, retrieved context, database schema, vectorstore schema and operators.
+"""
+Each task consists of the following parts:
+
+[Question]: User question regarding the PDF, e.g., Is there any ...?
+[Answer Format]: it describes the format of the final answer, e.g., the answer is "Yes" or "No" without punctuation.
+[Anchor PDF]: Optional, a python str or list, the PDF(s) you must use to answer the question.
+[Reference PDF]: Optional, a python str or list, the PDF(s) you may use to answer the question.
+[Conference]: Optional, a python str or list, the conference(s) and year(s) of the relevant papers for retrieval.
+[Database Schema]: A detailed serialized schema of the DuckDB database for reference when generating SQL queries. It includes 1) tables, 2) columns and their data types, 3) descriptions for these schema items, and 4) primary key and foreign key constraints.
+[Vectorstore Schema]: A detailed serialized schema of the Milvus vectorstore for reference when generating executable retrieval actions with specific parameters. It includes 1) collections, 2) fields, 3) encodable (table, column) pairs in the relational database where the vectorized content originates, and 4) grammar for valid filter rules.
+"""</code></pre>
         </div>
       </div>
 
@@ -938,7 +960,7 @@
           NeuSym-RAG follows a thought-action-observation loop for answering questions. The agent analyzes questions, retrieves relevant content from both vectorstore and database, and generates answers through iterative interactions.
         </md-block>
         <div class="code-section">
-          <pre class="line-numbers"><code class="language-python"># Turn 1: Initial System Setup
+          <pre class="line-numbers"><code class="language-python">
 """
 System initializes the agent with:
 - Task description and requirements
