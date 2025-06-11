@@ -721,47 +721,53 @@
         <div id="parsing" class="method-content is-active">
           <h4 class="title is-5">Multiview Document Parsing</h4>
           <p>
-            The multiview document parsing process includes:
+            The multiview document parsing process transforms raw PDF files into a structured database (DuckDB) through a comprehensive pipeline:
           </p>
           <ul>
-            <li>Querying APIs for metadata</li>
-            <li>Segmenting text</li>
-            <li>Extracting non-textual elements</li>
+            <li><strong>Metadata Extraction:</strong> Querying scholar APIs (e.g., arXiv) to obtain paper metadata, enabling metadata-based filtering during retrieval</li>
+            <li><strong>Text Segmentation:</strong> Using PyMuPDF to split text at different granularities (pages, sections, fixed-length tokens)</li>
+            <li><strong>Non-textual Element Extraction:</strong> Leveraging OCR models (MinerU) to extract tables, figures, and other visual elements</li>
+            <li><strong>Content Summarization:</strong> Employing LLMs/VLMs to generate concise summaries of parsed texts, tables, and images</li>
           </ul>
           <p>
-            This process ensures comprehensive extraction of both textual and non-textual elements from the PDF documents, enabling a rich representation of the content for subsequent processing.
+            All extracted elements are stored in a carefully designed database schema that captures the rich structure of PDF documents, enabling both symbolic and neural retrieval in subsequent stages.
           </p>
         </div>
   
         <div id="encoding" class="method-content">
           <h4 class="title is-5">Multimodal Vector Encoding</h4>
           <p>
-            The multimodal vector encoding process involves:
+            The multimodal vector encoding process transforms structured database content into vector representations:
           </p>
           <ul>
-            <li>Identifying encodable columns</li>
-            <li>Vectorizing using different models</li>
-            <li>Storing vectors for efficient retrieval</li>
+            <li><strong>Encodable Column Selection:</strong> Identifying columns suitable for vectorization (e.g., long text summaries, image bounding boxes)</li>
+            <li><strong>Multi-model Vectorization:</strong> Using specialized models for different modalities:
+              <ul>
+                <li>Text: BM25, all-MiniLM-L6-v2, and bge-large-en-v1.5</li>
+                <li>Images: CLIP-ViT-Base-Patch32</li>
+              </ul>
+            </li>
+            <li><strong>Structured Storage:</strong> Creating a one-to-one mapping between database cells and vector entries, supplemented with metadata for efficient retrieval</li>
           </ul>
           <p>
-            This stage transforms the parsed elements into vector representations that can be efficiently searched and retrieved during the interaction phase.
+            This stage enables semantic search capabilities while maintaining the connection to the structured database through carefully designed metadata fields.
           </p>
         </div>
   
         <div id="interaction" class="method-content">
           <h4 class="title is-5">Iterative Agent Interaction</h4>
           <p>
-            The iterative agent interaction includes five parameterized actions:
+            The iterative agent interaction process enables dynamic interaction with both the database and vectorstore through five parameterized actions:
           </p>
           <ul>
-            <li>Retrieving from vectorstore</li>
-            <li>Retrieving from database</li>
-            <li>Viewing images</li>
-            <li>Calculating expressions</li>
-            <li>Generating answers</li>
+            <li><strong>RetrieveFromVectorstore:</strong> Dynamic neural retrieval with customizable parameters (query, collection, filters) for semantic search</li>
+            <li><strong>RetrieveFromDatabase:</strong> Symbolic retrieval through SQL queries, enabling precise structured data access</li>
+            <li><strong>ViewImage:</strong> Extracting and analyzing specific regions of PDF pages using bounding box coordinates</li>
+            <li><strong>CalculateExpr:</strong> Mathematical computation for handling numerical questions and reducing hallucination</li>
+            <li><strong>GenerateAnswer:</strong> Terminal action that produces the final answer when sufficient context is gathered</li>
           </ul>
           <p>
-            These actions allow the agent to dynamically interact with the document content and provide accurate responses to user queries.
+            The agent follows a ReAct framework, interleaving thought, action, and observation steps until it can confidently generate an answer. This hybrid approach combines the strengths of both neural and symbolic retrieval paradigms.
           </p>
         </div>
       </div>
@@ -929,12 +935,12 @@
         </div>
         <div class="dataset-stats">
           <div class="stat-item">
-            <div class="stat-label">M3SciQA</div>
-            <div class="stat-value">452 test samples</div>
+            <div class="stat-label">452 test samples</div>
+            <div class="stat-value">M3SciQA</div>
           </div>
           <div class="stat-item">
-            <div class="stat-label">SciDQA</div>
-            <div class="stat-value">2,937 test samples</div>
+            <div class="stat-label">2,937 test samples</div>
+            <div class="stat-value">SciDQA</div>
           </div>
         </div>
       </div>
