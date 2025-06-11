@@ -1,0 +1,29 @@
+{
+    "uuid": "8205ffe4-abc4-54fc-bf39-2e0f3b375848",
+    "question": "According to the paper that proposed BooookScore, another paper analysed the disadvantage of the only existing public dataset for book-length summarization. In that analysis paper, which book published in the 21st century is among the books where GPT-4 performs the best on name cloze?",
+    "answer_format": "Your answer should be a Python string, the title of the book.",
+    "tags": [
+        "comprehensive",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "BooookScore: A systematic exploration of book-length summarization in the era of LLMs"
+    ],
+    "reference_pdf": [
+        "Speak, Memory: An Archaeology of Books Known to ChatGPT/GPT-4"
+    ],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "Fifty Shades of Grey",
+            "ignore_blank": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

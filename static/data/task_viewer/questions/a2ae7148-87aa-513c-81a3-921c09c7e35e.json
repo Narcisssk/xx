@@ -1,0 +1,29 @@
+{
+    "uuid": "a2ae7148-87aa-513c-81a3-921c09c7e35e",
+    "question": "According to \"Casting Hybrid Digital-Analog Training into Hierarchical Energy-Based Learning\", how can the delta of energy function be used in the EP gradient of EBM and BP gradient of FF module?",
+    "answer_format": "Your answer should be in fluential English.",
+    "tags": [
+        "single",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "93d4e1d2-32ff-5758-87d6-64606cf0e46a"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "The EP gradient uses the difference of the second-order gradient of energy function.",
+                "The BP gradient uses the difference of the fourth-order gradient of energy function."
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "zhangdanyang"
+}

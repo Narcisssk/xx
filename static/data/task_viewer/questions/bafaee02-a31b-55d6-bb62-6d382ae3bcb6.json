@@ -1,0 +1,30 @@
+{
+    "uuid": "bafaee02-a31b-55d6-bb62-6d382ae3bcb6",
+    "question": "Both as hybrid digital twins, what's the advantage of HDTwinGen over PINN-based Med-Real2Sim?",
+    "answer_format": "Your answer should be in well-formed item list.",
+    "tags": [
+        "multiple",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "54a132ad-617a-5af3-9de3-7b86946dc779",
+        "090a2d55-9042-555f-8520-81c642111e2a"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "HDTwinGen injects domain knowledge from LLM rather than real human expert, which reduces the reliance of expensive and heavy expert labour and make the framework easily generalized to new domains.",
+                "HDTwinGen's pipeline can automatically optimize both model parameters and model structures, in constrast Med-Real2Sim only optimizes model parameters and its structure relies on human's a priori knowledge."
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "zhangdanyang"
+}

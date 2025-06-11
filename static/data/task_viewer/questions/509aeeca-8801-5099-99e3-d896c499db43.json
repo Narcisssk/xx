@@ -1,0 +1,44 @@
+{
+    "uuid": "509aeeca-8801-5099-99e3-d896c499db43",
+    "question": "According to the main body of the paper \"Bayesian low-rank adaptation for large language models\", which method is statistical significant on BoolQ with ECE metrics? In that method, how is the hyperparameter k selected?",
+    "answer_format": "Your answer should be a Python list of 2 strings, the first is the full name of the method, and the second is the formula in LaTeX format.",
+    "tags": [
+        "multiple",
+        "table",
+        "metadata",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "02c6b82d-45fe-5da0-88ca-4a4f9e2d84a7"
+    ],
+    "reference_pdf": [
+        "56e1eebb-05d6-58d2-bee7-722be0b9d923"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_complex_math_formula_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "checkpoint ensemble",
+                    "ignore_blank": true,
+                    "lowercase": true
+                },
+                {
+                    "formulas": "k = min(a + 5, b, n)",
+                    "question": "How is the hyperparameter k selected?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

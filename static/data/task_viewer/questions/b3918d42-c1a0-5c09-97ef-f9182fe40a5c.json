@@ -1,0 +1,29 @@
+{
+    "uuid": "b3918d42-c1a0-5c09-97ef-f9182fe40a5c",
+    "question": "Regarding the construction of the Edit Matrix, which paper's findings does this study reference and follow? What are the affiliations of the authors of the cited work?",
+    "answer_format": "Your answer should be a brief text containing the cited paper's name and the authors' affiliations.",
+    "tags": [
+        "multiple",
+        "metadata",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "578bb752-3163-587e-8206-4d887f7c52ec"
+    ],
+    "reference_pdf": [
+        "71909a98-75e0-5256-9873-ce430f465c19"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The cited paper is 'Incomplete Utterance Rewriting as Semantic Segmentation' and its authors are from the School of 'Computer Science and Engineering, Beihang University, China' and 'Microsoft Research, Beijing, China'.",
+            "question": "Regarding the construction of the Edit Matrix, which paper's findings does this study reference and follow? What are the affiliations of the authors of the cited work?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "wangchenrun"
+}

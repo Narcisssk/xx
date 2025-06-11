@@ -1,0 +1,30 @@
+{
+    "uuid": "f70c12d9-365c-5fb5-aa6f-7cb0620991fc",
+    "question": "In the larger dataset in hours that the EgoDistill paper applies, what's the second largest country of residence for camera wearers?",
+    "answer_format": "Your answer should be a string, the country as given in the paper.",
+    "tags": [
+        "multiple",
+        "image",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "2b518d78-7e56-5928-85cb-ff7ccfd63307"
+    ],
+    "reference_pdf": [
+        "2553c64e-a36f-5ee3-a805-2f4c1abe737c"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "India",
+            "lowercase": true,
+            "ignore_blank": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

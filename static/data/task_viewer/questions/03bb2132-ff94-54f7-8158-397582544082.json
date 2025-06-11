@@ -1,0 +1,24 @@
+{
+    "uuid": "03bb2132-ff94-54f7-8158-397582544082",
+    "question": "Which paper propose a PEFT method for LLM that detects important attention heads first, then adds learnable bias to their outputs?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "retrieval",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_reference_answer",
+        "eval_kwargs": {
+            "question": "Which paper propose a PEFT method for LLM that detects important attention heads first, then adds learnable bias to their outputs?",
+            "reference_answer": "LoFiT: Localized Fine-tuning on LLM Representations"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "hansenyu"
+}

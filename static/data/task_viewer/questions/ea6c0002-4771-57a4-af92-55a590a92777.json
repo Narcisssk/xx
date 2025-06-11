@@ -1,0 +1,26 @@
+{
+    "uuid": "ea6c0002-4771-57a4-af92-55a590a92777",
+    "question": "Which model achieves superior performance with a large number of examples in the task of cancer type classification?",
+    "answer_format": "Your answer should be a single model name used in the corresponding figure.",
+    "tags": [
+        "single",
+        "image",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "Enhancing vision-language models for medical imaging: bridging the 3D gap with innovative slice selection"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "Med-Flamingo",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "zhuzichen"
+}

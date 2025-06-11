@@ -1,0 +1,37 @@
+{
+    "uuid": "830f1c03-4a94-5c36-863e-cbf523ec9785",
+    "question": "In the experiment section of \"InCharacter: Evaluating Personality Fidelity in Role-Playing Agents through Psychological Interviews\", where does the character data come from, and how many characters are there in each character source dataset?",
+    "answer_format": "Your answer should be a Python dictionary of one or more key-value pairs, where each key is the name of the source character dataset and each value is an integer indicating the number of characters in that dataset. e.g. {\"dataset1\": 3, \"dataset2\": 5}",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "InCharacter: Evaluating Personality Fidelity in Role-Playing Agents through Psychological Interviews"
+    ],
+    "reference_pdf": [
+        "ChatHaruhi: Reviving Anime Character in Reality via Large Language Model",
+        "RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Firstly, find the experimental setting section that introduces the character data.",
+        "Identify the dataset names.",
+        "Then, for each dataset, turn to the paper which proposed that dataset.",
+        "Find the number of characters in that dataset."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": {
+                "ChatHaruhi": 32,
+                "RoleLLM": 100
+            }
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "hansenyu"
+}

@@ -1,0 +1,29 @@
+{
+    "uuid": "04f34534-aa58-5d9a-8e0a-d57200c092a7",
+    "question": "In the intervention-based training of this paper(titled \"Inducing Character-level Structure in Subword-based Language Models with Type-level Interchange Intervention Training\"), can you give me a github link of the method mainly used in this part? ",
+    "answer_format": "Your answer should be a single link like \"https://github.com/a/b\".",
+    "tags": [
+        "multiple",
+        "metadata",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "ab3799c1-e815-5e18-bec8-be7e428c3b0e"
+    ],
+    "reference_pdf": [
+        "d75d5242-633e-5513-81b8-424a535f6e2e"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "https://github.com/frankaging/Interchange-Intervention-Training",
+            "lower_case": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "kangzhangyi"
+}

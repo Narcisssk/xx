@@ -1,0 +1,36 @@
+{
+    "uuid": "8f5ae2e9-9450-57e9-bc4f-069747845fdb",
+    "question": "How were the data samples selected for the dataset used in the SFT of the paper \"FACTALIGN: Long-form Factuality Alignment of Large Language Models\"?",
+    "answer_format": "Your answer should be a python strings.",
+    "tags": [
+        "multiple",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "3f41366a-f254-5708-af03-6ab7381ca5c3"
+    ],
+    "reference_pdf": [
+        "f4dbf2f3-ab88-55dc-bb3f-95d7541335f9"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the dataset used in the SFT of the paper \"FACTALIGN: Long-form Factuality Alignment of Large Language Models\".",
+        "Locate the relevant paper about the dataset.",
+        "Find the selecting strategy for the data samples in the dataset, which is usually in the method."
+    ],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "question": "How were the data samples selected for the dataset used in the SFT of the paper \"FACTALIGN: Long-form Factuality Alignment of Large Language Models\"?",
+            "scoring_points": [
+                "A score-first, diverse-aware data selection strategy, denoted as \\pi_{DEITA} were proposed to combine complexity, quality, and diversity measures.",
+                "The strategy incorporates a new evol score s that combines complexity and quality by multiplying the complexity score c with the quality score q as s := c * q. For multi-turn dialogues, we calculate this score for each turn, summing them to obtain the final score for the entire conversation. Next, we sort all samples in X using s, yielding the sorted pool X^* = (x^*_1, x^*_2, ..., x^*_n), where x^*_0 represents the sample with the highest evol score. Beginning with S^1_{\\pi_{DEITA}} = (x^*_0), we iteratively select data from X^*/S^1_{\\pi_{DEITA}} one by one, following the REPR FILTER strategy, and discard redundant samples for S^1_{\\pi_{DEITA}}."
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "zhangyuxin"
+}

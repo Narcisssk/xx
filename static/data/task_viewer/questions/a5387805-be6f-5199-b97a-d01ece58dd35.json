@@ -1,0 +1,50 @@
+{
+    "uuid": "a5387805-be6f-5199-b97a-d01ece58dd35",
+    "question": "In the baseline construction of the experiment of TrojText, which models are employed? Where can I get the code or data of these models?",
+    "answer_format": "Your answer should be a single python list like [[\"model_name1\",\"model_name2\",...],[\"https://github.com/a/b\",\"https://github.com/c/d\",...]].Note that you should choose the most concise way to express the name of the model.",
+    "tags": [
+        "multiple",
+        "metadata",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "e6260126-455c-5dea-ac6d-b1c0e38c210d"
+    ],
+    "reference_pdf": [
+        "02594a34-fbd5-5e5b-9820-7ae0455d8184",
+        "b548bb39-f044-5ca3-9c7e-dfe5eb9aa993"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_structured_object_exact_match",
+                "eval_structured_object_exact_match"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": [
+                        "Hidden Killer",
+                        "TBT"
+                    ],
+                    "ignore_order": true,
+                    "lowercase": true
+                },
+                {
+                    "gold": [
+                        "https://github.com/thunlp/HiddenKiller",
+                        "https://github.com/adnansirajrakin/TBT-2020"
+                    ],
+                    "ignore_order": true,
+                    "lowercase": true
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "kangzhangyi"
+}

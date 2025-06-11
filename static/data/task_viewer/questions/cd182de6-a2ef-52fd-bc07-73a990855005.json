@@ -1,0 +1,30 @@
+{
+    "uuid": "cd182de6-a2ef-52fd-bc07-73a990855005",
+    "question": "What stages does training of Med-Real2Sim comprise?",
+    "answer_format": "Your answer should be a string list consisting of the training stages in order.",
+    "tags": [
+        "single",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "090a2d55-9042-555f-8520-81c642111e2a"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "physics-informed pretext task",
+                "physics-guided finetuning"
+            ],
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "zhangdanyang"
+}

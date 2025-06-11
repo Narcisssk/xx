@@ -1,0 +1,26 @@
+{
+    "uuid": "13c85a99-fac5-53e9-9c74-bf2b67a640aa",
+    "question": "Which database did the authors use to select the 250 highest-rated television series for building their dataset?",
+    "answer_format": "Your answer must be ONE string just containing the database's name in abbreviation format.",
+    "tags": [
+        "single",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "Classist Tools: Social Class Correlates with Performance in NLP"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "IMDB",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "wangchenrun"
+}

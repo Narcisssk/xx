@@ -1,0 +1,23 @@
+{
+    "uuid": "053401b8-15b3-59d8-a9e0-30ccdd459166",
+    "question": "In Table 1: Test MAE for different interpolation methods,which method performs better in dataset Shallow Water with grid Coarser?" ,
+    "answer_format": "Your answer should be one of k-NN,Linear and IDW.",
+    "tags": [
+        "single",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": ["c77ee3f6-804f-508b-bc75-1f7a93d3f0dezz"],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "glod":"Linear"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "sunwenjie"
+}

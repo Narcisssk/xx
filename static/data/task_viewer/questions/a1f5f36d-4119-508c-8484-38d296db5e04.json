@@ -1,0 +1,48 @@
+{
+    "uuid": "a1f5f36d-4119-508c-8484-38d296db5e04",
+    "question": "In the paper titled \"ON-TRAC consortium systems for the IWSLT 2023 dialectal and low-resource speech translation tasks\", which dataset is used when training the translation model X→FR,EN? Which institute is this dataset released by?",
+    "answer_format": "Your answer should be a single python list like [\"dataset_name\",\"institute_name\"].Note that you don't have to indicate the language pair in the dataset name.",
+    "tags": [
+        "multiple",
+        "metadata",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "ffda5466-8659-558a-928e-91f7701a8325"
+    ],
+    "reference_pdf": [
+        "bff17d39-34ec-559c-82a6-644050316af8"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_element_included",
+                "eval_element_included"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": [
+                        "CoVoST-2",
+                        "CoVoST 2",
+                        "CoVoST2"
+                    ],
+                    "lowercase": true
+                },
+                {
+                    "gold": [
+                        "Facebook AI",
+                        "Facebook"
+                    ],
+                    "lowercase": true
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "kangzhangyi"
+}

@@ -1,0 +1,30 @@
+{
+    "uuid": "2f4dc6e0-c001-55c8-ba36-c72fc509e506",
+    "question": "What are the conditions under which the zero generalization error can be achieved?",
+    "answer_format": "Your answer should be a Python string listing all the conditions in detail.",
+    "tags": [
+        "single",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "fffa8c85-c16f-566b-a036-0a584e6a445c"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [
+        "First, locate where the conditions of zero generalization error are mentioned.",
+        "Select all the conditions required in the text."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "When the testing-relevant patterns in testing prompts and queries are positive linear combinations of training-relevant features, the label embeddings match those in the training data and if the testing prompt is long enough to adequately cover demonstrations with the same testing-relevant features as the testing query.",
+            "question": "What are the conditions under which the zero generalization error can be achieved?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "qianlirong"
+}

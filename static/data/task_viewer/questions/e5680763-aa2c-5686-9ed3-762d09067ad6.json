@@ -1,0 +1,42 @@
+{
+    "uuid": "e5680763-aa2c-5686-9ed3-762d09067ad6",
+    "question": "What type of information is scored the highest when the loss equals 0, 0.01 and 0.06? What can be concluded from this result?",
+    "answer_format": "Your answer should be a python list of two strings, the first is the type of information, the second is the conclusion from the result.",
+    "tags": [
+        "single",
+        "image",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "Lossy Compression and the Granularity of Causal Representation"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_structured_object_exact_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": [
+                        "Compressed",
+                        "High",
+                        "High"
+                    ],
+                    "lowercase": true
+                },
+                {
+                    "reference_answer": "When there is no information loss, participants evaluate more compressed causal claims significantly more highly than less compressed causal claims. When information loss is moderate, there is no significant difference. When information loss is high, participants prefer less compressed claims.",
+                    "question": "What can be concluded from this result?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "qianlirong"
+}

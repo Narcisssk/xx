@@ -1,0 +1,27 @@
+{
+    "uuid": "d74a2ccf-fd25-5523-839c-94dc3a8a156f",
+    "question": "Which categories of KV cache compression techniques within PoD does WindowKV belong to?",
+    "answer_format": "Your answer should be a string that represents categories of KV cache compression techniques in PoD.",
+    "tags": [
+        "multiple",
+        "subjective",
+        "text"
+    ],
+    "anchor_pdf": [
+        "WindowKV: Task-Adaptive Group-Wise KV Cache Window Selection for Efficient LLM Inference",
+        "Compressing KV Cache for Long-Context LLM Inference with Inter-Layer Attention Similarity"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "Token-selection-based methods and Layer-sharing-based methods",
+            "question": "Which categories of KV cache compression techniques within PoD does WindowKV belong to?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "mada"
+}

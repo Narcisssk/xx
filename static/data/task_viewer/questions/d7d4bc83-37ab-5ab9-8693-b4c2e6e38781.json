@@ -1,0 +1,29 @@
+{
+    "uuid": "d7d4bc83-37ab-5ab9-8693-b4c2e6e38781",
+    "question": "What do you think is the biggest advantage of Variator compared to baseline models as shown in table 1 in the article 'Variator: Accelerating Pre-trained Models with Plug-and-Play Compression Modules'? Please briefly describe the working principle of LTP, which is one of the baseline models.",
+    "answer_format": "Your answer should be a brief text.",
+    "tags": [
+        "multiple",
+        "table",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "05ed59ad-42f0-5267-9275-a13db0684cde"
+    ],
+    "reference_pdf": [
+        "916615ea-a2db-5994-815e-ff4c0b641987"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The biggest advantage of Variator is its minimal additional parameters. LTP works by adaptively removing unimportant tokens based on attention scores, pruning tokens below a learned threshold for each layer.",
+            "question": "What do you think is the biggest advantage of Variator compared to baseline models as shown in table 1 in the article 'Variator: Accelerating Pre-trained Models with Plug-and-Play Compression Modules'? Please briefly describe the working principle of LTP, which is one of the baseline models."
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "wangchenrun"
+}

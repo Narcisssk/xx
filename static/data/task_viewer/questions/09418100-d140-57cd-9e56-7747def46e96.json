@@ -1,0 +1,29 @@
+{
+    "uuid": "09418100-d140-57cd-9e56-7747def46e96",
+    "question": "In the paper that introduces a novel task \"source imputation\", an ODE integrator is used in Algorithm 1. In the paper that proposed this ODE integrator, what's the original form of Eq. 4 in terms of $f(t)$ and $g(t)$?",
+    "answer_format": "Your answer should be a string, the formula in LaTeX format.",
+    "tags": [
+        "comprehensive",
+        "formula",
+        "metadata",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "Multi-Source Diffusion Models for Simultaneous Music Generation and Separation"
+    ],
+    "reference_pdf": [
+        "Elucidating the Design Space of Diffusion-Based Generative Models"
+    ],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formulas": "\\mathrm{d}\\boldsymbol{x} = \\left[ f(t)\\boldsymbol{x} - \\frac{1}{2} g(t)^2 \\nabla_{\\boldsymbol{x}} \\log p\\left(\\frac{\\boldsymbol{x}}{s(t)}; \\sigma(t)\\right) \\right] \\, \\mathrm{d}t.",
+            "question": "What's the original form of Eq. 4 in terms of $f(t)$ and $g(t)$?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

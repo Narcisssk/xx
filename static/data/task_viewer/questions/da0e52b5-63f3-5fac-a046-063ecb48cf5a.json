@@ -1,0 +1,27 @@
+{
+    "uuid": "da0e52b5-63f3-5fac-a046-063ecb48cf5a",
+    "question": "When conducting experiments, which kind of GPU device is used in this paper?",
+    "answer_format": "Your answer should be a brief text.",
+    "tags": [
+        "single",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "c2a32b9f-dbe7-5d89-a71d-feabd95e7fd2"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "All experiments were done with an Nvidia A40 GPU in this paper.",
+            "question": "When conducting experiments, which kind of GPU device is used in this paper?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "wangchenrun"
+}

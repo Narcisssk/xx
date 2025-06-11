@@ -1,0 +1,28 @@
+{
+    "uuid": "4c3b2423-fcfb-5a2b-9eea-44d28196587b",
+    "question": "In the experiment of the paper that proposed knowledge card, a model is used as the component denoted by a cube with a question mark in the overview figure. What're the training hyperparameters of this model according to the paper that proposed it?",
+    "answer_format": "Your answer should be a paragraph, the training hyperparameters of the model.",
+    "tags": [
+        "comprehensive",
+        "image",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "Knowledge Card: Filling LLMs' Knowledge Gaps with Plug-in Specialized Language Models"
+    ],
+    "reference_pdf": [
+        "Evaluating Large Language Models Trained on Code"
+    ],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "We train Codex using the same learning rate as the corresponding GPT model, with a 175 step linear warmup and cosine learning rate decay. We train for a total of 100 billion tokens, using the Adam optimizer with $\\beta_1 = 0.9$, $\\beta_2 = 0.95$, $\\epsilon = 10^{−8}$, and a weight decay coefficient of 0.1.",
+            "question": "What're the training hyperparameters of CodeX?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

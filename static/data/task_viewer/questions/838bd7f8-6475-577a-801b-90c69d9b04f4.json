@@ -1,0 +1,32 @@
+{
+    "uuid": "838bd7f8-6475-577a-801b-90c69d9b04f4",
+    "question": "Which model achieves the best performance in the experimental results of MQUAKE-T in Figure 2? Considering the GPU VRAM consumption of the model from the previous question, which models from ENN and KE have similar consumption?",
+    "answer_format": "Your answer should be a single python list containing two strings, the first element of the list is the model's name, the second element of the name of the model that has similar GPU VRAM consumption of with the first element.",
+    "tags": [
+        "multiple",
+        "image",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "5e2682ca-f1c4-536d-bd61-0a2f0055f435"
+    ],
+    "reference_pdf": [
+        "44c58240-57f2-5f7c-b511-e44337f6a5af"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "MEND",
+                "KE"
+            ],
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "wangchenrun"
+}

@@ -1,0 +1,33 @@
+{
+    "uuid": "3cc4cb1e-ec2f-53ca-a69b-029e013b2d6a",
+    "question": "In Theorem 4.7 of this paper, a basic learning algorithm is applied. According to the paper that proposed that algorithm, what's the objective to be maximized for the actor and loss function to be minimized for the critic?",
+    "answer_format": "Your answer should be a Python list of 2 strings, the formulas in LaTeX format. Remember that order matters.",
+    "tags": [
+        "multiple",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "3bc84aef-afcf-5ef8-a2fb-8e3ead6663d4"
+    ],
+    "reference_pdf": [
+        "118cac21-d91b-55b6-bfce-0742348b4c2d"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formulas": [
+                "L(\\theta) = \\left[\\frac{1}{Bn} \\sum_{i=1}^{B} \\sum_{k=1}^{n} \\min\\left(r_{\\theta,i}^{(k)} A_i^{(k)}, \\text{clip}(r_{\\theta,i}^{(k)}, 1 - \\epsilon, 1 + \\epsilon)A_i^{(k)}\\right)\\right] + \\sigma \\frac{1}{Bn} \\sum_{i=1}^{B} \\sum_{k=1}^{n} S\\left[\\pi_{\\theta}(o_i^{(k)})\\right]",
+                "L(\\phi) = \\frac{1}{B_n} \\sum_{i=1}^B \\sum_{k=1}^n \\left( \\max\\left[(V_{\\phi}(s_i^{(k)}) - \\hat{R}_i)^2, (\\textrm{clip}(V_{\\phi}(s_i^{(k)}), V_{\\phi_{\\textrm{old}}}(s_i^{(k)}) - \\varepsilon, V_{\\phi_{\\textrm{old}}}(s_i^{(k)}) + \\varepsilon) - \\hat{R}_i)^2\\right] \\right)"
+            ],
+            "question": "What's the objective to be maximized for the actor and loss function to be minimized for the critic?",
+            "ignore_order": false
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

@@ -1,0 +1,28 @@
+{
+    "uuid": "a4913d15-35e1-511a-affd-ef4782d08df9",
+    "question": "I read two papers called Chain of Ideas and Nova, and they both involve the evaluation of the characteristics of ideas, such as quality, novelty, and so on. I want to know the specific measurement aspects of these two papers.",
+    "answer_format": "Your answer should be a brief text.",
+    "tags": [
+        "multiple",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "3abcffc7-5a8b-5dac-8e48-74a736149d26",
+        "8ae3051b-db29-53c3-89c6-64202b13cec6"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The Chain of Ideas paper evaluates the novelty, significance, clarity, feasibility, and expected effectiveness of ideas. The Nova paper evaluates the quality, novelty, and diversity of ideas.",
+            "question": "I read two papers called Chain of Ideas and Nova, and they both involve the evaluation of the characteristics of ideas, such as quality, novelty, and so on. I want to know the specific measurement aspects of these two papers."
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "wangchenrun"
+}

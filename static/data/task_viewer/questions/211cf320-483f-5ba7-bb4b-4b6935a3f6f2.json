@@ -1,0 +1,27 @@
+{
+    "uuid": "211cf320-483f-5ba7-bb4b-4b6935a3f6f2",
+    "question":  "What is the same core conclusion \"Which Layer is Learning Faster? A Systematic Exploration of Layer-wise Convergence Rate for Deep Neural Networks\" and \"On the Spectral Bias of Neural Networks\" draw?",
+    "answer_format": "Your answer should be a string",
+    "tags": [
+        "multiple",
+        "image",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "Which Layer is Learning Faster? A Systematic Exploration of Layer-wise Convergence Rate for Deep Neural Networks",
+        "On the Spectral Bias of Neural Networks"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "referenced_answer": "The conclusion is Deep Neural Networks (DNNs) exhibit significant variation in learning speeds across different layers, and this disparity is closely linked to spectral bias and DNNs' training follows a \"shallow-to-deep\" progression that shallow layers stabilize quickly due to their role in low-frequency feature extraction, while deeper layers (near the output) converge more slowly as they handle high-frequency or complex patterns.",
+            "question": "What is the same core conclusion \"Which Layer is Learning Faster? A Systematic Exploration of Layer-wise Convergence Rate for Deep Neural Networks\" and \"On the Spectral Bias of Neural Networks\" draw? "
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "liudingye"
+}

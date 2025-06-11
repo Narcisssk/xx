@@ -1,0 +1,31 @@
+{
+    "uuid": "cd981e15-df19-5c78-8ed1-13b16d0ff91f",
+    "question": "Why can I find the exact dataset utilized by the LEGO-Prover paper?",
+    "answer_format": "Your answer should be a string, the URL as given in the paper without \"https://\", \"http://\" or \"www.\", e.g. \"google.com\"",
+    "tags": [
+        "comprehensive",
+        "metadata",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "LEGO-Prover: Neural Theorem Proving with Growing Libraries"
+    ],
+    "reference_pdf": [
+        "Draft, Sketch, and Prove: Guiding Formal Theorem Provers with Informal Proofs"
+    ],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_string_fuzzy_match",
+        "eval_kwargs": {
+            "gold": "github.com/facebookresearch/miniF2F",
+            "ignore_blank": false,
+            "lowercase": false,
+            "fuzz_method": "ratio",
+            "threshold": 95
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

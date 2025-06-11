@@ -1,0 +1,26 @@
+{
+    "uuid": "71456d85-6af1-5d17-ae3f-324516ab0853",
+    "question": "In the experiments presented in the paper \"Fast and Efficient Speech Enhancement with Variational Autoencoders\" evaluating the performance for speech enhancement, which method demonstrates the best performance apart from the proposed framework itself?",
+    "answer_format": "Your answer should be a python strings. YOU MUST USE THE EXACT ABBREVIATION AS IN THE PAPER.",
+    "tags": [
+        "single",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "Fast and Efficient Speech Enhancement with Variational Autoencoders"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold" : "MCEM",
+            "lowercase" : true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "zhangyuxin"
+}

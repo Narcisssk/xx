@@ -1,0 +1,38 @@
+{
+    "uuid": "1f3102a6-711f-5993-8e39-2334cfb5d96d",
+    "question": "What are the four evaluation metrics of the held-out dataset that InstructBLIP used for image QA?",
+    "answer_format": "Your answer should be a Python list of 4 strings, the metrics.",
+    "tags": [
+        "multiple",
+        "image",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "3cc54434-ac97-55b6-bb74-489e117724f8"
+    ],
+    "reference_pdf": [
+        "ada51525-eefa-5191-b98f-51f979a53ae9"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Accuracy",
+                "CIDEr",
+                "BLEU4",
+                "METEOR"
+            ],
+            "fuzz_method": "ratio",
+            "threshold": 90,
+            "lowercase": true,
+            "ignore_order": true,
+            "ignore_blank": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

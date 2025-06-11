@@ -1,0 +1,41 @@
+{
+    "uuid": "c7afaa8a-8311-5dd1-9e5e-5250a4b5011f",
+    "question": "According to this paper, which dataset(except the dataset proposed by this paper) also includes controls for unary vs binary predicates among the existing datasets for the formal analysis of reasoning ability? Can you describe the structure of each example in it in detail?",
+    "answer_format": "Your answer should be a single python list like this: [\"dataset_name\", \"structure_description\"]. Note that for the dataset name, the abbreviation is required. For the structure description, you should give a short string to describe the structure.",
+    "tags": [
+        "multiple",
+        "table",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "Language Models Are Greedy Reasoners: A Systematic Formal Analysis of Chain-of-Thought"
+    ],
+    "reference_pdf": [
+        "On the Paradox of Learning to Reason from Data"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "SimpleLogic",
+                    "lowercase": true
+                },
+                {
+                    "reference_answer": "Each example in SimpleLogic is a proposi tional reasoning problem that only involves def inite clauses. In particular, each example is a tuple  (facts, rules, query, label) where (1) facts is a list  of predicates that are known to be True, (2) rules  is a list of rules represented as definite clauses, (3)  query is a single predicate, and (4) label is either  True or False, denoting whether the query predicate  can be proved from facts and rules.",
+                    "question": "What is the structure of each example in the dataset?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "kangzhangyi"
+}

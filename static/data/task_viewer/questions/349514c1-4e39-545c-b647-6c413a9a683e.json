@@ -1,0 +1,29 @@
+{
+    "uuid": "349514c1-4e39-545c-b647-6c413a9a683e",
+    "question": "In the paper that proposed a CASH algorithm for finetuning, which two objective functions are essential for learning the estimator and the predictor?",
+    "answer_format": "Your answer should be a Python list of 2 strings, each string is a formula for the two objective functions in the LaTeX format.",
+    "tags": [
+        "comprehensive",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "Quick-Tune: Quickly Learning Which Pretrained Model to Finetune and How"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formulas": [
+                "\\theta^{(M)} := \\arg\\min_{\\theta} \\mathbb{E}_{(x,t,\\ell(x,t,d),c(x,t,d)) \\sim \\mathcal{H}^{(M)}} \\left[ -\\log p\\left( \\ell(x,t,d) \\mid x,t,d,\\hat{\\ell}(x,t,d;\\theta) \\right) \\right]",
+                "\\gamma^{(M)} := \\arg\\min_{\\gamma} \\mathbb{E}_{(x,t,\\ell(x,t,d),c(x,t,d)) \\sim \\mathcal{H}^{(M)}} \\left( c(x,t,d) - \\hat{c}(x,t,d;\\gamma) \\right)^2"
+            ],
+            "question": "Which two objective functions are essential for learning the estimator and the predictor?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

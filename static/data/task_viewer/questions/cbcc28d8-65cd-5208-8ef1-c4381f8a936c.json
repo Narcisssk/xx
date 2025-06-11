@@ -1,0 +1,46 @@
+{
+    "uuid": "cbcc28d8-65cd-5208-8ef1-c4381f8a936c",
+    "question": "Which dataset(s) is ViewCo trained on? I want to get the newer dataset, can you give me the link to it?",
+    "answer_format": "Your answer should be s single python list like this: [[\"dataset_name1\",\"dataset_name2\"], \"https://github.com/a/b\"]. Note that for the dataset name, the abbreviation is required.",
+    "tags": [
+        "multiple",
+        "metadata",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "ViewCo: Discovering Text-Supervised Segmentation Masks via Multi-View Semantic Consistency"
+    ],
+    "reference_pdf": [
+        "Conceptual 12M: Pushing Web-Scale Image-Text Pre-Training To Recognize Long-Tail Visual Concepts"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_structured_object_exact_match",
+                "eval_string_exact_match"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": [
+                        "CC12M",
+                        "YFCC"
+                    ],
+                    "lowercase": true,
+                    "ignore_order": true
+                },
+                {
+                    "gold": "https://github.com/google-research-datasets/conceptual-12m",
+                    "ignore_blank": true,
+                    "lowercase": true
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "kangzhangyi"
+}

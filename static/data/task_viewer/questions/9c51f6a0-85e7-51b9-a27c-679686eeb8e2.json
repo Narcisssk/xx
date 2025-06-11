@@ -1,0 +1,41 @@
+{
+    "uuid": "9c51f6a0-85e7-51b9-a27c-679686eeb8e2",
+    "question": "In the architecture of MolMIM, which encoder is used? What's the core idea of the designing of this encoder?",
+    "answer_format": "Your answer should be a single python list of two strings, like [\"encoder_name\",\"sentences_about_core_idea\"]",
+    "tags": [
+        "multiple",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "23169b8e-0212-5d75-a84b-651a57b2e331"
+    ],
+    "reference_pdf": [
+        "85cb73c1-03a5-5d60-83c7-19708b2bbad7"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "Perceiver",
+                    "lowercase": true
+                },
+                {
+                    "reference_answer": "The core idea of this encoder is to introduce a small set of latent units that form an \"attention bottleneck.\" Inputs must pass through this bottleneck, which solves the quadratic scaling problem of all-to-all attention in classical Transformers and decouples network depth from input size, enabling the construction of very deep models. The encoder iteratively attends to inputs, focusing its limited capacity on the most relevant parts based on previous steps. To compensate for the lack of explicit structures, position and modality-specific features are associated with each input element (e.g., pixels or audio samples). These features can be learned or constructed using high-fidelity Fourier features, effectively tagging input units with a high-fidelity representation of position and modality.",
+                    "question": "What's the core idea of the designing of this encoder?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "kangzhangyi"
+}

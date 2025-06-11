@@ -1,0 +1,26 @@
+{
+    "uuid": "e1464930-9482-58cc-8245-b84ab34841e9",
+    "question": "In the paper that proposed the information filtering hypothesis, under non-semantic task setting, how much does the frozen LLM transformers improve VectorNet, considering the miss rate?",
+    "answer_format": "Your answer should be a positive float, rounding to 1 decimal place.",
+    "tags": [
+        "comprehensive",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "Frozen Transformers in Language Models Are Effective Visual Encoder Layers"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 0.5,
+            "ndigits": 1
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

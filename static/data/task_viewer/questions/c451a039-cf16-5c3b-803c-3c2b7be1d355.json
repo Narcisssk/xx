@@ -1,0 +1,27 @@
+{
+    "uuid": "c451a039-cf16-5c3b-803c-3c2b7be1d355",
+    "question": "what is the exact performance drop when the diffusion model is removed in the MMWHS MR-to-CT UDA setting?",
+    "answer_format": "Your answer should be float number",
+    "tags": [
+        "single",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "ff55497d-cd0b-541c-b924-4d043c2ac3f9"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 10.9,
+            "ndigits": 1
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "qianlirong"
+}

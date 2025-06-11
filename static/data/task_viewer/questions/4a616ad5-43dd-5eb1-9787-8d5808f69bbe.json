@@ -1,0 +1,31 @@
+{
+    "uuid": "4a616ad5-43dd-5eb1-9787-8d5808f69bbe",
+    "question": "In the experiments of the paper \"SPZ: A Semantic Perturbation-based Data Augmentation Method with Zonal-Mixing for Alzheimer's Disease Detection\" on the ADReSS challenge dataset, which single model method and ensemble method performed the best, excluding the method proposed in this paper?",
+    "answer_format": "Your answer should be a python list, with the first element being the best single model method and the second element being the best ensemble method. YOU MUST USE THE ABBREVIATIONS IN THE TABLE.",
+    "tags": [
+        "single",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "SPZ: A Semantic Perturbation-based Data Augmentation Method with Zonal-Mixing for Alzheimer's Disease Detection"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold" : [
+                "CDA_single",
+                "CDA_ensemble"
+            ],
+            "lowercase" : true,
+            "ignore_blank" : true,
+            "threshold" : 90
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "zhangyuxin"
+}

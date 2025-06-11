@@ -1,0 +1,33 @@
+{
+    "uuid": "94ff4210-290d-53d9-90f7-56c5df1bed85",
+    "question": "What is the pipeline used to construct the dataset in the experiment of the paper \"PepRec: Progressive Enhancement of Prompting for Recommendation\"?",
+    "answer_format": "Your answer should be a python strings.",
+    "tags": [
+        "multiple",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "47db4060-7cd0-5824-b258-6410e0b16c37"
+    ],
+    "reference_pdf": [
+        "f69388c4-ec49-5a68-b169-22a427fc7686"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the dataset used in the experiment of the paper \"PepRec: Progressive Enhancement of Prompting for Recommendation\".",
+        "Locate the relevant paper about the dataset.",
+        "Find the pipeline used to construct the dataset."
+    ],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The pipeline to extract high quality justifications from raw user reviews consists of three steps: 1. Annotating a set of review segments with binary labels, i.e., to determine whether they are 'good' or 'bad' justifications. 2. Training a classifier on the annotated subset and applying it to distantly label all the review segments to extract 'good' justifications for each user and item pair. 3. Applying fine-grained aspect extraction for the extracted justifications, and building user personas and item profiles.",
+            "question": "What is the pipeline used to construct the dataset in the experiment of the paper \"PepRec: Progressive Enhancement of Prompting for Recommendation\"?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "zhangyuxin"
+}

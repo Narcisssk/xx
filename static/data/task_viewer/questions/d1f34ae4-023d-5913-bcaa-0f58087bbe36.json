@@ -1,0 +1,29 @@
+{
+    "uuid": "d1f34ae4-023d-5913-bcaa-0f58087bbe36",
+    "question": "According to the paper that proposed the second smallest baseline applied in the MetaGPT paper, what's the difference in pass rate between the best and the worst method, under single-line infilling setting?",
+    "answer_format": "Your answer should be a float between 0 and 100, rounding to one decimal place.",
+    "tags": [
+        "comprehensive",
+        "table",
+        "image",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework"
+    ],
+    "reference_pdf": [
+        "InCoder: A Generative Model for Code Infilling and Synthesis"
+    ],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_float_exact_match",
+        "eval_kwargs": {
+            "gold": 27.4,
+            "ndigits": 1
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

@@ -1,0 +1,35 @@
+{
+    "uuid": "3caa2b4d-e1e4-532d-9976-125838093bb8",
+    "question": "According to the paper \"FinGPT: Instruction Tuning Benchmark for Open-Source Large Language Models in Financial Datasets\", after the tuning phase shown in the right top of the paradigm overview figure, on which dataset MPT outperforms the other models with an average F1 score of around 0.87? In that dataset, which entity class accounts for the largest proportion?",
+    "answer_format": "Your answer should be a Python list of 2 elements, the first is the abbreviation of the dataset, and the second is the entity class.",
+    "tags": [
+        "multiple",
+        "table",
+        "image",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "1d2eb7a7-8dfa-5bc0-a906-b27725667ff4"
+    ],
+    "reference_pdf": [
+        "36e0be33-f25c-5bb9-a442-80cea9127bf1"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "FPB",
+                "General entity"
+            ],
+            "ignore_blank": true,
+            "lowercase": true,
+            "ignore_order": false
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

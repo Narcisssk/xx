@@ -1,0 +1,30 @@
+{
+    "uuid": "b939dfd5-150e-5b54-9ef3-b9b5497d688d",
+    "question": "In the CLAP paper, which three challenges for patchwork learning are mentioned?",
+    "answer_format": "Your answer should be a Python list of 3 strings, each string is a challenge.",
+    "tags": [
+        "comprehensive",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "CLAP: Collaborative Adaptation for Patchwork Learning"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "- statistical heterogeneity; the multimodal data of local clients are typically non-i.i.d. The model may fail to adapt the learned dependencies to target clients;",
+                "- modality combination heterogeneity; local clients can have various modality combinations. The learned dependencies from Xi is hard to be used for other clients with different combinations Xj;",
+                "- modality combination vulnerability; the learned imputation method could be vulnerable to the modality combinations and the imputation quality significantly varies for two similar combinations;"
+            ],
+            "question": "In the CLAP paper, which three challenges for patchwork learning are mentioned?",
+            "ignore_order": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

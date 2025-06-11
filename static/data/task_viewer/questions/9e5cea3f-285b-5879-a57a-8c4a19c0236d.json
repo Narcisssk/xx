@@ -1,0 +1,33 @@
+{
+    "uuid": "9e5cea3f-285b-5879-a57a-8c4a19c0236d",
+    "question": "Which dataset is GrailQAbility dataset derived from? How many literals are there in the source dataset?",
+    "answer_format": "Your answer should be a single python list like [\"dataset_name\",100].The first element of the list is a string and the second is an integer number.",
+    "tags": [
+        "multiple",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "0d9f5091-a5c3-5d69-8f13-b9427d3f4ccd"
+    ],
+    "reference_pdf": [
+        "058d0055-8d50-5b52-ac1a-8c36d074e246"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "GRAILQA",
+                3239
+            ],
+            "ignore_order": false,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "kangzhangyi"
+}

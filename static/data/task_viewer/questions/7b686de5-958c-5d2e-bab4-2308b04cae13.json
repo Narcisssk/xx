@@ -1,0 +1,28 @@
+{
+    "uuid": "7b686de5-958c-5d2e-bab4-2308b04cae13",
+    "question": "In \"Domain-Specific Pruning of Large Mixture-of-Experts Models with Few-shot Demonstrations\", which paper inspired the authors to calculate the expert-level token contribution?",
+    "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
+    "tags": [
+        "multiple",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "Domain-Specific Pruning of Large Mixture-of-Experts Models with Few-shot Demonstrations"
+    ],
+    "reference_pdf": [
+        "ShortGPT: Layers in Large Language Models are More Redundant Than You Expect"
+    ],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_paper_relevance_with_reference_answer",
+        "eval_kwargs": {
+            "question": "In \"Domain-Specific Pruning of Large Mixture-of-Experts Models with Few-shot Demonstrations\", which paper inspired the authors to calculate the expert-level token contribution?",
+            "reference_answer": "ShortGPT: Layers in Large Language Models are More Redundant Than You Expect"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "hansenyu"
+}

@@ -1,0 +1,31 @@
+{
+    "uuid": "5a15998a-846c-500d-8953-6e97fa7d745d",
+    "question": "In the joint context transfer module of the paper, which attention mechanism is used? Please give me the pdf url to the paper that proposed this attention mechanism.",
+    "answer_format": "Your answer should be a single link like this: https://arxiv.org/abs/xxxx.xxxxx.",
+    "tags": [
+        "multiple",
+        "metadata",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "LDMIC: Learning-based Distributed Multi-view Image Coding"
+    ],
+    "reference_pdf": [
+        "Efficient Attention: Attention with Linear Complexities"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_element_included",
+        "eval_kwargs": {
+            "gold": [
+                "https://arxiv.org/pdf/1812.01243v10",
+                "http://arxiv.org/pdf/1812.01243v10"
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "kangzhangyi"
+}

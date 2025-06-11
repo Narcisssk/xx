@@ -1,0 +1,29 @@
+{
+    "uuid": "b3bdd115-e25d-57c2-8931-40fb33a5f9a0",
+    "question": "Among the SR algorithms chosen in the paper \"Expression Sampler as a Dynamic Benchmark for Symbolic Regression\", which one performs the best on SRBench, considering the R-squared test.",
+    "answer_format": "Your answer should be a string, the abbreviation of the algorithm as given in the paper.",
+    "tags": [
+        "multiple",
+        "image",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "02a67239-2a8a-5168-bfd4-d861a1d86675",
+        "bb15ac6b-4277-52b1-b32e-a1fba6617dcd"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "SBP-GP",
+            "lowercase": true,
+            "ignore_blank": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

@@ -1,0 +1,26 @@
+{
+    "uuid": "b91a8c27-fa71-5ff7-a867-b58985276991",
+    "question": "Among three single-agent baselines in table one, which performs best on Damped Spring?",
+    "answer_format": "Your answer should be a python string. YOU MUST USE THE EXACT NAME FROM THE PDF WITHOUT CHANGING THE CAPITALIZATION.",
+    "tags": [
+        "single",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "fdfd844d-b6a6-5bbc-8ca2-740d4f7e8562"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "TRS-ODEN"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "qianlirong"
+}

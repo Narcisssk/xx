@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NeuSym-RAG Task Explorer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/explorer.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <style>
+        .is-halfheight {
+            height: 50vh;
+            overflow-y: scroll;
+        }
+
+        .category {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .task-list {
+            border: none;
+        }
+
+        .task-list:hover {
+            background-color: #f2f0f0;
+        }
+
+        .active,
+        .category:hover {
+            background-color: #ccc;
+        }
+
+        .task-active {
+            background-color: #f3f0f0;
+        }
+
+        .category:after {
+            content: "\002B";
+            color: #000000;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .categorycontainer {
+            max-height: 180vh;
+            overflow-y: scroll;
+        }
+
+        .taskid-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .taskid-label {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .highlight-quote {
+            background-color: #f9f9f9;
+            border-left: 4px solid #007BFF;
+            padding: 10px 15px;
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .highlight-quote-title {
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        .highlight-quote-content {
+            font-style: italic;
+            max-height: 180px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+
+    <section class="section is-max-desktop">
+        <div class="container">
+            <h2 class="title is-3" style="display: inline-block; vertical-align: middle;">NeuSym-RAG Task Explorer</h2>
+            <div class="notification is-info">
+                <md-block>
+                    Below we show a subset of NeuSym-RAG tasks, which allows you to explore the tasks in detail.<br>
+                    Tasks are categorized as either correct or incorrect based on their evaluation results.
+                </md-block>
+            </div>
+
+            <div class="columns">
+                <div class="column is-one-quarter categorycontainer" id="categoriesContainer">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+                <div class="column is-three-quarter">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <div class="box">
+                                    <div>
+                                        <b>Task id:</b>
+                                        <span class="taskid-label" id="taskid-text">uuid of the selected task</span>
+                                        
+                                        <h6 class="title is-6"></h6>
+                                        <div id="status-flag">
+                                            <b>Status:</b>
+                                            <span class="tag-success">success</span> or <span class="tag-failure">failure</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <h5>Question</h5>
+                                    <div id="tag-list">
+                                        <b>Tags:</b>
+                                        <!-- Tags will be populated by JavaScript -->
+                                    </div>
+                                    <div class="highlight-quote">
+                                        <div class="highlight-quote-content" id="question-text">
+                                            Select a task on the left panel to view the question.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="box">
+                                    <h5>Trajectory</h5>
+                                    <pre class="line-numbers" data-language="python" style="max-width: 100%; max-height: 500px; overflow: auto; white-space: pre-wrap;"><code class="language-python" id="trajectory-text">Select a task on the left panel to view the trajectory.</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load task data
+            Promise.all([
+                fetch('./static/data/task_viewer/correct/task_ids.json').then(response => response.json()),
+                fetch('./static/data/task_viewer/incorrect/task_ids.json').then(response => response.json())
+            ]).then(([correctTasks, incorrectTasks]) => {
+                const container = document.getElementById('categoriesContainer');
+                
+                // Create categories
+                const categories = {
+                    'Correct Tasks': correctTasks,
+                    'Incorrect Tasks': incorrectTasks
+                };
+
+                Object.entries(categories).forEach(([category, tasks]) => {
+                    // Create category button
+                    const catButton = document.createElement('button');
+                    catButton.textContent = category;
+                    catButton.classList.add('category');
+                    container.appendChild(catButton);
+
+                    // Create task list
+                    const taskList = document.createElement('ul');
+                    taskList.classList.add('panel');
+                    
+                    tasks.forEach((taskId, index) => {
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('task-list');
+                        listItem.textContent = `Task ${index + 1}`;
+
+                        listItem.addEventListener('click', () => {
+                            // Load task data
+                            Promise.all([
+                                fetch(`./static/data/task_viewer/questions/${taskId}.json`).then(response => response.json()),
+                                fetch(`./static/data/task_viewer/${category.toLowerCase().includes('correct') ? 'correct' : 'incorrect'}/${taskId}.jsonl`)
+                                    .then(response => response.text())
+                                    .then(text => {
+                                        // Parse JSONL file
+                                        const lines = text.trim().split('\n');
+                                        return lines.map(line => JSON.parse(line));
+                                    })
+                            ]).then(([taskData, trajectory]) => {
+                                // Update UI
+                                document.getElementById('taskid-text').textContent = taskId;
+                                document.getElementById('question-text').textContent = taskData.question;
+                                
+                                // Update status
+                                const statusFlag = document.getElementById('status-flag');
+                                statusFlag.innerHTML = `<b>Status:</b> <span class="tag-${category.toLowerCase().includes('correct') ? 'success' : 'failure'}">${category.toLowerCase().includes('correct') ? 'success' : 'failure'}</span>`;
+                                
+                                // Update tags
+                                const tagList = document.getElementById('tag-list');
+                                tagList.innerHTML = '<b>Tags:</b> ' + taskData.tags.map(tag => 
+                                    `<span class="tag-${tag.toLowerCase()}">${tag}</span>`
+                                ).join(' ');
+                                
+                                // Update trajectory
+                                const formattedTrajectory = trajectory.map((step, index) => {
+                                    return `## Step ${index + 1}\n${JSON.stringify(step, null, 2)}`;
+                                }).join('\n\n');
+                                document.getElementById('trajectory-text').textContent = formattedTrajectory;
+                                
+                                // Highlight active task
+                                document.querySelectorAll('.task-list').forEach(item => item.classList.remove('task-active'));
+                                listItem.classList.add('task-active');
+                            });
+                        });
+
+                        taskList.appendChild(listItem);
+                    });
+
+                    container.appendChild(taskList);
+
+                    // Toggle category
+                    catButton.addEventListener('click', () => {
+                        catButton.classList.toggle('active');
+                        if (taskList.style.maxHeight) {
+                            taskList.style.maxHeight = null;
+                        } else {
+                            taskList.style.maxHeight = taskList.scrollHeight + "px";
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

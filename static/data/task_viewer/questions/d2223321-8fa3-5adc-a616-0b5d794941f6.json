@@ -1,0 +1,36 @@
+{
+    "uuid": "d2223321-8fa3-5adc-a616-0b5d794941f6",
+    "question": "What is the architecture of the transformer-based classifier used in the paper \"A Two-Model Approach for Humour Style Recognition\"?",
+    "answer_format": "Your answer should be a python strings.",
+    "tags": [
+        "multiple",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "bf865303-7fd8-5e3d-a8ee-7ee54b04ed40"
+    ],
+    "reference_pdf": [
+        "7efa89b4-4460-5eed-b6f0-62238a690c9b"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the transformer-based classifier used in the paper \"A Two-Model Approach for Humour Style Recognition\".",
+        "Locate the related paper about the transformer-based classifier.",
+        "Retrieve the architecture of the transformer-based classifier."
+    ],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "The student DistilBERT has the same general architecture as BERT.",
+                "The token-type embeddings and the pooler are removed while the number of layers is reduced by a factor of 2."
+            ],
+            "question": "What is the architecture of the transformer-based classifier used in the paper \"A Two-Model Approach for Humour Style Recognition\"?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "zhangyuxin"
+}

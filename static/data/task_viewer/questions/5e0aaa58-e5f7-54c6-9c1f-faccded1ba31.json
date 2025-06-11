@@ -1,0 +1,26 @@
+{
+    "uuid": "5e0aaa58-e5f7-54c6-9c1f-faccded1ba31",
+    "question": "In the agent \"MO-DDN\" (Multi-object Demand-driven Navigation), what is the basic success rate for a specific demand instruction DI?",
+    "answer_format": "Your answer should be a formula string in latex format.",
+    "tags": [
+        "comprehensive",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "MO-DDN: A Coarse-to-Fine Attribute-based Exploration Agent for Multi-Object Demand-driven Navigationntangled Attention"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_complex_math_formula_with_llm",
+        "eval_kwargs": {
+            "formulas": "SR_b=\\frac{1}{N}\\sum_{i=1}^N\\max_{s_b\\in So_b}\\frac{\\sum_{o\\in FL}\\mathbb{1}_{o\\in s_b}}{Len(s_b)}"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "kangzhangyi"
+}

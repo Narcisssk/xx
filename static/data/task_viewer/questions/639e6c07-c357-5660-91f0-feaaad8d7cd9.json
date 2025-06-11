@@ -1,0 +1,26 @@
+{
+    "uuid": "639e6c07-c357-5660-91f0-feaaad8d7cd9",
+    "question": "Which evaluation method is used in the paper against gold standards, despite having a low correlation with human judgments according to various studies?",
+    "answer_format": "Your answer must be ONE string of the evaluation method's name.",
+    "tags": [
+        "single",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "GLIMPSE: Pragmatically Informative Multi-Document Summarization for Scholarly Reviews"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "ROUGE",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": true
+    },
+    "annotator": "wangchenrun"
+}

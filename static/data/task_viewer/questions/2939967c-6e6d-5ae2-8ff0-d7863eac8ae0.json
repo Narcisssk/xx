@@ -1,0 +1,29 @@
+{
+    "uuid": "2939967c-6e6d-5ae2-8ff0-d7863eac8ae0",
+    "question": "Both as vision-based GUI model accepting high-resolution screenshots, what improvement does MobileFlow make compared to CogAgent?",
+    "answer_format": "Your answer should be in influent English.",
+    "tags": [
+        "multiple",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "c0b50614-6a7c-51ba-a82d-48470b29fc57",
+        "1466d378-189d-5100-ad46-28868608e8e7"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_scoring_points_with_llm",
+        "eval_kwargs": {
+            "scoring_points": [
+                "Mixture-of-Experts (MoE)"
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "zhangdanyang"
+}

@@ -1,0 +1,47 @@
+{
+    "uuid": "7f7c3dd4-9ea4-5bed-84f1-06ecf15e7775",
+    "question": "In the paper that proposed the R2I method, which dataset covered in the experiment is the newest? In that dataset, how many environments are there for each tag?",
+    "answer_format": "Your answer should be a Python list of 2 elements, the first is a string, the name of the dataset, the second is a Python dict, the key is the tag and the value is the number of environments.",
+    "tags": [
+        "comprehensive",
+        "metadata",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "Mastering Memory Tasks with World Models"
+    ],
+    "reference_pdf": [
+        "POPGym: Benchmarking Partially Observable Reinforcement Learning"
+    ],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_structured_object_exact_match"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "POPGym",
+                    "ignore_blank": true,
+                    "lowercase": true
+                },
+                {
+                    "gold": {
+                        "Diagnostic": 5,
+                        "Control": 4,
+                        "Game": 5,
+                        "Noisy": 5,
+                        "Navigation": 2
+                    },
+                    "lowercase": true
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

@@ -1,0 +1,29 @@
+{
+    "uuid": "a205abd2-6b89-55ea-afc9-8578fa39bf0d",
+    "question": "In the results of topic modeling through LDA, which keyword is the most frequent among all the topics? How many times did it appear? The models' performance was measured using BERT-score. Which conference did the BERT-score authors present BERT-score at?",
+    "answer_format": "Your answer should be a brief text containing the most frequent keyword with its frequency and the conference name.",
+    "tags": [
+        "multiple",
+        "metadata",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "600defbf-5f93-5854-bad1-1054d180a120"
+    ],
+    "reference_pdf": [
+        "0a58057a-a09f-5b93-9aeb-0243adcf3eef"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The most frequent keyword is 'Missing' and it appeared in 3 topics. The BERT-score's authors presented BERT-score at the Conference on ICLR 2020.",
+            "question": "In the results of topic modeling through LDA, which keyword is the most frequent among all the topics? How many times did it appear? The models' performance was measured using BERT-score. Which conference did the BERT-score authors present BERT-score at?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "wangchenrun"
+}

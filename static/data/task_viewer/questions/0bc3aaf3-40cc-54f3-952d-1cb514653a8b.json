@@ -1,0 +1,26 @@
+{
+    "uuid": "0bc3aaf3-40cc-54f3-952d-1cb514653a8b",
+    "question": "Can you tell me the github link for GC-Bench library?",
+    "answer_format": "Your answer should be a single link string, e.g. \"https://github.com/a/b\"",
+    "tags": [
+        "comprehensive",
+        "metadata",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "GC-Bench: An Open and Unified Benchmark for Graph Condensation"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "https://github.com/RingBDStack/GC-Bench"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "kangzhangyi"
+}

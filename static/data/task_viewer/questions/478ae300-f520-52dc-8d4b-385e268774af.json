@@ -1,0 +1,37 @@
+{
+    "uuid": "478ae300-f520-52dc-8d4b-385e268774af",
+    "question": "Compared to vanilla ViT-Base, how much relative accuracy degradation does ECP-ViT result in on ImageNet? How much relative latency save does ECP-ViT obtained?",
+    "answer_format": "Your answer should be a list of two floats. The float should be in [0, 100] as percentages. The first float is the accuracy degradation and the second float is the latency reduction.",
+    "tags": [
+        "single",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "c6940e70-2fd5-5155-9130-800533243df2"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_float_exact_match",
+                "eval_float_exact_match"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": -0.834326579261025
+                },
+                {
+                    "gold": 76.29910979228487
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "zhangdanyang"
+}

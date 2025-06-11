@@ -1,0 +1,41 @@
+{
+    "uuid": "3c6a8a71-eb8c-501e-98b6-00564244c97d",
+    "question": "In the paraphrase category of the experiments in the paper \"Knowledge-in-Context: Towards Knowledgeable Semi-Parametric Language Models\", which task experienced a decline in accuracy after adding any type of knowledge? What is the significance of this task?",
+    "answer_format": "Your answer should be a list containing two elements, the first one is the name of the task being asked, and the second one explains the significance of the task",
+    "tags": [
+        "multiple",
+        "table",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "Paws: Paraphrase adversaries from word scrambling."
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "PAWS",
+                    "lowercase": true
+                },
+                {
+                    "referenced_answer": [
+                        "Existing paraphrase datasets (e.g., Quora Question Pairs) lack challenging negative examples with high lexical overlap but non-paraphrase pairs, and PAWS fills the gap."
+                    ],
+                    "question": "What is the significance of PAWS?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "liudingye"
+}

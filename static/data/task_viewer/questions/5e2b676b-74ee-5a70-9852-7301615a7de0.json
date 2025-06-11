@@ -1,0 +1,38 @@
+{
+    "uuid": "5e2b676b-74ee-5a70-9852-7301615a7de0",
+    "question": "What are the top 3 most main CONCEPTNET relations in the commonsense reasoning task dataset used in the paper \"Can LLMs Learn From Mistakes? An Empirical Study on Reasoning Tasks\"?",
+    "answer_format": "Your answer should be a python list. YOU MUST USE THE EXACT NAMES OF THE RELATIONS AS THEY APPEAR IN THE PAPER.",
+    "tags": [
+        "multiple",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "951af20e-0d2e-51b3-bd3f-429a10d69b05"
+    ],
+    "reference_pdf": [
+        "a87a7490-623a-54af-bad6-ef68b0757499"
+    ],
+    "conference": [],
+    "reasoning_steps": [
+        "Find the commonsense reasoning task dataset used in the paper \"Can LLMs Learn From Mistakes? An Empirical Study on Reasoning Tasks\".",
+        "Locate the related papers about the dataset.",
+        "Find the top 3 most main CONCEPTNET relations in the dataset, which are mentioned in a table."
+    ],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "AtLocation",
+                "Causes",
+                "CapableOf"
+            ],
+            "ignore_order": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "zhangyuxin"
+}

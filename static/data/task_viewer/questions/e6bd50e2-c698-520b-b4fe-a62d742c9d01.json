@@ -1,0 +1,27 @@
+{
+    "uuid": "e6bd50e2-c698-520b-b4fe-a62d742c9d01",
+    "question": "When analyse the statistics of Chinese GEC datasets, which dataset for the usage of Fine-tuning has the largest number of sentences?",
+    "answer_format": "Your answer should be a single string of the dataset's name.",
+    "tags": [
+        "single",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "be89f00a-d771-5b5e-9b99-ba0becab9275"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "Lang8",
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "wangchenrun"
+}

@@ -1,0 +1,43 @@
+{
+    "uuid": "6f3b4d9d-f033-5e1b-bd31-eec4aef51ad2",
+    "question": "In the paper \"Quantized Local Independence Discovery for Fine-Grained Causal Dynamics Learning in Reinforcement Learning\", which method performs the best on ID states with full-chain setting? In the paper that proposed that method, where does the -inf in Fig. 3 come from?",
+    "answer_format": "Your answer should be a Python list of 2 strings, the first is the abbreviation of the method, the second is the reason why -inf appears in Fig. 3.",
+    "tags": [
+        "multiple",
+        "table",
+        "image",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "1e3d6210-2df4-5eba-92d6-beab951bf795"
+    ],
+    "reference_pdf": [
+        "5b01591b-d5e4-55ee-a33d-e11a6d0d1901"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "CDL",
+                    "lowercase": true,
+                    "ignore_blank": true
+                },
+                {
+                    "reference_answer": "Certain features are masked to $-\\infty$ according to a binary map $M_j$.",
+                    "question": "Where does the -inf in Fig. 3 come from?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

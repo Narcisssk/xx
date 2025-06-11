@@ -1,0 +1,29 @@
+{
+    "uuid": "4985e0e1-5249-5fba-81d1-3e8834b95d53",
+    "question": "In the MetaMath paper, a bootstraping method A is utilized in Example 3.4. In the paper that proposes the method A, which baseline method surpasses the proposed method A in AQuA under some specific setting?",
+    "answer_format": "Your answer should be a string, the name of the baseline method.",
+    "tags": [
+        "comprehensive",
+        "table",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "MetaMath: Bootstrap Your Own Mathematical Questions for Large Language Models"
+    ],
+    "reference_pdf": [
+        "Forward-Backward Reasoning in Large Language Models for Mathematical Verification"
+    ],
+    "conference": [],
+    "evaluator": {
+        "eval_func": "eval_string_exact_match",
+        "eval_kwargs": {
+            "gold": "PHP",
+            "ignore_blank": true,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "human"
+}

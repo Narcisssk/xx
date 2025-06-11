@@ -1,0 +1,23 @@
+{
+    "uuid": "dbe56b05-6b5d-5b95-8b02-6d455e8f0c75",
+    "question": "How many more layers of Transformer should the new method compute compared with the standard LLM in a LLM with 13B parameters? ",
+    "answer_format": "Your answer should be a integer.",
+    "tags": [
+        "single",
+        "text",
+        "objective"
+    ],
+    "anchor_pdf": ["0a2c3d8b-dc16-570c-b354-11797aebe290"],
+    "reference_pdf": [],
+    "conference": [],
+    "evaluator": {
+        "eval_func":"eval_int_exact_match",
+        "eval_kwargs": {
+            "gold": 5
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "sunwenjie"
+}

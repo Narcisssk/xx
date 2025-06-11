@@ -1,0 +1,29 @@
+{
+    "uuid": "0e5af47c-c613-5d27-9b50-2fd01ddebd55",
+    "question": "Which sampler was implemented in the paper which proposed the latent-space diffusion model used in the paper \"UniPC: A Unified Predictor-Corrector Framework for Fast Sampling of Diffusion Models\"? What is the relationship between that sampler and UniPC according to this paper?",
+    "answer_format": "Your answer should be brief text giving the name of the sampler and the relationship between that sampler and UniPC.",
+    "tags": [
+        "text",
+        "multiple",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "9234b475-7c40-51b4-920a-4c243f065ced"
+    ],
+    "reference_pdf": [
+        "aa4925a8-1e46-5996-8654-b82cfa7820a5"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "The sampler is DDIM, and UniPC will reduce to DDIM when p=1, where p is the order of accuracy.",
+            "question": "Which sampler was implemented in the paper which proposed the latent-space diffusion model used in the paper \"UniPC: A Unified Predictor-Corrector Framework for Fast Sampling of Diffusion Models\"? What is the relationship between that sampler and UniPC according to this paper?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "miaoyuxun"
+}

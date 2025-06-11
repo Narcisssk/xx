@@ -1,0 +1,41 @@
+{
+    "uuid": "cf7fc88e-f139-5d73-a000-bc96995f9276",
+    "question": "In the experiment of real-world data in the paper of \"CALIBRATION MATTERS: TACKLING MAXIMIZATION BIAS IN LARGE-SCALE ADVERTISING RECOMMENDATION SYSTEMS\", which base model was used? What's the architecture of this base model?",
+    "answer_format": "Your answer should be a single python list like this: [\"model_name\", \"model_architecture\"]. Note that for the model name, the abbreviation is required. For the model architecture, you should give a string to describe the architecture.",
+    "tags": [
+        "multiple",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "Calibration Matters: Tackling Maximization Bias in Large-scale Advertising Recommendation Systems"
+    ],
+    "reference_pdf": [
+        "Deep Learning Recommendation Model for Personalization and Recommendation Systems"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_reference_answer_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "DLRM",
+                    "lowercase": true
+                },
+                {
+                    "reference_answer": "Input Features: DLRM takes both categorical features and continuous features as input.\nEmbeddings: Categorical features are converted into dense vectors using embeddings. Each category is represented by an embedding vector.\nBottom MLP: Continuous features are processed by a multilayer perceptron (MLP) called the 'bottom MLP'.\nFeature Interaction: The output embedding vectors and the output of the bottom MLP are then interacted explicitly using dot products between all pairs of vectors. These interactions capture second-order feature interactions.\nTop MLP: The interacted features are concatenated with the original bottom MLP output and fed into another MLP called the 'top MLP' for further processing.\nOutput Layer: The output of the top MLP is then passed through a sigmoid function to produce a probability prediction (e.g. probability of a click).",
+                    "question": "What is the architecture of the model?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "kangzhangyi"
+}

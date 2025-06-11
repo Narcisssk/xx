@@ -1,0 +1,42 @@
+{
+    "uuid": "dea6a700-d8b4-5269-851e-d3a99f3961f5",
+    "question": "In the PRL paper, besides the proposed method, which baseline performs better? In the paper that proposes that baseline, what's the loss function for the controller?",
+    "answer_format": "Your answer should be a Python list of 2 elements, the first is the abbreviation of the baseline, and the second is a string, the formula in LaTeX format.",
+    "tags": [
+        "multiple",
+        "image",
+        "formula",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "1bc55c7c-8d2d-5044-a29f-d192744fce84"
+    ],
+    "reference_pdf": [
+        "cf9871b5-b2b8-5762-b4ed-5ebde599bbd6"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_conjunction",
+        "eval_kwargs": {
+            "eval_func_list": [
+                "eval_string_exact_match",
+                "eval_complex_math_formula_with_llm"
+            ],
+            "eval_kwargs_list": [
+                {
+                    "gold": "h-DQN",
+                    "lowercase": true
+                },
+                {
+                    "formulas": "L_1(\\theta_{1,i}) = \\mathbf{E}_{(s,a,g,r,s') \\sim D_1}[(y_{1,i} - Q_1(s,a;\\theta_{1,i},g))^2]",
+                    "question": "What's the loss function for the controller?"
+                }
+            ]
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "huangtiancheng"
+}

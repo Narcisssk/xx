@@ -1,0 +1,27 @@
+{
+    "uuid": "84834991-f063-5ab4-ad5c-bccb3de208d0",
+    "question": "Which two independent sources of variance do the models performing sentiment classifications have to cope with?",
+    "answer_format": "Your answer should be a python strings of the two independent sources of variance.",
+    "tags": [
+        "single",
+        "text",
+        "subjective"
+    ],
+    "anchor_pdf": [
+        "ff860bc6-9474-58c9-8a5b-19d92fff2932"
+    ],
+    "reference_pdf": [],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_reference_answer_with_llm",
+        "eval_kwargs": {
+            "reference_answer": "cultural expressions of sentiment and errors in automatic translations",
+            "question": "Which two independent sources of variance do the models performing sentiment classifications have to cope with?"
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "qianlirong"
+}

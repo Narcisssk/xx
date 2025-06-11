@@ -1,0 +1,33 @@
+{
+    "uuid": "9b5168ec-96c6-54ca-afba-0b40bbbb8edc",
+    "question": "In the paper of offline Q-learning, which state-of-the-art return-conditioned supervised method was mentionned? Which conference was this method published in?",
+    "answer_format": "Your answer should be a single python list like [\"paper_title\", \"conference_name_and_year\"], the paper title should be the full title of state-of-the-art return-conditioned supervised method, and conference_name_and_year should be the abbreviation of the conference and the year like \"ACL2021\".Note that arxiv should not be included as the conference name.",
+    "tags": [
+        "multiple",
+        "metadata",
+        "objective"
+    ],
+    "anchor_pdf": [
+        "Offline Q-learning on Diverse Multi-Task Data Both Scales And Generalizes"
+    ],
+    "reference_pdf": [
+        "Multi-Game Decision Transformers"
+    ],
+    "conference": [],
+    "reasoning_steps": [],
+    "evaluator": {
+        "eval_func": "eval_structured_object_exact_match",
+        "eval_kwargs": {
+            "gold": [
+                "Multi-Game Decision Transformers",
+                "NeurIPS2022"
+            ],
+            "ignore_order": false,
+            "lowercase": true
+        }
+    },
+    "state": {
+        "gui-gpt-4o-2024-11-20": false
+    },
+    "annotator": "kangzhangyi"
+}
