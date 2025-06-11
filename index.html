@@ -820,66 +820,43 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3">Task Demonstration</h2>
       <md-block>
-        We present a real example from AirQA-Real to showcase:
-        - 1. The data format and question types
-        - 2. The interaction trajectory
-        - 3. The evaluation metrics
+        We demonstrate NeuSym-RAG's capabilities through a real example from the AirQA-Real dataset, showing how the agent processes questions, retrieves information, and generates answers.
       </md-block>
-    </div>
-    <div class="container">
-      <div class="card">
-        <div class="card-content">
-          <div class="infoCard">
-            <div class="infoBody">
-              <div class="tabs">
-                <ul>
-                  <li class="is-active"><a data-tab="data-format">Data Format</a></li>
-                  <li><a data-tab="interaction">Interaction</a></li>
-                  <li><a data-tab="evaluation">Evaluation</a></li>
-                  <li><a data-tab="prompt">Prompt</a></li>
-                </ul>
-              </div>
 
-              <div title="Data Format" class="lib_examples" id="TaskPanel1">
-                <md-block>
-                  AirQA-Real uses a structured JSON format to represent questions and their metadata. Each question entry contains core fields for the question content, reference fields for source papers, and evaluation fields for assessment.
-                </md-block>
-                <div class="code-section">
-                  <pre class="line-numbers"><code class="language-json">{
-    // Core Fields
-    "uuid": "966deaf9-83fe-5f5b-8b30-06c8e350375a",
+      <div class="tabs">
+        <ul>
+          <li class="is-active"><a data-tab="Data Format">Data Format</a></li>
+          <li><a data-tab="Interaction">Interaction</a></li>
+          <li><a data-tab="Evaluation">Evaluation</a></li>
+          <li><a data-tab="Prompt">Prompt</a></li>
+        </ul>
+      </div>
+
+      <div class="lib_examples" title="Data Format">
+        <md-block>
+          AirQA-Real uses a structured JSON format to represent questions and their metadata. Each question entry contains core fields for the question content, reference fields for source papers, and evaluation fields for assessment.
+        </md-block>
+        <div class="code-section">
+          <pre class="line-numbers"><code class="language-json">{
+    "uuid": "unique_identifier",
     "question": "In the paper proposing Voila-A, which baselines do the main experimental results demonstrate that Voila-A outperform?",
-    "answer_format": "Your answer should be a single python list of strings, each string is a baseline name. e.g. [\"baseline1_name\", \"baseline2_name\"]. Note that for the names, the abbreviation is enough.",
-    "tags": ["comprehensive", "text", "objective"],
-
-    // Reference Fields
-    "anchor_pdf": ["Voila-A: Aligning Vision-Language Models with User's Gaze Attention"],
-    "reference_pdf": [],
-    "conference": [],
-
-    // Evaluation Fields
-    "evaluator": {
-      "eval_func": "eval_structured_object_exact_match",
-      "eval_kwargs": {
-        "gold": ["Otter", "Kosmos-2"],
-        "ignore_order": true,
-        "lowercase": true
-      }
-    },
-    "state": {
-      "gui-gpt-4o-2024-11-20": false
-    },
-    "annotator": "kangzhangyi"
+    "answer_format": "Your answer should be a single python list of strings, each string is a baseline name.",
+    "tags": ["experiment", "comparison"],
+    "anchor_pdf": "voila-a.pdf",
+    "reference_pdf": null,
+    "conference": "neurips2024",
+    "evaluator": "exact_match",
+    "state": "completed"
   }</code></pre>
-                </div>
-              </div>
+        </div>
+      </div>
 
-              <div title="Interaction" class="lib_examples" id="TaskPanel2" style="display: none;">
-                <md-block>
-                  NeuSym-RAG follows a thought-action-observation loop for answering questions. The agent analyzes questions, retrieves relevant content from both vectorstore and database, and generates answers through iterative interactions.
-                </md-block>
-                <div class="code-section">
-                  <pre class="line-numbers"><code class="language-python"># Turn 1: Initial System Setup
+      <div class="lib_examples" title="Interaction">
+        <md-block>
+          NeuSym-RAG follows a thought-action-observation loop for answering questions. The agent analyzes questions, retrieves relevant content from both vectorstore and database, and generates answers through iterative interactions.
+        </md-block>
+        <div class="code-section">
+          <pre class="line-numbers"><code class="language-python"># Turn 1: Initial System Setup
 """
 System initializes the agent with:
 - Task description and requirements
@@ -888,7 +865,14 @@ System initializes the agent with:
 - Available actions and their specifications
 """
 
-## Turn 1:
+# Turn 2: User Question
+"""
+[Question]: In the paper proposing Voila-A, which baselines do the main experimental results demonstrate that Voila-A outperform?
+[Answer Format]: Your answer should be a single python list of strings, each string is a baseline name.
+[Conference]: neurips2024
+"""
+
+# Turn 3: First Thought-Action-Observation Cycle
 # Thought
 """
 To answer the question, we need to find the paper that proposes Voila-A 
@@ -906,7 +890,7 @@ RetrieveFromDatabase(sql="SELECT paper_id, title FROM metadata WHERE conference_
   "title": "Voila-A: Aligning Vision-Language Models with User's Gaze Attention"
 }
 
-## Turn 2:
+# Turn 4: Second Thought-Action-Observation Cycle
 # Thought
 """
 Now that we have the `paper_id` of the paper proposing Voila-A, 
@@ -924,7 +908,7 @@ RetrieveFromDatabase(sql="SELECT section_title, section_content FROM sections WH
   "section_content": "... In Figure 5, we observe a notable superiority of VOILA over both Otter and Kosmos-2 on the VOILA-COCO-TESTSET. ... In real gaze scenarios, as illustrated in Figure 6, VOILA outperforms the two baseline models as well. ..."
 }
 
-## Turn 3:
+# Turn 5: Final Thought-Action-Observation Cycle
 # Thought
 """
 From the experiment section, we can see that Voila-A outperforms 
@@ -937,63 +921,37 @@ GenerateAnswer(answer=['Otter', 'Kosmos-2'])
 
 # Observation
 ['Otter', 'Kosmos-2']</code></pre>
-                </div>
-              </div>
+        </div>
+      </div>
 
-              <div title="Evaluation" class="lib_examples" id="TaskPanel3" style="display: none;">
-                <md-block>
-                  AirQA-Real employs two types of evaluation methods: objective and subjective. Objective evaluation uses automated metrics like exact match and custom evaluation functions, while subjective evaluation relies on human assessment of answer quality. For this example, we use objective evaluation with exact match criteria.
-                </md-block>
-                <div class="code-section">
-                  <pre class="line-numbers"><code class="language-json">{
-    "evaluator": {
-      "eval_func": "eval_structured_object_exact_match",
-      "eval_kwargs": {
-        "gold": ["Otter", "Kosmos-2"],
-        "ignore_order": true,
-        "lowercase": true
-      }
-    }
-  }</code></pre>
-                </div>
-                <div class="evaluation-cards">
-                  <div class="eval-card">
-                    <div class="eval-header">Evaluation Method</div>
-                    <div class="eval-content">
-                      <div class="method-type">Objective Evaluation</div>
-                      <div class="method-desc">Exact match with configurable parameters</div>
-                    </div>
-                  </div>
-                  <div class="eval-card">
-                    <div class="eval-header">Parameters</div>
-                    <div class="eval-content">
-                      <div class="param-item">
-                        <span class="param-name">ignore_order</span>
-                        <span class="param-value">true</span>
-                        <span class="param-desc">Order of items doesn't matter</span>
-                      </div>
-                      <div class="param-item">
-                        <span class="param-name">lowercase</span>
-                        <span class="param-value">true</span>
-                        <span class="param-desc">Case-insensitive comparison</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="eval-card">
-                    <div class="eval-header">Result</div>
-                    <div class="eval-content success">
-                      ✓ Answer matches ground truth
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div class="lib_examples" title="Evaluation">
+        <md-block>
+          The evaluation process uses both objective and subjective metrics to assess answer quality. For this example, we use an exact match evaluation to compare the generated answer with the ground truth.
+        </md-block>
+        <div class="code-section">
+          <pre class="line-numbers"><code class="language-python"># Evaluation Function
+def exact_match(predicted, ground_truth):
+    """
+    Compare predicted answer with ground truth using exact match.
+    For lists, order doesn't matter but all elements must match.
+    """
+    if isinstance(predicted, list) and isinstance(ground_truth, list):
+        return set(predicted) == set(ground_truth)
+    return predicted == ground_truth
 
-              <div title="Prompt" class="lib_examples" id="TaskPanel4" style="display: none;">
-                <md-block>
-                  The system prompt defines the agent's capabilities and interaction framework for answering questions about PDF files through a hybrid retrieval approach.
-                </md-block>
-                <div class="code-section">
-                  <pre class="line-numbers"><code class="language-python"># System Prompt Components
+# Example Evaluation
+predicted = ['Otter', 'Kosmos-2']
+ground_truth = ['Otter', 'Kosmos-2']
+score = exact_match(predicted, ground_truth)  # Returns True</code></pre>
+        </div>
+      </div>
+
+      <div class="lib_examples" title="Prompt">
+        <md-block>
+          The system prompt defines the agent's capabilities and interaction framework for answering questions about PDF files through a hybrid retrieval approach.
+        </md-block>
+        <div class="code-section">
+          <pre class="line-numbers"><code class="language-python"># System Prompt Components
 
 ## 1. Agent Role and Task Description
 """
@@ -1050,15 +1008,7 @@ The interaction loop continues until:
    - Only generate answer when information is sufficient
    - Verify answer format matches requirements
 """</code></pre>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-
-      <div class="task-demo">
-        <!-- Task demonstration content -->
       </div>
     </div>
   </section>
@@ -1475,6 +1425,33 @@ The interaction loop continues until:
     document.querySelectorAll('.results-table tr').forEach(row => {
       row.addEventListener('mouseenter', () => {
         row.style.transition = 'background-color 0.2s ease';
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Tab switching functionality
+      const tabLinks = document.querySelectorAll('.tabs a[data-tab]');
+      const tabContents = document.querySelectorAll('.lib_examples');
+
+      tabLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          
+          // Remove active class from all tabs
+          tabLinks.forEach(l => l.parentElement.classList.remove('is-active'));
+          // Add active class to clicked tab
+          link.parentElement.classList.add('is-active');
+
+          // Hide all tab contents
+          tabContents.forEach(content => content.style.display = 'none');
+          
+          // Show selected tab content
+          const targetId = link.getAttribute('data-tab');
+          const targetContent = document.querySelector(`.lib_examples[title="${targetId}"]`);
+          if (targetContent) {
+            targetContent.style.display = 'block';
+          }
+        });
       });
     });
   </script>
