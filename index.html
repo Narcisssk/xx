@@ -501,7 +501,7 @@
       color: #666;
     }
   </style>
-  <link rel="stylesheet" href="static/css/academic.css">
+  <link rel="stylesheet" href="./static/css/academic.css">
 </head>
 
 <body>
@@ -814,59 +814,34 @@
           </div>
 
           <div title="Retrieval" class="lib_examples" id="TaskPanel2" style="display: none;">
-            <h3 class="title is-5">Retrieval Process</h3>
-            <p>
-              The NeuSym-RAG framework follows these steps to retrieve relevant information:
-            </p>
-            <ol>
-              <li>Parse the question to identify key terms (WER, proposed method)</li>
-              <li>Search the vectorstore for relevant sections</li>
-              <li>Query the database for specific numerical values</li>
-              <li>Combine retrieved information for answer generation</li>
-            </ol>
             <div class="highlight-quote">
-              <h3 class="highlight-quote-title">Retrieved Context</h3>
+              <h3 class="highlight-quote-title">Retrieval Process</h3>
               <div class="highlight-quote-content">
-                "Our proposed method achieves a WER of 15.3% on the test set, which is significantly better than the baseline methods."
+                The system first identifies relevant sections in the paper that might contain WER values, then uses a combination of neural and symbolic retrieval to locate the specific information.
               </div>
             </div>
           </div>
 
           <div title="Interaction" class="lib_examples" id="TaskPanel3" style="display: none;">
-            <h3 class="title is-5">Interaction Trajectory</h3>
-            <p>
-              The agent's interaction process:
-            </p>
-            <pre class="line-numbers"><code class="language-python">## Step 1: Question Analysis
-- Identify key terms: WER, proposed method
-- Determine information type: numerical value
-
-## Step 2: Initial Retrieval
-- Search vectorstore for "WER" and "proposed method"
-- Found relevant section in experimental results
-
-## Step 3: Database Query
-- Query database for specific WER value
-- Retrieved value: 15.3%
-
-## Step 4: Answer Generation
-- Format retrieved information
-- Generate final answer: "The WER value reported for the proposed method is 15.3%."</code></pre>
+            <div class="highlight-quote">
+              <h3 class="highlight-quote-title">Interaction Trajectory</h3>
+              <div class="highlight-quote-content">
+                1. System identifies relevant sections in the paper<br>
+                2. Neural retrieval finds potential WER mentions<br>
+                3. Symbolic verification confirms the context<br>
+                4. Final answer is extracted and presented
+              </div>
+            </div>
           </div>
 
           <div title="Evaluation" class="lib_examples" id="TaskPanel4" style="display: none;">
-            <h3 class="title is-5">Evaluation Metrics</h3>
-            <p>
-              The answer is evaluated using both objective and subjective metrics:
-            </p>
-            <ul>
-              <li><strong>Objective Metric:</strong> Exact match with the ground truth value (15.3%)</li>
-              <li><strong>Subjective Metric:</strong> Human evaluation of answer completeness and clarity</li>
-            </ul>
             <div class="highlight-quote">
-              <h3 class="highlight-quote-title">Evaluation Result</h3>
+              <h3 class="highlight-quote-title">Evaluation</h3>
               <div class="highlight-quote-content">
-                The answer is considered correct as it exactly matches the ground truth value and provides a clear, complete response to the question.
+                The system's performance is evaluated based on:<br>
+                - Accuracy of the retrieved information<br>
+                - Relevance of the selected context<br>
+                - Completeness of the answer
               </div>
             </div>
           </div>
