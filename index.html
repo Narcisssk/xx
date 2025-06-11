@@ -285,7 +285,11 @@
 
     /* Experiment Results Styles */
     .dataset-tabs {
-      margin: 20px 0;
+      margin: 30px 0;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
     }
 
     .dataset-tabs ul {
@@ -294,20 +298,22 @@
       list-style: none;
       padding: 0;
       margin: 0;
-      border-bottom: 1px solid #dbdbdb;
+      border-bottom: 2px solid #f0f0f0;
     }
 
     .dataset-tabs li {
-      margin: 0 10px;
+      margin: 0 15px;
+      position: relative;
     }
 
     .dataset-tabs a {
       display: block;
-      padding: 10px 20px;
-      color: #4a4a4a;
+      padding: 12px 24px;
+      color: #666;
       text-decoration: none;
-      border-bottom: 3px solid transparent;
+      font-weight: 500;
       transition: all 0.3s ease;
+      border-bottom: 3px solid transparent;
     }
 
     .dataset-tabs li.is-active a {
@@ -315,35 +321,17 @@
       border-bottom-color: #3273dc;
     }
 
-    .results-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-      font-size: 0.9em;
-    }
-
-    .results-table th,
-    .results-table td {
-      padding: 12px;
-      text-align: center;
-      border: 1px solid #dbdbdb;
-    }
-
-    .results-table th {
-      background-color: #f5f5f5;
-      font-weight: bold;
-    }
-
-    .results-table tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-
-    .results-table tr:hover {
-      background-color: #f5f5f5;
+    .dataset-tabs a:hover {
+      color: #3273dc;
     }
 
     .results-content {
       display: none;
+      margin-top: 30px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
       overflow-x: auto;
     }
 
@@ -351,12 +339,107 @@
       display: block;
     }
 
-    .bold {
-      font-weight: bold;
+    .results-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 0;
+      font-size: 0.95em;
     }
 
-    .highlight {
-      background-color: #ffeb3b;
+    .results-table th,
+    .results-table td {
+      padding: 15px;
+      text-align: center;
+      border: none;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .results-table th {
+      background-color: #f8f9fa;
+      font-weight: 600;
+      color: #444;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .results-table th[rowspan="2"] {
+      background-color: #f0f4f8;
+      color: #3273dc;
+      font-weight: 700;
+    }
+
+    .results-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .results-table tr:nth-child(even) {
+      background-color: #fafbfc;
+    }
+
+    .results-table tr:hover {
+      background-color: #f5f7fa;
+    }
+
+    .results-table td:first-child {
+      font-weight: 500;
+      color: #444;
+      text-align: left;
+    }
+
+    .results-table .bold {
+      font-weight: 700;
+      color: #3273dc;
+      background-color: #f0f4f8;
+    }
+
+    .results-table .highlight {
+      background-color: #fff8e1;
+      color: #ff8f00;
+      font-weight: 600;
+    }
+
+    .results-table .model-group {
+      background-color: #f8f9fa;
+    }
+
+    .results-table .model-group td {
+      border-top: 2px solid #e0e0e0;
+    }
+
+    .results-table .model-group td:first-child {
+      color: #3273dc;
+      font-weight: 600;
+    }
+
+    /* Add a subtle animation for tab switching */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .results-content.is-active {
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    /* Add a scrollbar style for the table container */
+    .results-content::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .results-content::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+
+    .results-content::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 4px;
+    }
+
+    .results-content::-webkit-scrollbar-thumb:hover {
+      background: #a8a8a8;
     }
 
     /* Dataset Description Styles */
@@ -902,8 +985,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td colspan="7" class="bold">Classic-RAG</td>
+            <tr class="model-group">
+              <td colspan="7">Classic-RAG</td>
             </tr>
             <tr>
               <td>GPT-4o-mini</td>
@@ -1256,6 +1339,23 @@
             content.style.display = content.title === tabTitle ? 'block' : 'none';
           }
         });
+      });
+    });
+
+    // Add smooth scrolling for table container
+    document.querySelectorAll('.results-content').forEach(content => {
+      content.addEventListener('wheel', (e) => {
+        if (e.deltaY !== 0) {
+          e.preventDefault();
+          content.scrollLeft += e.deltaY;
+        }
+      });
+    });
+
+    // Add hover effect for table rows
+    document.querySelectorAll('.results-table tr').forEach(row => {
+      row.addEventListener('mouseenter', () => {
+        row.style.transition = 'background-color 0.2s ease';
       });
     });
   </script>
