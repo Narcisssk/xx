@@ -163,8 +163,9 @@
 
     .container-t {
       width: 100%;
-      padding: 0;
-      margin: 0;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     .infoCard {
@@ -357,6 +358,65 @@
     .highlight {
       background-color: #ffeb3b;
     }
+
+    /* Dataset Description Styles */
+    .dataset-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .dataset-card h3 {
+      color: #3273dc;
+      margin-bottom: 15px;
+    }
+
+    .dataset-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .feature-tag {
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 0.9em;
+      color: #4a4a4a;
+    }
+
+    .feature-tag.highlight {
+      background-color: #3273dc;
+      color: #fff;
+    }
+
+    .dataset-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .stat-item {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #3273dc;
+    }
+
+    .stat-label {
+      font-size: 0.9em;
+      color: #666;
+    }
   </style>
 </head>
 
@@ -436,7 +496,7 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/XXXX.XXXXX" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/pdf/2505.19754" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
@@ -444,7 +504,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://github.com/your-repo/neusym-rag"
+                  <a href="https://github.com/X-LANCE/NeuSym-RAG"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -454,7 +514,7 @@
                 </span>
                 <!-- Dataset Link. -->
                 <span class="link-block">
-                  <a href=""
+                  <a href="todo"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-database"></i>
@@ -645,58 +705,55 @@
         - 4. The evaluation metrics
       </md-block>
     </div>
-    <div class="cover" id="contentTask">
-      <div class="container-t">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="infoCard">
-              <div class="infoBody">
-                <div class="tabs is-centered example_lst1">
-                  <ul>
-                    <li class="is-active"><a title="Question">Question</a></li>
-                    <li><a title="Retrieval">Retrieval</a></li>
-                    <li><a title="Interaction">Interaction</a></li>
-                    <li><a title="Evaluation">Evaluation</a></li>
-                  </ul>
-                </div>
+    <div class="container-t">
+      <div class="infoCard">
+        <div class="infoBody">
+          <div class="tabs is-centered example_lst1">
+            <ul>
+              <li class="is-active"><a title="Question">Question</a></li>
+              <li><a title="Retrieval">Retrieval</a></li>
+              <li><a title="Interaction">Interaction</a></li>
+              <li><a title="Evaluation">Evaluation</a></li>
+            </ul>
+          </div>
 
-                <div title="Question" class="lib_examples" id="TaskPanel1" style="display: block;">
-                  <div class="highlight-quote">
-                    <h3 class="highlight-quote-title">Question</h3>
-                    <div class="highlight-quote-content">
-                      What is the WER value reported in the paper for the proposed method?
-                    </div>
-                  </div>
-                  <p>
-                    This is a typical question that requires retrieving specific numerical information from the paper. The answer can be found in the experimental results section.
-                  </p>
-                </div>
+          <div title="Question" class="lib_examples" id="TaskPanel1" style="display: block;">
+            <div class="highlight-quote">
+              <h3 class="highlight-quote-title">Question</h3>
+              <div class="highlight-quote-content">
+                What is the WER value reported in the paper for the proposed method?
+              </div>
+            </div>
+            <p>
+              This is a typical question that requires retrieving specific numerical information from the paper. The answer can be found in the experimental results section.
+            </p>
+          </div>
 
-                <div title="Retrieval" class="lib_examples" id="TaskPanel2" style="display: none;">
-                  <h3 class="title is-5">Retrieval Process</h3>
-                  <p>
-                    The NeuSym-RAG framework follows these steps to retrieve relevant information:
-                  </p>
-                  <ol>
-                    <li>Parse the question to identify key terms (WER, proposed method)</li>
-                    <li>Search the vectorstore for relevant sections</li>
-                    <li>Query the database for specific numerical values</li>
-                    <li>Combine retrieved information for answer generation</li>
-                  </ol>
-                  <div class="highlight-quote">
-                    <h3 class="highlight-quote-title">Retrieved Context</h3>
-                    <div class="highlight-quote-content">
-                      "Our proposed method achieves a WER of 15.3% on the test set, which is significantly better than the baseline methods."
-                    </div>
-                  </div>
-                </div>
+          <div title="Retrieval" class="lib_examples" id="TaskPanel2" style="display: none;">
+            <h3 class="title is-5">Retrieval Process</h3>
+            <p>
+              The NeuSym-RAG framework follows these steps to retrieve relevant information:
+            </p>
+            <ol>
+              <li>Parse the question to identify key terms (WER, proposed method)</li>
+              <li>Search the vectorstore for relevant sections</li>
+              <li>Query the database for specific numerical values</li>
+              <li>Combine retrieved information for answer generation</li>
+            </ol>
+            <div class="highlight-quote">
+              <h3 class="highlight-quote-title">Retrieved Context</h3>
+              <div class="highlight-quote-content">
+                "Our proposed method achieves a WER of 15.3% on the test set, which is significantly better than the baseline methods."
+              </div>
+            </div>
+          </div>
 
-                <div title="Interaction" class="lib_examples" id="TaskPanel3" style="display: none;">
-                  <h3 class="title is-5">Interaction Trajectory</h3>
-                  <p>
-                    The agent's interaction process:
-                  </p>
-                  <pre class="line-numbers"><code class="language-python">## Step 1: Question Analysis
+          <div title="Interaction" class="lib_examples" id="TaskPanel3" style="display: none;">
+            <h3 class="title is-5">Interaction Trajectory</h3>
+            <p>
+              The agent's interaction process:
+            </p>
+            <pre class="line-numbers"><code class="language-python">## Step 1: Question Analysis
 - Identify key terms: WER, proposed method
 - Determine information type: numerical value
 
@@ -711,24 +768,21 @@
 ## Step 4: Answer Generation
 - Format retrieved information
 - Generate final answer: "The WER value reported for the proposed method is 15.3%."</code></pre>
-                </div>
+          </div>
 
-                <div title="Evaluation" class="lib_examples" id="TaskPanel4" style="display: none;">
-                  <h3 class="title is-5">Evaluation Metrics</h3>
-                  <p>
-                    The answer is evaluated using both objective and subjective metrics:
-                  </p>
-                  <ul>
-                    <li><strong>Objective Metric:</strong> Exact match with the ground truth value (15.3%)</li>
-                    <li><strong>Subjective Metric:</strong> Human evaluation of answer completeness and clarity</li>
-                  </ul>
-                  <div class="highlight-quote">
-                    <h3 class="highlight-quote-title">Evaluation Result</h3>
-                    <div class="highlight-quote-content">
-                      The answer is considered correct as it exactly matches the ground truth value and provides a clear, complete response to the question.
-                    </div>
-                  </div>
-                </div>
+          <div title="Evaluation" class="lib_examples" id="TaskPanel4" style="display: none;">
+            <h3 class="title is-5">Evaluation Metrics</h3>
+            <p>
+              The answer is evaluated using both objective and subjective metrics:
+            </p>
+            <ul>
+              <li><strong>Objective Metric:</strong> Exact match with the ground truth value (15.3%)</li>
+              <li><strong>Subjective Metric:</strong> Human evaluation of answer completeness and clarity</li>
+            </ul>
+            <div class="highlight-quote">
+              <h3 class="highlight-quote-title">Evaluation Result</h3>
+              <div class="highlight-quote-content">
+                The answer is considered correct as it exactly matches the ground truth value and provides a clear, complete response to the question.
               </div>
             </div>
           </div>
@@ -740,7 +794,89 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Experiment Results</h2>
+      <h2 class="title is-3">Data and Experiment</h2>
+      
+      <!-- Dataset Description -->
+      <div class="dataset-card">
+        <h3 class="title is-4">Datasets</h3>
+        
+        <!-- AirQA-Real Dataset -->
+        <div class="dataset-description">
+          <h4 class="title is-5">AirQA-Real</h4>
+          <p>
+            Previous Q&A datasets on academic papers typically focus on simple questions based on a single page or merely the abstract of the PDF, which is far from reflecting real-world scenarios. To address this, we annotate a more complex Q&A dataset regarding full and even multiple PDFs, called AirQA-Real.
+          </p>
+          <div class="dataset-features">
+            <span class="feature-tag highlight">Full PDF</span>
+            <span class="feature-tag highlight">Multiple PDFs</span>
+            <span class="feature-tag">AI Papers 2023-2024</span>
+            <span class="feature-tag">Human Annotated</span>
+          </div>
+          <div class="dataset-stats">
+            <div class="stat-item">
+              <div class="stat-value">553</div>
+              <div class="stat-label">Total Questions</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">3</div>
+              <div class="stat-label">Task Types</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">5</div>
+              <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">2</div>
+              <div class="stat-label">Evaluation Genres</div>
+            </div>
+          </div>
+          <div class="content">
+            <h5 class="title is-6">Task Types:</h5>
+            <ul>
+              <li>Single-doc details</li>
+              <li>Multi-doc analysis</li>
+              <li>Paper retrieval</li>
+            </ul>
+            <h5 class="title is-6">Categories:</h5>
+            <ul>
+              <li>Text</li>
+              <li>Table</li>
+              <li>Image</li>
+              <li>Formula</li>
+              <li>Metadata</li>
+            </ul>
+            <h5 class="title is-6">Evaluation Genres:</h5>
+            <ul>
+              <li>Hard-coding objective metrics</li>
+              <li>LLM-based subjective assessment</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Other Benchmarks -->
+        <div class="dataset-description" style="margin-top: 30px;">
+          <h4 class="title is-5">Other Benchmarks</h4>
+          <p>
+            To validate the universality of our framework, we also evaluate on two other full-PDF-based Q&A datasets:
+          </p>
+          <div class="dataset-stats">
+            <div class="stat-item">
+              <div class="stat-value">M3SciQA</div>
+              <div class="stat-label">452 test samples</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">SciDQA</div>
+              <div class="stat-label">2,937 test samples</div>
+            </div>
+          </div>
+          <p>
+            These benchmarks are adjusted to match the data format of AirQA-Real for consistent evaluation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Experiment Results -->
+      <h3 class="title is-4" style="margin-top: 40px;">Experiment Results</h3>
       <div class="dataset-tabs">
         <ul>
           <li class="is-active"><a data-dataset="airqa">AirQA-Real</a></li>
@@ -1048,21 +1184,19 @@
   </section>
 
 
-  <section class="section" id="citation">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Citation</h2>
-          <div class="content has-text-justified">
-            <pre><code>@article{cao2024neusym,
-  title={NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering},
-  author={Cao, Ruisheng and Zhang, Hanchong and Huang, Tiancheng and Kang, Zhangyi and Zhang, Yuxin and Sun, Liangtai and Li, Hanqi and Miao, Yuxun and Fan, Shuai and Chen, Lu and Yu, Kai},
-  journal={arXiv preprint},
-  year={2024}
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Citation</h2>
+      <pre><code>@article{2024-spider2v,
+    title={NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering}, 
+    author={Cao, Ruisheng and Zhang, Hanchong and Huang, Tiancheng and Kang, Zhangyi and Zhang, Yuxin and Sun, Liangtai and Li, Hanqi and Miao, Yuxun and Fan, Shuai and Chen, Lu and Yu, Kai},
+    year={2024},
+    conference={xxc},
+    volume={xxx},
+    eprint={xxx},
+    eprinttype={arXiv},
+    url={https://arxiv.org/pdf/2505.19754}
 }</code></pre>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
