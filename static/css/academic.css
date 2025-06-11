@@ -226,6 +226,7 @@
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 
 .results-table {
@@ -234,6 +235,69 @@
   border-spacing: 0;
   background: #fff;
   font-size: 0.85rem;
+}
+
+/* Dataset column groups */
+.results-table th[colspan="6"], /* AirQA-Real */
+.results-table th[colspan="3"], /* M3SciQA */
+.results-table th[colspan="4"] { /* SciDQA */
+  background: #f1f5f9;
+  border-left: 2px solid #e2e8f0;
+  border-right: 2px solid #e2e8f0;
+}
+
+/* Add vertical separators between datasets */
+.results-table th:nth-child(7), /* After AirQA-Real */
+.results-table th:nth-child(10) { /* After M3SciQA */
+  border-left: 2px solid #e2e8f0;
+}
+
+.results-table td:nth-child(7), /* After AirQA-Real */
+.results-table td:nth-child(10) { /* After M3SciQA */
+  border-left: 2px solid #e2e8f0;
+}
+
+/* Make first column sticky */
+.results-table th:first-child,
+.results-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: #fff;
+  border-right: 2px solid #e2e8f0;
+}
+
+/* Ensure sticky header has proper background */
+.results-table th:first-child {
+  background: #f8fafc;
+  z-index: 3;
+}
+
+/* Add shadow to indicate scroll */
+.results-table th:first-child::after,
+.results-table td:first-child::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -4px;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to right, rgba(0,0,0,0.1), transparent);
+  pointer-events: none;
+}
+
+/* Ensure model group cells maintain background */
+.results-table tr.model-group td:first-child {
+  background: #f0f2f5;
+}
+
+/* Ensure hover state works with sticky column */
+.results-table tr:hover td:first-child {
+  background: #f8fafc;
+}
+
+.results-table tr.model-group:hover td:first-child {
+  background: #f0f2f5;
 }
 
 .results-table th {
@@ -254,8 +318,21 @@
   white-space: nowrap;
 }
 
-.results-table tr:hover {
+/* Add subtle background to alternate datasets */
+.results-table td:nth-child(n+2):nth-child(-n+7) { /* AirQA-Real columns */
+  background-color: #fafafa;
+}
+
+.results-table td:nth-child(n+8):nth-child(-n+10) { /* M3SciQA columns */
   background-color: #f8fafc;
+}
+
+.results-table td:nth-child(n+11) { /* SciDQA columns */
+  background-color: #fafafa;
+}
+
+.results-table tr:hover td {
+  background-color: #f0f7ff !important; /* Override dataset backgrounds on hover */
 }
 
 .results-table tr:last-child td {
@@ -263,7 +340,7 @@
 }
 
 .results-table tr.model-group td {
-  background-color: #f0f2f5;
+  background-color: #f0f2f5 !important; /* Override dataset backgrounds for model groups */
   font-weight: 600;
   text-align: left;
   padding: 0.4rem 0.75rem;

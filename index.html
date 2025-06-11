@@ -885,32 +885,34 @@
       <div class="dataset-card">
         <div class="dataset-header">
           <h4 class="dataset-title">AirQA-Real</h4>
-          <p class="dataset-description">
-            A human-labeled Q&A dataset on AI research papers, featuring complex questions that require understanding of text, tables, images, formulas, and metadata. The dataset includes 100 questions annotated by 3 annotators, with Fleiss' Kappa of 0.72.
-          </p>
+          <md-block class="dataset-description">
+            A human-labeled Q&A dataset on AI research papers, featuring complex questions that require understanding of text, tables, images, formulas, and metadata. The dataset includes 553 questions apanning across 3 types, annotated by 16 researchers.
+          </md-block>
         </div>
         
         <div class="dataset-stats">
           <div class="stat-item">
             <div class="stat-label">Total Questions</div>
-            <div class="stat-value">100</div>
+            <div class="stat-value">553</div>
           </div>
           <div class="stat-item">
-            <div class="stat-label">Annotators</div>
+            <div class="stat-label">Types</div>
             <div class="stat-value">3</div>
           </div>
           <div class="stat-item">
-            <div class="stat-label">Fleiss' Kappa</div>
-            <div class="stat-value">0.72</div>
+            <div class="stat-label">Categories</div>
+            <div class="stat-value">5</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Evaluation Genres</div>
+            <div class="stat-value">2</div>
           </div>
         </div>
 
         <div class="task-types">
-          <span class="task-type">Factual</span>
-          <span class="task-type">Inferential</span>
-          <span class="task-type">Analytical</span>
-          <span class="task-type">Comparative</span>
-          <span class="task-type">Synthesis</span>
+          <span class="task-type">Single-doc details</span>
+          <span class="task-type">Multi-doc analysis</span>
+          <span class="task-type">Paper retrieval</span>
         </div>
 
         <div class="dataset-categories">
@@ -920,20 +922,28 @@
           <span class="category-tag">Formula</span>
           <span class="category-tag">Metadata</span>
         </div>
-      </div>
 
-      <div class="dataset-card">
+        <div class="dataset-evaluation">
+          <div class="evaluation-item">
+            <div class="evaluation-genre">hard-coding objective metrics</div>
+            <div class="evaluation-genre">LLM-based subjective assessment</div>
+          </div>
+        </div>
+
         <div class="dataset-header">
           <h4 class="dataset-title">Other Benchmarks</h4>
+          <md-block class="dataset-description">
+            M3SciQA and SciDQA are two other benchmarks that we converted to the same format as AirQA-Real to evaluate the performance of NeuSym-RAG.
+          </md-block>
         </div>
         <div class="dataset-stats">
           <div class="stat-item">
             <div class="stat-label">M3SciQA</div>
-            <div class="stat-value">1,000 test samples</div>
+            <div class="stat-value">452 test samples</div>
           </div>
           <div class="stat-item">
             <div class="stat-label">SciDQA</div>
-            <div class="stat-value">500 test samples</div>
+            <div class="stat-value">2,937 test samples</div>
           </div>
         </div>
       </div>
