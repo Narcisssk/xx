@@ -565,16 +565,15 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Method</h2>
+      <h2 class="title is-3">Framework of NeuSym-RAG</h2>
       <div class="content has-text-justified">
-        <h3 class="title is-4">Overall Framework</h3>
         <img src="static/images/overview.png" alt="Overall Framework" class="responsive-image">
-        <p>
+        <md-block>
           The entire workflow proceeds as follows: 
           - **Parsing**: Firstly, we parse the raw PDF file into a pipeline of functions to segment it in multi-view, extract non-textual elements, and store them in a schema-constrained database (DB).
           - **Encoding**: Next, we identify those encodable columns in the DB, and utilize embedding models for different modalities to obtain and insert vectors of cell values into the vectorstore (VS).
           - **Interaction**: Finally, we build an iterative Q&A agent which can predict executable actions to retrieve context from the backend environment (either DB or VS) and answer the input question.
-        </p>
+        </md-block>
         
         <div class="method-tabs">
           <ul>
