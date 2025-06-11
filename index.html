@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="description"
     content="NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering">
-  <meta name="keywords" content="Data Science and Engineering, Professional Enterprise Application, Multi-modal Agent, Human Computer Interaction">
+  <meta name="keywords" content="Neural Symbolic Retrieval, PDF Question Answering, RAG, Multiview Structuring, AI Research">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering</title>
   <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=zaishuo"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -21,7 +21,7 @@
 
     gtag('js', new Date());
 
-    gtag('config', 'zaishuo');
+    gtag('config', 'G-XXXXXXXXXX');
   </script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -111,7 +111,47 @@
       width: 100%;
       object-fit: contain;
     }
-</style>
+  </style>
+  <style>
+    .highlight-box {
+      background-color: #f8f9fa;
+      border-left: 4px solid #007bff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    .method-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 15px 0;
+    }
+    .result-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .result-table th, .result-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    .result-table th {
+      background-color: #f5f5f5;
+    }
+    .demo-container {
+      display: flex;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .demo-item {
+      flex: 1;
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 
 <body>
@@ -190,15 +230,15 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2505.19754" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/abs/XXXX.XXXXX" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>Paper</span>
+                    <span>arXiv</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://github.com/X-LANCE/NeuSym-RAG"
+                  <a href="https://github.com/your-repo/neusym-rag"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -293,112 +333,327 @@
   </section>
 
 
-  <section class="section">
+  <section class="section" id="abstract">
     <div class="container is-max-desktop">
-      <!-- Abstract. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-wdith">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
-            <md-block>
-              The increasing number of academic papers poses significant challenges for researchers to efficiently acquire key details. While retrieval augmented generation (RAG) shows great promise in large language model (LLM) based automated question answering, previous works often isolate neural and symbolic retrieval despite their complementary strengths. Moreover, conventional single-view chunking neglects the rich structure and layout of PDFs, e.g., sections and tables. In this work, we propose NeuSym-RAG, a hybrid neural symbolic retrieval framework which combines both paradigms in an interactive process. By leveraging multi-view chunking and schema-based parsing, NeuSym-RAG organizes semi-structured PDF content into both the relational database and vectorstore, enabling LLM agents to iteratively gather context until sufficient to generate answers. Experiments on three full PDF-based QA datasets, including a self-annotated one AIRQA-REAL, show that NeuSym-RAG stably defeats both the vector-based RAG and various structured baselines, highlighting its capacity to unify both retrieval schemes and utilize multiple views. 
-            </md-block>
+            <p>
+              The increasing number of academic papers poses significant challenges for researchers to efficiently acquire key details.
+              While retrieval augmented generation (RAG) shows great promise in large language model (LLM) based automated question answering,
+              previous works often isolate neural and symbolic retrieval despite their complementary strengths.
+              Moreover, conventional single-view chunking neglects the rich structure and layout of PDFs, e.g., sections and tables.
+              In this work, we propose NeuSym-RAG, a hybrid neural symbolic retrieval framework which combines both paradigms in an interactive process. 
+              By leveraging multi-view chunking and schema-based parsing, NeuSym-RAG organizes semi-structured PDF content into both the relational database and vectorstore, 
+              enabling LLM agents to iteratively gather context until sufficient to generate answers.
+              Experiments on three full PDF-based QA datasets, including a self-annotated one AirQA-Real, show that NeuSym-RAG stably defeats both the vector-based RAG 
+              and various structured baselines, highlighting its capacity to unify both retrieval schemes and utilize multiple views.
+            </p>
           </div>
         </div>
       </div>
-      <!--/ Abstract. -->
     </div>
   </section>
 
 
-  <section class="section">
+  <section class="section" id="introduction">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Overview of the NeuSym-RAG framework</h2>
-      <div class="content has-text-justified">
-        <img src="static/images/overview.png" width="100%" alt="infrastructure" class="responsive-image">
-        <md-block>
-          The entire workflow proceeds as follows: 
-            - **Parsing**: Firstly, we parse the raw PDF file into a pipeline of functions to segment it in multi-view, extract non-textual elements, and store them in a schema-constrained database (DB).
-            - **Encoding**: Next, we identify those encodable columns in the DB, and utilize embedding models for different modalities to obtain and insert vectors of cell values into the vectorstore (VS).
-            - **Interaction**: Finally, we build an iterative Q&A agent which can predict executable actions to retrieve context from the backend environment (either DB or VS) and answer the input question.
-        </md-block>
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Introduction</h2>
+          <div class="content has-text-justified">
+            <p>
+              With the exponential growth in academic papers, large language model (LLM) based question answering (QA) systems show great potential to help researchers extract key details from emerging studies.
+              However, individual PDFs often exceed prompt limits, and user queries may span multiple documents.
+              To tackle these challenges, retrieval-augmented generation (RAG) is effective for knowledge-intensive QA.
+            </p>
+            <p>
+              Despite its wide application, the classic neural retrieval often fails when handling precise queries involving mathematical operations, comparisons, or aggregations. 
+              For example, determining the total number of tables cannot be done through retrieved chunks as they are scattered across the document. 
+              On the other hand, symbolic retrieval such as TAG relies on semantic parsing techniques, e.g., text-to-SQL, to directly extract the target information from the structured database.
+              Unfortunately, such precise queries often break down in semantic fuzzy matching or morphological variations, e.g., "graph-based RAG" versus "GraphRAG".
+              Previous literature investigates these two paradigms in isolation.
+            </p>
+            <p>
+              Furthermore, the most widely utilized scheme to segment documents into chunks is based on a fixed length of consecutive tokens, possibly considering sentence boundaries or more delicate granularities.
+              However, for semi-structured PDF documents of research papers, this common practice neglects the intrinsic structure of sections and the salient features of paratextual tables and figures. 
+              The distinct layout of PDF files offers a more structured view towards segmenting and arranging content.
+            </p>
+            <p>
+              To this end, we propose a hybrid Neural Symbolic retrieval framework (NeuSym-RAG) for PDF-based question answering, which combines both retrieval paradigms into an interactive procedure. 
+              During pre-processing, the PDF file of each paper is fed into a pipeline of parsing functions to complete the metadata, segment raw texts based on different views, 
+              and extract various embedded paratextual elements (e.g., tables and figures). These identified elements are populated into a relational database, 
+              specifically designed for semi-structured PDF. Then, we select encodable column values from the populated database for storage into the vectorstore. 
+              These cell values present diverse views in interpreting PDF content. Moreover, the database schema graph is leveraged to organize the vectors into a well-formed structure. 
+              To answer the user question, LLM agents can adaptively predict executable actions to retrieve desired information from either backend environment (database or vectorstore) 
+              in a multi-round fashion. This agentic retrieval terminates when the collected information suffices to answer the input question.
+            </p>
+            <p>
+              Our contributions are three-fold:
+            </p>
+            <ul>
+              <li>We are the first to integrate both vector-based neural retrieval and SQL-based symbolic retrieval into a unified and interactive NeuSym-RAG framework through executable actions.</li>
+              <li>We incorporate multiple views for parsing and vectorizing PDF documents, and adopt a structured database schema to systematically organize both text tokens and encoded vectors.</li>
+              <li>Experiments on three realistic full PDF-based QA datasets with respect to academic research validate the superiority of NeuSym-RAG over various neural and symbolic baselines.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+
+  <section class="section" id="method">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">AIRQA-REAL Dataset</h2>
-      <div class="content has-text-justified">
-        <md-block>
-          We introduce **AIRQA-REAL**, a novel benchmark for real-world PDF question answering tasks. It consists of **553 carefully designed questions** over academic papers in the AI domain.
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Method</h2>
+          <div class="content has-text-justified">
+            <div class="method-card">
+              <h3 class="title is-4">Overall Framework</h3>
+              <p>
+                The NeuSym-RAG framework comprises three main stages:
+              </p>
+              <ol>
+                <li><strong>Parsing:</strong> The raw PDF file is passed into a pipeline of functions to segment it in multi-view, extract non-textual elements, and store them in a schema-constrained database (DB).</li>
+                <li><strong>Encoding:</strong> Encodable columns in the DB are identified, and embedding models for different modalities are used to obtain and insert vectors of cell values into the vectorstore (VS).</li>
+                <li><strong>Interaction:</strong> An iterative Q&A agent is built which can predict executable actions to retrieve context from the backend environment (either DB or VS) and answer the input question.</li>
+              </ol>
+            </div>
 
-          - Covers **5 major question types**: text, table, image, formula, and metadata.
-          - Each question is annotated with golden answers and evidence spans.
-          - Supports both **single-document** and **multi-document** scenarios.
-          - Designed to evaluate retrieval, reasoning, and multi-modal comprehension over scientific PDFs.
+            <div class="method-card">
+              <h3 class="title is-4">Multiview Document Parsing</h3>
+              <p>
+                For each incoming PDF file, we parse it with different perspectives into a relational database DuckDB. The pipeline of parsing functions includes:
+              </p>
+              <ul>
+                <li>Querying scholar APIs (e.g., arxiv) to obtain metadata such as authors and published conference</li>
+                <li>Splitting text based on different granularities with PyMuPDF (pages, sections, fixed-length tokens)</li>
+                <li>Using OCR models to extract non-textual elements</li>
+                <li>Generating concise summaries of parsed texts, tables, and images using LLMs or VLMs</li>
+              </ul>
+              <p>
+                All retrieved metadata, parsed elements and predicted summaries are populated into a carefully designed and universal DB schema for PDF documents.
+              </p>
+            </div>
 
-          The dataset is publicly released to encourage research in hybrid retrieval and multimodal reasoning.
-        </md-block>
+            <div class="method-card">
+              <h3 class="title is-4">Multimodal Vector Encoding</h3>
+              <p>
+                After the symbolic part is complete, we switch to neural encoding of parsed elements:
+              </p>
+              <ul>
+                <li>Each column in the DB schema is labeled as "encodable" or not</li>
+                <li>For text modality, varchar columns with relatively long cell values are marked as encodable</li>
+                <li>For images, bounding_box columns recording coordinates of figures/tables are used to extract regions</li>
+                <li>Encoding models of both modalities are used to vectorize text snippets or cropped images</li>
+              </ul>
+              <p>
+                To build a one-to-one mapping between DB cells and neural vectors, each VS entry includes:
+              </p>
+              <ul>
+                <li>Table name, column name, and primary key value from the DB</li>
+                <li>Additional fields: paper_id and page_number for metadata filtering</li>
+                <li>Entries are categorized into different collections based on encoding model and modality</li>
+              </ul>
+            </div>
+
+            <div class="method-card">
+              <h3 class="title is-4">Iterative Agent Interaction</h3>
+              <p>
+                The framework includes 5 parameterized actions that agents can take during interaction:
+              </p>
+              <ul>
+                <li><strong>RetrieveFromVectorstore:</strong> Converts static retrieval into dynamic retrieval with adjustable parameters for query rewriting and perspective selection</li>
+                <li><strong>RetrieveFromDatabase:</strong> Executes SQL queries against the prepared DB to explore multiple pre-parsed views</li>
+                <li><strong>ViewImage:</strong> Extracts cropped regions from PDF pages for advanced VLM processing</li>
+                <li><strong>CalculateExpr:</strong> Handles mathematical expressions to reduce hallucination in math problems</li>
+                <li><strong>GenerateAnswer:</strong> Terminal action that returns the final answer when sufficient context is gathered</li>
+              </ul>
+              <p>
+                The agent follows the ReAct framework, outputting its thought process before taking actions. This enables:
+              </p>
+              <ul>
+                <li>Leveraging complementary strengths of both retrieval paradigms</li>
+                <li>Combining SQL-based filtering with neural semantic matching</li>
+                <li>Iterative refinement of results through multiple retrieval steps</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+
+  <section class="section" id="experiments">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Experimental Results</h2>
-      <div class="content has-text-justified">
-        <md-block>
-          We conduct comprehensive experiments on three datasets: <strong>AIRQA-REAL</strong>, <strong>M3SciQA</strong>, and <strong>SciDQA</strong>, comparing <code>NeuSym-RAG</code> against various structured and neural baselines.
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Experiments</h2>
+          <div class="content has-text-justified">
+            <div class="highlight-box">
+              <h3 class="title is-4">Datasets</h3>
+              <p>
+                We evaluate NeuSym-RAG on three full PDF-based QA datasets:
+              </p>
+              <ul>
+                <li><strong>AirQA-Real:</strong> Our self-annotated dataset with 553 questions spanning across:
+                  <ul>
+                    <li>3 task types: single-doc details, multi-doc analysis, and paper retrieval</li>
+                    <li>5 categories: text, table, image, formula, and metadata</li>
+                    <li>2 evaluation genres: hard-coding objective metrics and LLM-based subjective assessment</li>
+                  </ul>
+                </li>
+                <li><strong>M3SciQA:</strong> 452 test samples</li>
+                <li><strong>SciDQA:</strong> 2937 test samples</li>
+              </ul>
+            </div>
 
-          ### 🧠 Key Findings
-          - NeuSym-RAG outperforms Classic RAG by at least <strong>17.3%</strong> across all LLMs on AIRQA-REAL.
-          - On M3SciQA, it even surpasses GPT-4o-mini by <strong>8.9%</strong> when using open-source Qwen2.5-VL.
-          - Our hybrid retrieval strategy (symbolic + neural) proves more effective than either method alone.
-          - Iterative agent-based querying consistently outperforms two-stage or flat retrieval.
-        </md-block>
+            <div class="highlight-box">
+              <h3 class="title is-4">Evaluation Metrics</h3>
+              <p>
+                We propose flexible and precise evaluation metrics:
+              </p>
+              <ul>
+                <li>Answer formatting similar to DABench, with Python-style restrictions on output</li>
+                <li>Instance-specific, execution-based evaluation using 18 functions with optional parameters</li>
+                <li>Functions categorized as either subjective or objective, depending on LLM involvement</li>
+              </ul>
+            </div>
+
+            <div class="highlight-box">
+              <h3 class="title is-4">Main Results</h3>
+              <p>
+                Key findings from our experiments:
+              </p>
+              <ol>
+                <li>NeuSym-RAG remarkably outperforms the Classic RAG baseline across all datasets, with a minimal 17.3% improvement on AirQA-Real for all LLMs. With more customizable actions and trials, it can interact with the backend environment with higher tolerance and learn through observations.</li>
+                <li>Vision Language Models (VLMs) perform better in tasks requiring vision capability, particularly in M3SciQA where LLMs must view anchor images.</li>
+                <li>Open-source LLMs are capable of handling this complicated interactive procedure in a zero-shot paradigm, and even outperform closed-source LLMs. NeuSym-RAG with Qwen2.5-VL-72B-Instruct elevates overall accuracy by 29.1% compared to Classic RAG, surpassing GPT-4o-mini by 8.9%.</li>
+              </ol>
+            </div>
+
+            <div class="highlight-box">
+              <h3 class="title is-4">Ablation Studies</h3>
+              <p>
+                We conducted several ablation studies to understand the contribution of different components:
+              </p>
+              <ol>
+                <li><strong>Model Scale Impact:</strong>
+                  <ul>
+                    <li>Performance consistently improves with larger model scales</li>
+                    <li>R1-Distill-Qwen series models lag behind their counterparts due to format following issues</li>
+                  </ul>
+                </li>
+                <li><strong>Chunking Strategies:</strong>
+                  <ul>
+                    <li>Classic 512-token chunking performs best overall</li>
+                    <li>Task-specific chunking views excel in their particular categories</li>
+                  </ul>
+                </li>
+                <li><strong>Text Embedding Models:</strong>
+                  <ul>
+                    <li>Single BM25 text collection suffices for best performance</li>
+                    <li>LLMs may not effectively utilize multiple encoding models</li>
+                    <li>Direct selection of top-performing tools is more effective</li>
+                  </ul>
+                </li>
+                <li><strong>Pre-processing and Evaluation:</strong>
+                  <ul>
+                    <li>Open-source LLMs are viable alternatives for PDF pre-parsing</li>
+                    <li>Results are insensitive to element summaries from different LLMs</li>
+                    <li>LLM evaluations align closely with human judgments</li>
+                    <li>GPT-4o shows exact alignment with human judgments</li>
+                  </ul>
+                </li>
+              </ol>
+            </div>
+
+            <div class="highlight-box">
+              <h3 class="title is-4">Case Study</h3>
+              <p>
+                A representative example demonstrates the effectiveness of NeuSym-RAG:
+              </p>
+              <ul>
+                <li>Question: "In terms of WER values with ASR across the six different methods tested in the paper, how much higher is DD2 compared to NV1?"</li>
+                <li>NeuSym-RAG's approach:
+                  <ol>
+                    <li>Uses RetrieveFromVectorstore to search chunks about "WER values"</li>
+                    <li>Detects relevant figures</li>
+                    <li>Uses RetrieveFromDatabase to access captions and summaries</li>
+                  </ol>
+                </li>
+                <li>Comparison:
+                  <ul>
+                    <li>Iterative Neu-RAG fails to exploit figures due to missing DB</li>
+                    <li>Iterative Sym-RAG struggles to locate relevant context</li>
+                    <li>NeuSym-RAG combines both retrieval types effectively</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Main Results Table Placeholder -->
+
+  <section class="section" id="demo">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Demo</h2>
+          <div class="demo-container">
+            <div class="demo-item">
+              <h3 class="title is-4">Try NeuSym-RAG</h3>
+              <p>Interactive demo coming soon...</p>
+            </div>
+            <div class="demo-item">
+              <h3 class="title is-4">Example Queries</h3>
+              <ul>
+                <li>Example 1</li>
+                <li>Example 2</li>
+                <li>Example 3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="citation">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Citation</h2>
+          <div class="content has-text-justified">
+            <pre><code>@article{cao2024neusym,
+  title={NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering},
+  author={Cao, Ruisheng and Zhang, Hanchong and Huang, Tiancheng and Kang, Zhangyi and Zhang, Yuxin and Sun, Liangtai and Li, Hanqi and Miao, Yuxun and Fan, Shuai and Chen, Lu and Yu, Kai},
+  journal={arXiv preprint},
+  year={2024}
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
       <div class="content has-text-centered">
-        <img src="static/images/main_results_table.png" alt="Main Experiment Results" style="max-width: 90%;">
-        <p class="is-size-6">Table: Performance of different LLMs on AIRQA-REAL, M3SciQA, and SciDQA.</p>
-      </div>
-
-      <div class="content has-text-justified">
-        <md-block>
-          ### 🔬 Ablation Studies
-          - **Chunking Strategy**: Multi-view chunking (text, image, table, formula) achieves higher accuracy in category-specific queries.
-          - **LLM Model Scale**: Larger models perform better, but distilled variants underperform due to overfitting prompt instructions.
-          - **Action/Observation Format**: Markdown-style action representation yields best results for agent execution.
-          - **Vectorstore Embedding**: Surprisingly, simple BM25-based text encoding outperforms dense embeddings.
-
-          ### 💰 Cost & Efficiency
-          - NeuSym-RAG with GPT-4o-mini completes QA in ~3.6 interactions at $0.0059 per sample.
-          - Open-source Qwen2.5 completes tasks in ~5.3 steps, with slightly higher token usage but zero cost.
-        </md-block>
-      </div>
-
-
-      <div class="content has-text-justified">
-        <md-block>
-          ### 📊 Summary of Baselines Compared
-          | Method               | Neural | Symbolic | Multi-view | Iterative | AIRQA-REAL (%) |
-          |----------------------|--------|----------|------------|-----------|----------------|
-          | Classic-RAG          | ✔️     | ❌       | ❌         | ❌        | 10.5           |
-          | Iterative Neu-RAG    | ✔️     | ❌       | ✔️         | ✔️        | 37.3           |
-          | Iterative Sym-RAG    | ❌     | ✔️       | ✔️         | ✔️        | 28.0           |
-          | Graph-RAG            | ✔️     | ✔️       | ❌         | ❌        | 15.6           |
-          | Hybrid-RAG           | ✔️     | ✔️       | ❌         | ❌        | 11.8           |
-          | NeuSym-RAG (Ours)    | ✔️     | ✔️       | ✔️         | ✔️        | <strong>39.6</strong>  |
-        </md-block>
+        <p>
+          This website is maintained by the NeuSym-RAG team.
+        </p>
       </div>
     </div>
-  </section>
-
-
-
-
+  </footer>
 </body>
 
 </html>
