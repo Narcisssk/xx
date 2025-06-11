@@ -310,7 +310,6 @@
     </div>
   </section>
 
-</body>
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -327,6 +326,79 @@
     </div>
   </section>
 
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">AIRQA-REAL Dataset</h2>
+      <div class="content has-text-justified">
+        <md-block>
+          We introduce **AIRQA-REAL**, a novel benchmark for real-world PDF question answering tasks. It consists of **553 carefully designed questions** over academic papers in the AI domain.
 
+          - Covers **5 major question types**: text, table, image, formula, and metadata.
+          - Each question is annotated with golden answers and evidence spans.
+          - Supports both **single-document** and **multi-document** scenarios.
+          - Designed to evaluate retrieval, reasoning, and multi-modal comprehension over scientific PDFs.
+
+          The dataset is publicly released to encourage research in hybrid retrieval and multimodal reasoning.
+        </md-block>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Experimental Results</h2>
+      <div class="content has-text-justified">
+        <md-block>
+          We conduct comprehensive experiments on three datasets: <strong>AIRQA-REAL</strong>, <strong>M3SciQA</strong>, and <strong>SciDQA</strong>, comparing <code>NeuSym-RAG</code> against various structured and neural baselines.
+
+          ### 🧠 Key Findings
+          - NeuSym-RAG outperforms Classic RAG by at least <strong>17.3%</strong> across all LLMs on AIRQA-REAL.
+          - On M3SciQA, it even surpasses GPT-4o-mini by <strong>8.9%</strong> when using open-source Qwen2.5-VL.
+          - Our hybrid retrieval strategy (symbolic + neural) proves more effective than either method alone.
+          - Iterative agent-based querying consistently outperforms two-stage or flat retrieval.
+        </md-block>
+      </div>
+
+      <!-- Main Results Table Placeholder -->
+      <div class="content has-text-centered">
+        <img src="static/images/main_results_table.png" alt="Main Experiment Results" style="max-width: 90%;">
+        <p class="is-size-6">Table: Performance of different LLMs on AIRQA-REAL, M3SciQA, and SciDQA.</p>
+      </div>
+
+      <div class="content has-text-justified">
+        <md-block>
+          ### 🔬 Ablation Studies
+          - **Chunking Strategy**: Multi-view chunking (text, image, table, formula) achieves higher accuracy in category-specific queries.
+          - **LLM Model Scale**: Larger models perform better, but distilled variants underperform due to overfitting prompt instructions.
+          - **Action/Observation Format**: Markdown-style action representation yields best results for agent execution.
+          - **Vectorstore Embedding**: Surprisingly, simple BM25-based text encoding outperforms dense embeddings.
+
+          ### 💰 Cost & Efficiency
+          - NeuSym-RAG with GPT-4o-mini completes QA in ~3.6 interactions at $0.0059 per sample.
+          - Open-source Qwen2.5 completes tasks in ~5.3 steps, with slightly higher token usage but zero cost.
+        </md-block>
+      </div>
+
+
+      <div class="content has-text-justified">
+        <md-block>
+          ### 📊 Summary of Baselines Compared
+          | Method               | Neural | Symbolic | Multi-view | Iterative | AIRQA-REAL (%) |
+          |----------------------|--------|----------|------------|-----------|----------------|
+          | Classic-RAG          | ✔️     | ❌       | ❌         | ❌        | 10.5           |
+          | Iterative Neu-RAG    | ✔️     | ❌       | ✔️         | ✔️        | 37.3           |
+          | Iterative Sym-RAG    | ❌     | ✔️       | ✔️         | ✔️        | 28.0           |
+          | Graph-RAG            | ✔️     | ✔️       | ❌         | ❌        | 15.6           |
+          | Hybrid-RAG           | ✔️     | ✔️       | ❌         | ❌        | 11.8           |
+          | NeuSym-RAG (Ours)    | ✔️     | ✔️       | ✔️         | ✔️        | <strong>39.6</strong>  |
+        </md-block>
+      </div>
+    </div>
+  </section>
+
+
+
+
+</body>
 
 </html>
