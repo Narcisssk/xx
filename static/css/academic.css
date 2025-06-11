@@ -2,10 +2,10 @@
 
 /* Common Card Styles */
 .container-t {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 30px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto
 }
 
 .infoCard {
