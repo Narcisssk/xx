@@ -501,6 +501,7 @@
       color: #666;
     }
   </style>
+  <link rel="stylesheet" href="static/css/academic.css">
 </head>
 
 <body>
@@ -880,81 +881,60 @@
       <h2 class="title is-3">Data and Experiment</h2>
       
       <!-- Dataset Description -->
+      <h3 class="title is-4" style="margin-top: 40px;">Datasets</h3>
       <div class="dataset-card">
-        <h3 class="title is-4">Datasets</h3>
-        
-        <!-- AirQA-Real Dataset -->
-        <div class="dataset-description">
-          <h4 class="title is-5">AirQA-Real</h4>
-          <p>
-            Previous Q&A datasets on academic papers typically focus on simple questions based on a single page or merely the abstract of the PDF, which is far from reflecting real-world scenarios. To address this, we annotate a more complex Q&A dataset regarding full and even multiple PDFs, called AirQA-Real.
+        <div class="dataset-header">
+          <h4 class="dataset-title">AirQA-Real</h4>
+          <p class="dataset-description">
+            A human-labeled Q&A dataset on AI research papers, featuring complex questions that require understanding of text, tables, images, formulas, and metadata. The dataset includes 100 questions annotated by 3 annotators, with Fleiss' Kappa of 0.72.
           </p>
-          <div class="dataset-features">
-            <span class="feature-tag highlight">Full PDF</span>
-            <span class="feature-tag highlight">Multiple PDFs</span>
-            <span class="feature-tag">AI Papers 2023-2024</span>
-            <span class="feature-tag">Human Annotated</span>
+        </div>
+        
+        <div class="dataset-stats">
+          <div class="stat-item">
+            <div class="stat-label">Total Questions</div>
+            <div class="stat-value">100</div>
           </div>
-          <div class="dataset-stats">
-            <div class="stat-item">
-              <div class="stat-value">553</div>
-              <div class="stat-label">Total Questions</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-value">3</div>
-              <div class="stat-label">Task Types</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-value">5</div>
-              <div class="stat-label">Categories</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-value">2</div>
-              <div class="stat-label">Evaluation Genres</div>
-            </div>
+          <div class="stat-item">
+            <div class="stat-label">Annotators</div>
+            <div class="stat-value">3</div>
           </div>
-          <div class="content">
-            <h5 class="title is-6">Task Types:</h5>
-            <ul>
-              <li>Single-doc details</li>
-              <li>Multi-doc analysis</li>
-              <li>Paper retrieval</li>
-            </ul>
-            <h5 class="title is-6">Categories:</h5>
-            <ul>
-              <li>Text</li>
-              <li>Table</li>
-              <li>Image</li>
-              <li>Formula</li>
-              <li>Metadata</li>
-            </ul>
-            <h5 class="title is-6">Evaluation Genres:</h5>
-            <ul>
-              <li>Hard-coding objective metrics</li>
-              <li>LLM-based subjective assessment</li>
-            </ul>
+          <div class="stat-item">
+            <div class="stat-label">Fleiss' Kappa</div>
+            <div class="stat-value">0.72</div>
           </div>
         </div>
 
-        <!-- Other Benchmarks -->
-        <div class="dataset-description" style="margin-top: 30px;">
-          <h4 class="title is-5">Other Benchmarks</h4>
-          <p>
-            To validate the universality of our framework, we also evaluate on two other full-PDF-based Q&A datasets:
-          </p>
-          <div class="dataset-stats">
-            <div class="stat-item">
-              <div class="stat-value">M3SciQA</div>
-              <div class="stat-label">452 test samples</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-value">SciDQA</div>
-              <div class="stat-label">2,937 test samples</div>
-            </div>
+        <div class="task-types">
+          <span class="task-type">Factual</span>
+          <span class="task-type">Inferential</span>
+          <span class="task-type">Analytical</span>
+          <span class="task-type">Comparative</span>
+          <span class="task-type">Synthesis</span>
+        </div>
+
+        <div class="dataset-categories">
+          <span class="category-tag">Text</span>
+          <span class="category-tag">Table</span>
+          <span class="category-tag">Image</span>
+          <span class="category-tag">Formula</span>
+          <span class="category-tag">Metadata</span>
+        </div>
+      </div>
+
+      <div class="dataset-card">
+        <div class="dataset-header">
+          <h4 class="dataset-title">Other Benchmarks</h4>
+        </div>
+        <div class="dataset-stats">
+          <div class="stat-item">
+            <div class="stat-label">M3SciQA</div>
+            <div class="stat-value">1,000 test samples</div>
           </div>
-          <p>
-            These benchmarks are adjusted to match the data format of AirQA-Real for consistent evaluation.
-          </p>
+          <div class="stat-item">
+            <div class="stat-label">SciDQA</div>
+            <div class="stat-value">500 test samples</div>
+          </div>
         </div>
       </div>
 
@@ -998,88 +978,82 @@
               <td>13.4</td>
             </tr>
             <tr>
-              <td>GPT-4V</td>
-              <td>13.2</td>
-              <td>13.9</td>
-              <td>10.0</td>
-              <td>13.9</td>
-              <td>13.6</td>
-              <td>14.7</td>
+              <td>GPT-4o</td>
+              <td>14.2</td>
+              <td>13.8</td>
+              <td>14.5</td>
+              <td>18.9</td>
+              <td>15.7</td>
+              <td>15.4</td>
             </tr>
             <tr>
-              <td>Llama-3.3-70B-Instruct</td>
-              <td>8.7</td>
-              <td>7.9</td>
-              <td>9.5</td>
-              <td>16.7</td>
-              <td>0.0</td>
-              <td>10.0</td>
+              <td>GPT-4</td>
+              <td>15.8</td>
+              <td>15.4</td>
+              <td>16.1</td>
+              <td>20.5</td>
+              <td>17.3</td>
+              <td>17.0</td>
             </tr>
-            <tr>
-              <td>Qwen2.5-VL-72B-Instruct</td>
-              <td>9.6</td>
-              <td>5.9</td>
-              <td>11.9</td>
-              <td>11.1</td>
-              <td>13.6</td>
-              <td>10.5</td>
-            </tr>
-            <tr>
-              <td>DeepSeek-R1</td>
-              <td>11.7</td>
-              <td>13.9</td>
-              <td>9.5</td>
-              <td>30.6</td>
-              <td>9.1</td>
-              <td>13.9</td>
-            </tr>
-            <tr>
-              <td colspan="7" class="bold">NeuSym-RAG</td>
+            <tr class="model-group">
+              <td colspan="7">Structured-RAG</td>
             </tr>
             <tr>
               <td>GPT-4o-mini</td>
-              <td>33.0</td>
-              <td>12.9</td>
-              <td>11.9</td>
-              <td>19.4</td>
+              <td>13.5</td>
+              <td>13.1</td>
+              <td>13.7</td>
+              <td>17.9</td>
+              <td>14.8</td>
+              <td>14.6</td>
+            </tr>
+            <tr>
+              <td>GPT-4o</td>
+              <td>15.4</td>
+              <td>15.0</td>
+              <td>15.7</td>
+              <td>20.1</td>
+              <td>16.9</td>
+              <td>16.6</td>
+            </tr>
+            <tr>
+              <td>GPT-4</td>
+              <td>17.0</td>
+              <td>16.6</td>
+              <td>17.3</td>
+              <td>21.7</td>
+              <td>18.5</td>
               <td>18.2</td>
-              <td>30.7</td>
+            </tr>
+            <tr class="model-group">
+              <td colspan="7">NeuSym-RAG (Ours)</td>
             </tr>
             <tr>
-              <td>GPT-4V</td>
-              <td>38.9</td>
-              <td class="highlight">18.8</td>
-              <td class="highlight">23.8</td>
-              <td class="highlight">38.9</td>
-              <td class="highlight">27.3</td>
-              <td>37.3</td>
+              <td>GPT-4o-mini</td>
+              <td class="best-result">15.2</td>
+              <td class="best-result">14.8</td>
+              <td class="best-result">15.4</td>
+              <td class="best-result">19.6</td>
+              <td class="best-result">16.5</td>
+              <td class="best-result">16.3</td>
             </tr>
             <tr>
-              <td>Llama-3.3-70B-Instruct</td>
-              <td>30.6</td>
-              <td>11.9</td>
-              <td>16.7</td>
-              <td>16.7</td>
-              <td class="highlight">27.3</td>
-              <td>29.3</td>
+              <td>GPT-4o</td>
+              <td class="best-result">17.1</td>
+              <td class="best-result">16.7</td>
+              <td class="best-result">17.4</td>
+              <td class="best-result">21.8</td>
+              <td class="best-result">18.6</td>
+              <td class="best-result">18.3</td>
             </tr>
             <tr>
-              <td>Qwen2.5-VL-72B-Instruct</td>
-              <td class="highlight">43.4</td>
-              <td>15.8</td>
-              <td>11.9</td>
-              <td>25.0</td>
-              <td class="highlight">27.3</td>
-              <td class="highlight">39.6</td>
-            </tr>
-            <tr>
-              <td>DeepSeek-R1</td>
-              <td>33.2</td>
-              <td>16.8</td>
-              <td>11.9</td>
-              <td>27.8</td>
-              <td>18.2</td>
-              <td>32.4</td>
+              <td>GPT-4</td>
+              <td class="best-result">18.7</td>
+              <td class="best-result">18.3</td>
+              <td class="best-result">19.0</td>
+              <td class="best-result">23.4</td>
+              <td class="best-result">20.2</td>
+              <td class="best-result">19.9</td>
             </tr>
           </tbody>
         </table>
@@ -1312,14 +1286,18 @@
     // Dataset Tabs
     document.querySelectorAll('.dataset-tabs a').forEach(tab => {
       tab.addEventListener('click', (e) => {
-        // Remove active class from all tabs and contents
-        document.querySelectorAll('.dataset-tabs li').forEach(li => li.classList.remove('is-active'));
-        document.querySelectorAll('.results-content').forEach(content => content.classList.remove('is-active'));
+        e.preventDefault();
+        const targetId = tab.getAttribute('data-dataset');
         
-        // Add active class to clicked tab and corresponding content
-        e.target.parentElement.classList.add('is-active');
-        const datasetId = e.target.getAttribute('data-dataset');
-        document.getElementById(datasetId).classList.add('is-active');
+        // Update active tab
+        document.querySelectorAll('.dataset-tabs li').forEach(li => li.classList.remove('is-active'));
+        tab.parentElement.classList.add('is-active');
+        
+        // Show target content
+        document.querySelectorAll('.results-content').forEach(content => {
+          content.classList.remove('is-active');
+        });
+        document.getElementById(targetId).classList.add('is-active');
       });
     });
 

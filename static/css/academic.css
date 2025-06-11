@@ -1,0 +1,278 @@
+/* Academic-specific styles for Neusym project */
+
+/* Dataset Section Styles */
+.dataset-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #e8e8e8;
+}
+
+.dataset-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.dataset-title {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.dataset-description {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.dataset-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.stat-item {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #edf2f7;
+}
+
+.stat-label {
+  color: #4a5568;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  color: #2d3748;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.dataset-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.category-tag {
+  background: #ebf8ff;
+  color: #2b6cb0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #bee3f8;
+}
+
+.task-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.task-type {
+  background: #f0fff4;
+  color: #2f855a;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #c6f6d5;
+}
+
+/* Experiment Results Styles */
+.dataset-tabs {
+  margin: 2rem 0;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid #e8e8e8;
+}
+
+.dataset-tabs ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.dataset-tabs li {
+  margin: 0 1rem;
+  position: relative;
+}
+
+.dataset-tabs a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: #4a5568;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.dataset-tabs li.is-active a {
+  color: #2b6cb0;
+  border-bottom-color: #2b6cb0;
+}
+
+.dataset-tabs a:hover {
+  color: #2b6cb0;
+}
+
+.results-content {
+  display: none;
+  margin-top: 1.5rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  overflow-x: auto;
+  border: 1px solid #e8e8e8;
+}
+
+.results-content.is-active {
+  display: block;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0;
+  font-size: 0.95rem;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.results-table th,
+.results-table td {
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.results-table th {
+  background-color: #f8fafc;
+  font-weight: 600;
+  color: #2d3748;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.results-table th[rowspan="2"] {
+  background-color: #edf2f7;
+  color: #2b6cb0;
+  font-weight: 700;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.results-table tr:last-child td {
+  border-bottom: none;
+}
+
+.results-table tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.results-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+.results-table td:first-child {
+  font-weight: 500;
+  color: #2d3748;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.results-table .model-group {
+  background-color: #f1f5f9;
+}
+
+.results-table .model-group td {
+  border-top: 2px solid #e2e8f0;
+  font-weight: 600;
+  color: #2b6cb0;
+}
+
+.results-table .highlight {
+  background-color: #ebf8ff;
+  color: #2b6cb0;
+  font-weight: 600;
+}
+
+.results-table .best-result {
+  background-color: #f0fff4;
+  color: #2f855a;
+  font-weight: 600;
+}
+
+.results-table .second-best {
+  background-color: #fffaf0;
+  color: #c05621;
+  font-weight: 600;
+}
+
+/* Custom scrollbar for results table */
+.results-content::-webkit-scrollbar {
+  height: 8px;
+}
+
+.results-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.results-content::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 4px;
+}
+
+.results-content::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .dataset-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .dataset-tabs ul {
+    flex-wrap: wrap;
+  }
+  
+  .dataset-tabs li {
+    margin: 0.5rem;
+  }
+  
+  .results-table {
+    font-size: 0.9rem;
+  }
+  
+  .results-table th,
+  .results-table td {
+    padding: 0.5rem 0.75rem;
+  }
+} 
