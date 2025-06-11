@@ -13,12 +13,6 @@
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 2rem 0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.infoCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .infoBody {
@@ -100,12 +94,6 @@
   padding: 2rem;
   margin-bottom: 2rem;
   border: 1px solid #e8e8e8;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.dataset-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .dataset-header {
@@ -265,24 +253,4 @@
 
 .results-table tr:last-child td {
   border-bottom: none;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
 } 
