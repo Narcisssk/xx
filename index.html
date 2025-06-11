@@ -563,60 +563,17 @@
   </section>
 
 
-  <section class="section" id="introduction">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Introduction</h2>
-          <div class="content has-text-justified">
-            <p>
-              With the exponential growth in academic papers, large language model (LLM) based question answering (QA) systems show great potential to help researchers extract key details from emerging studies.
-              However, individual PDFs often exceed prompt limits, and user queries may span multiple documents.
-              To tackle these challenges, retrieval-augmented generation (RAG) is effective for knowledge-intensive QA.
-            </p>
-            <p>
-              Despite its wide application, the classic neural retrieval often fails when handling precise queries involving mathematical operations, comparisons, or aggregations. 
-              For example, determining the total number of tables cannot be done through retrieved chunks as they are scattered across the document. 
-              On the other hand, symbolic retrieval such as TAG relies on semantic parsing techniques, e.g., text-to-SQL, to directly extract the target information from the structured database.
-              Unfortunately, such precise queries often break down in semantic fuzzy matching or morphological variations, e.g., "graph-based RAG" versus "GraphRAG".
-              Previous literature investigates these two paradigms in isolation.
-            </p>
-            <p>
-              Furthermore, the most widely utilized scheme to segment documents into chunks is based on a fixed length of consecutive tokens, possibly considering sentence boundaries or more delicate granularities.
-              However, for semi-structured PDF documents of research papers, this common practice neglects the intrinsic structure of sections and the salient features of paratextual tables and figures. 
-              The distinct layout of PDF files offers a more structured view towards segmenting and arranging content.
-            </p>
-            <p>
-              To this end, we propose a hybrid Neural Symbolic retrieval framework (NeuSym-RAG) for PDF-based question answering, which combines both retrieval paradigms into an interactive procedure. 
-              During pre-processing, the PDF file of each paper is fed into a pipeline of parsing functions to complete the metadata, segment raw texts based on different views, 
-              and extract various embedded paratextual elements (e.g., tables and figures). These identified elements are populated into a relational database, 
-              specifically designed for semi-structured PDF. Then, we select encodable column values from the populated database for storage into the vectorstore. 
-              These cell values present diverse views in interpreting PDF content. Moreover, the database schema graph is leveraged to organize the vectors into a well-formed structure. 
-              To answer the user question, LLM agents can adaptively predict executable actions to retrieve desired information from either backend environment (database or vectorstore) 
-              in a multi-round fashion. This agentic retrieval terminates when the collected information suffices to answer the input question.
-            </p>
-            <p>
-              Our contributions are three-fold:
-            </p>
-            <ul>
-              <li>We are the first to integrate both vector-based neural retrieval and SQL-based symbolic retrieval into a unified and interactive NeuSym-RAG framework through executable actions.</li>
-              <li>We incorporate multiple views for parsing and vectorizing PDF documents, and adopt a structured database schema to systematically organize both text tokens and encoded vectors.</li>
-              <li>Experiments on three realistic full PDF-based QA datasets with respect to academic research validate the superiority of NeuSym-RAG over various neural and symbolic baselines.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Method</h2>
       <div class="content has-text-justified">
         <h3 class="title is-4">Overall Framework</h3>
+        <img src="static/images/overview.png" alt="Overall Framework" class="responsive-image">
         <p>
-          The NeuSym-RAG framework consists of three main stages: parsing, encoding, and interaction. The parsing stage segments the PDF and extracts elements into a database, the encoding stage vectorizes the parsed elements, and the interaction stage describes how an iterative Q&A agent retrieves context from the database and vectorstore.
+          The entire workflow proceeds as follows: 
+          - **Parsing**: Firstly, we parse the raw PDF file into a pipeline of functions to segment it in multi-view, extract non-textual elements, and store them in a schema-constrained database (DB).
+          - **Encoding**: Next, we identify those encodable columns in the DB, and utilize embedding models for different modalities to obtain and insert vectors of cell values into the vectorstore (VS).
+          - **Interaction**: Finally, we build an iterative Q&A agent which can predict executable actions to retrieve context from the backend environment (either DB or VS) and answer the input question.
         </p>
         
         <div class="method-tabs">
@@ -626,7 +583,7 @@
             <li><a data-tab="interaction">Iterative Agent Interaction</a></li>
           </ul>
         </div>
-
+  
         <div id="parsing" class="method-content is-active">
           <h4 class="title is-5">Multiview Document Parsing</h4>
           <p>
@@ -641,7 +598,7 @@
             This process ensures comprehensive extraction of both textual and non-textual elements from the PDF documents, enabling a rich representation of the content for subsequent processing.
           </p>
         </div>
-
+  
         <div id="encoding" class="method-content">
           <h4 class="title is-5">Multimodal Vector Encoding</h4>
           <p>
@@ -656,7 +613,7 @@
             This stage transforms the parsed elements into vector representations that can be efficiently searched and retrieved during the interaction phase.
           </p>
         </div>
-
+  
         <div id="interaction" class="method-content">
           <h4 class="title is-5">Iterative Agent Interaction</h4>
           <p>
