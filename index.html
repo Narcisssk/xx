@@ -820,30 +820,6 @@
   "annotator": "kangzhangyi"
 }</code></pre>
             </div>
-            <div class="info-cards">
-              <div class="info-card">
-                <div class="card-header">Question Types</div>
-                <div class="card-content">
-                  <div class="tag-group">
-                    <span class="tag">comprehensive</span>
-                    <span class="tag">text</span>
-                    <span class="tag">objective</span>
-                  </div>
-                </div>
-              </div>
-              <div class="info-card">
-                <div class="card-header">Answer Format</div>
-                <div class="card-content">
-                  <code>["baseline1_name", "baseline2_name"]</code>
-                </div>
-              </div>
-              <div class="info-card">
-                <div class="card-header">Source Paper</div>
-                <div class="card-content">
-                  Voila-A: Aligning Vision-Language Models with User's Gaze Attention
-                </div>
-              </div>
-            </div>
           </div>
 
           <div title="Interaction" class="lib_examples" id="TaskPanel2" style="display: none;">
@@ -851,51 +827,77 @@
               NeuSym-RAG follows a thought-action-observation loop for answering questions. The agent analyzes questions, retrieves relevant content from both vectorstore and database, and generates answers through iterative interactions.
             </md-block>
             <div class="code-section">
-              <pre class="line-numbers"><code class="language-python"># Example Interaction Trajectory
-
-# Step 1: Thought
+              <pre class="line-numbers"><code class="language-python"># Turn 1: Initial System Setup
 """
-From the experiment section, we can see that Voila-A outperforms several baselines.
-We can extract the names of these baselines from the text.
-The relevant baselines mentioned are Otter and Kosmos-2.
+System initializes the agent with:
+- Task description and requirements
+- Database schema (DuckDB)
+- Vectorstore schema (Milvus)
+- Available actions and their specifications
 """
 
-# Step 2: Action
+# Turn 2: User Question
+"""
+[Question]: In the paper proposing Voila-A, which baselines do the main experimental results demonstrate that Voila-A outperform?
+[Answer Format]: Your answer should be a single python list of strings, each string is a baseline name.
+[Conference]: neurips2024
+"""
+
+# Turn 3: First Thought-Action-Observation Cycle
+# Thought
+"""
+To answer the question, we need to find the paper that proposes Voila-A 
+and then extract the baselines it outperforms. We can start by retrieving 
+the metadata of the paper from the `metadata` table using the conference 
+and year information.
+"""
+
+# Action
+RetrieveFromDatabase(sql="SELECT paper_id, title FROM metadata WHERE conference_abbreviation = 'NeurIPS' AND pub_year = 2024 AND title LIKE '%Voila-A%';")
+
+# Observation
+{
+  "paper_id": "f2bf5d36-449a-5699-9a1b-15fb940376c1",
+  "title": "Voila-A: Aligning Vision-Language Models with User's Gaze Attention"
+}
+
+# Turn 4: Second Thought-Action-Observation Cycle
+# Thought
+"""
+Now that we have the `paper_id` of the paper proposing Voila-A, 
+we can retrieve the sections of the paper to find the baselines 
+it outperforms. We can start by looking at the `sections` table 
+for the relevant information.
+"""
+
+# Action
+RetrieveFromDatabase(sql="SELECT section_title, section_content FROM sections WHERE ref_paper_id = 'f2bf5d36-449a-5699-9a1b-15fb940376c1' AND section_title LIKE '%Experiment%';")
+
+# Observation
+{
+  "section_title": "Experiment",
+  "section_content": "... In Figure 5, we observe a notable superiority of VOILA over both Otter and Kosmos-2 on the VOILA-COCO-TESTSET. ... In real gaze scenarios, as illustrated in Figure 6, VOILA outperforms the two baseline models as well. ..."
+}
+
+# Turn 5: Final Thought-Action-Observation Cycle
+# Thought
+"""
+From the experiment section, we can see that Voila-A outperforms 
+several baselines. We can extract the names of these baselines 
+from the text. The relevant baselines mentioned are Otter and Kosmos-2.
+"""
+
+# Action
 GenerateAnswer(answer=['Otter', 'Kosmos-2'])
 
-# Step 3: Observation
+# Observation
 ['Otter', 'Kosmos-2']</code></pre>
-            </div>
-            <div class="interaction-flow">
-              <div class="flow-item">
-                <div class="flow-icon">💭</div>
-                <div class="flow-content">
-                  <div class="flow-header">Thought</div>
-                  <div class="flow-text">Analyze question and determine required information</div>
-                </div>
-              </div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-item">
-                <div class="flow-icon">⚡</div>
-                <div class="flow-content">
-                  <div class="flow-header">Action</div>
-                  <div class="flow-text">Execute retrieval and answer generation</div>
-                </div>
-              </div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-item">
-                <div class="flow-icon">👁️</div>
-                <div class="flow-content">
-                  <div class="flow-header">Observation</div>
-                  <div class="flow-text">Process results and update context</div>
-                </div>
-              </div>
             </div>
           </div>
 
           <div title="Evaluation" class="lib_examples" id="TaskPanel3" style="display: none;">
             <md-block>
-              AirQA-Real uses a combination of objective and subjective metrics to evaluate answers. Objective metrics include exact match and custom evaluation functions, while subjective metrics assess answer quality through human evaluation.
+              AirQA-Real employs two types of evaluation methods: objective and subjective. Objective evaluation uses automated metrics like exact match and custom evaluation functions, while subjective evaluation relies on human assessment of answer quality. For this example, we use objective evaluation with exact match criteria.
             </md-block>
             <div class="code-section">
               <pre class="line-numbers"><code class="language-json">{
@@ -911,9 +913,10 @@ GenerateAnswer(answer=['Otter', 'Kosmos-2'])
             </div>
             <div class="evaluation-cards">
               <div class="eval-card">
-                <div class="eval-header">Evaluation Function</div>
+                <div class="eval-header">Evaluation Method</div>
                 <div class="eval-content">
-                  <code>eval_structured_object_exact_match</code>
+                  <div class="method-type">Objective Evaluation</div>
+                  <div class="method-desc">Exact match with configurable parameters</div>
                 </div>
               </div>
               <div class="eval-card">
@@ -922,10 +925,12 @@ GenerateAnswer(answer=['Otter', 'Kosmos-2'])
                   <div class="param-item">
                     <span class="param-name">ignore_order</span>
                     <span class="param-value">true</span>
+                    <span class="param-desc">Order of items doesn't matter</span>
                   </div>
                   <div class="param-item">
                     <span class="param-name">lowercase</span>
                     <span class="param-value">true</span>
+                    <span class="param-desc">Case-insensitive comparison</span>
                   </div>
                 </div>
               </div>
