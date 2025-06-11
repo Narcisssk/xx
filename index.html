@@ -826,9 +826,9 @@
       <div class="tabs">
         <ul>
           <li class="is-active"><a data-tab="Data Format">Data Format</a></li>
+          <li><a data-tab="Prompt">Prompt</a></li>
           <li><a data-tab="Interaction">Interaction</a></li>
           <li><a data-tab="Evaluation">Evaluation</a></li>
-          <li><a data-tab="Prompt">Prompt</a></li>
         </ul>
       </div>
 
@@ -851,6 +851,57 @@
         </div>
       </div>
 
+      <div class="lib_examples" title="Prompt">
+        <md-block>
+          The system prompt defines the agent's capabilities and interaction framework for answering questions about PDF files through a hybrid retrieval approach.
+        </md-block>
+        <div class="code-section">
+          <pre class="line-numbers"><code class="language-python"># System Prompt
+"""
+You are an intelligent agent with expertise in retrieving useful context from both the DuckDB database and the Milvus vectorstore through SQL execution and similarity search and answering user questions. You will be given a natural language question concerning PDF files, along with the schema of both the database and the vectorstore. Your ultimate goal is to answer the input question with pre-defined answer format.
+
+## Task Description
+Each task consists of the following parts:
+[Question]: User question regarding the PDF
+[Answer Format]: Format of the final answer
+[Anchor PDF]: Optional, PDF(s) you must use
+[Reference PDF]: Optional, PDF(s) you may use
+[Conference]: Optional, conference(s) and year(s)
+[Database Schema]: Schema of DuckDB database
+[Vectorstore Schema]: Schema of Milvus vectorstore
+
+## Action and Observation Space
+All allowable action types include ['RetrieveFromDatabase', 'ClassicRetrieve', 'GenerateAnswer'].
+
+### RetrieveFromDatabase
+Generate an SQL query to retrieve information from DuckDB database.
+Syntax: RetrieveFromDatabase(sql: str)
+
+### ClassicRetrieve
+Retrieve relevant context from Milvus vectorstore.
+Syntax: ClassicRetrieve(query: str, limit: int = 5)
+
+### GenerateAnswer
+Generate final answer in specified format.
+Syntax: GenerateAnswer(answer: Any)
+
+## Interaction Framework
+Each interaction turn follows the format:
+[Thought]: Reasoning process and action planning
+[Action]: Execute one of the available actions
+[Observation]: Results or error message from action
+
+## Suggestions for Effective Interaction
+1. Explore multiple retrieval strategies
+2. Combine structured and unstructured data
+3. Iterate and refine
+4. Ensure confidence before final answer
+
+Remember that, for each question, you only have 20 interaction turns at most.
+"""</code></pre>
+        </div>
+      </div>
+
       <div class="lib_examples" title="Interaction">
         <md-block>
           NeuSym-RAG follows a thought-action-observation loop for answering questions. The agent analyzes questions, retrieves relevant content from both vectorstore and database, and generates answers through iterative interactions.
@@ -865,14 +916,7 @@ System initializes the agent with:
 - Available actions and their specifications
 """
 
-# Turn 2: User Question
-"""
-[Question]: In the paper proposing Voila-A, which baselines do the main experimental results demonstrate that Voila-A outperform?
-[Answer Format]: Your answer should be a single python list of strings, each string is a baseline name.
-[Conference]: neurips2024
-"""
-
-# Turn 3: First Thought-Action-Observation Cycle
+# Turn 1:
 # Thought
 """
 To answer the question, we need to find the paper that proposes Voila-A 
@@ -890,7 +934,7 @@ RetrieveFromDatabase(sql="SELECT paper_id, title FROM metadata WHERE conference_
   "title": "Voila-A: Aligning Vision-Language Models with User's Gaze Attention"
 }
 
-# Turn 4: Second Thought-Action-Observation Cycle
+# Turn 2:
 # Thought
 """
 Now that we have the `paper_id` of the paper proposing Voila-A, 
@@ -908,7 +952,7 @@ RetrieveFromDatabase(sql="SELECT section_title, section_content FROM sections WH
   "section_content": "... In Figure 5, we observe a notable superiority of VOILA over both Otter and Kosmos-2 on the VOILA-COCO-TESTSET. ... In real gaze scenarios, as illustrated in Figure 6, VOILA outperforms the two baseline models as well. ..."
 }
 
-# Turn 5: Final Thought-Action-Observation Cycle
+# Turn 3:
 # Thought
 """
 From the experiment section, we can see that Voila-A outperforms 
@@ -926,10 +970,10 @@ GenerateAnswer(answer=['Otter', 'Kosmos-2'])
 
       <div class="lib_examples" title="Evaluation">
         <md-block>
-          The evaluation process uses both objective and subjective metrics to assess answer quality. For this example, we use an exact match evaluation to compare the generated answer with the ground truth.
+          NeuSym-RAG implements instance-specific, execution-based evaluation through 18 carefully designed evaluation functions with optional parameters. These functions are categorized as either subjective or objective, depending on whether they involve judgment from LLMs. For more details about the evaluation framework and available metrics, please visit our <a href="https://github.com/X-LANCE/NeuSym-RAG/tree/main/evaluation" target="_blank">evaluation repository</a>.
         </md-block>
         <div class="code-section">
-          <pre class="line-numbers"><code class="language-python"># Evaluation Function
+          <pre class="line-numbers"><code class="language-python"># Example Evaluation Function
 def exact_match(predicted, ground_truth):
     """
     Compare predicted answer with ground truth using exact match.
@@ -943,71 +987,6 @@ def exact_match(predicted, ground_truth):
 predicted = ['Otter', 'Kosmos-2']
 ground_truth = ['Otter', 'Kosmos-2']
 score = exact_match(predicted, ground_truth)  # Returns True</code></pre>
-        </div>
-      </div>
-
-      <div class="lib_examples" title="Prompt">
-        <md-block>
-          The system prompt defines the agent's capabilities and interaction framework for answering questions about PDF files through a hybrid retrieval approach.
-        </md-block>
-        <div class="code-section">
-          <pre class="line-numbers"><code class="language-python"># System Prompt Components
-
-## 1. Agent Role and Task Description
-"""
-You are an intelligent agent with expertise in:
-- Retrieving useful context from both DuckDB database and Milvus vectorstore
-- Answering user questions through SQL execution and similarity search
-- Interacting with the hybrid environment across multiple turns
-"""
-
-## 2. Action and Observation Space
-"""
-Available Actions:
-1. RetrieveFromDatabase(sql: str)
-   - Execute SQL queries on DuckDB database
-   - Returns query results or error messages
-
-2. ClassicRetrieve(query: str, limit: int = 5)
-   - Perform similarity search in Milvus vectorstore
-   - Returns top-k relevant entries
-
-3. GenerateAnswer(answer: Any)
-   - Generate final answer in specified format
-   - No observation for this terminal action
-"""
-
-## 3. Interaction Framework
-"""
-Each interaction turn follows the format:
-[Thought]: Reasoning process and action planning
-[Action]: Execute one of the available actions
-[Observation]: Results or error message from action
-
-The interaction loop continues until:
-1. Sufficient information is gathered
-2. GenerateAnswer action is taken
-3. Maximum turns (20) is reached
-"""
-
-## 4. Suggestions for Effective Interaction
-"""
-1. Explore multiple retrieval strategies:
-   - Try different (table, column) pairs
-   - Query various embedding models
-
-2. Combine structured and unstructured data:
-   - Use SQL for precise facts
-   - Use similarity search for semantic relationships
-
-3. Iterate and refine:
-   - Try alternative queries if results are unsatisfactory
-   - Validate findings before final answer
-
-4. Ensure confidence:
-   - Only generate answer when information is sufficient
-   - Verify answer format matches requirements
-"""</code></pre>
         </div>
       </div>
     </div>
