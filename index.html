@@ -722,14 +722,14 @@
           <p>
             The multiview document parsing process transforms raw PDF files into a structured database (DuckDB) through a comprehensive pipeline:
           </p>
-          <ul>
-            <li><strong>Metadata Extraction:</strong> Querying scholar APIs (e.g., arXiv) to obtain paper metadata, enabling metadata-based filtering during retrieval</li>
-            <li><strong>Text Segmentation:</strong> Using PyMuPDF to split text at different granularities (pages, sections, fixed-length tokens)</li>
-            <li><strong>Non-textual Element Extraction:</strong> Leveraging OCR models (MinerU) to extract tables, figures, and other visual elements</li>
-            <li><strong>Content Summarization:</strong> Employing LLMs/VLMs to generate concise summaries of parsed texts, tables, and images</li>
-          </ul>
+          <ol style="list-style-type: decimal; padding-left: 1.5rem;">
+            <li>Querying scholar APIs (e.g., arXiv) to obtain paper metadata, enabling metadata-based filtering during retrieval</li>
+            <li>Using PyMuPDF to split text at different granularities (pages, sections, fixed-length tokens)</li>
+            <li>Leveraging OCR models (MinerU) to extract tables, figures, and other visual elements</li>
+            <li>Employing LLMs/VLMs to generate concise summaries of parsed texts, tables, and images</li>
+          </ol>
           <p>
-            All extracted elements are stored in a carefully designed database schema that captures the rich structure of PDF documents, enabling both symbolic and neural retrieval in subsequent stages.
+            All extracted elements are populated into the symbolic DB. The DB schema is carefully designed in advance to capture the rich structure of PDF documents.
           </p>
         </div>
   
@@ -737,18 +737,13 @@
           <p>
             The multimodal vector encoding process transforms structured database content into vector representations:
           </p>
-          <ul>
-            <li><strong>Encodable Column Selection:</strong> Identifying columns suitable for vectorization (e.g., long text summaries, image bounding boxes)</li>
-            <li><strong>Multi-model Vectorization:</strong> Using specialized models for different modalities:
-              <ul>
-                <li>Text: BM25, all-MiniLM-L6-v2, and bge-large-en-v1.5</li>
-                <li>Images: CLIP-ViT-Base-Patch32</li>
-              </ul>
-            </li>
-            <li><strong>Structured Storage:</strong> Creating a one-to-one mapping between database cells and vector entries, supplemented with metadata for efficient retrieval</li>
-          </ul>
+          <ol style="list-style-type: decimal; padding-left: 1.5rem;">
+            <li>Labeling columns suitable for vectorization (e.g., long text summaries, image bounding boxes)</li>
+            <li>Encoding models of both modalities to vectorize text snippets or cropped images</li>
+            <li>Creating a one-to-one mapping between database cells and vector entries, supplemented with metadata for efficient retrieval</li>
+          </ol>
           <p>
-            This stage enables semantic search capabilities while maintaining the connection to the structured database through carefully designed metadata fields.
+            This stage enables semantic search capabilities while maintaining the connection to the structured database.
           </p>
         </div>
   
@@ -764,7 +759,7 @@
             <li><strong>GenerateAnswer:</strong> Terminal action that produces the final answer when sufficient context is gathered</li>
           </ul>
           <p>
-            The agent follows a ReAct framework, interleaving thought, action, and observation steps until it can confidently generate an answer. This hybrid approach combines the strengths of both neural and symbolic retrieval paradigms.
+            The agent follows a thought, action, and observation loop until it can confidently generate an answer.
           </p>
         </div>
       </div>
