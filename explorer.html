@@ -533,11 +533,24 @@
         // Load trajectory for a task
         async function loadTrajectory(taskId) {
             try {
-                const response = await fetch(`./static/data/task_viewer/trajectories/${taskId}.json`);
+                const response = await fetch(`./static/data/task_viewer/trajectory/${taskId}.jsonl`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                const trajectory = await response.json();
+                const text = await response.text();
+                const lines = text.trim().split('\n');
+                
+                // Skip the first two lines (environment prompts)
+                const steps = lines.slice(2).map(line => JSON.parse(line));
+                
+                // Group steps into turns (every two steps)
+                const turns = [];
+                for (let i = 0; i < steps.length; i += 2) {
+                    if (i + 1 < steps.length) {
+                        turns.push([steps[i], steps[i + 1]]);
+                    }
+                }
+                
                 const trajectoryList = document.getElementById('trajectoryList');
                 trajectoryList.innerHTML = ''; // Clear previous content
 
@@ -545,60 +558,57 @@
                 const timeline = document.createElement('div');
                 timeline.className = 'timeline';
 
-                // Add each step to the timeline
-                trajectory.forEach((step, index) => {
-                    const stepDiv = document.createElement('div');
-                    stepDiv.className = 'timeline-item';
+                // Add each turn to the timeline
+                turns.forEach((turn, index) => {
+                    const turnDiv = document.createElement('div');
+                    turnDiv.className = 'timeline-item';
                     
-                    // Create the step marker
+                    // Create the turn marker
                     const marker = document.createElement('div');
                     marker.className = 'timeline-marker';
                     
-                    // Create the step content
+                    // Create the turn content
                     const content = document.createElement('div');
                     content.className = 'timeline-content';
                     
-                    // Add step number and type
+                    // Add turn number
                     const header = document.createElement('p');
                     header.className = 'has-text-weight-bold';
-                    header.textContent = `Step ${index + 1}: ${step.type}`;
+                    header.textContent = `Turn ${index + 1}`;
                     content.appendChild(header);
                     
-                    // Add step details
+                    // Add turn details
                     const details = document.createElement('div');
                     details.className = 'content';
                     
-                    // Add input if present
-                    if (step.input) {
-                        const inputDiv = document.createElement('div');
-                        inputDiv.className = 'highlight-quote';
-                        inputDiv.innerHTML = `<p class="has-text-weight-bold">Input:</p><p>${step.input}</p>`;
-                        details.appendChild(inputDiv);
-                    }
+                    // Add thought and action
+                    const thoughtDiv = document.createElement('div');
+                    thoughtDiv.className = 'highlight-quote';
+                    thoughtDiv.innerHTML = `
+                        <p class="has-text-weight-bold">Thought and Action:</p>
+                        <pre><code class="language-json">${JSON.stringify(turn[0], null, 2)}</code></pre>
+                    `;
+                    details.appendChild(thoughtDiv);
                     
-                    // Add output if present
-                    if (step.output) {
-                        const outputDiv = document.createElement('div');
-                        outputDiv.className = 'highlight-quote';
-                        outputDiv.innerHTML = `<p class="has-text-weight-bold">Output:</p><p>${step.output}</p>`;
-                        details.appendChild(outputDiv);
-                    }
-                    
-                    // Add error if present
-                    if (step.error) {
-                        const errorDiv = document.createElement('div');
-                        errorDiv.className = 'notification is-danger is-light';
-                        errorDiv.textContent = step.error;
-                        details.appendChild(errorDiv);
-                    }
+                    // Add observation
+                    const observationDiv = document.createElement('div');
+                    observationDiv.className = 'highlight-quote';
+                    observationDiv.innerHTML = `
+                        <p class="has-text-weight-bold">Observation:</p>
+                        <pre><code class="language-json">${JSON.stringify(turn[1], null, 2)}</code></pre>
+                    `;
+                    details.appendChild(observationDiv);
                     
                     content.appendChild(details);
-                    stepDiv.appendChild(marker);
-                    stepDiv.appendChild(content);
-                    timeline.appendChild(stepDiv);
+                    turnDiv.appendChild(marker);
+                    turnDiv.appendChild(content);
+                    timeline.appendChild(turnDiv);
                 });
                 
                 trajectoryList.appendChild(timeline);
+                
+                // Apply syntax highlighting
+                Prism.highlightAll();
             } catch (error) {
                 console.error('Error loading trajectory:', error);
                 const trajectoryList = document.getElementById('trajectoryList');
@@ -801,8 +811,17 @@
                 border-left: 3px solid #3273dc;
             }
             
-            .timeline-content .notification {
+            .timeline-content pre {
                 margin-top: 0.5rem;
+                background: #f8f8f8;
+                padding: 0.5rem;
+                border-radius: 4px;
+                overflow-x: auto;
+            }
+            
+            .timeline-content code {
+                font-family: 'Fira Code', monospace;
+                font-size: 0.9em;
             }
         `;
         document.head.appendChild(style);
