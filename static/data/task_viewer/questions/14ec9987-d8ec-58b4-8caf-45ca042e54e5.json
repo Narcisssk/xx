@@ -8,7 +8,7 @@
         "objective"
     ],
     "anchor_pdf": [
-        "Ask Again, Then Fail: Large Language Models’ Vacillations in Judgment"
+        "Ask Again, Then Fail: Large Language Models\u2019 Vacillations in Judgment"
     ],
     "reference_pdf": [],
     "conference": [],
@@ -22,5 +22,6 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "wangchenrun"
+    "annotator": "wangchenrun",
+    "status": "failure"
 }

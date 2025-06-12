@@ -31,5 +31,6 @@
     "anchor_pdf": [
         "3ea7de2a-3312-589f-a765-01e4b9e1dcb7"
     ],
-    "reference_pdf": []
+    "reference_pdf": [],
+    "status": "failure"
 }

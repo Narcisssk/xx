@@ -25,7 +25,7 @@
         "eval_func": "eval_scoring_points_with_llm",
         "eval_kwargs": {
             "scoring_points": [
-                "The 500 prompts data is collected by slicing and dicing a random selection of texts from the news-like subset of the C4 dataset. or each random string, we trim a fixed length of tokens from the end and treat them as a \"baseline\" completion. The remaining tokens are a prompt. For the experimental runs using multinomial sampling, we pull examples from the dataset until we achieve at least 500 of generations with length T = 200 ± 5 tokens.",
+                "The 500 prompts data is collected by slicing and dicing a random selection of texts from the news-like subset of the C4 dataset. or each random string, we trim a fixed length of tokens from the end and treat them as a \"baseline\" completion. The remaining tokens are a prompt. For the experimental runs using multinomial sampling, we pull examples from the dataset until we achieve at least 500 of generations with length T = 200 \u00b1 5 tokens.",
                 "The C4 dataset is collected from Common Crawl. We downloaded the web extracted text from April 2019 and applied several filtering, which produces a collection of text that is not only orders of magnitude larger than most data sets used for pre-training but also comprises reasonably clean and natural English text."
             ],
             "question": "Summarize the data collection process of the dataset used in the evaluation section of the paper \"ATTACKING LLM WATERMARKS BY EXPLOITING THEIR STRENGTHS.\""
@@ -34,5 +34,6 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "zhangyuxin"
+    "annotator": "zhangyuxin",
+    "status": "failure"
 }

@@ -17,7 +17,7 @@
     "evaluator": {
         "eval_func": "eval_reference_answer_with_llm",
         "eval_kwargs": {
-            "reference_answer": "Prefix-tuning prepends a prefix for an autoregressive LM to obtain z = [PREFIX; x; y], or prepends prefixes for both encoder and encoder to obtain z = [PREFIX; x; PREFIX' ; y]. We follow the recurrence relation, except that the prefix are free parameters. Prefix-tuning initializes a trainable matrix Pθ (parametrized by θ) to store the prefix parameters. The language model parameters φ are fixed and the prefix parameters θ are the only trainable parameters. Here, hi (for all i) is a function of the trainable Pθ. When i ∈ Pidx, this is clear because hi copies directly from Pθ. When i \not ∈ Pidx, hi still depends on Pθ, because the prefix activations are always in the left context and will therefore affect any activations to its right.",
+            "reference_answer": "Prefix-tuning prepends a prefix for an autoregressive LM to obtain z = [PREFIX; x; y], or prepends prefixes for both encoder and encoder to obtain z = [PREFIX; x; PREFIX' ; y]. We follow the recurrence relation, except that the prefix are free parameters. Prefix-tuning initializes a trainable matrix P\u03b8 (parametrized by \u03b8) to store the prefix parameters. The language model parameters \u03c6 are fixed and the prefix parameters \u03b8 are the only trainable parameters. Here, hi (for all i) is a function of the trainable P\u03b8. When i \u2208 Pidx, this is clear because hi copies directly from P\u03b8. When i \not \u2208 Pidx, hi still depends on P\u03b8, because the prefix activations are always in the left context and will therefore affect any activations to its right.",
             "question": "What is the method of prefix-tuning, mentioned as the PEFT module, in the method section of this paper?"
         }
     },
@@ -30,5 +30,6 @@
     ],
     "reference_pdf": [
         "21df0715-990d-58d3-b218-280ac3a84c8f"
-    ]
+    ],
+    "status": "failure"
 }

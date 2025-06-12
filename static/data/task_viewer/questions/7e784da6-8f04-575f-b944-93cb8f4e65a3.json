@@ -7,7 +7,9 @@
         "image",
         "subjective"
     ],
-    "anchor_pdf": ["000ab6db-4b65-5dc0-8393-fbc2c05843c8"],
+    "anchor_pdf": [
+        "000ab6db-4b65-5dc0-8393-fbc2c05843c8"
+    ],
     "reference_pdf": [],
     "conference": [],
     "evaluator": {
@@ -25,5 +27,6 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "sunwenjie"
+    "annotator": "sunwenjie",
+    "status": "failure"
 }

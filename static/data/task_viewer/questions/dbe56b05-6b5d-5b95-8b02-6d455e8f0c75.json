@@ -7,11 +7,13 @@
         "text",
         "objective"
     ],
-    "anchor_pdf": ["0a2c3d8b-dc16-570c-b354-11797aebe290"],
+    "anchor_pdf": [
+        "0a2c3d8b-dc16-570c-b354-11797aebe290"
+    ],
     "reference_pdf": [],
     "conference": [],
     "evaluator": {
-        "eval_func":"eval_int_exact_match",
+        "eval_func": "eval_int_exact_match",
         "eval_kwargs": {
             "gold": 5
         }
@@ -19,5 +21,6 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "sunwenjie"
+    "annotator": "sunwenjie",
+    "status": "success"
 }

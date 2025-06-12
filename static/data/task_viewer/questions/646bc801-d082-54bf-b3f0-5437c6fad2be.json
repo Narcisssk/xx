@@ -13,7 +13,7 @@
     "reference_pdf": [],
     "conference": [],
     "reasoning_steps": [
-        "First, find the authors’ description of their contributions.",
+        "First, find the authors\u2019 description of their contributions.",
         "Then, identify the downstream tasks they experimented on and the improvement of their proposed method compared to the best existing methods."
     ],
     "evaluator": {
@@ -31,5 +31,6 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "liudingye"
+    "annotator": "liudingye",
+    "status": "failure"
 }

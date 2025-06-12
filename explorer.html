@@ -105,6 +105,42 @@
             max-height: 180px;
             overflow: auto;
         }
+
+        .tag-container {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .tag-group {
+            margin-bottom: 15px;
+        }
+        .tag-group-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .tag-button {
+            margin: 2px;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            background: #f5f5f5;
+            cursor: pointer;
+        }
+        .tag-button.selected {
+            background: #3273dc;
+            color: white;
+        }
+        .trajectory-step {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        .step-number {
+            font-weight: bold;
+            color: #3273dc;
+        }
     </style>
 </head>
 
@@ -250,6 +286,202 @@
                         }
                     });
                 });
+            });
+        });
+    </script>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title">NeuSym-RAG Task Explorer</h1>
+            
+            <!-- Filter Section -->
+            <div class="box">
+                <h2 class="subtitle">Filter Tasks</h2>
+                
+                <!-- Task Type -->
+                <div class="tag-group">
+                    <div class="tag-group-title">Task Type:</div>
+                    <div class="buttons">
+                        <button class="button tag-button" data-type="task" data-value="single">Single</button>
+                        <button class="button tag-button" data-type="task" data-value="multiple">Multiple</button>
+                        <button class="button tag-button" data-type="task" data-value="retrieval">Retrieval</button>
+                    </div>
+                </div>
+
+                <!-- Content Type -->
+                <div class="tag-group">
+                    <div class="tag-group-title">Content Type:</div>
+                    <div class="buttons">
+                        <button class="button tag-button" data-type="content" data-value="text">Text</button>
+                        <button class="button tag-button" data-type="content" data-value="table">Table</button>
+                        <button class="button tag-button" data-type="content" data-value="image">Image</button>
+                        <button class="button tag-button" data-type="content" data-value="formula">Formula</button>
+                        <button class="button tag-button" data-type="content" data-value="metadata">Metadata</button>
+                    </div>
+                </div>
+
+                <!-- Question Type -->
+                <div class="tag-group">
+                    <div class="tag-group-title">Question Type:</div>
+                    <div class="buttons">
+                        <button class="button tag-button" data-type="question" data-value="subjective">Subjective</button>
+                        <button class="button tag-button" data-type="question" data-value="objective">Objective</button>
+                    </div>
+                </div>
+
+                <button id="filterButton" class="button is-primary">Filter Tasks</button>
+                <button id="randomButton" class="button is-info">Show Random Task</button>
+            </div>
+
+            <!-- Results Section -->
+            <div class="box" id="resultsSection" style="display: none;">
+                <h2 class="subtitle">Task Details</h2>
+                <div class="content">
+                    <p><strong>Task ID:</strong> <span id="taskId"></span></p>
+                    <p><strong>Status:</strong> <span id="taskStatus"></span></p>
+                    <p><strong>Tags:</strong> <span id="taskTags"></span></p>
+                    
+                    <div class="highlight-quote">
+                        <p><strong>Question:</strong></p>
+                        <p id="taskQuestion"></p>
+                    </div>
+
+                    <div class="highlight-quote">
+                        <p><strong>Trajectory:</strong></p>
+                        <div id="taskTrajectory"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let allTasks = [];
+        let selectedFilters = {
+            task: new Set(),
+            content: new Set(),
+            question: new Set()
+        };
+
+        // Load all tasks
+        async function loadTasks() {
+            try {
+                // First get the list of all task IDs
+                const response = await fetch('./static/data/task_viewer/questions/task_ids.json');
+                const taskIds = await response.json();
+                
+                // Then load each task's data
+                const taskPromises = taskIds.map(async (taskId) => {
+                    const taskResponse = await fetch(`./static/data/task_viewer/questions/${taskId}.json`);
+                    return taskResponse.json();
+                });
+                
+                allTasks = await Promise.all(taskPromises);
+            } catch (error) {
+                console.error('Error loading tasks:', error);
+            }
+        }
+
+        // Initialize tag buttons
+        function initializeTagButtons() {
+            document.querySelectorAll('.tag-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const type = button.dataset.type;
+                    const value = button.dataset.value;
+                    
+                    if (button.classList.contains('selected')) {
+                        button.classList.remove('selected');
+                        selectedFilters[type].delete(value);
+                    } else {
+                        button.classList.add('selected');
+                        selectedFilters[type].add(value);
+                    }
+                });
+            });
+        }
+
+        // Filter tasks based on selected tags
+        function filterTasks() {
+            return allTasks.filter(task => {
+                const taskTags = new Set(task.tags);
+                
+                // Check task type
+                if (selectedFilters.task.size > 0) {
+                    const hasTaskType = Array.from(selectedFilters.task).some(type => taskTags.has(type));
+                    if (!hasTaskType) return false;
+                }
+
+                // Check content type
+                if (selectedFilters.content.size > 0) {
+                    const hasContentType = Array.from(selectedFilters.content).some(type => taskTags.has(type));
+                    if (!hasContentType) return false;
+                }
+
+                // Check question type
+                if (selectedFilters.question.size > 0) {
+                    const hasQuestionType = Array.from(selectedFilters.question).some(type => taskTags.has(type));
+                    if (!hasQuestionType) return false;
+                }
+
+                return true;
+            });
+        }
+
+        // Load and display trajectory
+        async function loadTrajectory(taskId) {
+            try {
+                const response = await fetch(`./static/data/task_viewer/trajectory/${taskId}.jsonl`);
+                const text = await response.text();
+                const steps = text.trim().split('\n').map(line => JSON.parse(line));
+                
+                const trajectoryDiv = document.getElementById('taskTrajectory');
+                trajectoryDiv.innerHTML = steps.map((step, index) => `
+                    <div class="trajectory-step">
+                        <span class="step-number">Step ${index + 1}:</span>
+                        <pre><code class="language-json">${JSON.stringify(step, null, 2)}</code></pre>
+                    </div>
+                `).join('');
+                
+                // Apply syntax highlighting
+                Prism.highlightAll();
+            } catch (error) {
+                console.error('Error loading trajectory:', error);
+                document.getElementById('taskTrajectory').innerHTML = 'No trajectory data available';
+            }
+        }
+
+        // Display task details
+        async function displayTask(task) {
+            document.getElementById('taskId').textContent = task.uuid;
+            document.getElementById('taskStatus').textContent = task.status;
+            document.getElementById('taskTags').textContent = task.tags.join(', ');
+            document.getElementById('taskQuestion').textContent = task.question;
+            
+            await loadTrajectory(task.uuid);
+            
+            document.getElementById('resultsSection').style.display = 'block';
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadTasks();
+            initializeTagButtons();
+
+            // Filter button click handler
+            document.getElementById('filterButton').addEventListener('click', () => {
+                const filteredTasks = filterTasks();
+                if (filteredTasks.length > 0) {
+                    const randomTask = filteredTasks[Math.floor(Math.random() * filteredTasks.length)];
+                    displayTask(randomTask);
+                } else {
+                    alert('No tasks match the selected filters');
+                }
+            });
+
+            // Random button click handler
+            document.getElementById('randomButton').addEventListener('click', () => {
+                const randomTask = allTasks[Math.floor(Math.random() * allTasks.length)];
+                displayTask(randomTask);
             });
         });
     </script>

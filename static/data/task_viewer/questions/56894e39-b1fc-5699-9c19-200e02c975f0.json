@@ -1,6 +1,6 @@
 {
     "uuid": "56894e39-b1fc-5699-9c19-200e02c975f0",
-    "question": "In the paper \"Are Emergent Abilities in Large Language Models just In-Context Learning?\" (anchor_pdf), token edit distance is introduced as an additional evaluation metric, what’s the purpose of doing so?",
+    "question": "In the paper \"Are Emergent Abilities in Large Language Models just In-Context Learning?\" (anchor_pdf), token edit distance is introduced as an additional evaluation metric, what\u2019s the purpose of doing so?",
     "answer_format": "Your answer should be a string",
     "tags": [
         "multiple",
@@ -24,12 +24,13 @@
     "evaluator": {
         "eval_func": "eval_reference_answer_with_llm",
         "eval_kwargs": {
-            "question": "In the paper \"Are Emergent Abilities in Large Language Models just In-Context Learning?\" (anchor_pdf), token edit distance is introduced as an additional evaluation metric, what’s the purpose of doing so?",
+            "question": "In the paper \"Are Emergent Abilities in Large Language Models just In-Context Learning?\" (anchor_pdf), token edit distance is introduced as an additional evaluation metric, what\u2019s the purpose of doing so?",
             "reference_answer": " To align to the findings in the paper \"Are Emergent Abilities of Large Language Models a Mirage?\" that unproper metrics can mislead to the emergent abilities phenomenon."
         }
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "luoyijie"
+    "annotator": "luoyijie",
+    "status": "failure"
 }

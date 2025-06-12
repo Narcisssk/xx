@@ -1,7 +1,7 @@
 {
     "uuid": "08f5327e-584e-5c34-a092-a5dec11041dc",
-    "question": "What do γt and σ mean in the formula(2) in RulE paper?",
-    "answer_format": "Your answer should be a python list of two strings, explaining the meaning of γt and σ respectively",
+    "question": "What do \u03b3t and \u03c3 mean in the formula(2) in RulE paper?",
+    "answer_format": "Your answer should be a python list of two strings, explaining the meaning of \u03b3t and \u03c3 respectively",
     "tags": [
         "multiple",
         "text",
@@ -20,14 +20,15 @@
         "eval_func": "eval_scoring_points_with_llm",
         "eval_kwargs": {
             "scoring_points": [
-                "γt is a fixed triplet margin.",
-                "σ is the sigmoid function."
+                "\u03b3t is a fixed triplet margin.",
+                "\u03c3 is the sigmoid function."
             ],
-            "question": "What do γt and σ mean in the formula(2) in RulE paper?"
+            "question": "What do \u03b3t and \u03c3 mean in the formula(2) in RulE paper?"
         }
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "wangye"
+    "annotator": "wangye",
+    "status": "failure"
 }

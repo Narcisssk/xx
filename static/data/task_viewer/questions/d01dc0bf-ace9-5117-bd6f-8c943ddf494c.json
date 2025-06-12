@@ -39,5 +39,6 @@
         "bdd90971-ecf1-5dcc-87cf-3b4a75ad4b01",
         "3c73cc66-fb71-5c29-95c7-b2c887290e79"
     ],
-    "reference_pdf": []
+    "reference_pdf": [],
+    "status": "failure"
 }

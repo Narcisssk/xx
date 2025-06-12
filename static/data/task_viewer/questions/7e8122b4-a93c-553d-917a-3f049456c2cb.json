@@ -14,12 +14,15 @@
     "conference": [],
     "evaluator": {
         "eval_func": "eval_float_exact_match",
-        "eval_kwargs": {"gold": 251.2,
-              "decimal": 1,
-              "tolerance": 0.1}
+        "eval_kwargs": {
+            "gold": 251.2,
+            "decimal": 1,
+            "tolerance": 0.1
+        }
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "zhuzichen"
+    "annotator": "zhuzichen",
+    "status": "failure"
 }

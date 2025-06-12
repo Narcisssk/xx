@@ -21,5 +21,6 @@
         }
     },
     "state": {},
-    "annotator": "litsearch_manual"
+    "annotator": "litsearch_manual",
+    "status": "failure"
 }

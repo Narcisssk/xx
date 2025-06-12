@@ -13,7 +13,7 @@
     "reference_pdf": [],
     "conference": [],
     "reasoning_steps": [
-        "First, locate the section in the paper that describes the model’s perception of ambiguity.",
+        "First, locate the section in the paper that describes the model\u2019s perception of ambiguity.",
         "Second, read it, and summarize the formulas and ideas presented by the author."
     ],
     "evaluator": {
@@ -26,5 +26,6 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "liudingye"
+    "annotator": "liudingye",
+    "status": "failure"
 }

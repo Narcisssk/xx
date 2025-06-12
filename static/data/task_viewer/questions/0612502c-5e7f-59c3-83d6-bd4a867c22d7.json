@@ -31,7 +31,7 @@
             ],
             "eval_kwargs_list": [
                 {
-                    "reference_answer": "The CrowSPairs score represents the percentage of instance pairs in which the stereotypical sentence has lower perplexity than the anti-stereotypical sentence in the total number of instance pairs. Since it is not easy to understand that the scores closer to 50 indicate less bias, we instead utilized the Bias score, which is defined as equal to |CrowSPairs score −50|, to replace the CrowSPairs score. A lower score represents lower bias.",
+                    "reference_answer": "The CrowSPairs score represents the percentage of instance pairs in which the stereotypical sentence has lower perplexity than the anti-stereotypical sentence in the total number of instance pairs. Since it is not easy to understand that the scores closer to 50 indicate less bias, we instead utilized the Bias score, which is defined as equal to |CrowSPairs score \u221250|, to replace the CrowSPairs score. A lower score represents lower bias.",
                     "question": "Why the anchor PDF proposes a new Bias Score?"
                 },
                 {
@@ -44,5 +44,6 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "huangtiancheng"
+    "annotator": "huangtiancheng",
+    "status": "failure"
 }

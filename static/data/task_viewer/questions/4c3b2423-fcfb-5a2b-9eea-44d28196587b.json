@@ -17,12 +17,13 @@
     "evaluator": {
         "eval_func": "eval_reference_answer_with_llm",
         "eval_kwargs": {
-            "reference_answer": "We train Codex using the same learning rate as the corresponding GPT model, with a 175 step linear warmup and cosine learning rate decay. We train for a total of 100 billion tokens, using the Adam optimizer with $\\beta_1 = 0.9$, $\\beta_2 = 0.95$, $\\epsilon = 10^{−8}$, and a weight decay coefficient of 0.1.",
+            "reference_answer": "We train Codex using the same learning rate as the corresponding GPT model, with a 175 step linear warmup and cosine learning rate decay. We train for a total of 100 billion tokens, using the Adam optimizer with $\\beta_1 = 0.9$, $\\beta_2 = 0.95$, $\\epsilon = 10^{\u22128}$, and a weight decay coefficient of 0.1.",
             "question": "What're the training hyperparameters of CodeX?"
         }
     },
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "huangtiancheng"
+    "annotator": "huangtiancheng",
+    "status": "failure"
 }

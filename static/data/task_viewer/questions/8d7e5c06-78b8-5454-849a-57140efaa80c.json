@@ -38,5 +38,6 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "huangtiancheng"
+    "annotator": "huangtiancheng",
+    "status": "failure"
 }

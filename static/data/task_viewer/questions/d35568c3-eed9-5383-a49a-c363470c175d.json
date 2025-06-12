@@ -37,5 +37,6 @@
     "reference_pdf": [
         "ecba768d-4b87-58ca-968b-2a375793a798",
         "b846c66a-a177-5119-af8d-ec4757d6a06c"
-    ]
+    ],
+    "status": "failure"
 }

@@ -17,7 +17,7 @@
         "eval_func": "eval_reference_answer_and_scoring_points_with_llm",
         "eval_kwargs": {
             "question": "What does the special symbol $\\overline{\\mathcal{V}}$ mean in the proposed CFIC decoding strategy?",
-            "reference_answer": "The special symbol $\\overline{\\mathcal{V}}$ denotes a token set containing each sentence’s prefix, and the sentence prefix serves as an position identifier to facilitate the identification of the starting point of a supporting passage within the source context.",
+            "reference_answer": "The special symbol $\\overline{\\mathcal{V}}$ denotes a token set containing each sentence\u2019s prefix, and the sentence prefix serves as an position identifier to facilitate the identification of the starting point of a supporting passage within the source context.",
             "scoring_points": [
                 "The answer must mention the restricted token set composed of sentence prefixes instead of the whole vocabulary.",
                 "The answer should also explain what the sentence prefixes come from, that is they are derived from the source context."
@@ -27,5 +27,6 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "caoruisheng"
+    "annotator": "caoruisheng",
+    "status": "failure"
 }

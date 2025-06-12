@@ -1,6 +1,6 @@
 {
     "uuid": "211cf320-483f-5ba7-bb4b-4b6935a3f6f2",
-    "question":  "What is the same core conclusion \"Which Layer is Learning Faster? A Systematic Exploration of Layer-wise Convergence Rate for Deep Neural Networks\" and \"On the Spectral Bias of Neural Networks\" draw?",
+    "question": "What is the same core conclusion \"Which Layer is Learning Faster? A Systematic Exploration of Layer-wise Convergence Rate for Deep Neural Networks\" and \"On the Spectral Bias of Neural Networks\" draw?",
     "answer_format": "Your answer should be a string",
     "tags": [
         "multiple",
@@ -23,5 +23,6 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "liudingye"
+    "annotator": "liudingye",
+    "status": "failure"
 }

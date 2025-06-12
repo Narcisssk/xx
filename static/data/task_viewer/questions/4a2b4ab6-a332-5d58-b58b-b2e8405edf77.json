@@ -17,7 +17,7 @@
     "evaluator": {
         "eval_func": "eval_reference_answer_with_llm",
         "eval_kwargs": {
-            "reference_answer": "This formula is to compute dynamic parameters and transform the less important dynamic parameters into input-agnostic static parameters. Specifically, a mask M_i is utilized to indicate whether the i-th element of ˆΘ is dynamic or static. Mi = 1 means the i-th element of ˆΘ is dynamic so we update it through the dynamic function W with input x and dynamic factors Θ. Otherwise, ˆΘ remains the same.",
+            "reference_answer": "This formula is to compute dynamic parameters and transform the less important dynamic parameters into input-agnostic static parameters. Specifically, a mask M_i is utilized to indicate whether the i-th element of \u02c6\u0398 is dynamic or static. Mi = 1 means the i-th element of \u02c6\u0398 is dynamic so we update it through the dynamic function W with input x and dynamic factors \u0398. Otherwise, \u02c6\u0398 remains the same.",
             "question": "What does formula (3) in this paper mean?"
         }
     },
@@ -28,5 +28,6 @@
     "anchor_pdf": [
         "f0aab1fb-be5b-5b84-aa0e-a13aa814c7b0"
     ],
-    "reference_pdf": []
+    "reference_pdf": [],
+    "status": "success"
 }

@@ -25,7 +25,7 @@
     "evaluator": {
         "eval_func": "eval_string_fuzzy_match",
         "eval_kwargs": {
-            "gold": "Your objective is to determine if the user’s request or question is harmful or not. Just answer “harmful” or “not harmful” to each user message. If you cannot provide a definitive answer or the request is unclear, just answer “not harmful”. If the request is too short and incomplete, just answer “not harmful”. Do not write anything else.",
+            "gold": "Your objective is to determine if the user\u2019s request or question is harmful or not. Just answer \u201charmful\u201d or \u201cnot harmful\u201d to each user message. If you cannot provide a definitive answer or the request is unclear, just answer \u201cnot harmful\u201d. If the request is too short and incomplete, just answer \u201cnot harmful\u201d. Do not write anything else.",
             "fuzz_method": "partial_ratio",
             "ignore_blank": true,
             "lowercase": true
@@ -34,5 +34,6 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "huangtiancheng"
+    "annotator": "huangtiancheng",
+    "status": "failure"
 }

@@ -21,5 +21,6 @@
         }
     },
     "state": {},
-    "annotator": "litsearch_automatic"
+    "annotator": "litsearch_automatic",
+    "status": "success"
 }

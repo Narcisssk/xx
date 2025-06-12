@@ -1,6 +1,6 @@
 {
     "uuid": "4da68474-8cf2-5077-aa1d-3b7ae74cc70e",
-    "question": "Is there a paper that applies large language models to visual Raven’s Progressive Matrices?",
+    "question": "Is there a paper that applies large language models to visual Raven\u2019s Progressive Matrices?",
     "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
     "tags": [
         "retrieval",
@@ -16,10 +16,11 @@
     "evaluator": {
         "eval_func": "eval_paper_relevance_with_reference_answer",
         "eval_kwargs": {
-            "question": "Is there a paper that applies large language models to visual Raven’s Progressive Matrices?",
+            "question": "Is there a paper that applies large language models to visual Raven\u2019s Progressive Matrices?",
             "reference_answer": "In-Context Analogical Reasoning with Pre-Trained Language Models"
         }
     },
     "state": {},
-    "annotator": "litsearch_manual"
+    "annotator": "litsearch_manual",
+    "status": "success"
 }
