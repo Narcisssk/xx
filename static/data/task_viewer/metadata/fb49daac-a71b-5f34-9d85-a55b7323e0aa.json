@@ -1,0 +1,28 @@
+{
+    "uuid": "fb49daac-a71b-5f34-9d85-a55b7323e0aa",
+    "title": "Prompttts: Controllable Text-To-Speech With Text Descriptions",
+    "conference_full": "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)",
+    "conference": "icassp",
+    "year": 2023,
+    "volume": "ICASSP session SLT: Spoken Language Technology",
+    "bibtex": "@inproceedings{DBLP:conf/icassp/GuoLWZT23,\n  author       = {Zhifang Guo and\n                  Yichong Leng and\n                  Yihan Wu and\n                  Sheng Zhao and\n                  Xu Tan},\n  title        = {Prompttts: Controllable Text-To-Speech With Text Descriptions},\n  booktitle    = {{IEEE} International Conference on Acoustics, Speech and Signal Processing\n                  {ICASSP} 2023, Rhodes Island, Greece, June 4-10, 2023},\n  pages        = {1--5},\n  publisher    = {{IEEE}},\n  year         = {2023},\n  url          = {https://doi.org/10.1109/ICASSP49357.2023.10096285},\n  doi          = {10.1109/ICASSP49357.2023.10096285},\n  timestamp    = {Sun, 05 Nov 2023 16:51:21 +0100},\n  biburl       = {https://dblp.org/rec/conf/icassp/GuoLWZT23.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+    "authors": [
+        "Zhifang Guo",
+        "Yichong Leng",
+        "Yihan Wu",
+        "Sheng Zhao",
+        "Xu Tan"
+    ],
+    "pdf_url": "https://doi.org/10.1109/ICASSP49357.2023.10096285",
+    "pdf_path": "data/dataset/airqa/papers/icassp2023/fb49daac-a71b-5f34-9d85-a55b7323e0aa.pdf",
+    "num_pages": 5,
+    "abstract": "Using a text description as prompt to guide the generation of text or images (e.g., GPT-3 or DALLE-2) has drawn wide attention recently. Beyond text and image generation, in this work, we explore the possibility of utilizing text descriptions to guide speech synthesis. Thus, we develop a text-to-speech (TTS) system (dubbed as PromptTTS) that takes a prompt with both style and content descriptions as input to synthesize the corresponding speech. Specifically, PromptTTS consists of a style encoder and a content encoder to extract the corresponding representations from the prompt, and a speech decoder to synthesize speech according to the extracted style and content representations. Compared with previous works in controllable TTS that require users to have acoustic knowledge to understand style factors such as prosody and pitch, PromptTTS is more user-friendly since text descriptions are a more natural way to express speech style (e.g., “A lady whispers to her friend slowly”). Given that there is no TTS dataset with prompts, to benchmark the task of PromptTTS, we construct and release a dataset containing prompts with style and content information and the corresponding speech. Experiments show that PromptTTS can generate speech with precise style control and high speech quality. Audio samples and our dataset are publicly available1.",
+    "tldr": "PromptTTS enables speech synthesis guided by natural text descriptions for style control.",
+    "tags": [
+        "Text-to-Speech",
+        "Speech Synthesis",
+        "Controllable TTS",
+        "Style Encoding",
+        "Dataset Creation"
+    ]
+}

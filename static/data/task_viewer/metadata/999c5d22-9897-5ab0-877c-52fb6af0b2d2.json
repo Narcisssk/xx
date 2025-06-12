@@ -1,0 +1,23 @@
+{
+    "uuid": "999c5d22-9897-5ab0-877c-52fb6af0b2d2",
+    "title": "PromptIR: Prompting for All-in-One Image Restoration",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 poster",
+    "bibtex": "@inproceedings{\npotlapalli2023promptir,\ntitle={Prompt{IR}: Prompting for All-in-One Image Restoration},\nauthor={Vaishnav Potlapalli and Syed Waqas Zamir and Salman Khan and Fahad Khan},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=KAlSIL4tXU}\n}",
+    "authors": [
+        "Vaishnav Potlapalli",
+        "Syed Waqas Zamir",
+        "Salman Khan",
+        "Fahad Khan"
+    ],
+    "pdf_url": "https://openreview.net/pdf/cbe1dce66d50ff3df554eb2f0f78eaab057b2d80.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/999c5d22-9897-5ab0-877c-52fb6af0b2d2.pdf",
+    "num_pages": 19,
+    "abstract": "Image restoration involves recovering a high-quality clean image from its degraded version. Deep learning-based methods have significantly improved image restoration performance, however, they have limited generalization ability to different degradation types and levels. This restricts their real-world application since it requires training individual models for each specific degradation and knowing the input degradation type to apply the relevant model. We present a prompt-based learning approach, PromptIR, for All-In-One image restoration that can effectively restore images from various types and levels of degradation. In particular, our method uses prompts to encode degradation-specific information, which is then used to dynamically guide the restoration network. This allows our method to generalize to different degradation types and levels, while still achieving state-of-the-art results on image denoising, deraining, and dehazing.  Overall, PromptIR offers a generic and efficient plugin module with few lightweight prompts that can be used to restore images of various types and levels of degradation with no prior information on the corruptions present in the image. Our code and pre-trained models are available here: https://github.com/va1shn9v/PromptIR",
+    "tldr": "PromptIR uses prompts for effective, versatile image restoration from various degradations.",
+    "tags": [
+        "Image Restoration"
+    ]
+}

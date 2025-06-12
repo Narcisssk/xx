@@ -1,0 +1,31 @@
+{
+    "uuid": "4261dbce-3665-5261-9125-09c96905ca64",
+    "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 oral",
+    "bibtex": "@inproceedings{\nschick2023toolformer,\ntitle={Toolformer: Language Models Can Teach Themselves to Use Tools},\nauthor={Timo Schick and Jane Dwivedi-Yu and Roberto Dessi and Roberta Raileanu and Maria Lomeli and Eric Hambro and Luke Zettlemoyer and Nicola Cancedda and Thomas Scialom},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=Yacmpz84TH}\n}",
+    "authors": [
+        "Timo Schick",
+        "Jane Dwivedi-Yu",
+        "Roberto Dessi",
+        "Roberta Raileanu",
+        "Maria Lomeli",
+        "Eric Hambro",
+        "Luke Zettlemoyer",
+        "Nicola Cancedda",
+        "Thomas Scialom"
+    ],
+    "pdf_url": "https://openreview.net/pdf/b2e1ecf89cf4267621b45a071bc6b838f88e3884.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/4261dbce-3665-5261-9125-09c96905ca64.pdf",
+    "num_pages": 13,
+    "abstract": "Language models (LMs) exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale. They also, paradoxically, struggle with basic functionality, such as arithmetic or factual lookup, where much simpler and smaller specialized models excel. In this paper, we show that LMs can teach themselves to *use external tools* via simple APIs and achieve the best of both worlds. We introduce *Toolformer*, a model trained to decide which APIs to call, when to call them, what arguments to pass, and how to best incorporate the results into future token prediction. This is done in a self-supervised way, requiring nothing more than a handful of demonstrations for each API. We incorporate a range of tools, including a calculator, a Q&A system, a search engine, a translation system, and a calendar. Toolformer achieves substantially improved zero-shot performance across a variety of downstream tasks, often competitive with much larger models, without sacrificing its core language modeling abilities.",
+    "tldr": "We introduce Toolformer, a language model trained in a self-supervised way to know when and how to use external tools, achieving substantially improved zero-shot performance across a variety of downstream tasks.",
+    "tags": [
+        "Language Models",
+        "Zero-Shot Learning",
+        "Tool Use",
+        "APIs"
+    ]
+}

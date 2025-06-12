@@ -1,0 +1,30 @@
+{
+    "uuid": "2c626d88-ca60-501d-9beb-763ddf799a85",
+    "title": "Voyager: An Open-Ended Embodied Agent with Large Language Models",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "IMOL@NeurIPS2023 Oral",
+    "bibtex": "@inproceedings{\nwang2023voyager,\ntitle={Voyager: An Open-Ended Embodied Agent with Large Language Models},\nauthor={Guanzhi Wang and Yuqi Xie and Yunfan Jiang and Ajay Mandlekar and Chaowei Xiao and Yuke Zhu and Linxi Fan and Anima Anandkumar},\nbooktitle={Intrinsically-Motivated and Open-Ended Learning Workshop @NeurIPS2023},\nyear={2023},\nurl={https://openreview.net/forum?id=nfx5IutEed}\n}",
+    "authors": [
+        "Guanzhi Wang",
+        "Yuqi Xie",
+        "Yunfan Jiang",
+        "Ajay Mandlekar",
+        "Chaowei Xiao",
+        "Yuke Zhu",
+        "Linxi Fan",
+        "Anima Anandkumar"
+    ],
+    "pdf_url": "https://openreview.net/pdf/4506d5f949720799c9f5037a2c4197bcb4519bc0.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/2c626d88-ca60-501d-9beb-763ddf799a85.pdf",
+    "num_pages": 43,
+    "abstract": "We introduce Voyager, the first LLM-powered embodied lifelong learning agent in an open-ended world that continuously explores, acquires diverse skills, and makes novel discoveries without human intervention in Minecraft. Voyager consists of three key components: 1) an automatic curriculum that maximizes exploration, 2) an ever-growing skill library of executable code for storing and retrieving complex behaviors, and 3) a new iterative prompting mechanism that incorporates environment feedback, execution errors, and self-verification for program improvement. Voyager interacts with GPT-4 via blackbox queries, which bypasses the need for model parameter fine-tuning. The skills developed by Voyager are temporally extended, interpretable, and compositional, which compounds the agent’s capability rapidly and alleviates catastrophic forgetting. Empirically, Voyager demonstrates strong in-context lifelong learning capabilities. It outperforms prior SOTA by obtaining 3.1x more unique items, unlocking tech tree milestones up to 15.3x faster, and traveling 2.3x longer distances. Voyager is able to utilize the learned skill library in a new Minecraft world to solve novel tasks from scratch, while other techniques struggle to generalize.",
+    "tldr": "Voyager is the first LLM-powered embodied lifelong learning agent in an open-ended world that continuously explores, acquires diverse skills, and makes novel discoveries without human intervention in Minecraft.",
+    "tags": [
+        "Open-Ended Learning",
+        "Lifelong Learning",
+        "Embodied Agents",
+        "Large Language Models"
+    ]
+}

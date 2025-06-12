@@ -377,6 +377,11 @@
                         <div id="anchorPdfList"></div>
                     </div>
 
+                    <div class="highlight-quote" id="referencePdfSection" style="display: none;">
+                        <p class="has-text-weight-bold">Reference PDFs:</p>
+                        <div id="referencePdfList"></div>
+                    </div>
+
                     <div class="highlight-quote" id="conferenceSection" style="display: none;">
                         <p class="has-text-weight-bold">Conference:</p>
                         <p id="conferenceInfo"></p>
@@ -586,6 +591,21 @@
                 anchorPdfList.innerHTML = pdfLinks.join('<br>');
             } else {
                 anchorPdfSection.style.display = 'none';
+            }
+
+            // Handle reference PDFs
+            const referencePdfSection = document.getElementById('referencePdfSection');
+            const referencePdfList = document.getElementById('referencePdfList');
+            if (task.reference_pdf && Array.isArray(task.reference_pdf) && task.reference_pdf.length > 0) {
+                referencePdfSection.style.display = 'block';
+                const pdfPromises = task.reference_pdf.map(async (pdfName) => {
+                    const pdfUrl = await loadPdfMetadata(pdfName);
+                    return pdfUrl ? `<a href="${pdfUrl}" target="_blank">${pdfName}</a>` : pdfName;
+                });
+                const pdfLinks = await Promise.all(pdfPromises);
+                referencePdfList.innerHTML = pdfLinks.join('<br>');
+            } else {
+                referencePdfSection.style.display = 'none';
             }
 
             // Handle conference information
