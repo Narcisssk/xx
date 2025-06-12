@@ -415,12 +415,31 @@
                     const type = button.dataset.type;
                     const value = button.dataset.value;
                     
-                    if (button.classList.contains('selected')) {
-                        button.classList.remove('selected');
-                        selectedFilters[type].delete(value);
+                    // Handle different selection rules for different tag types
+                    if (type === 'task' || type === 'question') {
+                        // For task type and question type, only one can be selected
+                        if (button.classList.contains('selected')) {
+                            button.classList.remove('selected');
+                            selectedFilters[type].delete(value);
+                        } else {
+                            // Deselect other buttons in the same group
+                            document.querySelectorAll(`.tag-button[data-type="${type}"]`).forEach(btn => {
+                                btn.classList.remove('selected');
+                                selectedFilters[type].delete(btn.dataset.value);
+                            });
+                            // Select the clicked button
+                            button.classList.add('selected');
+                            selectedFilters[type].add(value);
+                        }
                     } else {
-                        button.classList.add('selected');
-                        selectedFilters[type].add(value);
+                        // For content type, multiple selections are allowed
+                        if (button.classList.contains('selected')) {
+                            button.classList.remove('selected');
+                            selectedFilters[type].delete(value);
+                        } else {
+                            button.classList.add('selected');
+                            selectedFilters[type].add(value);
+                        }
                     }
                 });
             });
@@ -431,19 +450,19 @@
             return allTasks.filter(task => {
                 const taskTags = new Set(task.tags);
                 
-                // Check task type
+                // Check task type (must match exactly)
                 if (selectedFilters.task.size > 0) {
                     const hasTaskType = Array.from(selectedFilters.task).some(type => taskTags.has(type));
                     if (!hasTaskType) return false;
                 }
 
-                // Check content type
+                // Check content type (must match all selected)
                 if (selectedFilters.content.size > 0) {
-                    const hasContentType = Array.from(selectedFilters.content).some(type => taskTags.has(type));
-                    if (!hasContentType) return false;
+                    const hasAllContentTypes = Array.from(selectedFilters.content).every(type => taskTags.has(type));
+                    if (!hasAllContentTypes) return false;
                 }
 
-                // Check question type
+                // Check question type (must match exactly)
                 if (selectedFilters.question.size > 0) {
                     const hasQuestionType = Array.from(selectedFilters.question).some(type => taskTags.has(type));
                     if (!hasQuestionType) return false;
@@ -538,7 +557,25 @@
                     const randomTask = filteredTasks[Math.floor(Math.random() * filteredTasks.length)];
                     displayTask(randomTask);
                 } else {
-                    alert('No tasks match the selected filters');
+                    // Show a more informative message about why no tasks were found
+                    const selectedTypes = {
+                        task: Array.from(selectedFilters.task),
+                        content: Array.from(selectedFilters.content),
+                        question: Array.from(selectedFilters.question)
+                    };
+                    
+                    let message = 'No tasks match the selected filters:\n';
+                    if (selectedTypes.task.length > 0) {
+                        message += `\nTask Type: ${selectedTypes.task.join(', ')}`;
+                    }
+                    if (selectedTypes.content.length > 0) {
+                        message += `\nContent Type: ${selectedTypes.content.join(', ')}`;
+                    }
+                    if (selectedTypes.question.length > 0) {
+                        message += `\nQuestion Type: ${selectedTypes.question.join(', ')}`;
+                    }
+                    
+                    alert(message);
                 }
             });
 
