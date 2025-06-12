@@ -1,0 +1,23 @@
+{
+    "uuid": "f31f02ac-25e9-5aba-a7f5-a0c7e6b52022",
+    "title": "Set-based Neural Network Encoding Without Weight Tying",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nandreis2024setbased,\ntitle={Set-based Neural Network Encoding Without Weight Tying},\nauthor={Bruno Andreis and Bedionita Soro and Philip Torr and Sung Ju Hwang},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=i3me9bCSCy}\n}",
+    "authors": [
+        "Bruno Andreis",
+        "Bedionita Soro",
+        "Philip Torr",
+        "Sung Ju Hwang"
+    ],
+    "pdf_url": "https://openreview.net/pdf/33f91158a52165aa47bb815d1eace1c19419ffbb.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/f31f02ac-25e9-5aba-a7f5-a0c7e6b52022.pdf",
+    "num_pages": 29,
+    "abstract": "We propose a neural network weight encoding method for network property prediction that utilizes set-to-set and set-to-vector functions\nto efficiently encode neural network parameters. Our approach is capable of encoding neural networks in a model zoo of mixed architecture and different parameter sizes as opposed to previous approaches that require custom encoding models for different architectures. Furthermore, our \\textbf{S}et-based \\textbf{N}eural network \\textbf{E}ncoder (SNE) takes into consideration the hierarchical computational structure of neural networks. To respect symmetries inherent in network weight space, we utilize Logit Invariance to learn the required minimal invariance properties. Additionally, we introduce a \\textit{pad-chunk-encode} pipeline to efficiently encode neural network layers that is adjustable to computational and memory constraints. We also introduce two new tasks for neural network property prediction: cross-dataset and cross-architecture. In cross-dataset property prediction, we evaluate how well property predictors generalize across model zoos trained on different datasets but of the same architecture. In cross-architecture property prediction, we evaluate how well property predictors transfer to model zoos of different architecture not seen during training. We show that SNE outperforms the relevant baselines on standard benchmarks.",
+    "tldr": "New method for encoding neural networks improves property prediction across architectures.",
+    "tags": [
+        "Neural Network Encoding"
+    ]
+}

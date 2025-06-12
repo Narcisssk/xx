@@ -1,0 +1,23 @@
+{
+    "uuid": "8b995434-305f-5516-ab80-163d647a30ce",
+    "title": "Training Mixture-of-Experts: A Focus on Expert-Token Matching",
+    "conference_full": "International Conference on Learning Representations",
+    "conference": "ICLR",
+    "year": 2024,
+    "volume": "Tiny Papers @ ICLR 2024 Notable",
+    "bibtex": "@inproceedings{\nvesaghati2024training,\ntitle={Training Mixture-of-Experts: A Focus on Expert-Token Matching},\nauthor={Fateme Vesaghati and Masoumeh Zareapoor},\nbooktitle={The Second Tiny Papers Track at ICLR 2024},\nyear={2024},\nurl={https://openreview.net/forum?id=UJgSQjBWZS}\n}",
+    "authors": [
+        "Fateme Vesaghati",
+        "Masoumeh Zareapoor"
+    ],
+    "pdf_url": "https://openreview.net/pdf/c645a6e369684e3b1a8a5bec37615c6a8c9791df.pdf",
+    "pdf_path": "data/dataset/airqa/papers/iclr2024/8b995434-305f-5516-ab80-163d647a30ce.pdf",
+    "num_pages": 6,
+    "abstract": "Recent advancements in sparse Mixture-of-Experts (MoE) models, particularly in the Vision MoE (VMoE) framework, have demonstrated promising results in enhancing vision task performance. However, a key challenge persists in optimally routing tokens (such as image patches) to the right experts, without incurring excessive computational costs. Addressing this, we apply the regularized optimal transport, which relies on the Sinkhorn algorithm to the Vision MoE (VMoE) framework, aiming at improving the token-expert matching process. The resulting model, Sinkhorn-VMoE (SVMoE), represents a meaningful step in optimizing efficiency and effectiveness of sparsely-gated MoE models.",
+    "tldr": "We present an effective recipe for the training of VMoE (a sparse variant of the Vision Transformer), using the Sinkhorn algorithm to enhance the token-expert matching process.",
+    "tags": [
+        "Vision Transformer",
+        "Mixture-of-Experts Models",
+        "Token Routing"
+    ]
+}

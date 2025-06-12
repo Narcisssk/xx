@@ -1,0 +1,26 @@
+{
+    "uuid": "08b7c0d2-b64c-5fb1-8b0c-8326bb3d220b",
+    "title": "M2SUM: Multi-Granularity Scale-Adaptive Video Summarizer towards Informative Context Representation Learning",
+    "conference_full": "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)",
+    "conference": "icassp",
+    "year": 2024,
+    "volume": "ICASSP session IVMSP: Image, Video & Multidimensional Signal Processing",
+    "bibtex": "@inproceedings{DBLP:conf/icassp/ZhangLK24,\n  author       = {Yunzuo Zhang and\n                  Yameng Liu and\n                  Weili Kang},\n  title        = {{M2SUM:} Multi-Granularity Scale-Adaptive Video Summarizer towards\n                  Informative Context Representation Learning},\n  booktitle    = {{IEEE} International Conference on Acoustics, Speech and Signal Processing,\n                  {ICASSP} 2024, Seoul, Republic of Korea, April 14-19, 2024},\n  pages        = {3410--3414},\n  publisher    = {{IEEE}},\n  year         = {2024},\n  url          = {https://doi.org/10.1109/ICASSP48485.2024.10446527},\n  doi          = {10.1109/ICASSP48485.2024.10446527},\n  timestamp    = {Mon, 05 Aug 2024 15:27:25 +0200},\n  biburl       = {https://dblp.org/rec/conf/icassp/ZhangLK24.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+    "authors": [
+        "Yunzuo Zhang",
+        "Yameng Liu",
+        "Weili Kang"
+    ],
+    "pdf_url": "https://doi.org/10.1109/ICASSP48485.2024.10446527",
+    "pdf_path": "data/dataset/airqa/papers/icassp2024/08b7c0d2-b64c-5fb1-8b0c-8326bb3d220b.pdf",
+    "num_pages": 5,
+    "abstract": "Video summarization intends to automatically select meaningful segments from untrimmed videos. Although previous efforts have achieved remarkable progress, they still struggle to robustly aggregate and effectively process multi-granularity contextual information within videos, which hinders understanding towards video content. To address these issues, we propose M2SUM, which is composed of three dominant components including the embedding learning attention (ELA) module, multi-granularity aggregator (MGA), and semantic scale-adaption (SSA) module. ELA dynamically enhances pre-trained visual features by considering the similarity relationship across frame-level and video-level embeddings. MGA incorporates self-attention and temporal convolution into a unified learnable module, robustly learning long-range and short-range multi-granularity temporal dependencies. SSA is exploited to adaptively perform representation fusion after deep interaction across multi-granularity temporal dependencies. According to the fused representations, M2SUM predicts importance scores and generates video summaries. Extensive experiments on standard datasets have proved the effectiveness and superiority of our method in F-score and rank-based evaluations.",
+    "tldr": "M2SUM improves video summarization by effectively processing multi-granularity contexts.",
+    "tags": [
+        "video summarization",
+        "multi-granularity",
+        "contextual information",
+        "representation learning",
+        "attention mechanisms"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "93d4e1d2-32ff-5758-87d6-64606cf0e46a",
+    "title": "Casting hybrid digital-analog training into hierarchical energy-based learning",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "MLNCP Oral",
+    "bibtex": "@inproceedings{\nnest2024casting,\ntitle={Casting hybrid digital-analog training into hierarchical energy-based learning},\nauthor={Timothy Nest and Maxence Ernoult},\nbooktitle={NeurIPS 2024 Workshop Machine Learning with new Compute Paradigms},\nyear={2024},\nurl={https://openreview.net/forum?id=V2hUyxgAIR}\n}",
+    "authors": [
+        "Timothy Nest",
+        "Maxence Ernoult"
+    ],
+    "pdf_url": "https://openreview.net/pdf/4c4fbe2b28349463f9d3f534b63980ec4e62ec37.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/93d4e1d2-32ff-5758-87d6-64606cf0e46a.pdf",
+    "num_pages": 32,
+    "abstract": "Deep learning requires new approaches to combat the rising cost of training large models. The combination of energy-based analog circuits and the Equilibrium Propagation (EP) algorithm offers one compelling alternative to BP for gradient-based optimization of neural nets. In this work, we introduce a hybrid framework comprising feedforward (FF) and energy-based (EB) blocks housed on digital and analog circuits. We derive a novel algorithm to compute gradients end-to-end via BP \\emph{and} EP, through FF and EB parts respectively, enabling EP to be applied to much more flexible and realistic architectures as  analog units are incorporated into digital circuitry over time. We  demonstrate the effectiveness of the proposed approach, showing that a standard Hopfield Network can be split into any shape while maintaining automatic differentiation performance. We apply it to ImageNet32 where we establish new SOTA in the EP and BP-alternative literature (46\\% top-1).",
+    "tldr": "We present an algorithm for joint training of energy based and feedforward models in a hybrid analog-digital setting.",
+    "tags": [
+        "Neuromorphic",
+        "Energy-based-models",
+        "Equilibrium Propagation",
+        "Backprop-alternatives",
+        "Sustainability"
+    ]
+}

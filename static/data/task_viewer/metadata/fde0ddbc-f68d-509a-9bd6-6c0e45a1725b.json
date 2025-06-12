@@ -1,0 +1,26 @@
+{
+    "uuid": "fde0ddbc-f68d-509a-9bd6-6c0e45a1725b",
+    "title": "Sample Efficient Reinforcement Learning in Mixed Systems through Augmented Samples and Its Applications to Queueing Networks",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 spotlight",
+    "bibtex": "@inproceedings{\nwei2023sample,\ntitle={Sample Efficient Reinforcement Learning in Mixed Systems through Augmented Samples and Its Applications to Queueing Networks},\nauthor={Honghao Wei and Xin Liu and Weina Wang and Lei Ying},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=LTbIUkN95h}\n}",
+    "authors": [
+        "Honghao Wei",
+        "Xin Liu",
+        "Weina Wang",
+        "Lei Ying"
+    ],
+    "pdf_url": "https://openreview.net/pdf/69edfe02e4a5907f1172ddcb774d1138aee62e60.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/fde0ddbc-f68d-509a-9bd6-6c0e45a1725b.pdf",
+    "num_pages": 23,
+    "abstract": "This paper considers a class of reinforcement learning problems, which involve systems with two types of states: stochastic and pseudo-stochastic. In such systems, stochastic states follow a stochastic transition kernel while the transitions of pseudo-stochastic states are deterministic {\\em given} the stochastic states/transitions. We refer to such systems as mixed systems, which are widely used in various applications, including Manufacturing systems, communication networks, and queueing networks. We propose a sample-efficient RL method that accelerates learning by generating augmented data samples. The proposed algorithm is data-driven (model-free), but it learns the policy from data samples from both real and augmented samples. This method significantly improves learning by reducing the sample complexity such that the dataset only needs to have sufficient coverage of the stochastic states. We analyze the sample complexity of the proposed method under Fitted Q Iteration (FQI) and demonstrate that the optimality gap decreases as  $O\\left(\\sqrt{\\frac{1}{n}}+\\sqrt{\\frac{1}{m}}\\right),$ where $n$ represents the number of real samples, and $m$ is the number of augmented samples per real sample. It is important to note that without augmented samples, the optimality gap is $O(1)$ due to the insufficient data coverage of the pseudo-stochastic states. Our experimental results on multiple queueing network applications confirm that the proposed method indeed significantly accelerates both deep Q-learning and deep policy gradient.",
+    "tldr": "We propose a sample efficient RL method that accelerates learning in mixed systems.",
+    "tags": [
+        "Reinforcement Learning",
+        "Mixed Systems",
+        "Queueing Network",
+        "Sample Efficient"
+    ]
+}

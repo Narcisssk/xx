@@ -1,0 +1,25 @@
+{
+    "uuid": "3d972caa-a02a-5eb5-b483-d0c721952aaf",
+    "title": "How Sparse Can We Prune A Deep Network: A Fundamental Limit Perspective",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nzhang2024how,\ntitle={How Sparse Can We Prune A Deep Network: A Fundamental Limit Perspective},\nauthor={Qiaozhe Zhang and Ruijie ZHANG and Jun Sun and Yingzhuang Liu},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=IAAPhOLhcX}\n}",
+    "authors": [
+        "Qiaozhe Zhang",
+        "Ruijie ZHANG",
+        "Jun Sun",
+        "Yingzhuang Liu"
+    ],
+    "pdf_url": "https://openreview.net/pdf/c9bd2e43865cf1531a7e1d76f1e894ac0f35f2f3.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/3d972caa-a02a-5eb5-b483-d0c721952aaf.pdf",
+    "num_pages": 36,
+    "abstract": "Network pruning is a commonly used measure to alleviate the storage and computational burden of deep neural networks. However, the fundamental limit of network pruning is still lacking. To close the gap, in this work we'll take a first-principles approach, i.e. we'll directly impose the sparsity constraint on the loss function and leverage the framework of *statistical dimension* in convex geometry, thus we're able to characterize the sharp phase transition point, i.e. the fundamental limit of the pruning ratio. Through this fundamental limit, we're able to identify two key factors that determine the pruning ratio limit, namely, *weight magnitude* and *network flatness*. Generally speaking, the flatter the loss landscape or the smaller the weight magnitude, the smaller pruning ratio. Moreover, we provide efficient countermeasures to address the challenges in the computation of the pruning limit, which involves accurate spectrum estimation of a large-scale and non-positive Hessian matrix. Moreover, through the lens of the pruning ratio threshold,  we can provide rigorous interpretations on several heuristics in existing pruning algorithms. Extensive experiments are performed that demonstrate that our theoretical pruning ratio threshold coincides very well with the experiments. All codes are available at: https://anonymous.4open.science/r/Global-One-shot-Pruning-BC7B",
+    "tldr": "This paper defines fundamental limits of deep network pruning using statistical dimensions.",
+    "tags": [
+        "Network Pruning",
+        "Fundamental Limit",
+        "Convex Geometry"
+    ]
+}

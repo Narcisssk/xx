@@ -1,0 +1,25 @@
+{
+    "uuid": "58a12475-a7ce-5d3a-b75e-04814b025231",
+    "title": "Interleaving Text and Number Embeddings to Solve Mathemathics Problems",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "MATH-AI 24",
+    "bibtex": "@inproceedings{\nalberts2024interleaving,\ntitle={Interleaving Text and Number Embeddings to Solve Mathemathics Problems},\nauthor={Marvin Alberts and Gianmarco Gabrieli and Irina Espejo Morales},\nbooktitle={The 4th Workshop on Mathematical Reasoning and AI at NeurIPS'24},\nyear={2024},\nurl={https://openreview.net/forum?id=8cNJyqs45T}\n}",
+    "authors": [
+        "Marvin Alberts",
+        "Gianmarco Gabrieli",
+        "Irina Espejo Morales"
+    ],
+    "pdf_url": "https://openreview.net/pdf/d5616301289fc98a190e66246ee902e197f0939b.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/58a12475-a7ce-5d3a-b75e-04814b025231.pdf",
+    "num_pages": 8,
+    "abstract": "Integrating text and numbers effectively is a crucial step towards enhancing Large Language Models (LLMs) capabilities in assisting in scientific tasks. While most current approaches rely on discrete tokenization of numbers, for instance, conversion to scientific notation or base 10-decomposition, a recent approach proposed a continuous numerical encoding as an inductive bias. In this paper, we build upon this approach by introducing more expressive numerical embeddings. Our method addresses key shortcomings, including the elimination of numerical artefacts and the ability to handle a wide range of magnitudes without clipping. Our work presents two key contributions. First, we employ an MLP to assign distinct directions in the embedding space to different numbers. Our second contribution is the introduction of a routing layer that differentiates between numerical and text embeddings. We hypothesise that this combined approach enables the model to distinguish between text and number distributions while maintaining its capacity for arithmetic operations. Using only a 45 M parameter encoder-decoder architecture our method achieves a R2=0.9988 over a wide range of magnitude (10−3, 10^8). In addition, we empirically observe a reduction of the numerical artefacts and biases observed compared to the baselines",
+    "tldr": "New numerical embeddings improve LLMs in solving math problems effectively.",
+    "tags": [
+        "Transformer",
+        "Multimodal",
+        "Embedding",
+        "Decoding"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "uuid": "be9dbf2b-6279-53cb-a9df-cd5d983b7192",
+    "title": "Better Together: Jointly Using Masked Latent Semantic Modeling and Masked Language Modeling for Sample Efficient Pre-training",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Proceedings of the BabyLM Challenge at the 27th Conference on Computational Natural Language Learning",
+    "bibtex": "@inproceedings{berend-2023-better,\n    title = \"Better Together: Jointly Using Masked Latent Semantic Modeling and Masked Language Modeling for Sample Efficient Pre-training\",\n    author = \"Berend, G{\\'a}bor\",\n    editor = \"Warstadt, Alex  and\n      Mueller, Aaron  and\n      Choshen, Leshem  and\n      Wilcox, Ethan  and\n      Zhuang, Chengxu  and\n      Ciro, Juan  and\n      Mosquera, Rafael  and\n      Paranjabe, Bhargavi  and\n      Williams, Adina  and\n      Linzen, Tal  and\n      Cotterell, Ryan\",\n    booktitle = \"Proceedings of the BabyLM Challenge at the 27th Conference on Computational Natural Language Learning\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.conll-babylm.26\",\n    doi = \"10.18653/v1/2023.conll-babylm.26\",\n    pages = \"298--307\",\n}\n",
+    "authors": [
+        "Gábor Berend"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.conll-babylm.26.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/be9dbf2b-6279-53cb-a9df-cd5d983b7192.pdf",
+    "num_pages": 10,
+    "abstract": "In this paper, we demonstrate the benefits of jointly using Masked Latent Semantic Modeling (MLSM) and traditional Masked Language Modeling (MLM) as the pre-training objective of masked language models. The core idea behind MLSM is to modify the pre-training objective in a way which ensures that the language models predict a (latent) semantic distribution for the masked tokens – instead of outputting their exact identity as in MLM. Language models pre-trained with MLSM behave more favorable in terms of fine-tuneability towards downstream tasks, however, their performance lags behind MLM pre-trained language models in evaluations that investigate the linguistic capabilities. In an attempt to combine the strengths of the two different pre-training paradigms, we propose their joint use in a multitask learning setting. Our evaluations that we performed using the BabyLM evaluation framework (Warstadt et al., 2023) demonstrate the synergistic effects of the joint use of the two different kinds of pre-training objectives.",
+    "tldr": "Jointly using MLSM and MLM improves pre-training efficiency for language models.",
+    "tags": [
+        "Masked Language Modeling",
+        "Latent Semantic Modeling",
+        "Pre-training Objectives",
+        "Multitask Learning",
+        "Language Model Evaluation"
+    ]
+}

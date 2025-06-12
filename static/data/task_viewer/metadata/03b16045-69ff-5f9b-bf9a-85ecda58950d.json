@@ -1,0 +1,29 @@
+{
+    "uuid": "03b16045-69ff-5f9b-bf9a-85ecda58950d",
+    "title": "Unsupervised Learning of Facial Optical Flow via Occlusion-Aware Global-Local Matching",
+    "conference_full": "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)",
+    "conference": "icassp",
+    "year": 2024,
+    "volume": "ICASSP session IVMSP: Image, Video & Multidimensional Signal Processing",
+    "bibtex": "@inproceedings{DBLP:conf/icassp/ZhangCSDLY24,\n  author       = {Yungeng Zhang and\n                  Yuan Chang and\n                  Yun Shen and\n                  Peng Ding and\n                  Wei Liang and\n                  Mingchuan Yang},\n  title        = {Unsupervised Learning of Facial Optical Flow via Occlusion-Aware Global-Local\n                  Matching},\n  booktitle    = {{IEEE} International Conference on Acoustics, Speech and Signal Processing,\n                  {ICASSP} 2024, Seoul, Republic of Korea, April 14-19, 2024},\n  pages        = {3635--3639},\n  publisher    = {{IEEE}},\n  year         = {2024},\n  url          = {https://doi.org/10.1109/ICASSP48485.2024.10447241},\n  doi          = {10.1109/ICASSP48485.2024.10447241},\n  timestamp    = {Mon, 05 Aug 2024 15:27:25 +0200},\n  biburl       = {https://dblp.org/rec/conf/icassp/ZhangCSDLY24.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+    "authors": [
+        "Yungeng Zhang",
+        "Yuan Chang",
+        "Yun Shen",
+        "Peng Ding",
+        "Wei Liang",
+        "Mingchuan Yang"
+    ],
+    "pdf_url": "https://doi.org/10.1109/ICASSP48485.2024.10447241",
+    "pdf_path": "data/dataset/airqa/papers/icassp2024/03b16045-69ff-5f9b-bf9a-85ecda58950d.pdf",
+    "num_pages": 5,
+    "abstract": "Estimating optical ﬂow from facial videos is an essential preprocessing step for many applications. However, it is a challenging task as the facial videos contain rich expressions, large displacements, and complex occlusions. Obtaining the ground truth optical ﬂow for facial videos is very difﬁcult, which hinders the supervised learning of optical ﬂow from monocular in-the-wild facial videos. In this paper, we pro- vide an effective and accurate method for the unsupervised learning of optical ﬂow from facial videos. An occlusion- aware global-local matching model is introduced for the joint reasoning of optical ﬂow and occlusions. We propose a novel occlusion estimation paradigm to detect occlusions caused by facial expressions and pose variations. Experiments demon- strate that our method compares favorably against the state- of-the-art methods in facial optical ﬂow estimation.",
+    "tldr": "Unsupervised method for accurate facial optical flow using occlusion-aware matching.",
+    "tags": [
+        "unsupervised learning",
+        "facial optical flow",
+        "occlusion detection",
+        "global-local matching",
+        "computer vision"
+    ]
+}

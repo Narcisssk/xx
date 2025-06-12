@@ -1,0 +1,30 @@
+{
+    "uuid": "090a2d55-9042-555f-8520-81c642111e2a",
+    "title": "Med-Real2Sim: Non-Invasive Medical Digital Twins using Physics-Informed Self-Supervised Learning",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nkuang2024medrealsim,\ntitle={Med-Real2Sim: Non-Invasive Medical Digital Twins using Physics-Informed Self-Supervised Learning},\nauthor={Keying Kuang and Frances Dean and Jack B. Jedlicki and David Ouyang and Anthony Philippakis and David Sontag and Ahmed Alaa},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=xCUXJqQySD}\n}",
+    "authors": [
+        "Keying Kuang",
+        "Frances Dean",
+        "Jack B. Jedlicki",
+        "David Ouyang",
+        "Anthony Philippakis",
+        "David Sontag",
+        "Ahmed Alaa"
+    ],
+    "pdf_url": "https://openreview.net/pdf/b6609bf4e5f0ce3248a6b5f958f0f2f6b75a2c04.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/090a2d55-9042-555f-8520-81c642111e2a.pdf",
+    "num_pages": 32,
+    "abstract": "A digital twin is a virtual replica of a real-world physical phenomena that uses mathematical modeling to characterize and simulate its defining features. By constructing digital twins for disease processes, we can perform in-silico simulations that mimic patients' health conditions and counterfactual outcomes under hypothetical interventions in a virtual setting. This eliminates the need for invasive procedures or uncertain treatment decisions. In this paper, we propose a method to identify digital twin model parameters using only noninvasive patient health data. We approach the digital twin modeling as a composite inverse problem, and observe that its structure resembles pretraining and finetuning in self-supervised learning (SSL). Leveraging this, we introduce a physics-informed SSL algorithm that initially pretrains a neural network on the pretext task of learning a differentiable simulator of a physiological process. Subsequently, the model is trained to reconstruct physiological measurements from noninvasive modalities while being constrained by the physical equations learned in pretraining. We apply our method to identify digital twins of cardiac hemodynamics using noninvasive echocardiogram videos, and demonstrate its utility in unsupervised disease detection and in-silico clinical trials.",
+    "tldr": "Non-invasive digital twins for disease simulations using self-supervised learning.",
+    "tags": [
+        "Inverse Problems",
+        "Digital Twins",
+        "Personalized Medicine",
+        "Non-Invasive Imaging",
+        "Physics-Informed"
+    ]
+}

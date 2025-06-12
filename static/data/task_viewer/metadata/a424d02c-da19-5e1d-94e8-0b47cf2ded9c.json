@@ -1,0 +1,25 @@
+{
+    "uuid": "a424d02c-da19-5e1d-94e8-0b47cf2ded9c",
+    "title": "Understanding Emergent Abilities of Language Models from the Loss Perspective",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\ndu2024understanding,\ntitle={Understanding Emergent Abilities of Language Models from the Loss Perspective},\nauthor={Zhengxiao Du and Aohan Zeng and Yuxiao Dong and Jie Tang},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=35DAviqMFo}\n}",
+    "authors": [
+        "Zhengxiao Du",
+        "Aohan Zeng",
+        "Yuxiao Dong",
+        "Jie Tang"
+    ],
+    "pdf_url": "https://openreview.net/pdf/43201d777367113dc215698fd6279ce31413c9d3.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/a424d02c-da19-5e1d-94e8-0b47cf2ded9c.pdf",
+    "num_pages": 30,
+    "abstract": "Recent studies have put into question the belief that emergent abilities in language models are exclusive to large models. This skepticism arises from two observations: 1) smaller models can also exhibit high performance on emergent abilities and 2) there is  doubt on the discontinuous metrics used to measure these abilities. In this paper, we propose to study emergent abilities in the lens of pre-training loss, instead of model size or training compute. We demonstrate that the models with the same pre-training loss, but different model and data sizes, generate the same performance on various downstream tasks. We also discover that a model exhibits emergent abilities on certain tasks---regardless of the continuity of metrics---when its pre-training loss falls below a specific threshold. Before reaching this threshold, its performance remains at the level of random guessing. This inspires us to redefine emergent abilities as those that manifest in models with lower pre-training losses, highlighting that these abilities cannot be predicted by merely extrapolating the performance trends of models with higher pre-training losses.",
+    "tldr": "We demonstrate the existence of emergent abilities in the lens of pre-training loss regardless of the continuity of evaluation metrics",
+    "tags": [
+        "pretrained language model",
+        "emergent ability",
+        "scaling law"
+    ]
+}

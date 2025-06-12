@@ -1,0 +1,29 @@
+{
+    "uuid": "52543c4f-6202-589d-b564-cf3421e3ce75",
+    "title": "WinoPron: Revisiting English Winogender Schemas for Consistency, Coverage, and Grammatical Case",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of The Seventh Workshop on Computational Models of Reference, Anaphora and Coreference",
+    "bibtex": "@inproceedings{gautam-etal-2024-winopron,\n    title = \"{W}ino{P}ron: Revisiting {E}nglish {W}inogender Schemas for Consistency, Coverage, and Grammatical Case\",\n    author = \"Gautam, Vagrant  and\n      Steuer, Julius  and\n      Bingert, Eileen  and\n      Johns, Ray  and\n      Lauscher, Anne  and\n      Klakow, Dietrich\",\n    editor = \"Ogrodniczuk, Maciej  and\n      Nedoluzhko, Anna  and\n      Poesio, Massimo  and\n      Pradhan, Sameer  and\n      Ng, Vincent\",\n    booktitle = \"Proceedings of The Seventh Workshop on Computational Models of Reference, Anaphora and Coreference\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.crac-1.6/\",\n    doi = \"10.18653/v1/2024.crac-1.6\",\n    pages = \"52--66\"\n}\n",
+    "authors": [
+        "Vagrant Gautam",
+        "Julius Steuer",
+        "Eileen Bingert",
+        "Ray Johns",
+        "Anne Lauscher",
+        "Dietrich Klakow"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.crac-1.6.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/52543c4f-6202-589d-b564-cf3421e3ce75.pdf",
+    "num_pages": 15,
+    "abstract": "While measuring bias and robustness in coreference resolution are important goals, such measurements are only as good as the tools we use to measure them. Winogender Schemas (Rudinger et al., 2018) are an influential dataset proposed to evaluate gender bias in coreference resolution, but a closer look reveals issues with the data that compromise its use for reliable evaluation, including treating different pronominal forms as equivalent, violations of template constraints, and typographical errors. We identify these issues and fix them, contributing a new dataset: WINOPRON. Using WINOPRON, we evaluate two state-ofthe-art supervised coreference resolution systems, SpanBERT, and five sizes of FLAN-T5, and demonstrate that accusative pronouns are harder to resolve for all models. We also propose a new method to evaluate pronominal bias in coreference resolution that goes beyond the binary. With this method, we also show that bias characteristics vary not just across pronoun sets (e.g., he vs. she), but also across surface forms of those sets (e.g., him vs. his).",
+    "tldr": "WINOPRON addresses bias in coreference resolution, improving Winogender Schemas.",
+    "tags": [
+        "coreference resolution",
+        "gender bias",
+        "Winogender Schemas",
+        "dataset evaluation",
+        "pronominal forms"
+    ]
+}

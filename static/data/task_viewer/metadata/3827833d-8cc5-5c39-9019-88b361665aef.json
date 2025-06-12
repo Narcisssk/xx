@@ -1,0 +1,29 @@
+{
+    "uuid": "3827833d-8cc5-5c39-9019-88b361665aef",
+    "title": "RoME: A Robust Mixed-Effects Bandit Algorithm for Optimizing Mobile Health Interventions",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nhuch2024rome,\ntitle={Ro{ME}: A Robust Mixed-Effects Bandit Algorithm for Optimizing Mobile Health Interventions},\nauthor={Easton Knight Huch and Jieru Shi and Madeline R Abbott and Jessica R Golbus and Alexander Moreno and Walter H. Dempsey},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=eKVugi5zr0}\n}",
+    "authors": [
+        "Easton Knight Huch",
+        "Jieru Shi",
+        "Madeline R Abbott",
+        "Jessica R Golbus",
+        "Alexander Moreno",
+        "Walter H. Dempsey"
+    ],
+    "pdf_url": "https://openreview.net/pdf/62fc12290cd7fb3ec436e0b04de4642407685df9.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/3827833d-8cc5-5c39-9019-88b361665aef.pdf",
+    "num_pages": 47,
+    "abstract": "Mobile health leverages personalized and contextually tailored interventions optimized through bandit and reinforcement learning algorithms. In practice, however, challenges such as participant heterogeneity, nonstationarity, and nonlinear relationships hinder algorithm performance. We propose RoME, a **Ro**bust **M**ixed-**E**ffects contextual bandit algorithm that simultaneously addresses these challenges via (1) modeling the differential reward with user- and time-specific random effects, (2) network cohesion penalties, and (3) debiased machine learning for flexible estimation of baseline rewards. We establish a high-probability regret bound that depends solely on the dimension of the differential-reward model, enabling us to achieve robust regret bounds even when the baseline reward is highly complex. We demonstrate the superior performance of the RoME algorithm in a simulation and two off-policy evaluation studies.",
+    "tldr": "The authors propose a robust contextual bandit algorithm for optimizing mobile health interventions that leverages (1) mixed effects, (2) nearest-neighbor regularization, and (3) debiased machine learning (DML).",
+    "tags": [
+        "Bandit Algorithms",
+        "Causal Inference",
+        "Supervised Learning",
+        "mHealth",
+        "Mixed-effects Modeling"
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "uuid": "1caab0d7-f86a-52d7-9c89-8e4506d76b1f",
+    "title": "Hokoff: Real Game Dataset from Honor of Kings and its Offline Reinforcement Learning Benchmarks",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 Datasets and Benchmarks Poster",
+    "bibtex": "@inproceedings{\nqu2023hokoff,\ntitle={Hokoff: Real Game Dataset from Honor of Kings and its Offline Reinforcement Learning Benchmarks},\nauthor={Yun Qu and Boyuan Wang and Jianzhun Shao and Yuhang Jiang and Chen Chen and Zhenbin Ye and Lin Liu and Yang Jun Feng and Lin Lai and Hongyang Qin and Minwen Deng and Juchao Zhuo and Deheng Ye and QIANG FU and YANG GUANG and Yang Wei and Lanxiao Huang and Xiangyang Ji},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track},\nyear={2023},\nurl={https://openreview.net/forum?id=jP3BduIxy6}\n}",
+    "authors": [
+        "Yun Qu",
+        "Boyuan Wang",
+        "Jianzhun Shao",
+        "Yuhang Jiang",
+        "Chen Chen",
+        "Zhenbin Ye",
+        "Lin Liu",
+        "Yang Jun Feng",
+        "Lin Lai",
+        "Hongyang Qin",
+        "Minwen Deng",
+        "Juchao Zhuo",
+        "Deheng Ye",
+        "QIANG FU",
+        "YANG GUANG",
+        "Yang Wei",
+        "Lanxiao Huang",
+        "Xiangyang Ji"
+    ],
+    "pdf_url": "https://openreview.net/pdf/74067ef3e91227871be0c83f582952d83ca12af2.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/1caab0d7-f86a-52d7-9c89-8e4506d76b1f.pdf",
+    "num_pages": 25,
+    "abstract": "The advancement of Offline Reinforcement Learning (RL) and Offline Multi-Agent Reinforcement Learning (MARL) critically depends on the availability of high-quality, pre-collected offline datasets that represent real-world complexities and practical applications. However, existing datasets often fall short in their simplicity and lack of realism. To address this gap, we propose Hokoff, a comprehensive set of pre-collected datasets that covers both offline RL and offline MARL, accompanied by a robust framework, to facilitate further research. This data is derived from Honor of Kings, a recognized Multiplayer Online Battle Arena (MOBA) game known for its intricate nature, closely resembling real-life situations. Utilizing this framework, we benchmark a variety of offline RL and offline MARL algorithms. We also introduce a novel baseline algorithm tailored for the inherent hierarchical action space of the game. We reveal the incompetency of current offline RL approaches in handling task complexity, generalization and multi-task learning.",
+    "tldr": "We propose Hokoff, a comprehensive set of pre-collected datasets that covers both offline RL and offline MARL, accompanied by a robust framework, to facilitate further research.",
+    "tags": [
+        "offline reinforcement learning",
+        "offline multi-agent reinforcement learning",
+        "datasets and benchmarks"
+    ]
+}

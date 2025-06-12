@@ -1,0 +1,26 @@
+{
+    "uuid": "06ba9b19-1c5a-5765-aafb-16345a42de99",
+    "title": "Slowfast Network for Continuous Sign Language Recognition",
+    "conference_full": "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)",
+    "conference": "icassp",
+    "year": 2024,
+    "volume": "ICASSP session IVMSP: Image, Video & Multidimensional Signal Processing",
+    "bibtex": "@inproceedings{DBLP:conf/icassp/AhnJC24,\n  author       = {Junseok Ahn and\n                  Youngjoon Jang and\n                  Joon Son Chung},\n  title        = {Slowfast Network for Continuous Sign Language Recognition},\n  booktitle    = {{IEEE} International Conference on Acoustics, Speech and Signal Processing,\n                  {ICASSP} 2024, Seoul, Republic of Korea, April 14-19, 2024},\n  pages        = {3920--3924},\n  publisher    = {{IEEE}},\n  year         = {2024},\n  url          = {https://doi.org/10.1109/ICASSP48485.2024.10445841},\n  doi          = {10.1109/ICASSP48485.2024.10445841},\n  timestamp    = {Mon, 05 Aug 2024 15:27:25 +0200},\n  biburl       = {https://dblp.org/rec/conf/icassp/AhnJC24.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+    "authors": [
+        "Junseok Ahn",
+        "Youngjoon Jang",
+        "Joon Son Chung"
+    ],
+    "pdf_url": "https://doi.org/10.1109/ICASSP48485.2024.10445841",
+    "pdf_path": "data/dataset/airqa/papers/icassp2024/06ba9b19-1c5a-5765-aafb-16345a42de99.pdf",
+    "num_pages": 5,
+    "abstract": "The objective of this work is the effective extraction of spatial and dynamic features for Continuous Sign Language Recognition (CSLR). To accomplish this, we utilise a two-pathway SlowFast network, where each pathway operates at distinct temporal resolutions to separately capture spatial (hand shapes, facial expressions) and dynamic (movements) information. In addition, we introduce two distinct feature fusion methods, carefully designed for the characteristics of CSLR: (1) Bi-directional Feature Fusion (BFF), which facilitates the transfer of dynamic semantics into spatial semantics and vice versa; and (2) Pathway Feature Enhancement (PFE), which enriches dynamic and spatial representations through auxiliary subnetworks, while avoiding the need for extra inference time. As a result, our model further strengthens spatial and dynamic representations in parallel. We demonstrate that the proposed framework outperforms the current state-of-the-art performance on popular CSLR datasets, including PHOENIX14, PHOENIX14-T, and CSL-Daily.",
+    "tldr": "SlowFast network enhances continuous sign language recognition using dual pathways.",
+    "tags": [
+        "Continuous Sign Language Recognition",
+        "SlowFast Network",
+        "Feature Fusion",
+        "Spatial and Dynamic Features",
+        "Deep Learning"
+    ]
+}

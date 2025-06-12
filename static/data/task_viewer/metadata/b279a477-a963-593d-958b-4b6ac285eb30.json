@@ -1,0 +1,25 @@
+{
+    "uuid": "b279a477-a963-593d-958b-4b6ac285eb30",
+    "title": "Open Language Data Initiative: Advancing Low-Resource Machine Translation for Karakalpak",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of the Ninth Conference on Machine Translation",
+    "bibtex": "@inproceedings{mamasaidov-shopulatov-2024-open,\n    title = \"Open Language Data Initiative: Advancing Low-Resource Machine Translation for {K}arakalpak\",\n    author = \"Mamasaidov, Mukhammadsaid  and\n      Shopulatov, Abror\",\n    editor = \"Haddow, Barry  and\n      Kocmi, Tom  and\n      Koehn, Philipp  and\n      Monz, Christof\",\n    booktitle = \"Proceedings of the Ninth Conference on Machine Translation\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.wmt-1.48/\",\n    doi = \"10.18653/v1/2024.wmt-1.48\",\n    pages = \"606--613\",\n    abstract = \"This study presents several contributions for the Karakalpak language: a FLORES+ devtest dataset translated to Karakalpak, parallel corpora for Uzbek-Karakalpak, Russian-Karakalpak and English-Karakalpak of 100,000 pairs each and open-sourced fine-tuned neural models for translation across these languages. Our experiments compare different model variants and training approaches, demonstrating improvements over existing baselines. This work, conducted as part of the Open Language Data Initiative (OLDI) shared task, aims to advance machine translation capabilities for Karakalpak and contribute to expanding linguistic diversity in NLP technologies.\"\n}\n",
+    "authors": [
+        "Mukhammadsaid Mamasaidov",
+        "Abror Shopulatov"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.wmt-1.48.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/b279a477-a963-593d-958b-4b6ac285eb30.pdf",
+    "num_pages": 8,
+    "abstract": "This study presents several contributions for the Karakalpak language: a FLORES+ devtest dataset translated to Karakalpak, parallel corpora for Uzbek-Karakalpak, Russian-Karakalpak and English-Karakalpak of 100,000 pairs each and open-sourced fine-tuned neural models for translation across these languages. Our experiments compare different model variants and training approaches, demonstrating improvements over existing baselines. This work, conducted as part of the Open Language Data Initiative (OLDI) shared task, aims to advance machine translation capabilities for Karakalpak and contribute to expanding linguistic diversity in NLP technologies.",
+    "tldr": "Advances Karakalpak translation with new datasets and open-sourced models.",
+    "tags": [
+        "machine translation",
+        "low-resource languages",
+        "Karakalpak",
+        "NLP diversity",
+        "parallel corpora"
+    ]
+}

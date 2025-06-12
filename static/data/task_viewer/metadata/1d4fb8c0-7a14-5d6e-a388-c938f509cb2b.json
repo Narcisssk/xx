@@ -1,0 +1,28 @@
+{
+    "uuid": "1d4fb8c0-7a14-5d6e-a388-c938f509cb2b",
+    "title": "Semi-Supervised Fine-Tuning of Vision Foundation Models with Content-Style Decomposition",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "FITML 2024 Poster",
+    "bibtex": "@inproceedings{\ndrozdova2024semisupervised,\ntitle={Semi-Supervised Fine-Tuning of Vision Foundation Models with Content-Style Decomposition},\nauthor={Mariia Drozdova and Vitaliy Kinakh and Yury Belousov and Erica Lastufka and Slava Voloshynovskiy},\nbooktitle={NeurIPS 2024 Workshop on Fine-Tuning in Modern Machine Learning: Principles and Scalability},\nyear={2024},\nurl={https://openreview.net/forum?id=zHljWq2hqH}\n}",
+    "authors": [
+        "Mariia Drozdova",
+        "Vitaliy Kinakh",
+        "Yury Belousov",
+        "Erica Lastufka",
+        "Slava Voloshynovskiy"
+    ],
+    "pdf_url": "https://openreview.net/pdf/0812eefd374279ebfc84d1bce17433993ef05f35.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/1d4fb8c0-7a14-5d6e-a388-c938f509cb2b.pdf",
+    "num_pages": 18,
+    "abstract": "In this paper, we present a semi-supervised fine-tuning approach designed to improve the performance of pre-trained foundation models on downstream tasks with limited labeled data. By leveraging content-style decomposition within an information-theoretic framework, our method enhances the latent representations of pre-trained vision foundation models, aligning them more effectively with specific task objectives and addressing the problem of distribution shift. We evaluate our approach on multiple datasets, including MNIST, its augmented variations (with yellow and white stripes), CIFAR-10, SVHN, and GalaxyMNIST. The experiments show improvements over supervised finetuning baseline of pre-trained models, particularly in low-labeled data regimes, across both frozen and trainable backbones for the majority of the tested datasets.",
+    "tldr": "We propose a semi-supervised fine-tuning method that improves the performance of frozen and trainable foundation models, particularly in low-labeled data regimes, by using content-style decomposition to address distribution shift across datasets.",
+    "tags": [
+        "Semi-supervised learning",
+        "Foundation models",
+        "Fine-tuning",
+        "Distribution shift",
+        "Representation learning"
+    ]
+}

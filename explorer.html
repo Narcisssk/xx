@@ -372,6 +372,16 @@
                         <p id="taskQuestion"></p>
                     </div>
 
+                    <div class="highlight-quote" id="anchorPdfSection" style="display: none;">
+                        <p class="has-text-weight-bold">Reference PDFs:</p>
+                        <div id="anchorPdfList"></div>
+                    </div>
+
+                    <div class="highlight-quote" id="conferenceSection" style="display: none;">
+                        <p class="has-text-weight-bold">Conference:</p>
+                        <p id="conferenceInfo"></p>
+                    </div>
+
                     <div class="highlight-quote">
                         <p class="has-text-weight-bold">Trajectory:</p>
                         <div id="taskTrajectory"></div>
@@ -526,6 +536,18 @@
             }
         }
 
+        // Load PDF metadata
+        async function loadPdfMetadata(pdfName) {
+            try {
+                const response = await fetch(`./static/data/task_viewer/metadata/${pdfName}.json`);
+                const metadata = await response.json();
+                return metadata.pdf_url;
+            } catch (error) {
+                console.error(`Error loading PDF metadata for ${pdfName}:`, error);
+                return null;
+            }
+        }
+
         // Display task details
         async function displayTask(task) {
             document.getElementById('taskId').textContent = task.uuid;
@@ -550,6 +572,31 @@
             }).join('');
             
             document.getElementById('taskQuestion').textContent = task.question;
+            
+            // Handle anchor PDFs
+            const anchorPdfSection = document.getElementById('anchorPdfSection');
+            const anchorPdfList = document.getElementById('anchorPdfList');
+            if (task.anchor_pdf && task.anchor_pdf.length > 0) {
+                anchorPdfSection.style.display = 'block';
+                const pdfPromises = task.anchor_pdf.map(async (pdfName) => {
+                    const pdfUrl = await loadPdfMetadata(pdfName);
+                    return pdfUrl ? `<a href="${pdfUrl}" target="_blank">${pdfName}</a>` : pdfName;
+                });
+                const pdfLinks = await Promise.all(pdfPromises);
+                anchorPdfList.innerHTML = pdfLinks.join('<br>');
+            } else {
+                anchorPdfSection.style.display = 'none';
+            }
+
+            // Handle conference information
+            const conferenceSection = document.getElementById('conferenceSection');
+            const conferenceInfo = document.getElementById('conferenceInfo');
+            if (task.conference) {
+                conferenceSection.style.display = 'block';
+                conferenceInfo.textContent = task.conference;
+            } else {
+                conferenceSection.style.display = 'none';
+            }
             
             await loadTrajectory(task.uuid);
             

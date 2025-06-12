@@ -1,0 +1,29 @@
+{
+    "uuid": "7f3d16e8-d399-5ffd-bae5-7aad916c36eb",
+    "title": "Multi-Speaker Expressive Speech Synthesis via Multiple Factors Decoupling",
+    "conference_full": "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)",
+    "conference": "icassp",
+    "year": 2023,
+    "volume": "ICASSP session SLT: Spoken Language Technology",
+    "bibtex": "@inproceedings{DBLP:conf/icassp/ZhuLSZLX23,\n  author       = {Xinfa Zhu and\n                  Yi Lei and\n                  Kun Song and\n                  Yongmao Zhang and\n                  Tao Li and\n                  Lei Xie},\n  title        = {Multi-Speaker Expressive Speech Synthesis via Multiple Factors Decoupling},\n  booktitle    = {{IEEE} International Conference on Acoustics, Speech and Signal Processing\n                  {ICASSP} 2023, Rhodes Island, Greece, June 4-10, 2023},\n  pages        = {1--5},\n  publisher    = {{IEEE}},\n  year         = {2023},\n  url          = {https://doi.org/10.1109/ICASSP49357.2023.10095776},\n  doi          = {10.1109/ICASSP49357.2023.10095776},\n  timestamp    = {Thu, 21 Mar 2024 22:25:35 +0100},\n  biburl       = {https://dblp.org/rec/conf/icassp/ZhuLSZLX23.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+    "authors": [
+        "Xinfa Zhu",
+        "Yi Lei",
+        "Kun Song",
+        "Yongmao Zhang",
+        "Tao Li",
+        "Lei Xie"
+    ],
+    "pdf_url": "https://doi.org/10.1109/ICASSP49357.2023.10095776",
+    "pdf_path": "data/dataset/airqa/papers/icassp2023/7f3d16e8-d399-5ffd-bae5-7aad916c36eb.pdf",
+    "num_pages": 5,
+    "abstract": "This paper aims to synthesize the target speaker’s speech with desired speaking style and emotion by transferring the style and emotion from reference speech recorded by other speakers. We address this challenging problem with a two-stage framework composed of a text-to-style-and-emotion (Text2SE) module and a style-and-emotion-to-wave (SE2Wave) module, bridging by neural bottleneck (BN) features. To further solve the multi-factor (speaker timbre, speaking style and emotion) decoupling problem, we adopt the multi-label binary vector (MBV) and mutual information (MI) minimization to respectively discretize the extracted embeddings and disentangle these highly entangled factors in both Text2SE and SE2Wave modules. Moreover, we introduce a semi-supervised training strategy to leverage data from multiple speakers, including emotion-labeled data, style-labeled data, and unlabeled data. To better transfer the fine-grained expression from references to the target speaker in non-parallel transfer, we introduce a reference-candidate pool and propose an attention-based reference selection approach. Extensive experiments demonstrate the good design of our model.",
+    "tldr": "Synthesizes expressive speech by decoupling style and emotion from multiple speakers.",
+    "tags": [
+        "speech synthesis",
+        "multi-speaker",
+        "emotion transfer",
+        "style transfer",
+        "neural networks"
+    ]
+}

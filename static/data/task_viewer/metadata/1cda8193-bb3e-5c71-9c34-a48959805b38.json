@@ -1,0 +1,35 @@
+{
+    "uuid": "1cda8193-bb3e-5c71-9c34-a48959805b38",
+    "title": "Synthetic SQL Column Descriptions and Their Impact on Text-to-SQL Performance",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "TRL @ NeurIPS 2024 Poster",
+    "bibtex": "@inproceedings{\nwretblad2024synthetic,\ntitle={Synthetic {SQL} Column Descriptions and Their Impact on Text-to-{SQL} Performance},\nauthor={Niklas Wretblad and Oskar Holmstr{\\\"o}m and Erik Larsson and Axel Wiks{\\\"a}ter and Hjalmar {\\\"O}hman and Oscar S{\\\"o}derlund and Ture Pont{\\'e}n and Martin Forsberg and Martin S{\\\"o}rme and Fredrik Heintz},\nbooktitle={NeurIPS 2024 Third Table Representation Learning Workshop},\nyear={2024},\nurl={https://openreview.net/forum?id=hA0b6MUbSF}\n}",
+    "authors": [
+        "Niklas Wretblad",
+        "Oskar Holmström",
+        "Erik Larsson",
+        "Axel Wiksäter",
+        "Hjalmar Öhman",
+        "Oscar Söderlund",
+        "Ture Pontén",
+        "Martin Forsberg",
+        "Martin Sörme",
+        "Fredrik Heintz"
+    ],
+    "pdf_url": "https://openreview.net/pdf/cfe0aebee8e644b380941c348075f0cf13942acc.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/1cda8193-bb3e-5c71-9c34-a48959805b38.pdf",
+    "num_pages": 27,
+    "abstract": "Relational databases often suffer from uninformative descriptors of table contents, such as ambiguous columns and hard-to-interpret values, impacting both human users and text-to-SQL models. In this paper, we explore the use of large language models (LLMs) to automatically generate detailed natural language descriptions for SQL database columns, aiming to improve text-to-SQL performance and automate metadata creation. We create a dataset of gold column descriptions based on the BIRD-Bench benchmark, manually refining its column descriptions and creating a taxonomy for categorizing column difficulty. We then evaluate several different LLMs in generating column descriptions across the columns and different difficulties in the dataset, finding that models unsurprisingly struggle with columns that exhibit inherent ambiguity, highlighting the need for manual expert input. We also find that incorporating such generated column descriptions consistently enhances text-to-SQL model performance, particularly for larger models like GPT-4o, Qwen2 72B and Mixtral 22Bx8.  Notably, Qwen2-generated descriptions, containing by annotators deemed superfluous information, outperform manually curated gold descriptions, suggesting that models benefit from more detailed metadata than humans expect. Future work will investigate the specific features of these high-performing descriptions and explore other types of metadata, such as numerical reasoning and synonyms, to further improve text-to-SQL systems. The dataset, annotations and code will all be made available.",
+    "tldr": "The paper explores using large language models to generate detailed descriptions for SQL database columns, improving text-to-SQL systems, with findings showing that more detailed significantly improves text-to-SQL performance.",
+    "tags": [
+        "text-to-sql",
+        "LLM",
+        "large language model",
+        "SQL",
+        "database",
+        "column descriptions",
+        "metadata"
+    ]
+}

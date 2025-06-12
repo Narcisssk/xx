@@ -1,0 +1,23 @@
+{
+    "uuid": "03f5c8ae-47ce-5312-b368-7fe6a4088e58",
+    "title": "Equivariant Blurring Diffusion for Hierarchical Molecular Conformer Generation",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\npark2024equivariant,\ntitle={Equivariant Blurring Diffusion for Hierarchical Molecular Conformer Generation},\nauthor={Jiwoong Park and Yang Shen},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=Aj0Zf28l6o}\n}",
+    "authors": [
+        "Jiwoong Park",
+        "Yang Shen"
+    ],
+    "pdf_url": "https://openreview.net/pdf/18ad6fd7ccc4d430e351d06384b59c3ba44fe1a4.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/03f5c8ae-47ce-5312-b368-7fe6a4088e58.pdf",
+    "num_pages": 31,
+    "abstract": "How can diffusion models process 3D geometries in a coarse-to-fine manner, akin to our multiscale view of the world?\nIn this paper, we address the question by focusing on a fundamental biochemical problem of generating 3D molecular conformers conditioned on molecular graphs in a multiscale manner. \nOur approach consists of two hierarchical stages: i) generation of coarse-grained fragment-level 3D structure from the molecular graph, and ii) generation of fine atomic details from the coarse-grained approximated structure while allowing the latter to be adjusted simultaneously.\nFor the challenging second stage, which demands preserving coarse-grained information while ensuring SE(3) equivariance, we introduce a novel generative model termed Equivariant Blurring Diffusion (EBD), which defines a forward process that moves towards the fragment-level coarse-grained structure by blurring the fine atomic details of conformers, and a reverse process that performs the opposite operation using equivariant networks.\nWe demonstrate the effectiveness of EBD by geometric and chemical comparison to state-of-the-art denoising diffusion models on a benchmark of drug-like molecules.\nAblation studies draw insights on the design of EBD by thoroughly analyzing its architecture, which includes the design of the loss function and the data corruption process.\nCodes are released at https://github.com/Shen-Lab/EBD.",
+    "tldr": "Introduces Equivariant Blurring Diffusion for hierarchical 3D molecular conformer generation.",
+    "tags": [
+        "molecular conformer generation",
+        "diffusion models",
+        "hierarchical models"
+    ]
+}

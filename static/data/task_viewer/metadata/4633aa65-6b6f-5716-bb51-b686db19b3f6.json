@@ -1,0 +1,32 @@
+{
+    "uuid": "4633aa65-6b6f-5716-bb51-b686db19b3f6",
+    "title": "AgentBank: Towards Generalized LLM Agents via Fine-Tuning on 50000+ Interaction Trajectories",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    "bibtex": "@inproceedings{song-etal-2024-agentbank,\n    title = \"{A}gent{B}ank: Towards Generalized {LLM} Agents via Fine-Tuning on 50000+ Interaction Trajectories\",\n    author = \"Song, Yifan  and\n      Xiong, Weimin  and\n      Zhao, Xiutian  and\n      Zhu, Dawei  and\n      Wu, Wenhao  and\n      Wang, Ke  and\n      Li, Cheng  and\n      Peng, Wei  and\n      Li, Sujian\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2024\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-emnlp.116/\",\n    doi = \"10.18653/v1/2024.findings-emnlp.116\",\n    pages = \"2124--2141\",\n    abstract = \"Fine-tuning on agent-environment interaction trajectory data holds significant promise for surfacing generalized agent capabilities in open-source large language models (LLMs). In this work, we introduce AgentBank, by far the largest trajectory tuning data collection featuring more than 50k diverse high-quality interaction trajectories which comprises 16 tasks covering five distinct agent skill dimensions. Leveraging a novel annotation pipeline, we are able to scale the annotated trajectories and generate a trajectory dataset with minimized difficulty bias. Furthermore, we fine-tune LLMs on AgentBank to get a series of agent models, Samoyed. Our comparative experiments demonstrate the effectiveness of scaling the interaction trajectory data to acquire generalized agent capabilities. Additional studies also reveal some key observations regarding trajectory tuning and agent skill generalization.\"\n}\n",
+    "authors": [
+        "Yifan Song",
+        "Weimin Xiong",
+        "Xiutian Zhao",
+        "Dawei Zhu",
+        "Wenhao Wu",
+        "Ke Wang",
+        "Cheng Li",
+        "Wei Peng",
+        "Sujian Li"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-emnlp.116.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/4633aa65-6b6f-5716-bb51-b686db19b3f6.pdf",
+    "num_pages": 18,
+    "abstract": "Fine-tuning on agent-environment interaction trajectory data holds significant promise for surfacing generalized agent capabilities in open-source large language models (LLMs). In this work, we introduce AgentBank, by far the largest trajectory tuning data collection featuring more than 50k diverse high-quality interaction trajectories which comprises 16 tasks covering five distinct agent skill dimensions. Leveraging a novel annotation pipeline, we are able to scale the annotated trajectories and generate a trajectory dataset with minimized difficulty bias. Furthermore, we fine-tune LLMs on AgentBank to get a series of agent models, Samoyed. Our comparative experiments demonstrate the effectiveness of scaling the interaction trajectory data to acquire generalized agent capabilities. Additional studies also reveal some key observations regarding trajectory tuning and agent skill generalization.",
+    "tldr": "AgentBank enhances LLMs by fine-tuning on 50k diverse interaction trajectories.",
+    "tags": [
+        "AgentBank",
+        "LLM fine-tuning",
+        "interaction trajectories",
+        "agent capabilities",
+        "skill generalization"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "uuid": "52ea9a1c-753e-50ab-9049-86da02c9f585",
+    "title": "Is It Safe to Tell Your Story? Towards Achieving Privacy for Sensitive Narratives",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of the The 6th Workshop on Narrative Understanding",
+    "bibtex": "@inproceedings{shokri-etal-2024-safe,\n    title = \"Is It Safe to Tell Your Story? Towards Achieving Privacy for Sensitive Narratives\",\n    author = \"Shokri, Mohammad  and\n      Bishop, Allison  and\n      Levitan, Sarah Ita\",\n    editor = \"Lal, Yash Kumar  and\n      Clark, Elizabeth  and\n      Iyyer, Mohit  and\n      Chaturvedi, Snigdha  and\n      Brei, Anneliese  and\n      Brahman, Faeze  and\n      Chandu, Khyathi Raghavi\",\n    booktitle = \"Proceedings of the The 6th Workshop on Narrative Understanding\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.wnu-1.7/\",\n    doi = \"10.18653/v1/2024.wnu-1.7\",\n    pages = \"47--54\",\n    abstract = \"Evolving tools for narrative analysis present an opportunity to identify common structure in stories that are socially important to tell, such as stories of survival from domestic abuse. A greater structural understanding of such stories could lead to stronger protections against de-anonymization, as well as future tools to help survivors navigate the complex trade-offs inherent in trying to tell their stories safely. In this work we explore narrative patterns within a small set of domestic violence stories, identifying many similarities. We then propose a method to assess the safety of sharing a story based on a distance feature vector.\"\n}\n",
+    "authors": [
+        "Mohammad Shokri",
+        "Allison Bishop",
+        "Sarah Ita Levitan"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.wnu-1.7.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/52ea9a1c-753e-50ab-9049-86da02c9f585.pdf",
+    "num_pages": 8,
+    "abstract": "Evolving tools for narrative analysis present an opportunity to identify common structure in stories that are socially important to tell, such as stories of survival from domestic abuse. A greater structural understanding of such stories could lead to stronger protections against de-anonymization, as well as future tools to help survivors navigate the complex trade-offs inherent in trying to tell their stories safely. In this work we explore narrative patterns within a small set of domestic violence stories, identifying many similarities. We then propose a method to assess the safety of sharing a story based on a distance feature vector.",
+    "tldr": "Proposes a method to enhance privacy for sharing sensitive survivor narratives.",
+    "tags": [
+        "narrative analysis",
+        "privacy protection",
+        "domestic abuse",
+        "de-anonymization",
+        "story sharing safety"
+    ]
+}

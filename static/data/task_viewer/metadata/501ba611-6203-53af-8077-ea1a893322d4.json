@@ -1,0 +1,24 @@
+{
+    "uuid": "501ba611-6203-53af-8077-ea1a893322d4",
+    "title": "Composing Parameter-Efficient Modules with Arithmetic Operation",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 poster",
+    "bibtex": "@inproceedings{\nzhang2023composing,\ntitle={Composing Parameter-Efficient Modules with Arithmetic Operation},\nauthor={Jinghan Zhang and Shiqi Chen and Junteng Liu and Junxian He},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=5r3e27I9Gy}\n}",
+    "authors": [
+        "Jinghan Zhang",
+        "Shiqi Chen",
+        "Junteng Liu",
+        "Junxian He"
+    ],
+    "pdf_url": "https://openreview.net/pdf/535f99fa5f5799b453fb22fa002b3b269a2137e8.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/501ba611-6203-53af-8077-ea1a893322d4.pdf",
+    "num_pages": 22,
+    "abstract": "As an efficient alternative to conventional full fine-tuning, parameter-efficient fine-tuning (PEFT) is becoming the prevailing method to adapt pretrained language models. In PEFT, a lightweight module is learned on each dataset while the underlying pretrained language model remains unchanged, resulting in multiple compact modules representing diverse skills when applied to various domains and tasks. In this paper, we propose to compose these parameter-efficient modules through linear arithmetic operations in the weight space, thereby integrating different module capabilities. Specifically, we first define an addition and negation operator for the module, and then further compose these two basic operators to perform flexible arithmetic. Our approach requires no additional training and enables highly flexible module composition.  We apply different arithmetic operations to compose the parameter-efficient modules for (1) distribution generalization, (2) multi-tasking, (3) detoxifying, and (4) domain transfer. Additionally, we extend our approach to detoxify Alpaca-LoRA, the latest instruction-tuned large language model based on LLaMA. Empirical results demonstrate that our approach produces new and effective parameter-efficient modules that significantly outperform existing ones across all settings.",
+    "tldr": "We propose methods to compose parameter-efficient modules through arithmetic operations in the weight space.",
+    "tags": [
+        "Parameter-efficient fine-tuning",
+        "module composition"
+    ]
+}

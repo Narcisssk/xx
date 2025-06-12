@@ -1,0 +1,26 @@
+{
+    "uuid": "07882218-f745-5ca9-a420-67adc943de81",
+    "title": "Granularity is crucial when applying differential privacy to text: An investigation for neural machine translation",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    "bibtex": "@inproceedings{vu-etal-2024-granularity,\n    title = \"Granularity is crucial when applying differential privacy to text: An investigation for neural machine translation\",\n    author = \"Vu, Doan Nam Long  and\n      Igamberdiev, Timour  and\n      Habernal, Ivan\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2024\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-emnlp.29/\",\n    doi = \"10.18653/v1/2024.findings-emnlp.29\",\n    pages = \"507--527\",\n    abstract = \"Applying differential privacy (DP) by means of the DP-SGD algorithm to protect individual data points during training is becoming increasingly popular in NLP. However, the choice of granularity at which DP is applied is often neglected. For example, neural machine translation (NMT) typically operates on the sentence-level granularity. From the perspective of DP, this setup assumes that each sentence belongs to a single person and any two sentences in the training dataset are independent. This assumption is however violated in many real-world NMT datasets, e.g., those including dialogues. For proper application of DP we thus must shift from sentences to entire documents. In this paper, we investigate NMT at both the sentence and document levels, analyzing the privacy/utility trade-off for both scenarios, and evaluating the risks of not using the appropriate privacy granularity in terms of leaking personally identifiable information (PII). Our findings indicate that the document-level NMT system is more resistant to membership inference attacks, emphasizing the significance of using the appropriate granularity when working with DP.\"\n}\n",
+    "authors": [
+        "Doan Nam Long Vu",
+        "Timour Igamberdiev",
+        "Ivan Habernal"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-emnlp.29.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/07882218-f745-5ca9-a420-67adc943de81.pdf",
+    "num_pages": 21,
+    "abstract": "Applying differential privacy (DP) by means of the DP-SGD algorithm to protect individual data points during training is becoming increasingly popular in NLP. However, the choice of granularity at which DP is applied is often neglected. For example, neural machine translation (NMT) typically operates on the sentence-level granularity. From the perspective of DP, this setup assumes that each sentence belongs to a single person and any two sentences in the training dataset are independent. This assumption is however violated in many real-world NMT datasets, e.g., those including dialogues. For proper application of DP we thus must shift from sentences to entire documents. In this paper, we investigate NMT at both the sentence and document levels, analyzing the privacy/utility trade-off for both scenarios, and evaluating the risks of not using the appropriate privacy granularity in terms of leaking personally identifiable information (PII). Our findings indicate that the document-level NMT system is more resistant to membership inference attacks, emphasizing the significance of using the appropriate granularity when working with DP.",
+    "tldr": "Proper granularity in differential privacy enhances security in neural machine translation.",
+    "tags": [
+        "differential privacy",
+        "neural machine translation",
+        "privacy granularity",
+        "membership inference",
+        "data protection"
+    ]
+}

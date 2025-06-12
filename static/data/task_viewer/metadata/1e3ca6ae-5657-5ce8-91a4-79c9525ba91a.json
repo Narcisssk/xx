@@ -1,0 +1,27 @@
+{
+    "uuid": "1e3ca6ae-5657-5ce8-91a4-79c9525ba91a",
+    "title": "Minimum norm interpolation by perceptra: Explicit regularization and implicit bias",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 poster",
+    "bibtex": "@inproceedings{\npark2023minimum,\ntitle={Minimum norm interpolation by perceptra: Explicit regularization and implicit bias},\nauthor={Jiyoung Park and Ian Pelakh and Stephan Wojtowytsch},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=MlrFYNo1yc}\n}",
+    "authors": [
+        "Jiyoung Park",
+        "Ian Pelakh",
+        "Stephan Wojtowytsch"
+    ],
+    "pdf_url": "https://openreview.net/pdf/2ca2eed62df4f225529f8c17ec4c7848726062eb.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/1e3ca6ae-5657-5ce8-91a4-79c9525ba91a.pdf",
+    "num_pages": 43,
+    "abstract": "We investigate how shallow ReLU networks interpolate between known regions. Our analysis shows that empirical risk minimizers converge to a minimum norm interpolant as the number of data points and parameters tends to infinity when a weight decay regularizer is penalized with a coefficient which vanishes at a precise rate as the network width and the number of data points grow. With and without explicit regularization, we numerically study the implicit bias of common optimization algorithms towards known minimum norm interpolants.",
+    "tldr": "We show that shallow ReLU networks converge to minimum norm interpolants of given data: Provably if explicit regularization is included and empirically if it is not (at least for suitable initialization).",
+    "tags": [
+        "Artificial neural network",
+        "interpolation",
+        "explicit regularization",
+        "implicit bias",
+        "weight decay",
+        "Barron class"
+    ]
+}

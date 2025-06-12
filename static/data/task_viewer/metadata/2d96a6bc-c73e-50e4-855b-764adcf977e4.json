@@ -1,0 +1,26 @@
+{
+    "uuid": "2d96a6bc-c73e-50e4-855b-764adcf977e4",
+    "title": "Facing Off World Model Backbones: RNNs, Transformers, and S4",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 poster",
+    "bibtex": "@inproceedings{\ndeng2023facing,\ntitle={Facing Off World Model Backbones: {RNN}s, Transformers, and S4},\nauthor={Fei Deng and Junyeong Park and Sungjin Ahn},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=GDYuzX0rwj}\n}",
+    "authors": [
+        "Fei Deng",
+        "Junyeong Park",
+        "Sungjin Ahn"
+    ],
+    "pdf_url": "https://openreview.net/pdf/40dac67dc758d23a1b5b853d98c67564af05f2c2.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/2d96a6bc-c73e-50e4-855b-764adcf977e4.pdf",
+    "num_pages": 27,
+    "abstract": "World models are a fundamental component in model-based reinforcement learning (MBRL). To perform temporally extended and consistent simulations of the future in partially observable environments, world models need to possess long-term memory. However, state-of-the-art MBRL agents, such as Dreamer, predominantly employ recurrent neural networks (RNNs) as their world model backbone, which have limited memory capacity. In this paper, we seek to explore alternative world model backbones for improving long-term memory. In particular, we investigate the effectiveness of Transformers and Structured State Space Sequence (S4) models, motivated by their remarkable ability to capture long-range dependencies in low-dimensional sequences and their complementary strengths. We propose S4WM, the first world model compatible with parallelizable SSMs including S4 and its variants. By incorporating latent variable modeling, S4WM can efficiently generate high-dimensional image sequences through latent imagination. Furthermore, we extensively compare RNN-, Transformer-, and S4-based world models across four sets of environments, which we have tailored to assess crucial memory capabilities of world models, including long-term imagination, context-dependent recall, reward prediction, and memory-based reasoning. Our findings demonstrate that S4WM outperforms Transformer-based world models in terms of long-term memory, while exhibiting greater efficiency during training and imagination. These results pave the way for the development of stronger MBRL agents.",
+    "tldr": "We propose the first world model compatible with parallelizable SSMs including S4 and its variants, and extensively compare it with RNN- and Transformer-based world models across four sets of environments tailored to assess memory capabilities.",
+    "tags": [
+        "world models",
+        "structured state space sequence models",
+        "S4",
+        "long-term memory",
+        "model-based reinforcement learning"
+    ]
+}

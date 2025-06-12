@@ -1,0 +1,27 @@
+{
+    "uuid": "bdd54ef7-963a-5aac-b825-751cd425a114",
+    "title": "Are Large Language Models Bayesian? A Martingale Perspective on In-Context Learning",
+    "conference_full": "International Conference on Learning Representations",
+    "conference": "ICLR",
+    "year": 2024,
+    "volume": "SeT LLM @ ICLR 2024",
+    "bibtex": "@inproceedings{\nfalck2024are,\ntitle={Are Large Language Models Bayesian? A Martingale Perspective on In-Context Learning},\nauthor={Fabian Falck and Ziyu Wang and Christopher C. Holmes},\nbooktitle={ICLR 2024 Workshop on Secure and Trustworthy Large Language Models},\nyear={2024},\nurl={https://openreview.net/forum?id=z4YTZ01NT4}\n}",
+    "authors": [
+        "Fabian Falck",
+        "Ziyu Wang",
+        "Christopher C. Holmes"
+    ],
+    "pdf_url": "https://openreview.net/pdf/d2fa2f9be1843fdc2b28efb0c2dc9d84c6b017b3.pdf",
+    "pdf_path": "data/dataset/airqa/papers/iclr2024/bdd54ef7-963a-5aac-b825-751cd425a114.pdf",
+    "num_pages": 20,
+    "abstract": "In-context learning (ICL) has emerged as a particularly remarkable characteristic of Large Language Models (LLM). Numerous works have postulated  ICL as approximately Bayesian inference, rendering this a natural hypothesis. In this work, we analyse this hypothesis from a new angle through the *martingale property*, a fundamental requirement of a Bayesian learning system on exchangeable data. We show that the martingale property is a necessary condition for unambiguous predictions in such scenarios, and enables a principled, decomposed notion of uncertainty vital in trustworthy, safety-critical systems. We derive actionable checks with corresponding theory and test statistics which must hold if the martingale property is satisfied. We also examine if uncertainty in LLMs decreases as expected in Bayesian learning when more data is observed. In three experiments, we provide evidence for violations of the martingale property, and deviations from a Bayesian scaling behaviour of uncertainty, falsifying the hypothesis that ICL is Bayesian.",
+    "tldr": "We falsify the hypothesis that in-context learning in state-of-the-art LLMs follows Bayesian principles.",
+    "tags": [
+        "large language models",
+        "in-context learning",
+        "generative models",
+        "Bayesian inference",
+        "exchangeability",
+        "uncertainty estimation"
+    ]
+}

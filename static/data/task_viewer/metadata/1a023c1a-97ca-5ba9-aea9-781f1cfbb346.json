@@ -1,0 +1,24 @@
+{
+    "uuid": "1a023c1a-97ca-5ba9-aea9-781f1cfbb346",
+    "title": "Knowledge Distillation ≈ Label Smoothing: Fact or Fallacy?",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{sultan-2023-knowledge,\n    title = \"Knowledge Distillation $\\approx$ Label Smoothing: Fact or Fallacy?\",\n    author = \"Sultan, Md\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.emnlp-main.271\",\n    doi = \"10.18653/v1/2023.emnlp-main.271\",\n    pages = \"4469--4477\",\n    abstract = \"Originally proposed as a method for knowledge transfer from one model to another, some recent studies have suggested that knowledge distillation (KD) is in fact a form of regularization. Perhaps the strongest argument of all for this new perspective comes from its apparent similarities with label smoothing (LS). Here we re-examine this stated equivalence between the two methods by comparing the predictive confidences of the models they train. Experiments on four text classification tasks involving models of different sizes show that: (a) In most settings, KD and LS drive model confidence in completely opposite directions, and (b) In KD, the student inherits not only its knowledge but also its confidence from the teacher, reinforcing the classical knowledge transfer view.\",\n}\n",
+    "authors": [
+        "Md Sultan"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.emnlp-main.271.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/1a023c1a-97ca-5ba9-aea9-781f1cfbb346.pdf",
+    "num_pages": 9,
+    "abstract": "Originally proposed as a method for knowledge transfer from one model to another, some recent studies have suggested that knowledge distillation (KD) is in fact a form of regularization. Perhaps the strongest argument of all for this new perspective comes from its apparent similarities with label smoothing (LS). Here we re-examine this stated equivalence between the two methods by comparing the predictive confidences of the models they train. Experiments on four text classification tasks involving models of different sizes show that: (a) In most settings, KD and LS drive model confidence in completely opposite directions, and (b) In KD, the student inherits not only its knowledge but also its confidence from the teacher, reinforcing the classical knowledge transfer view.",
+    "tldr": "KD and LS are not equivalent; they impact model confidence differently.",
+    "tags": [
+        "Knowledge Distillation",
+        "Label Smoothing",
+        "Model Regularization",
+        "Predictive Confidence",
+        "Text Classification"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "uuid": "1ee0a3c2-c155-541c-aa3a-dd86cb24a4d8",
+    "title": "NoMAD-Attention: Efficient LLM Inference on CPUs Through Multiply-add-free Attention",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nzhang2024nomadattention,\ntitle={No{MAD}-Attention: Efficient {LLM} Inference on {CPU}s Through Multiply-add-free Attention},\nauthor={Tianyi Zhang and Jonah Wonkyu Yi and Bowen Yao and Zhaozhuo Xu and Anshumali Shrivastava},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=4xDxVQHsbZ}\n}",
+    "authors": [
+        "Tianyi Zhang",
+        "Jonah Wonkyu Yi",
+        "Bowen Yao",
+        "Zhaozhuo Xu",
+        "Anshumali Shrivastava"
+    ],
+    "pdf_url": "https://openreview.net/pdf/68372dd1d74a348f9569575a9907e59741292fab.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/1ee0a3c2-c155-541c-aa3a-dd86cb24a4d8.pdf",
+    "num_pages": 25,
+    "abstract": "Large Language Model (LLM) inference on Central Processing Units (CPU) is challenging due to the vast quantities of  Multiply-Add (MAD) matrix operations in the attention computations. This paper highlights a rare gem in modern CPUs, Single-Instruction-Multiple-Data (SIMD) registers, which allows for ultra-low-latency lookups in a batch. We leverage this unique capability to propose NoMAD-Attention, an efficient attention algorithm that replaces MAD operations with in-register lookups. Through hardware-aware algorithmic designs, NoMAD-Attention achieves the computation of attention scores using repeated fast accesses to SIMD registers. NoMAD-Attention works with pre-trained attention-based LLMs without model finetuning. Extensive empirical evaluations demonstrate that NoMAD-Attention maintains the quality of the original LLMs well and speeds up the 4-bit quantized LLaMA-7B-based model by up to $2 \\times$ at 16k context length.",
+    "tldr": "NoMAD-Attention boosts LLM inference on CPUs by replacing MAD with SIMD lookups.",
+    "tags": [
+        "large language model",
+        "efficiency",
+        "CPU inference",
+        "attention"
+    ]
+}

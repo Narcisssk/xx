@@ -1,0 +1,24 @@
+{
+    "uuid": "3f1a0e10-2f3f-53b3-8bf3-7869f3a40b31",
+    "title": "Is Programming by Example solved by LLMs?",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nli2024is,\ntitle={Is Programming by Example solved by {LLM}s?},\nauthor={Wen-Ding Li and Kevin Ellis},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=xqc8yyhScL}\n}",
+    "authors": [
+        "Wen-Ding Li",
+        "Kevin Ellis"
+    ],
+    "pdf_url": "https://openreview.net/pdf/33f765535b07939dd68a31a9eb396750d9b18474.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/3f1a0e10-2f3f-53b3-8bf3-7869f3a40b31.pdf",
+    "num_pages": 30,
+    "abstract": "Programming-by-Examples (PBE) aims to generate an algorithm from input-output examples.\nSuch systems are practically and theoretically important:\nfrom an end-user perspective, they are deployed to millions of people, and from an AI perspective, PBE corresponds to a very general form of few-shot inductive inference.\nGiven the success of Large Language Models (LLMs) in code-generation tasks, we investigate here the extent to which LLMs can be said to have \"solved\" PBE.\nWe experiment on classic domains such as lists and strings, and an uncommon graphics programming domain not well represented in typical pretraining data.\nWe find that pretrained models are not effective at PBE, but that they can be fine-tuned for much higher performance, provided the test problems are in-distribution.\nWe analyze empirically what causes these models to succeed and fail, and take steps toward understanding how to achieve better out-of-distribution generalization.\nCollectively these results suggest that LLMs make strong progress toward solving the typical suite of PBE tasks, potentially increasing the flexibility and applicability of PBE systems, while also identifying ways in which LLMs still fall short.",
+    "tldr": "We explore methods for doing PBE with LLMs",
+    "tags": [
+        "programming by example",
+        "program synthesis",
+        "LLM",
+        "code generation"
+    ]
+}

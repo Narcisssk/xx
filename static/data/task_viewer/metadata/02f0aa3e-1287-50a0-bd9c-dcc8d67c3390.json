@@ -1,0 +1,28 @@
+{
+    "uuid": "02f0aa3e-1287-50a0-bd9c-dcc8d67c3390",
+    "title": "VoiceFlow: Efficient Text-To-Speech with Rectified Flow Matching",
+    "conference_full": "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)",
+    "conference": "icassp",
+    "year": 2024,
+    "volume": "ICASSP session SLP: Speech & Language Processing",
+    "bibtex": "@inproceedings{DBLP:conf/icassp/GuoDM0024,\n  author       = {Yiwei Guo and\n                  Chenpeng Du and\n                  Ziyang Ma and\n                  Xie Chen and\n                  Kai Yu},\n  title        = {VoiceFlow: Efficient Text-To-Speech with Rectified Flow Matching},\n  booktitle    = {{IEEE} International Conference on Acoustics, Speech and Signal Processing,\n                  {ICASSP} 2024, Seoul, Republic of Korea, April 14-19, 2024},\n  pages        = {11121--11125},\n  publisher    = {{IEEE}},\n  year         = {2024},\n  url          = {https://doi.org/10.1109/ICASSP48485.2024.10445948},\n  doi          = {10.1109/ICASSP48485.2024.10445948},\n  timestamp    = {Wed, 07 Aug 2024 12:26:13 +0200},\n  biburl       = {https://dblp.org/rec/conf/icassp/GuoDM0024.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+    "authors": [
+        "Yiwei Guo",
+        "Chenpeng Du",
+        "Ziyang Ma",
+        "Xie Chen",
+        "Kai Yu"
+    ],
+    "pdf_url": "https://doi.org/10.1109/ICASSP48485.2024.10445948",
+    "pdf_path": "data/dataset/airqa/papers/icassp2024/02f0aa3e-1287-50a0-bd9c-dcc8d67c3390.pdf",
+    "num_pages": 5,
+    "abstract": "Although diffusion models in text-to-speech have become a popular choice due to their strong generative ability, the intrinsic complexity of sampling from diffusion models harms their efficiency. Alternatively, we propose VoiceFlow, an acoustic model that utilizes a rectified flow matching algorithm to achieve high synthesis quality with a limited number of sampling steps. VoiceFlow formulates the process of generating mel-spectrograms into an ordinary differential equation conditional on text inputs, whose vector field is then estimated. The rectified flow technique then effectively straightens its sampling trajectory for efficient synthesis. Subjective and objective evaluations on both single and multi-speaker corpora showed the superior synthesis quality of VoiceFlow compared to the diffusion counterpart. Ablation studies further verified the validity of the rectified flow technique in VoiceFlow.",
+    "tldr": "VoiceFlow improves text-to-speech efficiency using rectified flow matching.",
+    "tags": [
+        "Text-to-Speech",
+        "VoiceFlow",
+        "Rectified Flow Matching",
+        "Diffusion Models",
+        "Mel-Spectrograms"
+    ]
+}

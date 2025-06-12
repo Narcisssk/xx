@@ -1,0 +1,31 @@
+{
+    "uuid": "86aea8c2-7ffe-534a-a610-d467151fe5de",
+    "title": "Rater Cohesion and Quality from a Vicarious Perspective",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    "bibtex": "@inproceedings{pandita-etal-2024-rater,\n    title = \"Rater Cohesion and Quality from a Vicarious Perspective\",\n    author = \"Pandita, Deepak  and\n      Weerasooriya, Tharindu Cyril  and\n      Dutta, Sujan  and\n      Luger, Sarah K. K.  and\n      Ranasinghe, Tharindu  and\n      KhudaBukhsh, Ashiqur R.  and\n      Zampieri, Marcos  and\n      Homan, Christopher M\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2024\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-emnlp.296/\",\n    doi = \"10.18653/v1/2024.findings-emnlp.296\",\n    pages = \"5149--5162\",\n    abstract = \"Human feedback is essential for building human-centered AI systems across domains where disagreement is prevalent, such as AI safety, content moderation, or sentiment analysis. Many disagreements, particularly in politically charged settings, arise because raters have opposing values or beliefs. Vicarious annotation is a method for breaking down disagreement by asking raters how they think others would annotate the data. In this paper, we explore the use of vicarious annotation with analytical methods for moderating rater disagreement. We employ rater cohesion metrics to study the potential influence of political affiliations and demographic backgrounds on raters' perceptions of offense. Additionally, we utilize CrowdTruth's rater quality metrics, which consider the demographics of the raters, to score the raters and their annotations. We study how the rater quality metrics influence the in-group and cross-group rater cohesion across the personal and vicarious levels.\"\n}\n",
+    "authors": [
+        "Deepak Pandita",
+        "Tharindu Cyril Weerasooriya",
+        "Sujan Dutta",
+        "Sarah K. K. Luger",
+        "Tharindu Ranasinghe",
+        "Ashiqur R. KhudaBukhsh",
+        "Marcos Zampieri",
+        "Christopher M Homan"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-emnlp.296.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/86aea8c2-7ffe-534a-a610-d467151fe5de.pdf",
+    "num_pages": 14,
+    "abstract": "Human feedback is essential for building human-centered AI systems across domains where disagreement is prevalent, such as AI safety, content moderation, or sentiment analysis. Many disagreements, particularly in politically charged settings, arise because raters have opposing values or beliefs. Vicarious annotation is a method for breaking down disagreement by asking raters how they think others would annotate the data. In this paper, we explore the use of vicarious annotation with analytical methods for moderating rater disagreement. We employ rater cohesion metrics to study the potential influence of political affiliations and demographic backgrounds on raters’ perceptions of offense. Additionally, we utilize CrowdTruth’s rater quality metrics, which consider the demographics of the raters, to score the raters and their annotations. We study how the rater quality metrics influence the in-group and cross-group rater cohesion across the personal and vicarious levels.",
+    "tldr": "This paper explores vicarious annotation to reduce rater disagreement in AI tasks.",
+    "tags": [
+        "Rater cohesion",
+        "Vicarious annotation",
+        "Human-centered AI",
+        "Rater quality metrics",
+        "Political disagreement"
+    ]
+}

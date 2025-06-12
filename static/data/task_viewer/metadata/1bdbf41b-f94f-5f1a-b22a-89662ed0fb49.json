@@ -1,0 +1,28 @@
+{
+    "uuid": "1bdbf41b-f94f-5f1a-b22a-89662ed0fb49",
+    "title": "ReFIR: Grounding Large Restoration Models with Retrieval Augmentation",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nguo2024refir,\ntitle={Re{FIR}: Grounding Large Restoration Models with Retrieval Augmentation},\nauthor={Hang Guo and Tao Dai and Zhihao Ouyang and Taolin Zhang and Yaohua Zha and Bin Chen and Shu-Tao Xia},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=iFKmFUxQDh}\n}",
+    "authors": [
+        "Hang Guo",
+        "Tao Dai",
+        "Zhihao Ouyang",
+        "Taolin Zhang",
+        "Yaohua Zha",
+        "Bin Chen",
+        "Shu-Tao Xia"
+    ],
+    "pdf_url": "https://openreview.net/pdf/4b4f37247817eaee1dde1da0101212a63588a707.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/1bdbf41b-f94f-5f1a-b22a-89662ed0fb49.pdf",
+    "num_pages": 29,
+    "abstract": "Recent advances in diffusion-based Large Restoration Models (LRMs) have significantly improved photo-realistic image restoration by leveraging the internal knowledge embedded within model weights. However, existing LRMs often suffer from the hallucination dilemma, i.e., producing incorrect contents or textures when dealing with severe degradations, due to their heavy reliance on limited internal knowledge. In this paper, we propose an orthogonal solution called the Retrieval-augmented Framework for Image Restoration (ReFIR), which incorporates retrieved images as external knowledge to extend the knowledge boundary of existing LRMs in generating details faithful to the original scene.  Specifically, we first introduce the nearest neighbor lookup to retrieve content-relevant high-quality images as reference, after which we propose the cross-image injection to modify existing LRMs to utilize high-quality textures from retrieved images. Thanks to the additional external knowledge, our ReFIR can well handle the hallucination challenge and facilitate faithfully results. Extensive experiments demonstrate that ReFIR can achieve not only high-fidelity but also realistic restoration results. Importantly, our ReFIR requires no training and is adaptable to various LRMs.",
+    "tldr": "This paper propose a training-free framework to alleviate the hallucination of existing diffusion-based restoration models producing unfaithful contents or textures.",
+    "tags": [
+        "Image Restoration",
+        "Diffusion Model",
+        "Retrieval Augmented Generation"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "uuid": "3c858455-bd01-5499-9960-eaffa5af22e8",
+    "title": "Soft-Label Integration for Robust Toxicity Classification",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\ncheng2024softlabel,\ntitle={Soft-Label Integration for Robust Toxicity Classification},\nauthor={Zelei Cheng and Xian Wu and Jiahao Yu and Shuo Han and Xin-Qiang Cai and Xinyu Xing},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=iYkhThIXG1}\n}",
+    "authors": [
+        "Zelei Cheng",
+        "Xian Wu",
+        "Jiahao Yu",
+        "Shuo Han",
+        "Xin-Qiang Cai",
+        "Xinyu Xing"
+    ],
+    "pdf_url": "https://openreview.net/pdf/57903154d4f4a6b9319a3259d24f77771bc8c00d.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/3c858455-bd01-5499-9960-eaffa5af22e8.pdf",
+    "num_pages": 32,
+    "abstract": "Toxicity classification in textual content remains a significant problem. Data with labels from a single annotator fall short of capturing the diversity of human perspectives. Therefore, there is a growing need to incorporate crowdsourced annotations for training an effective toxicity classifier. Additionally, the standard approach to training a classifier using empirical risk minimization (ERM) may fail to address the potential shifts between the training set and testing set due to exploiting spurious correlations. This work introduces a novel bi-level optimization framework that integrates crowdsourced annotations with the soft-labeling technique and optimizes the soft-label weights by Group Distributionally Robust Optimization (GroupDRO) to enhance the robustness against out-of-distribution (OOD) risk. We theoretically prove the convergence of our bi-level optimization algorithm. Experimental results demonstrate that our approach outperforms existing baseline methods in terms of both average and worst-group accuracy, confirming its effectiveness in leveraging crowdsourced annotations to achieve more effective and robust toxicity classification.",
+    "tldr": "A bi-level optimization framework improves toxicity classification using crowdsourced soft-labels.",
+    "tags": [
+        "toxicity",
+        "LLM safety",
+        "crowdsourcing",
+        "OOD"
+    ]
+}

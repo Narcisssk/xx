@@ -1,0 +1,27 @@
+{
+    "uuid": "0a95099e-2121-5136-b03f-d9232413cc31",
+    "title": "Offline Imitation Learning with Variational Counterfactual Reasoning",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 poster",
+    "bibtex": "@inproceedings{\nsun2023offline,\ntitle={Offline Imitation Learning with Variational Counterfactual Reasoning},\nauthor={Zexu Sun and Bowei He and Jinxin Liu and Xu Chen and Chen Ma and Shuai Zhang},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=6d9Yxttb3w}\n}",
+    "authors": [
+        "Zexu Sun",
+        "Bowei He",
+        "Jinxin Liu",
+        "Xu Chen",
+        "Chen Ma",
+        "Shuai Zhang"
+    ],
+    "pdf_url": "https://openreview.net/pdf/b9a6e171b807e5d95fa53aa8388a0612716edf42.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/0a95099e-2121-5136-b03f-d9232413cc31.pdf",
+    "num_pages": 13,
+    "abstract": "In offline imitation learning (IL), an agent aims to learn an optimal expert behavior policy without additional online environment interactions. However, in many real-world scenarios, such as robotics manipulation, the offline dataset is collected from suboptimal behaviors without rewards. Due to the scarce expert data, the agents usually suffer from simply memorizing poor trajectories and are vulnerable to the variations in the environments, lacking the capability of generalizing to new environments.To automatically generate high-quality expert data and improve the generalization ability of the agent, we propose a framework named \\underline{O}ffline \\underline{I}mitation \\underline{L}earning with \\underline{C}ounterfactual data \\underline{A}ugmentation (OILCA) by doing counterfactual inference. In particular, we leverage identifiable variational autoencoder to generate \\textit{counterfactual} samples for expert data augmentation. We theoretically analyze the influence of the generated expert data and the improvement of generalization. Moreover, we conduct extensive experiments to demonstrate that our approach significantly outperforms various baselines on both \\textsc{DeepMind Control Suite} benchmark for in-distribution performance and \\textsc{CausalWorld} benchmark for out-of-distribution generalization.",
+    "tldr": "Proposes OILCA to enhance offline imitation learning using counterfactual data.",
+    "tags": [
+        "offline imitaion learning",
+        "counterfactual reasoning",
+        "data augmentation"
+    ]
+}

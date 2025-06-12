@@ -1,0 +1,30 @@
+{
+    "uuid": "229809ba-59b0-5972-8dd9-ca9aedcdce32",
+    "title": "Analog Computing for AI Sometimes Needs Correction by Digital Computing: Why and When",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "MLNCP Poster",
+    "bibtex": "@inproceedings{\nkim2024analog,\ntitle={Analog Computing for {AI} Sometimes Needs Correction by Digital Computing: Why and When},\nauthor={Changdae Kim and Daegun Yoon and Taehoon Kim and Yeonjeong Jeong and Kangho Kim and Kwangwon Koh and Eunji Pak},\nbooktitle={NeurIPS 2024 Workshop Machine Learning with new Compute Paradigms},\nyear={2024},\nurl={https://openreview.net/forum?id=GebgnS1TdT}\n}",
+    "authors": [
+        "Changdae Kim",
+        "Daegun Yoon",
+        "Taehoon Kim",
+        "Yeonjeong Jeong",
+        "Kangho Kim",
+        "Kwangwon Koh",
+        "Eunji Pak"
+    ],
+    "pdf_url": "https://openreview.net/pdf/a15870cd709a97c3c194db8b421e76f8ddd4d0e1.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/229809ba-59b0-5972-8dd9-ca9aedcdce32.pdf",
+    "num_pages": 9,
+    "abstract": "Analog computing is a compute-in-memory technology that allows multiple dot-product operations to be performed in parallel, and can extremely accelerate matrix-vector multiplications in AI. However, computation in analog computing devices is imperfect due to its non-idealities. This can severely degrade its accuracy, and prevents the analog computing from being widely used.\nIn this paper, we propose a correction-based approach to mitigate these non-idealities of analog computing. The proposed method exploits the confidence score calculated from analog computing, and leverages digital computing to correct the result if the confidence is low. We propose two algorithms that efficiently improve accuracy without requiring offline profiling or training. First, the digital rate-based correction algorithm optimizes the accuracy with given the target digital computing usage rate. Second, the confidence threshold based correction algorithm balances the digital computing usage rate and the accuracy by finding the appropriate threshold from online profiling. We use several image recognition models to show that the proposed algorithms improve the accuracy of AI on analog computing by efficiently utilizing the digital computing.",
+    "tldr": "To overcome the computational inaccuracies of analog computing for AI, we estimate the confidence of the results and correct the results by digital computing if needed. Two algorithms balance the use of digital computing with accuracy.",
+    "tags": [
+        "Analog Computing",
+        "Non-ideality",
+        "AI",
+        "Accuracy",
+        "Efficiency"
+    ]
+}

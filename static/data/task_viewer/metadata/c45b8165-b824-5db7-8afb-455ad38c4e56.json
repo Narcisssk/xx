@@ -1,0 +1,25 @@
+{
+    "uuid": "c45b8165-b824-5db7-8afb-455ad38c4e56",
+    "title": "On the Similarity of Circuits across Languages: a Case Study on the Subject-verb Agreement Task",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    "bibtex": "@inproceedings{ferrando-costa-jussa-2024-similarity,\n    title = \"On the Similarity of Circuits across Languages: a Case Study on the Subject-verb Agreement Task\",\n    author = \"Ferrando, Javier  and\n      Costa-juss\\`a, Marta R.\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2024\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-emnlp.591/\",\n    doi = \"10.18653/v1/2024.findings-emnlp.591\",\n    pages = \"10115--10125\",\n    abstract = \"Several algorithms implemented by language models have recently been successfully reversed-engineered. However, these findings have been concentrated on specific tasks and models, leaving it unclear how universal circuits are across different settings. In this paper, we study the circuits implemented by Gemma 2B for solving the subject-verb agreement task across two different languages, English and Spanish. We discover that both circuits are highly consistent, being mainly driven by a particular attention head writing a `subject number' signal to the last residual stream, which is read by a small set of neurons in the final MLPs. Notably, this subject number signal is represented as a direction in the residual stream space, and is language-independent. Finally, we demonstrate this direction has a causal effect on the model predictions, effectively flipping the Spanish predicted verb number by intervening with the direction found in English.\"\n}\n",
+    "authors": [
+        "Javier Ferrando",
+        "Marta R. Costa-jussà"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-emnlp.591.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/c45b8165-b824-5db7-8afb-455ad38c4e56.pdf",
+    "num_pages": 11,
+    "abstract": "Several algorithms implemented by language models have recently been successfully reversed-engineered. However, these findings have been concentrated on specific tasks and models, leaving it unclear how universal circuits are across different settings. In this paper, we study the circuits implemented by Gemma 2B for solving the subject-verb agreement task across two different languages, English and Spanish. We discover that both circuits are highly consistent, being mainly driven by a particular attention head writing a ‘subject number’ signal to the last residual stream, which is read by a small set of neurons in the final MLPs. Notably, this subject number signal is represented as a direction in the residual stream space, and is language-independent. Finally, we demonstrate this direction has a causal effect on the model predictions, effectively flipping the Spanish predicted verb number by intervening with the direction found in English.",
+    "tldr": "Circuits for subject-verb agreement in English and Spanish show high consistency.",
+    "tags": [
+        "subject-verb agreement",
+        "language models",
+        "circuit similarity",
+        "cross-linguistic study",
+        "attention mechanisms"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "uuid": "4535464e-20c9-5370-ba5c-63e36d110e00",
+    "title": "Voice-Preserving Zero-Shot Multiple Accent Conversion",
+    "conference_full": "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)",
+    "conference": "icassp",
+    "year": 2023,
+    "volume": "ICASSP session SLT: Spoken Language Technology",
+    "bibtex": "@inproceedings{DBLP:conf/icassp/JinSWTMH23,\n  author       = {Mumin Jin and\n                  Prashant Serai and\n                  Jilong Wu and\n                  Andros Tjandra and\n                  Vimal Manohar and\n                  Qing He},\n  title        = {Voice-Preserving Zero-Shot Multiple Accent Conversion},\n  booktitle    = {{IEEE} International Conference on Acoustics, Speech and Signal Processing\n                  {ICASSP} 2023, Rhodes Island, Greece, June 4-10, 2023},\n  pages        = {1--5},\n  publisher    = {{IEEE}},\n  year         = {2023},\n  url          = {https://doi.org/10.1109/ICASSP49357.2023.10094737},\n  doi          = {10.1109/ICASSP49357.2023.10094737},\n  timestamp    = {Sun, 05 Nov 2023 16:51:21 +0100},\n  biburl       = {https://dblp.org/rec/conf/icassp/JinSWTMH23.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+    "authors": [
+        "Mumin Jin",
+        "Prashant Serai",
+        "Jilong Wu",
+        "Andros Tjandra",
+        "Vimal Manohar",
+        "Qing He"
+    ],
+    "pdf_url": "https://doi.org/10.1109/ICASSP49357.2023.10094737",
+    "pdf_path": "data/dataset/airqa/papers/icassp2023/4535464e-20c9-5370-ba5c-63e36d110e00.pdf",
+    "num_pages": 5,
+    "abstract": "Most people who have tried to learn a foreign language would have experienced difficulties understanding or speaking with a native speaker’s accent. For native speakers, understanding or speaking a new accent is likewise a difficult task. An accent conversion system that changes a speaker’s accent but preserves that speaker’s voice identity, such as timbre and pitch, has the potential for a range of applications, such as communication, language learning, and entertainment. Existing accent conversion models tend to change the speaker identity and accent at the same time. Here, we use adversarial learning to disentangle accent dependent features while retaining other acoustic characteristics. What sets our work apart from existing accent conversion models is the capability to convert an unseen speaker’s utterance to multiple accents while preserving its original voice identity. Subjective evaluations show that our model generates audio that sound closer to the target accent and like the original speaker.",
+    "tldr": "Voice-preserving model enables zero-shot accent conversion for unseen speakers.",
+    "tags": [
+        "accent conversion",
+        "voice preservation",
+        "zero-shot learning",
+        "adversarial learning",
+        "speech synthesis"
+    ]
+}

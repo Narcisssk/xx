@@ -1,0 +1,27 @@
+{
+    "uuid": "c0b50614-6a7c-51ba-a82d-48470b29fc57",
+    "title": "MobileFlow: A Multimodal LLM For Mobile GUI Agent",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 Workshop Open-World Agents Poster",
+    "bibtex": "@inproceedings{\nnong2024mobileflow,\ntitle={MobileFlow: A Multimodal {LLM} For Mobile {GUI} Agent},\nauthor={Songqin Nong and Jiali Zhu and Rui Wu and Jiongchao Jin and Shuo Shan and Xiutian Huang and Wenhao Xu},\nbooktitle={NeurIPS 2024 Workshop on Open-World Agents},\nyear={2024},\nurl={https://openreview.net/forum?id=ylyF4ux9WJ}\n}",
+    "authors": [
+        "Songqin Nong",
+        "Jiali Zhu",
+        "Rui Wu",
+        "Jiongchao Jin",
+        "Shuo Shan",
+        "Xiutian Huang",
+        "Wenhao Xu"
+    ],
+    "pdf_url": "https://openreview.net/pdf/f9b9456c5a66d3c3112aadacb0e1f1edf799f9ee.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/c0b50614-6a7c-51ba-a82d-48470b29fc57.pdf",
+    "num_pages": 15,
+    "abstract": "The ongoing evolution of multimodal large-scale models, such as GPT-4v, Qwen-VL-Max, has significantly bolstered the capabilities of image comprehension and user action analysis, showcasing the potentiality of intelligent graphically-oriented user interface (GUI) assistants. However, current GUI Agents often need to access page layout information through calling system APIs, which may pose privacy risks, and also need to fix user interfaces to a certain low resolution might result in the loss of fine-grained image details. Meanwhile, the multimodal large models built for GUI Agents currently have poor understanding and decision-making performance when dealing with Mandarin apps. This paper introduces MobileFlow, a multimodal large language model meticulously crafted for mobile GUI agents. Transforming from the open-source model Qwen-VL-Chat into GUI domain, MobileFlow contains approximately 21 billion parameters and is equipped with novel hybrid visual encoders, making it possible for variable resolutions of image inputs and good support for multilingual GUI. By incorporating Mixture of Experts (MoE) expansions and pioneering alignment training strategies, MobileFlow has the capacity to fully interpret image data and comprehend user instructions for GUI interaction tasks. Finally, MobileFlow outperforms Qwen-VL-Max and GPT-4v in terms of task execution by GUI agents on both public and our proposed evaluation metrics, and has been successfully deployed in real-world business contexts, proving its effectiveness for practical applications.",
+    "tldr": "MobileFlow is a multimodal LLM for improved mobile GUI agent performance.",
+    "tags": [
+        "Large Language Model",
+        "GUI Agent"
+    ]
+}

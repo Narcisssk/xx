@@ -1,0 +1,29 @@
+{
+    "uuid": "000bebd2-6c2c-56dc-9709-cd228a417519",
+    "title": "Retrieval-Augmented Text-to-Audio Generation",
+    "conference_full": "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)",
+    "conference": "icassp",
+    "year": 2024,
+    "volume": "ICASSP session AASP: Audio & Acoustic Signal Processing",
+    "bibtex": "@inproceedings{DBLP:conf/icassp/YuanLLHP024,\n  author       = {Yi Yuan and\n                  Haohe Liu and\n                  Xubo Liu and\n                  Qiushi Huang and\n                  Mark D. Plumbley and\n                  Wenwu Wang},\n  title        = {Retrieval-Augmented Text-to-Audio Generation},\n  booktitle    = {{IEEE} International Conference on Acoustics, Speech and Signal Processing,\n                  {ICASSP} 2024, Seoul, Republic of Korea, April 14-19, 2024},\n  pages        = {581--585},\n  publisher    = {{IEEE}},\n  year         = {2024},\n  url          = {https://doi.org/10.1109/ICASSP48485.2024.10447898},\n  doi          = {10.1109/ICASSP48485.2024.10447898},\n  timestamp    = {Mon, 05 Aug 2024 15:27:25 +0200},\n  biburl       = {https://dblp.org/rec/conf/icassp/YuanLLHP024.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+    "authors": [
+        "Yi Yuan",
+        "Haohe Liu",
+        "Xubo Liu",
+        "Qiushi Huang",
+        "Mark D. Plumbley",
+        "Wenwu Wang"
+    ],
+    "pdf_url": "https://doi.org/10.1109/ICASSP48485.2024.10447898",
+    "pdf_path": "data/dataset/airqa/papers/icassp2024/000bebd2-6c2c-56dc-9709-cd228a417519.pdf",
+    "num_pages": 5,
+    "abstract": "Despite recent progress in text-to-audio (TTA) generation, we show that the state-of-the-art models, such as AudioLDM, trained on datasets with an imbalanced class distribution, such as AudioCaps, are biased in their generation performance. Specifically, they excel in generating common audio classes while underperforming in the rare ones, thus degrading the overall generation performance. We refer to this problem as long-tailed text-to-audio generation. To address this issue, we propose a simple retrieval-augmented approach for TTA models. Specifically, given an input text prompt, we first leverage a Contrastive Language Audio Pretraining (CLAP) model to retrieve relevant text-audio pairs. The features of the retrieved audio-text data are then used as additional conditions to guide the learning of TTA models. We enhance AudioLDM with our proposed approach and denote the resulting augmented system as Re-AudioLDM. On the AudioCaps dataset, Re-AudioLDM achieves a state-of-the-art Frechet Audio Distance (FAD) of 1.37, outperforming the existing approaches by a large margin. Furthermore, we show that Re-AudioLDM can generate realistic audio for complex scenes, rare audio classes, and even unseen audio types, indicating its potential in TTA tasks.",
+    "tldr": "Proposes Re-AudioLDM to improve text-to-audio generation for rare classes.",
+    "tags": [
+        "text-to-audio generation",
+        "retrieval-augmented learning",
+        "long-tailed classification",
+        "Contrastive Language Audio Pretraining",
+        "AudioLDM"
+    ]
+}

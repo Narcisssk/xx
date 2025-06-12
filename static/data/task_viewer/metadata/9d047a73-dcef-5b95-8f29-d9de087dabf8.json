@@ -1,0 +1,25 @@
+{
+    "uuid": "9d047a73-dcef-5b95-8f29-d9de087dabf8",
+    "title": "Wav2vec-VC: Voice Conversion via Hidden Representations of Wav2vec 2.0",
+    "conference_full": "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)",
+    "conference": "icassp",
+    "year": 2024,
+    "volume": "ICASSP session SLP: Speech & Language Processing",
+    "bibtex": "@inproceedings{DBLP:conf/icassp/LimK24,\n  author       = {Jaemin Lim and\n                  Kiyeon Kim},\n  title        = {Wav2vec-VC: Voice Conversion via Hidden Representations of Wav2vec\n                  2.0},\n  booktitle    = {{IEEE} International Conference on Acoustics, Speech and Signal Processing,\n                  {ICASSP} 2024, Seoul, Republic of Korea, April 14-19, 2024},\n  pages        = {10326--10330},\n  publisher    = {{IEEE}},\n  year         = {2024},\n  url          = {https://doi.org/10.1109/ICASSP48485.2024.10447984},\n  doi          = {10.1109/ICASSP48485.2024.10447984},\n  timestamp    = {Tue, 06 Aug 2024 14:48:06 +0200},\n  biburl       = {https://dblp.org/rec/conf/icassp/LimK24.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+    "authors": [
+        "Jaemin Lim",
+        "Kiyeon Kim"
+    ],
+    "pdf_url": "https://doi.org/10.1109/ICASSP48485.2024.10447984",
+    "pdf_path": "data/dataset/airqa/papers/icassp2024/9d047a73-dcef-5b95-8f29-d9de087dabf8.pdf",
+    "num_pages": 5,
+    "abstract": "This paper describes an unconventional way to use wav2vec 2.0 representations for voice conversion (VC) purpose. Our experiment shows that aggregate of hidden representations from wav2vec 2.0 layers is more effective in VC than using last-layer representation only. In particular, the aggregate of all hidden representations is dependent on a mainly required characteristic (e.g. vocal or linguistic) by a speech task—but such results are consistent on different datasets for the same task. Based on these results, we propose Wav2vec-VC that uses wav2vec 2.0 hidden-layer representations as input to the disentanglement-based VC. Given a target (/source) utterance, Wav2vec-VC gets an aggregated hidden representation weighted in order to perform the speaker (/content)-related tasks, and feeds it to a speaker (/content) encoder whose output is combined at a decoder to synthesize a voice-converted utterance. Our evaluation shows that Wav2vec-VC outperforms SOTA VC models in terms of both voice similarity and speech intelligibility.",
+    "tldr": "Wav2vec-VC improves voice conversion using aggregated hidden representations.",
+    "tags": [
+        "voice conversion",
+        "wav2vec 2.0",
+        "hidden representations",
+        "speech synthesis",
+        "machine learning"
+    ]
+}

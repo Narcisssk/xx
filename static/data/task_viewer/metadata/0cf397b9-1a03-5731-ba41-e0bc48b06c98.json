@@ -1,0 +1,27 @@
+{
+    "uuid": "0cf397b9-1a03-5731-ba41-e0bc48b06c98",
+    "title": "Simultaneous Interpretation Corpus Construction by Large Language Models in Distant Language Pair",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{sakai-etal-2024-simultaneous,\n    title = \"Simultaneous Interpretation Corpus Construction by Large Language Models in Distant Language Pair\",\n    author = \"Sakai, Yusuke  and\n      Makinae, Mana  and\n      Kamigaito, Hidetaka  and\n      Watanabe, Taro\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.emnlp-main.1248/\",\n    doi = \"10.18653/v1/2024.emnlp-main.1248\",\n    pages = \"22375--22398\",\n    abstract = \"In Simultaneous Machine Translation (SiMT), training with a simultaneous interpretation (SI) corpus is an effective method for achieving high-quality yet low-latency. However, constructing such a corpus is challenging due to high costs, and limitations in annotator capabilities, and as a result, existing SI corpora are limited. Therefore, we propose a method to convert existing speech translation (ST) corpora into interpretation-style corpora, maintaining the original word order and preserving the entire source content using Large Language Models (LLM-SI-Corpus). We demonstrate that fine-tuning SiMT models using the LLM-SI-Corpus reduces latency while achieving better quality compared to models fine-tuned with other corpora in both speech-to-text and text-to-text settings. The LLM-SI-Corpus is available at https://github.com/yusuke1997/LLM-SI-Corpus.\"\n}\n",
+    "authors": [
+        "Yusuke Sakai",
+        "Mana Makinae",
+        "Hidetaka Kamigaito",
+        "Taro Watanabe"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.emnlp-main.1248.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/0cf397b9-1a03-5731-ba41-e0bc48b06c98.pdf",
+    "num_pages": 24,
+    "abstract": "In Simultaneous Machine Translation (SiMT), training with a simultaneous interpretation (SI) corpus is an effective method for achieving high-quality yet low-latency. However, constructing such a corpus is challenging due to high costs, and limitations in annotator capabilities, and as a result, existing SI corpora are limited. Therefore, we propose a method to convert existing speech translation (ST) corpora into interpretation-style corpora, maintaining the original word order and preserving the entire source content using Large Language Models (LLM-SI-Corpus). We demonstrate that fine-tuning SiMT models using the LLM-SI-Corpus reduces latency while achieving better quality compared to models fine-tuned with other corpora in both speech-to-text and text-to-text settings. The LLM-SI-Corpus is available at https://github.com/yusuke1997/LLM-SI-Corpus.",
+    "tldr": "LLM-SI-Corpus improves simultaneous translation quality and reduces latency.",
+    "tags": [
+        "Simultaneous Interpretation",
+        "Large Language Models",
+        "Machine Translation",
+        "Corpus Construction",
+        "Speech Translation"
+    ]
+}

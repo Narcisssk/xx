@@ -1,0 +1,35 @@
+{
+    "uuid": "2c47dd59-12dc-5da3-ac15-4f046cf45d6c",
+    "title": "De-Identification of Sensitive Personal Data in Datasets Derived from IIT-CDIP",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{larson-etal-2024-de,\n    title = \"De-Identification of Sensitive Personal Data in Datasets Derived from {IIT}-{CDIP}\",\n    author = \"Larson, Stefan  and\n      Lima, Nicole Cornehl  and\n      Diaz, Santiago Pedroza  and\n      Joshi, Amogh Manoj  and\n      Betala, Siddharth  and\n      Suleiman, Jamiu Tunde  and\n      Mathur, Yash  and\n      Prajapati, Kaushal Kumar  and\n      Alakraa, Ramla  and\n      Shen, Junjie  and\n      Okotore, Temi  and\n      Leach, Kevin\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.emnlp-main.1198\",\n    doi = \"10.18653/v1/2024.emnlp-main.1198\",\n    pages = \"21494--21505\",\n    abstract = \"The IIT-CDIP document collection is the source of several widely used and publicly accessible document understanding datasets. In this paper, manual inspection of 5 datasets derived from IIT-CDIP uncovers the presence of thousands of instances of sensitive personal data, including US Social Security Numbers (SSNs), birth places and dates, and home addresses of individuals. The presence of such sensitive personal data in commonly-used and publicly available datasets is startling and has ethical and potentially legal implications; we believe such sensitive data ought to be removed from the internet. Thus, in this paper, we develop a modular data de-identification pipeline that replaces sensitive data with synthetic, but realistic, data. Via experiments, we demonstrate that this de-identification method preserves the utility of the de-identified documents so that they can continue be used in various document understanding applications. We will release redacted versions of these datasets publicly.\",\n}\n",
+    "authors": [
+        "Stefan Larson",
+        "Nicole Cornehl Lima",
+        "Santiago Pedroza Diaz",
+        "Amogh Manoj Joshi",
+        "Siddharth Betala",
+        "Jamiu Tunde Suleiman",
+        "Yash Mathur",
+        "Kaushal Kumar Prajapati",
+        "Ramla Alakraa",
+        "Junjie Shen",
+        "Temi Okotore",
+        "Kevin Leach"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.emnlp-main.1198.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/2c47dd59-12dc-5da3-ac15-4f046cf45d6c.pdf",
+    "num_pages": 12,
+    "abstract": "The IIT-CDIP document collection is the source of several widely used and publicly accessible document understanding datasets. In this paper, manual inspection of 5 datasets derived from IIT-CDIP uncovers the presence of thousands of instances of sensitive personal data, including US Social Security Numbers (SSNs), birth places and dates, and home addresses of individuals. The presence of such sensitive personal data in commonly-used and publicly available datasets is startling and has ethical and potentially legal implications; we believe such sensitive data ought to be removed from the internet. Thus, in this paper, we develop a modular data de-identification pipeline that replaces sensitive data with synthetic, but realistic, data. Via experiments, we demonstrate that this de-identification method preserves the utility of the de-identified documents so that they can continue be used in various document understanding applications. We will release redacted versions of these datasets publicly.",
+    "tldr": "Developed a pipeline to de-identify sensitive data in IIT-CDIP datasets.",
+    "tags": [
+        "data de-identification",
+        "sensitive personal data",
+        "IIT-CDIP",
+        "document understanding",
+        "ethical implications"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "2f1c8d90-3428-52b0-b7ec-da132f9178e6",
+    "title": "LLM Evaluators Recognize and Favor Their Own Generations",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 oral",
+    "bibtex": "@inproceedings{\npanickssery2024llm,\ntitle={{LLM} Evaluators Recognize and Favor Their Own Generations},\nauthor={Arjun Panickssery and Samuel R. Bowman and Shi Feng},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=4NJBV6Wp0h}\n}",
+    "authors": [
+        "Arjun Panickssery",
+        "Samuel R. Bowman",
+        "Shi Feng"
+    ],
+    "pdf_url": "https://openreview.net/pdf/17f3e3ce067de145352b0881a5a5a351cfcceac4.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/2f1c8d90-3428-52b0-b7ec-da132f9178e6.pdf",
+    "num_pages": 31,
+    "abstract": "Self-evaluation using large language models (LLMs) has proven valuable not only in benchmarking but also methods like reward modeling, constitutional AI, and self-refinement. But new biases are introduced due to the same LLM acting as both the evaluator and the evaluatee. One such bias is self-preference, where an LLM evaluator scores its own outputs higher than others’ while human annotators consider them of equal quality. But do LLMs actually recognize their own outputs when they give those texts higher scores, or is it just a coincidence? In this paper, we investigate if self-recognition capability contributes to self-preference. We discover that, out of the box, LLMs such as GPT-4 and Llama 2 have non-trivial accuracy at distinguishing themselves from other LLMs and humans. By finetuning LLMs, we discover a linear correlation between self-recognition capability and the strength of self-preference bias; using controlled experiments, we show that the causal explanation resists straightforward confounders. We discuss how self-recognition can interfere with unbiased evaluations and AI safety more generally.",
+    "tldr": "In two text-summarization tasks, we find evidence of a causal link between an LLM's self-recognition ability and bias toward its own outputs in evaluation.",
+    "tags": [
+        "LLMs",
+        "evaluations",
+        "benchmarking",
+        "situational-awareness"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "uuid": "610d8e02-d6bb-52e3-801d-0dbcdb5310db",
+    "title": "SARCAT: Generative Span-Act Guided Response Generation using Copy-enhanced Target Augmentation",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    "bibtex": "@inproceedings{lee-etal-2024-sarcat,\n    title = \"{SARCAT}: Generative Span-Act Guided Response Generation using Copy-enhanced Target Augmentation\",\n    author = \"Lee, Jeong-Doo  and\n      Choi, Hyeongjun  and\n      Hong, Beomseok  and\n      Han, Youngsub  and\n      Jeon, Byoung-Ki  and\n      Na, Seung-Hoon\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2024\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-emnlp.867/\",\n    doi = \"10.18653/v1/2024.findings-emnlp.867\",\n    pages = \"14780--14787\",\n    abstract = \"In this paper, we present a novel extension to improve the document grounded response generation, by proposing the Generative Span Act Guided Response Generation using Copy enhanced Target Augmentation (SARCAT) that consists of two major components as follows: 1) Copy-enhanced target-side input augmentation is an extended data augmentation to deal with the exposure bias problem by additionally incorporating the copy mechanism on top of the target-side augmentation (Xie et al., 2021). 2) Span-act guided response generation, which first predicts grounding spans and dialogue acts before generating a response. Experiment results on validation set in MultiDoc2Dial show that the proposed SARSAT leads to improvement over strong baselines on both seen and unseen settings and achieves the start-of the-art performance, even with the base reader using the pretrained T5-base model.\"\n}\n",
+    "authors": [
+        "Jeong-Doo Lee",
+        "Hyeongjun Choi",
+        "Beomseok Hong",
+        "Youngsub Han",
+        "Byoung-Ki Jeon",
+        "Seung-Hoon Na"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-emnlp.867.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/610d8e02-d6bb-52e3-801d-0dbcdb5310db.pdf",
+    "num_pages": 8,
+    "abstract": "In this paper, we present a novel extension to improve the document grounded response generation, by proposing the Generative Span Act Guided Response Generation using Copy enhanced Target Augmentation (SARCAT) that consists of two major components as follows: 1) Copy-enhanced target-side input augmentation is an extended data augmentation to deal with the exposure bias problem by additionally incorporating the copy mechanism on top of the target-side augmentation (Xie et al., 2021). 2) Span-act guided response generation, which first predicts grounding spans and dialogue acts before generating a response. Experiment results on validation set in MultiDoc2Dial show that the proposed SARSAT leads to improvement over strong baselines on both seen and unseen settings and achieves the start-of the-art performance, even with the base reader using the pretrained T5-base model.",
+    "tldr": "SARCAT improves document grounded response generation using innovative data augmentation.",
+    "tags": [
+        "SARCAT",
+        "response generation",
+        "data augmentation",
+        "dialogue systems",
+        "exposure bias"
+    ]
+}

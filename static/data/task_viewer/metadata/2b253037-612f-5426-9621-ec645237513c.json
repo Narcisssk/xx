@@ -1,0 +1,28 @@
+{
+    "uuid": "2b253037-612f-5426-9621-ec645237513c",
+    "title": "SaulLM-54B & SaulLM-141B: Scaling Up Domain Adaptation for the Legal Domain",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\ncolombo2024saullmb,\ntitle={Saul{LM}-54B \\& Saul{LM}-141B: Scaling Up Domain Adaptation for the Legal Domain},\nauthor={Pierre Colombo and Telmo Pires and Malik Boudiaf and Rui Filipe Coimbra Pereira de Melo and Gabriel Hautreux and Etienne Malaboeuf and Johanne Charpentier and Dominic Culver and Michael Desa},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=NLUYZ4ZqNq}\n}",
+    "authors": [
+        "Pierre Colombo",
+        "Telmo Pires",
+        "Malik Boudiaf",
+        "Rui Filipe Coimbra Pereira de Melo",
+        "Gabriel Hautreux",
+        "Etienne Malaboeuf",
+        "Johanne Charpentier",
+        "Dominic Culver",
+        "Michael Desa"
+    ],
+    "pdf_url": "https://openreview.net/pdf/74664a11f3edd9b8dcbd2e5f6b79efd266b14e8f.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/2b253037-612f-5426-9621-ec645237513c.pdf",
+    "num_pages": 24,
+    "abstract": "In this paper, we introduce SaulLM-medium and SaulLM-large, two large language models (LLMs) families tailored for the legal sector. These models, which feature architectures of 54 billion and 140 billion parameters, respectively, are based on the Mixtral architecture. The development of SaulLM-54B and SaulLM-140B is guided by large-scale domain adaptation,  divided into strategies: (1) the exploitation of continued pretaining involving a legal corpus that includes over $400$ billion tokens, (2) the implementation of a specialized legal instruction-following protocol, and (3) the alignment of model outputs with human preferences in legal interpretations. The integration of synthetically generated data in the second and third steps enhances the models' capabilities in interpreting and processing legal texts, effectively reaching state-of-the-art performance and outperforming all previous open-source models on LegalBench Instruct. This research thoroughly explores the trade-offs involved in domain-specific adaptation at this scale, offering insights that may inform future studies on domain adaptation using strong decoder models. Building upon SaulLM-7B, this study refines the approach to produce an LLM better equipped for legal tasks and domains. Additionally, we release base, instruct and aligned versions on top of SaulLM-medium and SaulLM-large under the MIT License to facilitate reuse and collaborative research.",
+    "tldr": "LLM for Law via domain adaptation",
+    "tags": [
+        "NLP; Deep Learning; Law"
+    ]
+}

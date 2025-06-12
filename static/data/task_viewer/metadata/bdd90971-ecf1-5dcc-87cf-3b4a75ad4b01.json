@@ -1,0 +1,28 @@
+{
+    "uuid": "bdd90971-ecf1-5dcc-87cf-3b4a75ad4b01",
+    "title": "Humans or LLMs as the Judge? A Study on Judgement Bias",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{chen-etal-2024-humans,\n    title = \"Humans or {LLM}s as the Judge? A Study on Judgement Bias\",\n    author = \"Chen, Guiming Hardy  and\n      Chen, Shunian  and\n      Liu, Ziche  and\n      Jiang, Feng  and\n      Wang, Benyou\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.emnlp-main.474\",\n    doi = \"10.18653/v1/2024.emnlp-main.474\",\n    pages = \"8301--8327\",\n    abstract = \"Adopting human and large language models (LLM) as judges (*a.k.a* human- and LLM-as-a-judge) for evaluating the performance of LLMs has recently gained attention. Nonetheless, this approach concurrently introduces potential biases from human and LLMs, questioning the reliability of the evaluation results. In this paper, we propose a novel framework that is free from referencing groundtruth annotations for investigating **Misinformation Oversight Bias**, **Gender Bias**, **Authority Bias** and **Beauty Bias** on LLM and human judges. We curate a dataset referring to the revised Bloom{'}s Taxonomy and conduct thousands of evaluations. Results show that human and LLM judges are vulnerable to perturbations to various degrees, and that even the cutting-edge judges possess considerable biases. We further exploit these biases to conduct attacks on LLM judges. We hope that our work can notify the community of the bias and vulnerability of human- and LLM-as-a-judge, as well as the urgency of developing robust evaluation systems.\",\n}\n",
+    "authors": [
+        "Guiming Hardy Chen",
+        "Shunian Chen",
+        "Ziche Liu",
+        "Feng Jiang",
+        "Benyou Wang"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.emnlp-main.474.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/bdd90971-ecf1-5dcc-87cf-3b4a75ad4b01.pdf",
+    "num_pages": 27,
+    "abstract": "Adopting human and large language models (LLM) as judges (*a.k.a* human- and LLM-as-a-judge) for evaluating the performance of LLMs has recently gained attention. Nonetheless, this approach concurrently introduces potential biases from human and LLMs, questioning the reliability of the evaluation results. In this paper, we propose a novel framework that is free from referencing groundtruth annotations for investigating **Misinformation Oversight Bias**, **Gender Bias**, **Authority Bias** and **Beauty Bias** on LLM and human judges. We curate a dataset referring to the revised Bloom’s Taxonomy and conduct thousands of evaluations. Results show that human and LLM judges are vulnerable to perturbations to various degrees, and that even the cutting-edge judges possess considerable biases. We further exploit these biases to conduct attacks on LLM judges. We hope that our work can notify the community of the bias and vulnerability of human- and LLM-as-a-judge, as well as the urgency of developing robust evaluation systems.",
+    "tldr": "Human and LLM judges show significant biases in performance evaluation.",
+    "tags": [
+        "judgment bias",
+        "large language models",
+        "human evaluation",
+        "misinformation oversight",
+        "bias detection"
+    ]
+}

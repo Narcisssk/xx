@@ -1,0 +1,28 @@
+{
+    "uuid": "1e3d6210-2df4-5eba-92d6-beab951bf795",
+    "title": "Quantized Local Independence Discovery for Fine-Grained Causal Dynamics Learning in Reinforcement Learning",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "GenPlan'23",
+    "bibtex": "@inproceedings{\nhwang2023quantized,\ntitle={Quantized Local Independence Discovery for Fine-Grained Causal Dynamics Learning in Reinforcement Learning},\nauthor={Inwoo Hwang and Yunhyeok Kwak and Suhyung Choi and Byoung-Tak Zhang and Sanghack Lee},\nbooktitle={NeurIPS 2023 Workshop on Generalization in Planning},\nyear={2023},\nurl={https://openreview.net/forum?id=4xGCYC4dFp}\n}",
+    "authors": [
+        "Inwoo Hwang",
+        "Yunhyeok Kwak",
+        "Suhyung Choi",
+        "Byoung-Tak Zhang",
+        "Sanghack Lee"
+    ],
+    "pdf_url": "https://openreview.net/pdf/8a5bf589c4d5a5cb56b5cb86a9eb46efffc3fefe.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/1e3d6210-2df4-5eba-92d6-beab951bf795.pdf",
+    "num_pages": 27,
+    "abstract": "Incorporating causal relationships between the variables into dynamics learning has emerged as a promising approach to enhance robustness and generalization in reinforcement learning (RL). Recent studies have focused on examining conditional independences and leveraging only relevant state and action variables for prediction. However, such approaches tend to overlook local independence relationships that hold under certain circumstances referred as event. In this work, we present a theoretically-grounded and practical approach to dynamics learning which discovers such meaningful events and infers fine-grained causal relationships. The key idea is to learn a discrete latent variable that represents the pair of event and causal relationships specific to the event via vector quantization. As a result, our method provides a fine-grained understanding of the dynamics by capturing event-specific causal relationships, leading to improved robustness and generalization in RL. Experimental results demonstrate that our method is more robust to unseen states and generalizes well to downstream tasks compared to prior approaches. In addition, we find that our method successfully identifies meaningful events and recovers event-specific causal relationships.",
+    "tldr": "This paper presents a method for discovering event-specific causal relationships in RL.",
+    "tags": [
+        "Causal Dynamics",
+        "Reinforcement Learning",
+        "Local Independence",
+        "Event Detection",
+        "Latent Variable"
+    ]
+}

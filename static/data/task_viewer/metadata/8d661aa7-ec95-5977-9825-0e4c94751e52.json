@@ -1,0 +1,33 @@
+{
+    "uuid": "8d661aa7-ec95-5977-9825-0e4c94751e52",
+    "title": "Promptvc: Flexible Stylistic Voice Conversion in Latent Space Driven by Natural Language Prompts",
+    "conference_full": "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)",
+    "conference": "icassp",
+    "year": 2024,
+    "volume": "ICASSP session SLP: Speech & Language Processing",
+    "bibtex": "@inproceedings{DBLP:conf/icassp/Yao0LNHPYZ0024,\n  author       = {Jixun Yao and\n                  Yuguang Yang and\n                  Yi Lei and\n                  Ziqian Ning and\n                  Yanni Hu and\n                  Yu Pan and\n                  Jingjing Yin and\n                  Hongbin Zhou and\n                  Heng Lu and\n                  Lei Xie},\n  title        = {Promptvc: Flexible Stylistic Voice Conversion in Latent Space Driven\n                  by Natural Language Prompts},\n  booktitle    = {{IEEE} International Conference on Acoustics, Speech and Signal Processing,\n                  {ICASSP} 2024, Seoul, Republic of Korea, April 14-19, 2024},\n  pages        = {10571--10575},\n  publisher    = {{IEEE}},\n  year         = {2024},\n  url          = {https://doi.org/10.1109/ICASSP48485.2024.10445804},\n  doi          = {10.1109/ICASSP48485.2024.10445804},\n  timestamp    = {Tue, 06 Aug 2024 14:48:06 +0200},\n  biburl       = {https://dblp.org/rec/conf/icassp/Yao0LNHPYZ0024.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+    "authors": [
+        "Jixun Yao",
+        "Yuguang Yang",
+        "Yi Lei",
+        "Ziqian Ning",
+        "Yanni Hu",
+        "Yu Pan",
+        "Jingjing Yin",
+        "Hongbin Zhou",
+        "Heng Lu",
+        "Lei Xie"
+    ],
+    "pdf_url": "https://doi.org/10.1109/ICASSP48485.2024.10445804",
+    "pdf_path": "data/dataset/airqa/papers/icassp2024/8d661aa7-ec95-5977-9825-0e4c94751e52.pdf",
+    "num_pages": 5,
+    "abstract": "Stylistic voice conversion aims to transform the style of source speech to a desired style according to real-world application demands. However, the current style voice conversion approach relies on pre-defined labels or reference speech to control the conversion process, which leads to limitations in style diversity or falls short in terms of the intuitive and interpretability of style representation. In this study, we propose PromptVC, a novel style voice conversion approach that employs a latent diffusion model to generate a style vector driven by natural language prompts. Specifically, the style vector is extracted by a style encoder during training, and then the latent diffusion model is trained independently to sample the style vector from noise, with this process being conditioned on natural language prompts. To improve style expressiveness, we leverage HuBERT to extract discrete tokens and replace them with the K-Means center embedding to serve as the linguistic content, which minimizes residual style information. Additionally, we deduplicate the same discrete token and employ a differentiable duration predictor to re-predict the duration of each token, which can adapt the duration of the same linguistic content to different styles. The subjective and objective evaluation results demonstrate the effectiveness of our proposed system.",
+    "tldr": "PromptVC enables flexible voice style conversion using natural language prompts.",
+    "tags": [
+        "voice conversion",
+        "latent space",
+        "natural language processing",
+        "style representation",
+        "machine learning"
+    ]
+}

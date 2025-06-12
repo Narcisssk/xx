@@ -1,0 +1,26 @@
+{
+    "uuid": "0e2b3701-18a7-55f9-9d0c-973133e59a85",
+    "title": "Distributional Scaling Laws for Emergent Capabilities",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "SciForDL Poster",
+    "bibtex": "@inproceedings{\nzhao2024distributional,\ntitle={Distributional Scaling Laws for Emergent Capabilities},\nauthor={Rosie Zhao and Naomi Saphra and Sham M. Kakade},\nbooktitle={NeurIPS 2024 Workshop on Scientific Methods for Understanding Deep Learning},\nyear={2024},\nurl={https://openreview.net/forum?id=e8eo9iEFaO}\n}",
+    "authors": [
+        "Rosie Zhao",
+        "Naomi Saphra",
+        "Sham M. Kakade"
+    ],
+    "pdf_url": "https://openreview.net/pdf/ac4b9287fbc33562d387f4bb8b2b791ac2d89de3.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/0e2b3701-18a7-55f9-9d0c-973133e59a85.pdf",
+    "num_pages": 10,
+    "abstract": "In this paper, we explore the nature of sudden breakthroughs in language model performance at scale, which stands in contrast to smooth improvements governed by scaling laws. While advocates of ``emergence\" argue that abrupt performance gains arise from acquiring new capabilities at specific scales, recent work has suggested that these are illusions caused by thresholding effects. We propose an alternative explanation: that breakthroughs are driven by random variation, particularly multimodal performance distributions across random seeds. Using a length generalization task as a case study, we show that different random seeds lead to both highly linear or emergent behavior. We further demonstrate that the probability of a model acquiring a breakthrough capability increases continuously with scale, despite apparent discontinuities in performance. Additionally, we find that scaling models in width versus depth has distinct effects: depth impacts the likelihood of sampling from a successful distribution, while width improves the average performance of successful models. These insights suggest a need to consider the role of random variation in scaling and emergent capabilities in LMs.",
+    "tldr": "Using a length generalization task as a case study, we show that different random seeds lead to both highly linear or emergent behavior across scales, with scaling width vs scaling depth having distinct effects.",
+    "tags": [
+        "scaling laws",
+        "emergent capabilities",
+        "language models",
+        "random variation",
+        "multimodal performance"
+    ]
+}

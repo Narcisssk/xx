@@ -1,0 +1,27 @@
+{
+    "uuid": "23169b8e-0212-5d75-a84b-651a57b2e331",
+    "title": "Improving Small Molecule Generation using Mutual Information Machine",
+    "conference_full": "International Conference on Learning Representations",
+    "conference": "ICLR",
+    "year": 2023,
+    "volume": "ICLR 2023 - MLDD Poster",
+    "bibtex": "@inproceedings{\nreidenbach2023improving,\ntitle={Improving Small Molecule Generation using Mutual Information Machine},\nauthor={Danny Reidenbach and Micha Livne and Rajesh K. Ilango and Michelle Lynn Gill and Johnny Israeli},\nbooktitle={ICLR 2023 - Machine Learning for Drug Discovery workshop},\nyear={2023},\nurl={https://openreview.net/forum?id=iOJlwUTUyrN}\n}",
+    "authors": [
+        "Danny Reidenbach",
+        "Micha Livne",
+        "Rajesh K. Ilango",
+        "Michelle Lynn Gill",
+        "Johnny Israeli"
+    ],
+    "pdf_url": "https://openreview.net/pdf/7d43daf00690b0320253fa9743f9e70645c7cf96.pdf",
+    "pdf_path": "data/dataset/airqa/papers/iclr2023/23169b8e-0212-5d75-a84b-651a57b2e331.pdf",
+    "num_pages": 22,
+    "abstract": "We address the task of controlled generation of small molecules, which entails finding novel molecules with desired properties under certain constraints. \nHere we introduce MolMIM, a probabilistic auto-encoder for small molecule drug discovery that learns an informative and clustered latent space.\nMolMIM is trained with Mutual Information Machine (MIM) learning and provides a fixed-size representation of variable-length SMILES strings.\nSince encoder-decoder models can learn representations with ``holes'' of invalid samples, here we propose a novel extension to the MIM training procedure which promotes a dense latent space and allows the model to sample valid molecules from random perturbations of latent codes.\nWe provide a thorough comparison of MolMIM to several variable-size and fixed-size encoder-decoder models, demonstrating MolMIM's superior generation as measured in terms of validity, uniqueness, and novelty.\nWe then utilize CMA-ES, a naive black-box, and gradient-free search algorithm, over MolMIM's latent space for the task of property-guided molecule optimization.\nWe achieve state-of-the-art results in several constrained single-property optimization tasks and show competitive results in the challenging task of multi-objective optimization.\nWe attribute the strong results to the structure of MolMIM's learned representation which promotes the clustering of similar molecules in the latent space, whereas CMA-ES is often used as a baseline optimization method. \nWe also demonstrate MolMIM to be favorable in a compute-limited regime.\n",
+    "tldr": "MolMIM enhances small molecule generation by clustering in a dense latent space.",
+    "tags": [
+        "generative models",
+        "latent variable models",
+        "molecule property optimization",
+        "molecule generation"
+    ]
+}

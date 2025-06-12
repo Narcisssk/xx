@@ -1,0 +1,32 @@
+{
+    "uuid": "fdfd844d-b6a6-5bbc-8ca2-740d4f7e8562",
+    "title": "TANGO: Time-reversal Latent GraphODE for Multi-Agent Dynamical Systems",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "DLDE III BestPaperAwardSpotlightTalk",
+    "bibtex": "@inproceedings{\nhuang2023tango,\ntitle={{TANGO}: Time-reversal Latent Graph{ODE} for Multi-Agent Dynamical Systems},\nauthor={Zijie Huang and Wanjia Zhao and Jingdong Gao and Ziniu Hu and Xiao Luo and Yadi Cao and Yuanzhou Chen and Yizhou Sun and Wei Wang},\nbooktitle={The Symbiosis of Deep Learning and Differential Equations III},\nyear={2023},\nurl={https://openreview.net/forum?id=8AYetbupoZ}\n}",
+    "authors": [
+        "Zijie Huang",
+        "Wanjia Zhao",
+        "Jingdong Gao",
+        "Ziniu Hu",
+        "Xiao Luo",
+        "Yadi Cao",
+        "Yuanzhou Chen",
+        "Yizhou Sun",
+        "Wei Wang"
+    ],
+    "pdf_url": "https://openreview.net/pdf/e67475b869ef155cd32ae671833bd89cf4a5c7dd.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/fdfd844d-b6a6-5bbc-8ca2-740d4f7e8562.pdf",
+    "num_pages": 22,
+    "abstract": "Learning complex multi-agent system dynamics from data is crucial across many domains like physical simulations and material modeling. Existing physics-informed approaches, like Hamiltonian Neural Network, introduce inductive bias by strictly following energy conservation law. However, many real-world systems do not strictly conserve energy. Thus, we focus on Time-Reversal Symmetry, a broader physical principle indicating that system dynamics should remain invariant when time is reversed. This principle not only preserves energy in conservative systems but also serves as a strong inductive bias for non-conservative, reversible systems.\nIn this paper, we propose a simple-yet-effective self-supervised regularization term as a soft constraint that aligns the forward and backward trajectories predicted by a continuous graph neural network-based ordinary differential equation (GraphODE). \nIn addition, we theoretically show that our regularization essentially minimizes higher-order Taylor expansion terms during the ODE integration steps, which enables our model to be more noise-tolerant and even applicable to irreversible systems.",
+    "tldr": "TANGO uses time-reversal symmetry for robust multi-agent system dynamics modeling.",
+    "tags": [
+        "NeuralODE",
+        "Graph Neural Networks",
+        "Dynamical Systems",
+        "Physical Simulations",
+        "Physics-informed Neural Networks"
+    ]
+}

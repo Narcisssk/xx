@@ -1,0 +1,27 @@
+{
+    "uuid": "bc299fb6-0440-5a26-a0dc-f63956b28e52",
+    "title": "Matryoshka-Adaptor: Unsupervised and Supervised Tuning for Smaller Embedding Dimensions",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{yoon-etal-2024-matryoshka,\n    title = \"Matryoshka-Adaptor: Unsupervised and Supervised Tuning for Smaller Embedding Dimensions\",\n    author = \"Yoon, Jinsung  and\n      Sinha, Rajarishi  and\n      Arik, Sercan O  and\n      Pfister, Tomas\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.emnlp-main.576\",\n    doi = \"10.18653/v1/2024.emnlp-main.576\",\n    pages = \"10318--10336\",\n    abstract = \"Embeddings from Large Language Models (LLMs) have emerged as critical components in various applications, particularly for information retrieval. While high-dimensional embeddings generally demonstrate superior performance as they contain more salient information, their practical application is frequently hindered by elevated computational latency and the associated higher cost. To address these challenges, we propose Matryoshka-Adaptor, a novel tuning framework designed for the customization of LLM embeddings. Matryoshka-Adaptor facilitates substantial dimensionality reduction while maintaining comparable performance levels, thereby achieving a significant enhancement in computational efficiency and cost-effectiveness. Our framework directly modifies the embeddings from pre-trained LLMs which is designed to be seamlessly integrated with any LLM architecture, encompassing those accessible exclusively through black-box APIs. Also, it exhibits efficacy in both unsupervised and supervised learning settings. A rigorous evaluation conducted across a diverse corpus of English, multilingual, and multimodal datasets consistently reveals substantial gains with Matryoshka-Adaptor. Notably, with Google and OpenAI Embedding APIs, Matryoshka-Adaptor achieves a reduction in dimensionality ranging from two- to twelve-fold without compromising performance across multiple BEIR datasets.\",\n}\n",
+    "authors": [
+        "Jinsung Yoon",
+        "Rajarishi Sinha",
+        "Sercan O Arik",
+        "Tomas Pfister"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.emnlp-main.576.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/bc299fb6-0440-5a26-a0dc-f63956b28e52.pdf",
+    "num_pages": 19,
+    "abstract": "Embeddings from Large Language Models (LLMs) have emerged as critical components in various applications, particularly for information retrieval. While high-dimensional embeddings generally demonstrate superior performance as they contain more salient information, their practical application is frequently hindered by elevated computational latency and the associated higher cost. To address these challenges, we propose Matryoshka-Adaptor, a novel tuning framework designed for the customization of LLM embeddings. Matryoshka-Adaptor facilitates substantial dimensionality reduction while maintaining comparable performance levels, thereby achieving a significant enhancement in computational efficiency and cost-effectiveness. Our framework directly modifies the embeddings from pre-trained LLMs which is designed to be seamlessly integrated with any LLM architecture, encompassing those accessible exclusively through black-box APIs. Also, it exhibits efficacy in both unsupervised and supervised learning settings. A rigorous evaluation conducted across a diverse corpus of English, multilingual, and multimodal datasets consistently reveals substantial gains with Matryoshka-Adaptor. Notably, with Google and OpenAI Embedding APIs, Matryoshka-Adaptor achieves a reduction in dimensionality ranging from two- to twelve-fold without compromising performance across multiple BEIR datasets.",
+    "tldr": "Matryoshka-Adaptor optimizes LLM embeddings, reducing dimensions while preserving performance.",
+    "tags": [
+        "embeddings",
+        "dimensionality reduction",
+        "tuning framework",
+        "language models",
+        "computational efficiency"
+    ]
+}

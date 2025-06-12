@@ -1,0 +1,30 @@
+{
+    "uuid": "b1dcf0ab-6e6c-50d1-9f51-29f543bb11fd",
+    "title": "Reflow-TTS: A Rectified Flow Model for High-Fidelity Text-to-Speech",
+    "conference_full": "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)",
+    "conference": "icassp",
+    "year": 2024,
+    "volume": "ICASSP session SLP: Speech & Language Processing",
+    "bibtex": "@inproceedings{DBLP:conf/icassp/GuanSZMXLH24,\n  author       = {Wenhao Guan and\n                  Qi Su and\n                  Haodong Zhou and\n                  Shiyu Miao and\n                  Xingjia Xie and\n                  Lin Li and\n                  Qingyang Hong},\n  title        = {Reflow-TTS: {A} Rectified Flow Model for High-Fidelity Text-to-Speech},\n  booktitle    = {{IEEE} International Conference on Acoustics, Speech and Signal Processing,\n                  {ICASSP} 2024, Seoul, Republic of Korea, April 14-19, 2024},\n  pages        = {10501--10505},\n  publisher    = {{IEEE}},\n  year         = {2024},\n  url          = {https://doi.org/10.1109/ICASSP48485.2024.10447822},\n  doi          = {10.1109/ICASSP48485.2024.10447822},\n  timestamp    = {Tue, 06 Aug 2024 14:48:06 +0200},\n  biburl       = {https://dblp.org/rec/conf/icassp/GuanSZMXLH24.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+    "authors": [
+        "Wenhao Guan",
+        "Qi Su",
+        "Haodong Zhou",
+        "Shiyu Miao",
+        "Xingjia Xie",
+        "Lin Li",
+        "Qingyang Hong"
+    ],
+    "pdf_url": "https://doi.org/10.1109/ICASSP48485.2024.10447822",
+    "pdf_path": "data/dataset/airqa/papers/icassp2024/b1dcf0ab-6e6c-50d1-9f51-29f543bb11fd.pdf",
+    "num_pages": 5,
+    "abstract": "The diffusion models including Denoising Diffusion Probabilistic Models (DDPM) and score-based generative models have demonstrated excellent performance in speech synthesis tasks. However, its effectiveness comes at the cost of numerous sampling steps, resulting in prolonged sampling time required to synthesize high-quality speech. This drawback hinders its practical applicability in real-world scenarios. In this paper, we introduce ReFlow-TTS, a novel rectified flow based method for speech synthesis with high-fidelity. Specifically, our ReFlow-TTS is simply an Ordinary Differential Equation (ODE) model that transports Gaussian distribution to the ground-truth Mel-spectrogram distribution by straight line paths as much as possible. Furthermore, our proposed approach enables high-quality speech synthesis with a single sampling step and eliminates the need for training a teacher model. Our experiments on LJSpeech Dataset show that our ReFlow-TTS method achieves the best performance compared with other diffusion based models. And the ReFlow-TTS with one step sampling achieves competitive performance compared with existing one-step TTS models.",
+    "tldr": "ReFlow-TTS enables high-fidelity speech synthesis with single-step sampling.",
+    "tags": [
+        "ReFlow-TTS",
+        "speech synthesis",
+        "high-fidelity",
+        "diffusion models",
+        "Mel-spectrogram"
+    ]
+}

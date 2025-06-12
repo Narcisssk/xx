@@ -1,0 +1,27 @@
+{
+    "uuid": "5a854b33-31c8-50f8-beaa-b3c93e9ae2f8",
+    "title": "Birdie: Advancing State Space Language Modeling with Dynamic Mixtures of Training Objectives",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{blouir-etal-2024-birdie,\n    title = \"Birdie: Advancing State Space Language Modeling with Dynamic Mixtures of Training Objectives\",\n    author = \"Blouir, Sam  and\n      Smith, Jimmy T.h.  and\n      Anastasopoulos, Antonios  and\n      Shehu, Amarda\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.emnlp-main.541\",\n    doi = \"10.18653/v1/2024.emnlp-main.541\",\n    pages = \"9679--9705\",\n    abstract = \"Efficient state space models (SSMs), including linear recurrent neural networks and linear attention variants, have emerged as potential alternative language models to Transformers. While efficient, SSMs struggle with tasks requiring in-context retrieval, such as text copying and associative recall, limiting their usefulness in practical settings. Prior work on how to meet this challenge has focused on the internal model architecture and not investigated the role of the training procedure. This paper proposes a new training procedure that improve the performance of SSMs on retrieval-intensive tasks. This novel pre-training procedure combines a bidirectional processing of the input with dynamic mixtures of pre-training objectives to improve the utilization of the SSM{'}s fixed-size state. Our experimental evaluations show that this procedure significantly improves performance on retrieval-intensive tasks that challenge current SSMs, such as phone book lookup, long paragraph question-answering, and infilling tasks. Our findings offer insights into a new direction to advance the training of SSMs to close the performance gap with Transformers.\",\n}\n",
+    "authors": [
+        "Sam Blouir",
+        "Jimmy T.h. Smith",
+        "Antonios Anastasopoulos",
+        "Amarda Shehu"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.emnlp-main.541.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/5a854b33-31c8-50f8-beaa-b3c93e9ae2f8.pdf",
+    "num_pages": 27,
+    "abstract": "Efficient state space models (SSMs), including linear recurrent neural networks and linear attention variants, have emerged as potential alternative language models to Transformers. While efficient, SSMs struggle with tasks requiring in-context retrieval, such as text copying and associative recall, limiting their usefulness in practical settings. Prior work on how to meet this challenge has focused on the internal model architecture and not investigated the role of the training procedure. This paper proposes a new training procedure that improve the performance of SSMs on retrieval-intensive tasks. This novel pre-training procedure combines a bidirectional processing of the input with dynamic mixtures of pre-training objectives to improve the utilization of the SSM’s fixed-size state. Our experimental evaluations show that this procedure significantly improves performance on retrieval-intensive tasks that challenge current SSMs, such as phone book lookup, long paragraph question-answering, and infilling tasks. Our findings offer insights into a new direction to advance the training of SSMs to close the performance gap with Transformers.",
+    "tldr": "New training method enhances state space models for retrieval-intensive tasks.",
+    "tags": [
+        "State Space Models",
+        "Language Modeling",
+        "Training Procedure",
+        "Dynamic Mixtures",
+        "Retrieval Tasks"
+    ]
+}

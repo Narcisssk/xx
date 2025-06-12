@@ -1,0 +1,27 @@
+{
+    "uuid": "69b6b827-febb-5ece-adf1-88e6b6979aed",
+    "title": "GUARD: Role-playing to Generate Natural-language Jailbreakings to Test Guideline Adherence of Large Language Models",
+    "conference_full": "International Conference on Learning Representations",
+    "conference": "ICLR",
+    "year": 2024,
+    "volume": "SeT LLM @ ICLR 2024",
+    "bibtex": "@inproceedings{\njin2024guard,\ntitle={{GUARD}: Role-playing to Generate Natural-language Jailbreakings to Test Guideline Adherence of Large Language Models},\nauthor={Haibo Jin and Ruoxi Chen and Andy Zhou and Yang Zhang and Haohan Wang},\nbooktitle={ICLR 2024 Workshop on Secure and Trustworthy Large Language Models},\nyear={2024},\nurl={https://openreview.net/forum?id=vSB2FdKu5h}\n}",
+    "authors": [
+        "Haibo Jin",
+        "Ruoxi Chen",
+        "Andy Zhou",
+        "Yang Zhang",
+        "Haohan Wang"
+    ],
+    "pdf_url": "https://openreview.net/pdf/f7c37302e75ec3d65300cd08f1f3c1dbc5b7fe54.pdf",
+    "pdf_path": "data/dataset/airqa/papers/iclr2024/69b6b827-febb-5ece-adf1-88e6b6979aed.pdf",
+    "num_pages": 24,
+    "abstract": "Large Language Models (LLMs) face significant challenges with ``jailbreaks\" — specially crafted prompts designed to bypass safety filters and induce safety measures. In response, researchers have focused on developing comprehensive testing protocols, to generate a wide array of potential jailbreaks efficiently. In this paper, we propose a role-playing system, namely GUARD (Guideline Upholding through Adaptive Role-play Diagnostics), which can automatically follow the government-issued guidelines to generate jailbreaks to test whether LLMs follow the guidelines accordingly. GUARD works by assigning four different roles to LLMs to collaborate jailbreaks, in the style of the human generation.\nWe have empirically validated the effectiveness of GUARD on three cutting-edge open-sourced LLMs (Vicuna-13B, LongChat-7B, and Llama-2-7B), as well as a widely-utilized commercial LLM (ChatGPT). Moreover, our work extends to the realm of vision-language models (MiniGPT-v2 and Gemini Vision Pro), showcasing GUARD's versatility and contributing valuable insights for the development of safer, more reliable LLM-based applications across diverse modalities.",
+    "tldr": "GUARD uses role-playing to generate jailbreaks for testing LLM safety adherence.",
+    "tags": [
+        "large language models",
+        "safety",
+        "jailbreaking",
+        "red-teaming"
+    ]
+}

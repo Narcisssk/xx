@@ -1,0 +1,26 @@
+{
+    "uuid": "0ad1dc99-4c37-5e62-8054-5a080158541e",
+    "title": "Adapt in Contexts: Retrieval-Augmented Domain Adaptation via In-Context Learning",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{long-etal-2023-adapt,\n    title = \"Adapt in Contexts: Retrieval-Augmented Domain Adaptation via In-Context Learning\",\n    author = \"Long, Quanyu  and\n      Wang, Wenya  and\n      Pan, Sinno\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.emnlp-main.402\",\n    doi = \"10.18653/v1/2023.emnlp-main.402\",\n    pages = \"6525--6542\",\n    abstract = \"Large language models (LLMs) have showcased their capability with few-shot inference known as in-context learning. However, in-domain demonstrations are not always readily available in real scenarios, leading to cross-domain in-context learning. Besides, LLMs are still facing challenges in long-tail knowledge in unseen and unfamiliar domains. The above limitations demonstrate the necessity of Unsupervised Domain Adaptation (UDA). In this paper, we study the UDA problem under an in-context learning setting to adapt language models from the source domain to the target domain without any target labels. The core idea is to retrieve a subset of cross-domain elements that are the most similar to the query, and elicit language model to adapt in an in-context manner by learning both target domain distribution and the discriminative task signal simultaneously with the augmented cross-domain in-context examples. We devise different prompting and training strategies, accounting for different LM architectures to learn the target distribution via language modeling. With extensive experiments on Sentiment Analysis (SA) and Named Entity Recognition (NER) tasks, we thoroughly study the effectiveness of ICL for domain transfer and demonstrate significant improvements over baseline models.\",\n}\n",
+    "authors": [
+        "Quanyu Long",
+        "Wenya Wang",
+        "Sinno Pan"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.emnlp-main.402.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/0ad1dc99-4c37-5e62-8054-5a080158541e.pdf",
+    "num_pages": 18,
+    "abstract": "Large language models (LLMs) have showcased their capability with few-shot inference known as in-context learning. However, in-domain demonstrations are not always readily available in real scenarios, leading to cross-domain in-context learning. Besides, LLMs are still facing challenges in long-tail knowledge in unseen and unfamiliar domains. The above limitations demonstrate the necessity of Unsupervised Domain Adaptation (UDA). In this paper, we study the UDA problem under an in-context learning setting to adapt language models from the source domain to the target domain without any target labels. The core idea is to retrieve a subset of cross-domain elements that are the most similar to the query, and elicit language model to adapt in an in-context manner by learning both target domain distribution and the discriminative task signal simultaneously with the augmented cross-domain in-context examples. We devise different prompting and training strategies, accounting for different LM architectures to learn the target distribution via language modeling. With extensive experiments on Sentiment Analysis (SA) and Named Entity Recognition (NER) tasks, we thoroughly study the effectiveness of ICL for domain transfer and demonstrate significant improvements over baseline models.",
+    "tldr": "Proposes a method for unsupervised domain adaptation using in-context learning.",
+    "tags": [
+        "Domain Adaptation",
+        "In-Context Learning",
+        "Large Language Models",
+        "Unsupervised Learning",
+        "Cross-Domain Retrieval"
+    ]
+}

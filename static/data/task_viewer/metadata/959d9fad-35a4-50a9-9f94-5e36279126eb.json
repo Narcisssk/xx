@@ -1,0 +1,26 @@
+{
+    "uuid": "959d9fad-35a4-50a9-9f94-5e36279126eb",
+    "title": "Reliability Estimation for Synthetic Speech Detection",
+    "conference_full": "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP)",
+    "conference": "icassp",
+    "year": 2023,
+    "volume": "ICASSP session IFS: Information Forensics & Security",
+    "bibtex": "@inproceedings{DBLP:conf/icassp/SalviBT23,\n  author       = {Davide Salvi and\n                  Paolo Bestagini and\n                  Stefano Tubaro},\n  title        = {Reliability Estimation for Synthetic Speech Detection},\n  booktitle    = {{IEEE} International Conference on Acoustics, Speech and Signal Processing\n                  {ICASSP} 2023, Rhodes Island, Greece, June 4-10, 2023},\n  pages        = {1--5},\n  publisher    = {{IEEE}},\n  year         = {2023},\n  url          = {https://doi.org/10.1109/ICASSP49357.2023.10095524},\n  doi          = {10.1109/ICASSP49357.2023.10095524},\n  timestamp    = {Sun, 05 Nov 2023 16:51:21 +0100},\n  biburl       = {https://dblp.org/rec/conf/icassp/SalviBT23.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}",
+    "authors": [
+        "Davide Salvi",
+        "Paolo Bestagini",
+        "Stefano Tubaro"
+    ],
+    "pdf_url": "https://doi.org/10.1109/ICASSP49357.2023.10095524",
+    "pdf_path": "data/dataset/airqa/papers/icassp2023/959d9fad-35a4-50a9-9f94-5e36279126eb.pdf",
+    "num_pages": 5,
+    "abstract": "Recent advances in speech synthesis and counterfeit audio generation have pushed the multimedia forensics community to develop speech deepfake detection techniques to avoid threats and unpleasant situations. Although synthetic speech detectors show excellent performance in controlled conditions, they are not always reliable in open set cases, when evaluated on data that are very different from those seen during training. This can lead to misleading scores and poorly indicative results in real-world scenarios. In this paper, we propose a method for estimating the reliability of a prediction performed by a speech deepfake detector. This enables us to perform the detection only on the most relevant portions of a signal, i.e., the time windows on which we obtain more reliable scores. This increases the final accuracy of the developed systems. As some audio fragments may not contain enough traces for the task at hand and negatively affect the system output, a reliability estimator allows us to discard them and focus only on the most pertinent data. The proposed method proves to positively impact the performance of the considered detector and shows excellent generalization capabilities on unseen datasets.",
+    "tldr": "New method enhances reliability of synthetic speech detection in diverse scenarios.",
+    "tags": [
+        "speech deepfake detection",
+        "reliability estimation",
+        "audio forensics",
+        "synthetic speech",
+        "performance evaluation"
+    ]
+}

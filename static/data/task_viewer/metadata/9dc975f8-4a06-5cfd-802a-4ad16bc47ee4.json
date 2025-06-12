@@ -1,0 +1,32 @@
+{
+    "uuid": "9dc975f8-4a06-5cfd-802a-4ad16bc47ee4",
+    "title": "Why do LLaVA Vision-Language Models Reply to Images in English?",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    "bibtex": "@inproceedings{hinck-etal-2024-llava,\n    title = \"Why do {LL}a{VA} Vision-Language Models Reply to Images in {E}nglish?\",\n    author = \"Hinck, Musashi  and\n      Holtermann, Carolin  and\n      Olson, Matthew Lyle  and\n      Schneider, Florian  and\n      Yu, Sungduk  and\n      Bhiwandiwalla, Anahita  and\n      Lauscher, Anne  and\n      Tseng, Shao-Yen  and\n      Lal, Vasudev\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2024\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-emnlp.783/\",\n    doi = \"10.18653/v1/2024.findings-emnlp.783\",\n    pages = \"13402--13421\",\n    abstract = \"We uncover a surprising multilingual bias occurring in a popular class of multimodal vision-language models (VLMs). Including an image in the query to a LLaVA-style VLM significantly increases the likelihood of the model returning an English response, regardless of the language of the query. This paper investigates the causes of this loss with a two-pronged approach that combines extensive ablation of the design space with a mechanistic analysis of the models' internal representations of image and text inputs. Both approaches indicate that the issue stems in the language modeling component of the LLaVA model. Statistically, we find that switching the language backbone for a bilingual language model has the strongest effect on reducing this error. Mechanistically, we provide compelling evidence that visual inputs are not mapped to a similar space as text ones, and that intervening on intermediary attention layers can reduce this bias. Our findings provide important insights to researchers and engineers seeking to understand the crossover between multimodal and multilingual spaces, and contribute to the goal of developing capable and inclusive VLMs for non-English contexts.\"\n}\n",
+    "authors": [
+        "Musashi Hinck",
+        "Carolin Holtermann",
+        "Matthew Lyle Olson",
+        "Florian Schneider",
+        "Sungduk Yu",
+        "Anahita Bhiwandiwalla",
+        "Anne Lauscher",
+        "Shao-Yen Tseng",
+        "Vasudev Lal"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-emnlp.783.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/9dc975f8-4a06-5cfd-802a-4ad16bc47ee4.pdf",
+    "num_pages": 20,
+    "abstract": "We uncover a surprising multilingual bias occurring in a popular class of multimodal vision-language models (VLMs). Including an image in the query to a LLaVA-style VLM significantly increases the likelihood of the model returning an English response, regardless of the language of the query. This paper investigates the causes of this loss with a two-pronged approach that combines extensive ablation of the design space with a mechanistic analysis of the models’ internal representations of image and text inputs. Both approaches indicate that the issue stems in the language modeling component of the LLaVA model. Statistically, we find that switching the language backbone for a bilingual language model has the strongest effect on reducing this error. Mechanistically, we provide compelling evidence that visual inputs are not mapped to a similar space as text ones, and that intervening on intermediary attention layers can reduce this bias. Our findings provide important insights to researchers and engineers seeking to understand the crossover between multimodal and multilingual spaces, and contribute to the goal of developing capable and inclusive VLMs for non-English contexts.",
+    "tldr": "Multilingual bias in vision-language models leads to English responses from images.",
+    "tags": [
+        "multilingual bias",
+        "vision-language models",
+        "LLaVA",
+        "multimodal",
+        "language representation"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "uuid": "0a5088a8-c2d7-55c3-b08f-a690bab767b0",
+    "title": "RankAug: Augmented data ranking for text classification",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Proceedings of the Third Workshop on Natural Language Generation, Evaluation, and Metrics (GEM)",
+    "bibtex": "@inproceedings{roy-basu-2023-rankaug,\n    title = \"{R}ank{A}ug: Augmented data ranking for text classification\",\n    author = \"Roy, Tiasa  and\n      Basu, Priyam\",\n    editor = \"Gehrmann, Sebastian  and\n      Wang, Alex  and\n      Sedoc, Jo{\\~a}o  and\n      Clark, Elizabeth  and\n      Dhole, Kaustubh  and\n      Chandu, Khyathi Raghavi  and\n      Santus, Enrico  and\n      Sedghamiz, Hooman\",\n    booktitle = \"Proceedings of the Third Workshop on Natural Language Generation, Evaluation, and Metrics (GEM)\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.gem-1.26\",\n    pages = \"317--323\",\n    abstract = \"Research on data generation and augmentation has been focused majorly around enhancing generation models, leaving a notable gap in the exploration and refinement of methods for evaluating synthetic data. There are several text similarity metrics within the context of generated data filtering which can impact the performance of specific Natural Language Understanding (NLU) tasks, specifically focusing on intent and sentiment classification. In this study, we propose RankAug, a text-ranking approach that detects and filters out the top augmented texts in terms of being most similar in meaning with lexical and syntactical diversity. Through experiments conducted on multiple datasets, we demonstrate that the judicious selection of filtering techniques can yield a substantial improvement of up to 35{\\%} in classification accuracy for under-represented classes.\",\n}\n",
+    "authors": [
+        "Tiasa Roy",
+        "Priyam Basu"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.gem-1.26.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/0a5088a8-c2d7-55c3-b08f-a690bab767b0.pdf",
+    "num_pages": 7,
+    "abstract": "Research on data generation and augmentation has been focused majorly around enhancing generation models, leaving a notable gap in the exploration and refinement of methods for evaluating synthetic data. There are several text similarity metrics within the context of generated data filtering which can impact the performance of specific Natural Language Understanding (NLU) tasks, specifically focusing on intent and sentiment classification. In this study, we propose RankAug, a text-ranking approach that detects and filters out the top augmented texts in terms of being most similar in meaning with lexical and syntactical diversity. Through experiments conducted on multiple datasets, we demonstrate that the judicious selection of filtering techniques can yield a substantial improvement of up to 35% in classification accuracy for under-represented classes.",
+    "tldr": "RankAug improves text classification by ranking and filtering augmented data.",
+    "tags": [
+        "data augmentation",
+        "text classification",
+        "natural language understanding",
+        "text ranking",
+        "synthetic data evaluation"
+    ]
+}

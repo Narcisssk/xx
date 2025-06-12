@@ -1,0 +1,31 @@
+{
+    "uuid": "21b6b251-b7cd-5d0b-9dfd-19fe0e2efc1f",
+    "title": "Error Span Annotation: A Balanced Approach for Human Evaluation of Machine Translation",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of the Ninth Conference on Machine Translation",
+    "bibtex": "@inproceedings{kocmi-etal-2024-error,\n    title = \"Error Span Annotation: A Balanced Approach for Human Evaluation of Machine Translation\",\n    author = \"Kocmi, Tom  and\n      Zouhar, Vil\\'em  and\n      Avramidis, Eleftherios  and\n      Grundkiewicz, Roman  and\n      Karpinska, Marzena  and\n      Popovi\\'c, Maja  and\n      Sachan, Mrinmaya  and\n      Shmatova, Mariya\",\n    editor = \"Haddow, Barry  and\n      Kocmi, Tom  and\n      Koehn, Philipp  and\n      Monz, Christof\",\n    booktitle = \"Proceedings of the Ninth Conference on Machine Translation\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.wmt-1.131/\",\n    doi = \"10.18653/v1/2024.wmt-1.131\",\n    pages = \"1440--1453\",\n    abstract = \"High-quality Machine Translation (MT) evaluation relies heavily on human judgments.Comprehensive error classification methods, such as Multidimensional Quality Metrics (MQM), are expensive as they are time-consuming and can only be done by experts, whose availability may be limited especially for low-resource languages.On the other hand, just assigning overall scores, like Direct Assessment (DA), is simpler and faster and can be done by translators of any level, but is less reliable.In this paper, we introduce Error Span Annotation (ESA), a human evaluation protocol which combines the continuous rating of DA with the high-level error severity span marking of MQM.We validate ESA by comparing it to MQM and DA for 12 MT systems and one human reference translation (English to German) from WMT23. The results show that ESA offers faster and cheaper annotations than MQM at the same quality level, without the requirement of expensive MQM experts.\"\n}\n",
+    "authors": [
+        "Tom Kocmi",
+        "Vilém Zouhar",
+        "Eleftherios Avramidis",
+        "Roman Grundkiewicz",
+        "Marzena Karpinska",
+        "Maja Popović",
+        "Mrinmaya Sachan",
+        "Mariya Shmatova"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.wmt-1.131.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/21b6b251-b7cd-5d0b-9dfd-19fe0e2efc1f.pdf",
+    "num_pages": 14,
+    "abstract": "High-quality Machine Translation (MT) evaluation relies heavily on human judgments.Comprehensive error classification methods, such as Multidimensional Quality Metrics (MQM), are expensive as they are time-consuming and can only be done by experts, whose availability may be limited especially for low-resource languages.On the other hand, just assigning overall scores, like Direct Assessment (DA), is simpler and faster and can be done by translators of any level, but is less reliable.In this paper, we introduce Error Span Annotation (ESA), a human evaluation protocol which combines the continuous rating of DA with the high-level error severity span marking of MQM.We validate ESA by comparing it to MQM and DA for 12 MT systems and one human reference translation (English to German) from WMT23. The results show that ESA offers faster and cheaper annotations than MQM at the same quality level, without the requirement of expensive MQM experts.",
+    "tldr": "Error Span Annotation combines DA and MQM for efficient MT evaluation.",
+    "tags": [
+        "Machine Translation",
+        "Error Classification",
+        "Human Evaluation",
+        "Quality Metrics",
+        "Error Span Annotation"
+    ]
+}

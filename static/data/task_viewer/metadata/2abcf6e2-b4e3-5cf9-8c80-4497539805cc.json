@@ -1,0 +1,26 @@
+{
+    "uuid": "2abcf6e2-b4e3-5cf9-8c80-4497539805cc",
+    "title": "GenRec: Unifying Video Generation and Recognition with Diffusion Models",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nweng2024genrec,\ntitle={GenRec: Unifying Video Generation and Recognition with Diffusion Models},\nauthor={Zejia Weng and Xitong Yang and Zhen Xing and Zuxuan Wu and Yu-Gang Jiang},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=YdfZP7qMzp}\n}",
+    "authors": [
+        "Zejia Weng",
+        "Xitong Yang",
+        "Zhen Xing",
+        "Zuxuan Wu",
+        "Yu-Gang Jiang"
+    ],
+    "pdf_url": "https://openreview.net/pdf/6e0d541821e88a536a6cb8b823d0813a8fe901bb.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/2abcf6e2-b4e3-5cf9-8c80-4497539805cc.pdf",
+    "num_pages": 26,
+    "abstract": "Video diffusion models are able to generate high-quality videos by learning strong spatial-temporal priors on large-scale datasets. In this paper, we aim to investigate whether such priors derived from a generative process are suitable for video recognition, and eventually joint optimization of generation and recognition. Building upon Stable Video Diffusion, we introduce GenRec, the first unified framework trained with a random-frame conditioning process so as to learn generalized spatial-temporal representations. The resulting framework can naturally supports generation and recognition, and more importantly is robust even when visual inputs contain limited information. \nExtensive experiments demonstrate the efficacy of GenRec for both recognition and generation. In particular, GenRec achieves competitive recognition performance, offering 75.8% and 87.2% accuracy on SSV2 and K400, respectively. GenRec also performs the best on class-conditioned image-to-video generation, achieving 46.5 and 49.3 FVD scores on SSV2 and EK-100 datasets. Furthermore, GenRec demonstrates extraordinary robustness in scenarios that only limited frames can be observed. Code will be available at https://github.com/wengzejia1/GenRec.",
+    "tldr": "Unifying Video Generation and Recognition with Diffusion Models",
+    "tags": [
+        "video understanding",
+        "video generation",
+        "diffusion"
+    ]
+}

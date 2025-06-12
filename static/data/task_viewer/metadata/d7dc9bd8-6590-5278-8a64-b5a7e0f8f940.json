@@ -1,0 +1,31 @@
+{
+    "uuid": "d7dc9bd8-6590-5278-8a64-b5a7e0f8f940",
+    "title": "What Makes it Ok to Set a Fire? Iterative Self-distillation of Contexts and Rationales for Disambiguating Defeasible Social and Moral Situations",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    "bibtex": "@inproceedings{rao-etal-2023-makes,\n    title = \"What Makes it Ok to Set a Fire? Iterative Self-distillation of Contexts and Rationales for Disambiguating Defeasible Social and Moral Situations\",\n    author = \"Rao, Kavel  and\n      Jiang, Liwei  and\n      Pyatkin, Valentina  and\n      Gu, Yuling  and\n      Tandon, Niket  and\n      Dziri, Nouha  and\n      Brahman, Faeze  and\n      Choi, Yejin\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2023\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.findings-emnlp.812\",\n    doi = \"10.18653/v1/2023.findings-emnlp.812\",\n    pages = \"12140--12159\",\n    abstract = \"Moral or ethical judgments rely heavily on the specific contexts in which they occur. Understanding varying shades of defeasible contextualizations (i.e., additional information that strengthens or attenuates the moral acceptability of an action) is critical to accurately represent the subtlety and intricacy of grounded human moral judgment in real-life scenarios. We introduce defeasible moral reasoning: a task to provide grounded contexts that make an action more or less morally acceptable, along with commonsense rationales that justify the reasoning. To elicit high-quality task data, we take an iterative self-distillation approach that starts from a small amount of unstructured seed knowledge from GPT-3 and then alternates between (1) self-distillation from student models; (2) targeted filtering with a critic model trained by human judgment (to boost validity) and NLI (to boost diversity); (3) self-imitation learning (to amplify the desired data quality). This process yields a student model that produces defeasible contexts with improved validity, diversity, and defeasibility. From this model we distill a high-quality dataset, $\\delta$-Rules-of-Thumb, of 1.2M entries of contextualizations and rationales for 115K defeasible moral actions rated highly by human annotators 85.9{\\%} to 99.8{\\%} of the time. Using $\\delta$-RoT we obtain a final student model that wins over all intermediate student models by a notable margin.\",\n}\n",
+    "authors": [
+        "Kavel Rao",
+        "Liwei Jiang",
+        "Valentina Pyatkin",
+        "Yuling Gu",
+        "Niket Tandon",
+        "Nouha Dziri",
+        "Faeze Brahman",
+        "Yejin Choi"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.findings-emnlp.812.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/d7dc9bd8-6590-5278-8a64-b5a7e0f8f940.pdf",
+    "num_pages": 20,
+    "abstract": "Moral or ethical judgments rely heavily on the specific contexts in which they occur. Understanding varying shades of defeasible contextualizations (i.e., additional information that strengthens or attenuates the moral acceptability of an action) is critical to accurately represent the subtlety and intricacy of grounded human moral judgment in real-life scenarios. We introduce defeasible moral reasoning: a task to provide grounded contexts that make an action more or less morally acceptable, along with commonsense rationales that justify the reasoning. To elicit high-quality task data, we take an iterative self-distillation approach that starts from a small amount of unstructured seed knowledge from GPT-3 and then alternates between (1) self-distillation from student models; (2) targeted filtering with a critic model trained by human judgment (to boost validity) and NLI (to boost diversity); (3) self-imitation learning (to amplify the desired data quality). This process yields a student model that produces defeasible contexts with improved validity, diversity, and defeasibility. From this model we distill a high-quality dataset, 𝛿-Rules-of-Thumb, of 1.2M entries of contextualizations and rationales for 115K defeasible moral actions rated highly by human annotators 85.9% to 99.8% of the time. Using 𝛿-RoT we obtain a final student model that wins over all intermediate student models by a notable margin.",
+    "tldr": "Introduces defeasible moral reasoning to improve context-based ethical judgments.",
+    "tags": [
+        "moral reasoning",
+        "defeasible contexts",
+        "ethical judgments",
+        "self-distillation",
+        "dataset generation"
+    ]
+}

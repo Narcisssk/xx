@@ -1,0 +1,31 @@
+{
+    "uuid": "9185e20f-3b22-57bf-8611-cc902a76ebf9",
+    "title": "LLMC: Benchmarking Large Language Model Quantization with a Versatile Compression Toolkit",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: Industry Track",
+    "bibtex": "@inproceedings{gong-etal-2024-llmc,\n    title = \"{LLMC}: Benchmarking Large Language Model Quantization with a Versatile Compression Toolkit\",\n    author = \"Gong, Ruihao  and\n      Yong, Yang  and\n      Gu, Shiqiao  and\n      Huang, Yushi  and\n      Lv, Chengtao  and\n      Zhang, Yunchen  and\n      Tao, Dacheng  and\n      Liu, Xianglong\",\n    editor = \"Dernoncourt, Franck  and\n      Preo\\c tiuc-Pietro, Daniel  and\n      Shimorina, Anastasia\",\n    booktitle = \"Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing: Industry Track\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, US\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.emnlp-industry.12/\",\n    doi = \"10.18653/v1/2024.emnlp-industry.12\",\n    pages = \"132--152\",\n    abstract = \"Recent advancements in large language models (LLMs) are propelling us toward artificial general intelligence with their remarkable emergent abilities and reasoning capabilities. However, the substantial computational and memory requirements limit the widespread adoption. Quantization, a key compression technique, can effectively mitigate these demands by compressing and accelerating LLMs, albeit with potential risks to accuracy. Numerous studies have aimed to minimize the accuracy loss associated with quantization. However, their quantization configurations vary from each other and cannot be fairly compared. In this paper, we present LLMC, a plug-and-play compression toolkit, to fairly and systematically explore the impact of quantization. LLMC integrates dozens of algorithms, models, and hardware, offering high extensibility from integer to floating-point quantization, from LLM to vision-language (VLM) model, from fixed-bit to mixed precision, and from quantization to sparsification. Powered by this versatile toolkit, our benchmark covers three key aspects: calibration data, algorithms (three strategies), and data formats, providing novel insights and detailed analyses for further research and practical guidance for users. Our toolkit is available at https://github.com/ModelTC/llmc.\"\n}\n",
+    "authors": [
+        "Ruihao Gong",
+        "Yang Yong",
+        "Shiqiao Gu",
+        "Yushi Huang",
+        "Chengtao Lv",
+        "Yunchen Zhang",
+        "Dacheng Tao",
+        "Xianglong Liu"
+    ],
+    "pdf_url": "https://aclanthology.org/attachments/2024.emnlp-industry.12.poster.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/9185e20f-3b22-57bf-8611-cc902a76ebf9.pdf",
+    "num_pages": 1,
+    "abstract": "Recent advancements in large language models (LLMs) are propelling us toward artificial general intelligence with their remarkable emergent abilities and reasoning capabilities. However, the substantial computational and memory requirements limit the widespread adoption. Quantization, a key compression technique, can effectively mitigate these demands by compressing and accelerating LLMs, albeit with potential risks to accuracy. Numerous studies have aimed to minimize the accuracy loss associated with quantization. However, their quantization configurations vary from each other and cannot be fairly compared. In this paper, we present LLMC, a plug-and-play compression toolkit, to fairly and systematically explore the impact of quantization. LLMC integrates dozens of algorithms, models, and hardware, offering high extensibility from integer to floating-point quantization, from LLM to vision-language (VLM) model, from fixed-bit to mixed precision, and from quantization to sparsification. Powered by this versatile toolkit, our benchmark covers three key aspects: calibration data, algorithms (three strategies), and data formats, providing novel insights and detailed analyses for further research and practical guidance for users. Our toolkit is available at https://github.com/ModelTC/llmc.",
+    "tldr": "LLMC provides a versatile toolkit for benchmarking LLM quantization impacts.",
+    "tags": [
+        "large language models",
+        "quantization",
+        "compression toolkit",
+        "benchmarking",
+        "artificial general intelligence"
+    ]
+}

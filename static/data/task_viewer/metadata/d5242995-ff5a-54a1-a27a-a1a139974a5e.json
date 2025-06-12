@@ -1,0 +1,29 @@
+{
+    "uuid": "d5242995-ff5a-54a1-a27a-a1a139974a5e",
+    "title": "Prompting Large Language Models with Chain-of-Thought for Few-Shot Knowledge Base Question Generation",
+    "conference_full": "The 2023 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2023,
+    "volume": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{liang-etal-2023-prompting,\n    title = \"Prompting Large Language Models with Chain-of-Thought for Few-Shot Knowledge Base Question Generation\",\n    author = \"Liang, Yuanyuan  and\n      Wang, Jianing  and\n      Zhu, Hanlun  and\n      Wang, Lei  and\n      Qian, Weining  and\n      Lan, Yunshi\",\n    editor = \"Bouamor, Houda  and\n      Pino, Juan  and\n      Bali, Kalika\",\n    booktitle = \"Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing\",\n    month = dec,\n    year = \"2023\",\n    address = \"Singapore\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2023.emnlp-main.263\",\n    doi = \"10.18653/v1/2023.emnlp-main.263\",\n    pages = \"4329--4343\",\n    abstract = \"The task of Question Generation over Knowledge Bases (KBQG) aims to convert a logical form into a natural language question. For the sake of expensive cost of large-scale question annotation, the methods of KBQG under low-resource scenarios urgently need to be developed. However, current methods heavily rely on annotated data for fine-tuning, which is not well-suited for few-shot question generation. The emergence of Large Language Models (LLMs) has shown their impressive generalization ability in few-shot tasks. Inspired by Chain-of-Thought (CoT) prompting, which is an in-context learning strategy for reasoning, we formulate KBQG task as a reasoning problem, where the generation of a complete question is splitted into a series of sub-question generation. Our proposed prompting method KQG-CoT first retrieves supportive logical forms from the unlabeled data pool taking account of the characteristics of the logical form. Then, we write a prompt to explicit the reasoning chain of generating complicated questions based on the selected demonstrations. To further ensure prompt quality, we extend KQG-CoT into KQG-CoT+ via sorting the logical forms by their complexity. We conduct extensive experiments over three public KBQG datasets. The results demonstrate that our prompting method consistently outperforms other prompting baselines on the evaluated datasets. Remarkably, our KQG-CoT+ method could surpass existing few-shot SoTA results of the PathQuestions dataset by 18.25, 10.72, and 10.18 absolute points on BLEU-4, METEOR, and ROUGE-L, respectively.\",\n}\n",
+    "authors": [
+        "Yuanyuan Liang",
+        "Jianing Wang",
+        "Hanlun Zhu",
+        "Lei Wang",
+        "Weining Qian",
+        "Yunshi Lan"
+    ],
+    "pdf_url": "https://aclanthology.org/2023.emnlp-main.263.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2023/d5242995-ff5a-54a1-a27a-a1a139974a5e.pdf",
+    "num_pages": 15,
+    "abstract": "The task of Question Generation over Knowledge Bases (KBQG) aims to convert a logical form into a natural language question. For the sake of expensive cost of large-scale question annotation, the methods of KBQG under low-resource scenarios urgently need to be developed. However, current methods heavily rely on annotated data for fine-tuning, which is not well-suited for few-shot question generation. The emergence of Large Language Models (LLMs) has shown their impressive generalization ability in few-shot tasks. Inspired by Chain-of-Thought (CoT) prompting, which is an in-context learning strategy for reasoning, we formulate KBQG task as a reasoning problem, where the generation of a complete question is splitted into a series of sub-question generation. Our proposed prompting method KQG-CoT first retrieves supportive logical forms from the unlabeled data pool taking account of the characteristics of the logical form. Then, we write a prompt to explicit the reasoning chain of generating complicated questions based on the selected demonstrations. To further ensure prompt quality, we extend KQG-CoT into KQG-CoT+ via sorting the logical forms by their complexity. We conduct extensive experiments over three public KBQG datasets. The results demonstrate that our prompting method consistently outperforms other prompting baselines on the evaluated datasets. Remarkably, our KQG-CoT+ method could surpass existing few-shot SoTA results of the PathQuestions dataset by 18.25, 10.72, and 10.18 absolute points on BLEU-4, METEOR, and ROUGE-L, respectively.",
+    "tldr": "KQG-CoT improves few-shot question generation using Chain-of-Thought prompting.",
+    "tags": [
+        "Knowledge Base Question Generation",
+        "Few-Shot Learning",
+        "Chain-of-Thought Prompting",
+        "Large Language Models",
+        "Reasoning in NLP"
+    ]
+}

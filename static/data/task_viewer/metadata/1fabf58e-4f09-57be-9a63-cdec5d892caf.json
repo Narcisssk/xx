@@ -1,0 +1,25 @@
+{
+    "uuid": "1fabf58e-4f09-57be-9a63-cdec5d892caf",
+    "title": "Mastering Memory Tasks with World Models",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "ALOE 2023 Poster",
+    "bibtex": "@inproceedings{\nsamsami2023mastering,\ntitle={Mastering Memory Tasks with World Models},\nauthor={Mohammad Reza Samsami and Artem Zholus and Janarthanan Rajendran and Sarath Chandar},\nbooktitle={Second Agent Learning in Open-Endedness Workshop},\nyear={2023},\nurl={https://openreview.net/forum?id=dWiYbyqfJP}\n}",
+    "authors": [
+        "Mohammad Reza Samsami",
+        "Artem Zholus",
+        "Janarthanan Rajendran",
+        "Sarath Chandar"
+    ],
+    "pdf_url": "https://openreview.net/pdf/dca5c44673bed14161deb34adddf10cdb83afc1e.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/1fabf58e-4f09-57be-9a63-cdec5d892caf.pdf",
+    "num_pages": 38,
+    "abstract": "Current model-based reinforcement learning (MBRL) agents struggle with long-term dependencies. This limits their ability to effectively solve tasks involving extended time gaps between actions and outcomes, or tasks demanding the recalling of distant observations to inform current actions. To improve temporal coherence, we integrate a new family of state space models (SSMs) in world models of MBRL agents to present a new method, Recall to Imagine (R2I). This integration aims to enhance both long-term memory and long-horizon credit assignment. Through a diverse set of illustrative tasks, we systematically demonstrate that R2I establishes a new state-of-the-art performance in challenging memory and credit assignment RL tasks, such as Memory Maze, BSuite, and POPGym. At the same time, it upholds comparable performance in classic RL tasks, such as Atari and DMC, suggesting the generality of our method. We also show that R2I is faster than the state-of-the-art MBRL method, DreamerV3, resulting in faster wall-time convergence.",
+    "tldr": "We propose R2I, a model-based agent with enhanced memory capabilities which shines in challenging memory reinforcement learning tasks.",
+    "tags": [
+        "model-based reinforcement learning",
+        "state space models",
+        "memory in reinforcement learning"
+    ]
+}

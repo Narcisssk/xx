@@ -1,0 +1,26 @@
+{
+    "uuid": "2ed12ce6-ae87-53be-b0fd-5abb6a163932",
+    "title": "Full-Atom Peptide Design with Geometric Latent Diffusion",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nkong2024fullatom,\ntitle={Full-Atom Peptide Design with Geometric Latent Diffusion},\nauthor={Xiangzhe Kong and Yinjun Jia and Wenbing Huang and Yang Liu},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=IAQNJUJe8q}\n}",
+    "authors": [
+        "Xiangzhe Kong",
+        "Yinjun Jia",
+        "Wenbing Huang",
+        "Yang Liu"
+    ],
+    "pdf_url": "https://openreview.net/pdf/69729ae7bb5ba90164d10c5cefa3f252d78a5c65.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/2ed12ce6-ae87-53be-b0fd-5abb6a163932.pdf",
+    "num_pages": 32,
+    "abstract": "Peptide design plays a pivotal role in therapeutics, allowing brand new possibility to leverage target binding sites that are previously undruggable. Most existing methods are either inefficient or only concerned with the target-agnostic design of 1D sequences. In this paper, we propose a generative model for full-atom Peptide design with Geometric LAtent Diffusion (PepGLAD) given the binding site. We first establish a benchmark consisting of both 1D sequences and 3D structures from Protein Data Bank (PDB) and literature for systematic evaluation. We then identify two major challenges of leveraging current diffusion-based models for peptide design: the full-atom geometry and the variable binding geometry. To tackle the first challenge, PepGLAD derives a variational autoencoder that first encodes full-atom residues of variable size into fixed-dimensional latent representations, and then decodes back to the residue space after conducting the diffusion process in the latent space. For the second issue, PepGLAD explores a receptor-specific affine transformation to convert the 3D coordinates into a shared standard space, enabling better generalization ability across different binding shapes. Experimental Results show that our method not only improves diversity and binding affinity significantly in the task of sequence-structure co-design, but also excels at recovering reference structures for binding conformation generation.",
+    "tldr": "PepGLAD enhances peptide design by leveraging geometric latent diffusion for binding sites.",
+    "tags": [
+        "Peptide Design",
+        "Geometric Latent Diffusion",
+        "Full-Atom",
+        "Affine Transformation"
+    ]
+}

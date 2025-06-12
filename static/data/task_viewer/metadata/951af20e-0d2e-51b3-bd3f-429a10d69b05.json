@@ -1,0 +1,30 @@
+{
+    "uuid": "951af20e-0d2e-51b3-bd3f-429a10d69b05",
+    "title": "Can LLMs Learn From Mistakes? An Empirical Study on Reasoning Tasks",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    "bibtex": "@inproceedings{an-etal-2024-llms,\n    title = \"Can {LLM}s Learn From Mistakes? An Empirical Study on Reasoning Tasks\",\n    author = \"An, Shengnan  and\n      Ma, Zexiong  and\n      Cai, Siqi  and\n      Lin, Zeqi  and\n      Zheng, Nanning  and\n      Lou, Jian-Guang  and\n      Chen, Weizhu\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Findings of the Association for Computational Linguistics: EMNLP 2024\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.findings-emnlp.46/\",\n    doi = \"10.18653/v1/2024.findings-emnlp.46\",\n    pages = \"833--854\",\n    abstract = \"Towards enhancing the chain-of-thought (CoT) reasoning of large language models (LLMs), much existing work has revealed the effectiveness of straightforward learning on annotated/generated CoT paths. However, there is less evidence yet that reasoning capabilities can be enhanced through a reverse learning process, i.e., learning from potential mistakes in reasoning. To investigate whether LLMs can learn from mistakes, we construct mistake-correction datasets, using GPT-4 to identify and correct the mistakes in inaccurate CoTs. With these mistake-correction datasets, we fine-tune open-source LLMs and arrive at the following conclusions. (1) LLMs can indeed learn from mistakes to enhance their CoT reasoning performances. (2) Compared to CoT data, the mistake-correction data provides additional knowledge on the explanations and reasons for the potential mistakes in CoTs, which consistently contributes to the effectiveness of learning from mistakes. (3) Evolution techniques, especially the correction-centric evolution we introduced, can further enhance the effectiveness of learning from mistakes.\"\n}\n",
+    "authors": [
+        "Shengnan An",
+        "Zexiong Ma",
+        "Siqi Cai",
+        "Zeqi Lin",
+        "Nanning Zheng",
+        "Jian-Guang Lou",
+        "Weizhu Chen"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.findings-emnlp.46.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/951af20e-0d2e-51b3-bd3f-429a10d69b05.pdf",
+    "num_pages": 22,
+    "abstract": "Towards enhancing the chain-of-thought (CoT) reasoning of large language models (LLMs), much existing work has revealed the effectiveness of straightforward learning on annotated/generated CoT paths. However, there is less evidence yet that reasoning capabilities can be enhanced through a reverse learning process, i.e., learning from potential mistakes in reasoning. To investigate whether LLMs can learn from mistakes, we construct mistake-correction datasets, using GPT-4 to identify and correct the mistakes in inaccurate CoTs. With these mistake-correction datasets, we fine-tune open-source LLMs and arrive at the following conclusions. (1) LLMs can indeed learn from mistakes to enhance their CoT reasoning performances. (2) Compared to CoT data, the mistake-correction data provides additional knowledge on the explanations and reasons for the potential mistakes in CoTs, which consistently contributes to the effectiveness of learning from mistakes. (3) Evolution techniques, especially the correction-centric evolution we introduced, can further enhance the effectiveness of learning from mistakes.",
+    "tldr": "LLMs can improve reasoning by learning from mistakes through corrective datasets.",
+    "tags": [
+        "LLMs",
+        "reasoning tasks",
+        "mistake-correction",
+        "chain-of-thought",
+        "fine-tuning"
+    ]
+}

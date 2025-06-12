@@ -1,0 +1,31 @@
+{
+    "uuid": "9b3a636d-5184-58d5-9333-49a304ad2f68",
+    "title": "On the Humanity of Conversational AI: Evaluating the Psychological Portrayal of LLMs",
+    "conference_full": "International Conference on Learning Representations",
+    "conference": "ICLR",
+    "year": 2024,
+    "volume": "ICLR 2024 oral",
+    "bibtex": "@inproceedings{\nhuang2024on,\ntitle={On the Humanity of Conversational {AI}: Evaluating the Psychological Portrayal of {LLM}s},\nauthor={Jen-tse Huang and Wenxuan Wang and Eric John Li and Man Ho LAM and Shujie Ren and Youliang Yuan and Wenxiang Jiao and Zhaopeng Tu and Michael Lyu},\nbooktitle={The Twelfth International Conference on Learning Representations},\nyear={2024},\nurl={https://openreview.net/forum?id=H3UayAQWoE}\n}",
+    "authors": [
+        "Jen-tse Huang",
+        "Wenxuan Wang",
+        "Eric John Li",
+        "Man Ho LAM",
+        "Shujie Ren",
+        "Youliang Yuan",
+        "Wenxiang Jiao",
+        "Zhaopeng Tu",
+        "Michael Lyu"
+    ],
+    "pdf_url": "https://openreview.net/pdf/b229e8ebcec1e8bef4ab8642d47d29495fdc9534.pdf",
+    "pdf_path": "data/dataset/airqa/papers/iclr2024/9b3a636d-5184-58d5-9333-49a304ad2f68.pdf",
+    "num_pages": 24,
+    "abstract": "Large Language Models (LLMs) have recently showcased their remarkable capacities, not only in natural language processing tasks but also across diverse domains such as clinical medicine, legal consultation, and education. LLMs become more than mere applications, evolving into assistants capable of addressing diverse user requests. This narrows the distinction between human beings and artificial intelligence agents, raising intriguing questions regarding the potential manifestation of personalities, temperaments, and emotions within LLMs. In this paper, we propose a framework, PsychoBench, for evaluating diverse psychological aspects of LLMs. Comprising thirteen scales commonly used in clinical psychology, PsychoBench further classifies these scales into four distinct categories: personality traits, interpersonal relationships, motivational tests, and emotional abilities. Our study examines five popular models, namely text-davinci-003, ChatGPT, GPT-4, LLaMA-2-7b, and LLaMA-2-13b. Additionally, we employ a jailbreak approach to bypass the safety alignment protocols and test the intrinsic natures of LLMs. We have made PsychoBench openly accessible via https://github.com/CUHK-ARISE/PsychoBench.",
+    "tldr": "We propose PsychoBench, a framework for evaluating the psychological portrayal of LLMs. We provide insights on the humanity of LLM leveraging our tool.",
+    "tags": [
+        "LLM",
+        "Benchmark",
+        "Evaluation",
+        "Psychometrics"
+    ]
+}

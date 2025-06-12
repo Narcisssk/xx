@@ -1,0 +1,28 @@
+{
+    "uuid": "3bc84aef-afcf-5ef8-a2fb-8e3ead6663d4",
+    "title": "Conservative Offline Policy Adaptation in Multi-Agent Games",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2023,
+    "volume": "NeurIPS 2023 poster",
+    "bibtex": "@inproceedings{\nwu2023conservative,\ntitle={Conservative Offline Policy Adaptation in Multi-Agent Games},\nauthor={Chengjie Wu and Pingzhong Tang and Jun Yang and Yujing Hu and Tangjie Lv and Changjie Fan and Chongjie Zhang},\nbooktitle={Thirty-seventh Conference on Neural Information Processing Systems},\nyear={2023},\nurl={https://openreview.net/forum?id=C8pvL8Qbfa}\n}",
+    "authors": [
+        "Chengjie Wu",
+        "Pingzhong Tang",
+        "Jun Yang",
+        "Yujing Hu",
+        "Tangjie Lv",
+        "Changjie Fan",
+        "Chongjie Zhang"
+    ],
+    "pdf_url": "https://openreview.net/pdf/b7f33f5b4e401a1e19d7abd347b3d83b37583edc.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2023/3bc84aef-afcf-5ef8-a2fb-8e3ead6663d4.pdf",
+    "num_pages": 23,
+    "abstract": "Prior research on policy adaptation in multi-agent games has often relied on online interaction with the target agent in training, which can be expensive and impractical in real-world scenarios. Inspired by recent progress in offline reinforcement learn- ing, this paper studies offline policy adaptation, which aims to utilize the target agent’s behavior data to exploit its weakness or enable effective cooperation. We investigate its distinct challenges of distributional shift and risk-free deviation, and propose a novel learning objective, conservative offline adaptation, that optimizes the worst-case performance against any dataset consistent proxy models. We pro- pose an efficient algorithm called Constrained Self-Play (CSP) that incorporates dataset information into regularized policy learning. We prove that CSP learns a near-optimal risk-free offline adaptation policy upon convergence. Empirical results demonstrate that CSP outperforms non-conservative baselines in various environments, including Maze, predator-prey, MuJoCo, and Google Football.",
+    "tldr": "This paper presents a conservative offline adaptation method for multi-agent games.",
+    "tags": [
+        "reinforcement learning",
+        "opponent exploitation",
+        "multi-agent"
+    ]
+}

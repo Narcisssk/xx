@@ -1,0 +1,31 @@
+{
+    "uuid": "abc391d1-1098-5b04-b9aa-5f0de5a2dd41",
+    "title": "FIRST: Teach A Reliable Large Language Model Through Efficient Trustworthy Distillation",
+    "conference_full": "The 2024 Conference on Empirical Methods in Natural Language Processing",
+    "conference": "EMNLP",
+    "year": 2024,
+    "volume": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    "bibtex": "@inproceedings{shum-etal-2024-first,\n    title = \"{FIRST}: Teach A Reliable Large Language Model Through Efficient Trustworthy Distillation\",\n    author = \"Shum, KaShun  and\n      Xu, Minrui  and\n      Zhang, Jianshu  and\n      Chen, Zixin  and\n      Diao, Shizhe  and\n      Dong, Hanze  and\n      Zhang, Jipeng  and\n      Raza, Muhammad Omer\",\n    editor = \"Al-Onaizan, Yaser  and\n      Bansal, Mohit  and\n      Chen, Yun-Nung\",\n    booktitle = \"Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing\",\n    month = nov,\n    year = \"2024\",\n    address = \"Miami, Florida, USA\",\n    publisher = \"Association for Computational Linguistics\",\n    url = \"https://aclanthology.org/2024.emnlp-main.703\",\n    doi = \"10.18653/v1/2024.emnlp-main.703\",\n    pages = \"12646--12659\",\n    abstract = \"Large language models (LLMs) have become increasingly prevalent in our daily lives, leading to an expectation for LLMs to be trustworthy {---}- both accurate and well-calibrated (the prediction confidence should align with its ground truth correctness likelihood). Nowadays, fine-tuning has become the most popular method for adapting a model to practical usage by significantly increasing accuracy on downstream tasks. Despite the great accuracy it achieves, we found fine-tuning is still far away from satisfactory trustworthiness due to {``}tuning-induced mis-calibration{''}. In this paper, we delve deeply into why and how mis-calibration exists in fine-tuned models, and how distillation can alleviate the issue. Then we further propose a brand new method named Efficient Trustworthy Distillation (FIRST), which utilizes a small portion of teacher{'}s knowledge to obtain a reliable language model in a cost-efficient way. Specifically, we identify the {``}concentrated knowledge{''} phenomenon during distillation, which can significantly reduce the computational burden. Then we apply a {``}trustworthy maximization{''} process to optimize the utilization of this small portion of concentrated knowledge before transferring it to the student. Experimental results demonstrate the effectiveness of our method, where better accuracy (+2.3{\\%}) and less mis-calibration (-10{\\%}) are achieved on average across both in-domain and out-of-domain scenarios, indicating better trustworthiness.\",\n}\n",
+    "authors": [
+        "KaShun Shum",
+        "Minrui Xu",
+        "Jianshu Zhang",
+        "Zixin Chen",
+        "Shizhe Diao",
+        "Hanze Dong",
+        "Jipeng Zhang",
+        "Muhammad Omer Raza"
+    ],
+    "pdf_url": "https://aclanthology.org/2024.emnlp-main.703.pdf",
+    "pdf_path": "data/dataset/airqa/papers/emnlp2024/abc391d1-1098-5b04-b9aa-5f0de5a2dd41.pdf",
+    "num_pages": 14,
+    "abstract": "Large language models (LLMs) have become increasingly prevalent in our daily lives, leading to an expectation for LLMs to be trustworthy —- both accurate and well-calibrated (the prediction confidence should align with its ground truth correctness likelihood). Nowadays, fine-tuning has become the most popular method for adapting a model to practical usage by significantly increasing accuracy on downstream tasks. Despite the great accuracy it achieves, we found fine-tuning is still far away from satisfactory trustworthiness due to “tuning-induced mis-calibration”. In this paper, we delve deeply into why and how mis-calibration exists in fine-tuned models, and how distillation can alleviate the issue. Then we further propose a brand new method named Efficient Trustworthy Distillation (FIRST), which utilizes a small portion of teacher’s knowledge to obtain a reliable language model in a cost-efficient way. Specifically, we identify the “concentrated knowledge” phenomenon during distillation, which can significantly reduce the computational burden. Then we apply a “trustworthy maximization” process to optimize the utilization of this small portion of concentrated knowledge before transferring it to the student. Experimental results demonstrate the effectiveness of our method, where better accuracy (+2.3%) and less mis-calibration (-10%) are achieved on average across both in-domain and out-of-domain scenarios, indicating better trustworthiness.",
+    "tldr": "Efficient Trustworthy Distillation improves language model accuracy and trustworthiness.",
+    "tags": [
+        "Large Language Models",
+        "Trustworthy Distillation",
+        "Model Calibration",
+        "Fine-Tuning",
+        "Knowledge Transfer"
+    ]
+}

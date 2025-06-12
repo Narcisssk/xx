@@ -1,0 +1,32 @@
+{
+    "uuid": "18f299e4-95c7-5356-ae9a-777eb6df9a3b",
+    "title": "Mobile-Agent-v2: Mobile Device Operation Assistant with Effective Navigation via Multi-Agent Collaboration",
+    "conference_full": "Conference on Neural Information Processing Systems",
+    "conference": "NeurIPS",
+    "year": 2024,
+    "volume": "NeurIPS 2024 poster",
+    "bibtex": "@inproceedings{\nwang2024mobileagentv,\ntitle={Mobile-Agent-v2: Mobile Device Operation Assistant with Effective Navigation via Multi-Agent Collaboration},\nauthor={Junyang Wang and Haiyang Xu and Haitao Jia and Xi Zhang and Ming Yan and Weizhou Shen and Ji Zhang and Fei Huang and Jitao Sang},\nbooktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},\nyear={2024},\nurl={https://openreview.net/forum?id=O0nBMRlkc8}\n}",
+    "authors": [
+        "Junyang Wang",
+        "Haiyang Xu",
+        "Haitao Jia",
+        "Xi Zhang",
+        "Ming Yan",
+        "Weizhou Shen",
+        "Ji Zhang",
+        "Fei Huang",
+        "Jitao Sang"
+    ],
+    "pdf_url": "https://openreview.net/pdf/1884d55b0eac95c14035e897dcbb1c8186bcd65e.pdf",
+    "pdf_path": "data/dataset/airqa/papers/neurips2024/18f299e4-95c7-5356-ae9a-777eb6df9a3b.pdf",
+    "num_pages": 25,
+    "abstract": "Mobile device operation tasks are increasingly becoming a popular multi-modal AI application scenario. Current Multi-modal Large Language Models (MLLMs), constrained by their training data, lack the capability to function effectively as operation assistants. Instead, MLLM-based agents, which enhance capabilities through tool invocation, are gradually being applied to this scenario. However, the two major navigation challenges in mobile device operation tasks — task progress navigation and focus content navigation — are difficult to effectively solve under the single-agent architecture of existing work. This is due to the overly long token sequences and the interleaved text-image data format, which limit performance. To address these navigation challenges effectively, we propose Mobile-Agent-v2, a multi-agent architecture for mobile device operation assistance. The architecture comprises three agents: planning agent, decision agent, and reflection agent. The planning agent condenses lengthy, interleaved image-text history operations and screens summaries into a pure-text task progress, which is then passed on to the decision agent. This reduction in context length makes it easier for decision agent to navigate the task progress. To retain focus content, we design a memory unit that updates with task progress by decision agent. Additionally, to correct erroneous operations, the reflection agent observes the outcomes of each operation and handles any mistake accordingly. Experimental results indicate that Mobile-Agent-v2 achieves over a 30% improvement in task completion compared to the single-agent architecture of Mobile-Agent. The code is open-sourced at https://github.com/X-PLUG/MobileAgent.",
+    "tldr": "In this paper, we propose a mobile device operation assistant based on a multi-agent architecture, which is capable of effectively navigating through historical information and self-reflection.",
+    "tags": [
+        "multi-agent",
+        "multi-modal agent",
+        "multi-modal large language model",
+        "mobile operation",
+        "UI assistant"
+    ]
+}
