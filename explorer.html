@@ -378,6 +378,17 @@
                     </div>
                 </div>
             </div>
+
+            <!-- No Match Section -->
+            <div class="box" id="noMatchSection" style="display: none;">
+                <div class="notification is-warning">
+                    <p class="has-text-weight-bold">No matching tasks found</p>
+                    <p>There are no tasks in the current subset that match the selected filters:</p>
+                    <div class="content">
+                        <ul id="selectedFiltersList"></ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -496,7 +507,7 @@
                         <div class="turn-header">Turn ${index + 1}</div>
                         <div class="turn-content">
                             <div class="mb-3">
-                                <strong>Action:</strong>
+                                <strong>Thought and Action:</strong>
                                 <pre><code class="language-json">${JSON.stringify(turn[0], null, 2)}</code></pre>
                             </div>
                             <div>
@@ -554,33 +565,48 @@
             document.getElementById('filterButton').addEventListener('click', () => {
                 const filteredTasks = filterTasks();
                 if (filteredTasks.length > 0) {
+                    document.getElementById('noMatchSection').style.display = 'none';
+                    document.getElementById('resultsSection').style.display = 'block';
                     const randomTask = filteredTasks[Math.floor(Math.random() * filteredTasks.length)];
                     displayTask(randomTask);
                 } else {
-                    // Show a more informative message about why no tasks were found
+                    // Show no match message in a card
+                    document.getElementById('resultsSection').style.display = 'none';
+                    const noMatchSection = document.getElementById('noMatchSection');
+                    noMatchSection.style.display = 'block';
+                    
+                    // Update the list of selected filters
                     const selectedTypes = {
                         task: Array.from(selectedFilters.task),
                         content: Array.from(selectedFilters.content),
                         question: Array.from(selectedFilters.question)
                     };
                     
-                    let message = 'No tasks match the selected filters:\n';
+                    const filtersList = document.getElementById('selectedFiltersList');
+                    filtersList.innerHTML = '';
+                    
                     if (selectedTypes.task.length > 0) {
-                        message += `\nTask Type: ${selectedTypes.task.join(', ')}`;
+                        const li = document.createElement('li');
+                        li.textContent = `Task Type: ${selectedTypes.task.join(', ')}`;
+                        filtersList.appendChild(li);
                     }
                     if (selectedTypes.content.length > 0) {
-                        message += `\nContent Type: ${selectedTypes.content.join(', ')}`;
+                        const li = document.createElement('li');
+                        li.textContent = `Content Type: ${selectedTypes.content.join(', ')}`;
+                        filtersList.appendChild(li);
                     }
                     if (selectedTypes.question.length > 0) {
-                        message += `\nQuestion Type: ${selectedTypes.question.join(', ')}`;
+                        const li = document.createElement('li');
+                        li.textContent = `Question Type: ${selectedTypes.question.join(', ')}`;
+                        filtersList.appendChild(li);
                     }
-                    
-                    alert(message);
                 }
             });
 
             // Random button click handler
             document.getElementById('randomButton').addEventListener('click', () => {
+                document.getElementById('noMatchSection').style.display = 'none';
+                document.getElementById('resultsSection').style.display = 'block';
                 const randomTask = allTasks[Math.floor(Math.random() * allTasks.length)];
                 displayTask(randomTask);
             });
