@@ -321,9 +321,9 @@
                     </div>
                 </div>
 
-                <!-- Content Type -->
+                <!-- Task Categories -->
                 <div class="tag-group">
-                    <div class="tag-group-title">Content Type:</div>
+                    <div class="tag-group-title">Task Categories:</div>
                     <div class="buttons">
                         <button class="button tag-button" data-type="content" data-value="text">Text</button>
                         <button class="button tag-button" data-type="content" data-value="table">Table</button>
@@ -333,9 +333,9 @@
                     </div>
                 </div>
 
-                <!-- Question Type -->
+                <!-- Evaluation Genre -->
                 <div class="tag-group">
-                    <div class="tag-group-title">Question Type:</div>
+                    <div class="tag-group-title">Evaluation Genre:</div>
                     <div class="buttons">
                         <button class="button tag-button" data-type="question" data-value="subjective">Subjective</button>
                         <button class="button tag-button" data-type="question" data-value="objective">Objective</button>
@@ -592,12 +592,12 @@
                     }
                     if (selectedTypes.content.length > 0) {
                         const li = document.createElement('li');
-                        li.textContent = `Content Type: ${selectedTypes.content.join(', ')}`;
+                        li.textContent = `Task Categories: ${selectedTypes.content.join(', ')}`;
                         filtersList.appendChild(li);
                     }
                     if (selectedTypes.question.length > 0) {
                         const li = document.createElement('li');
-                        li.textContent = `Question Type: ${selectedTypes.question.join(', ')}`;
+                        li.textContent = `Evaluation Genre: ${selectedTypes.question.join(', ')}`;
                         filtersList.appendChild(li);
                     }
                 }
