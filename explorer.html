@@ -420,17 +420,37 @@
             try {
                 // First get the list of all task IDs
                 const response = await fetch('./static/data/task_viewer/questions/task_ids.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const taskIds = await response.json();
+                console.log('Loaded task IDs:', taskIds); // Debug log
                 
                 // Then load each task's data
                 const taskPromises = taskIds.map(async (taskId) => {
-                    const taskResponse = await fetch(`./static/data/task_viewer/questions/${taskId}.json`);
-                    return taskResponse.json();
+                    try {
+                        const taskResponse = await fetch(`./static/data/task_viewer/questions/${taskId}.json`);
+                        if (!taskResponse.ok) {
+                            console.error(`Failed to load task ${taskId}: ${taskResponse.status}`);
+                            return null;
+                        }
+                        return taskResponse.json();
+                    } catch (error) {
+                        console.error(`Error loading task ${taskId}:`, error);
+                        return null;
+                    }
                 });
                 
-                allTasks = await Promise.all(taskPromises);
+                const tasks = await Promise.all(taskPromises);
+                allTasks = tasks.filter(task => task !== null); // Remove any failed loads
+                console.log('Loaded tasks:', allTasks.length); // Debug log
+
+                if (allTasks.length === 0) {
+                    throw new Error('No tasks were loaded successfully');
+                }
             } catch (error) {
                 console.error('Error loading tasks:', error);
+                alert('Error loading tasks. Please check the console for details.');
             }
         }
 
@@ -627,58 +647,66 @@
 
         // Initialize
         document.addEventListener('DOMContentLoaded', async () => {
-            await loadTasks();
-            initializeTagButtons();
+            try {
+                await loadTasks();
+                if (allTasks.length === 0) {
+                    throw new Error('No tasks were loaded');
+                }
+                initializeTagButtons();
 
-            // Filter button click handler
-            document.getElementById('filterButton').addEventListener('click', () => {
-                const filteredTasks = filterTasks();
-                if (filteredTasks.length > 0) {
+                // Filter button click handler
+                document.getElementById('filterButton').addEventListener('click', () => {
+                    const filteredTasks = filterTasks();
+                    if (filteredTasks.length > 0) {
+                        document.getElementById('noMatchSection').style.display = 'none';
+                        document.getElementById('resultsSection').style.display = 'block';
+                        const randomTask = filteredTasks[Math.floor(Math.random() * filteredTasks.length)];
+                        displayTask(randomTask);
+                    } else {
+                        // Show no match message in a card
+                        document.getElementById('resultsSection').style.display = 'none';
+                        const noMatchSection = document.getElementById('noMatchSection');
+                        noMatchSection.style.display = 'block';
+                        
+                        // Update the list of selected filters
+                        const selectedTypes = {
+                            task: Array.from(selectedFilters.task),
+                            content: Array.from(selectedFilters.content),
+                            question: Array.from(selectedFilters.question)
+                        };
+                        
+                        const filtersList = document.getElementById('selectedFiltersList');
+                        filtersList.innerHTML = '';
+                        
+                        if (selectedTypes.task.length > 0) {
+                            const li = document.createElement('li');
+                            li.textContent = `Task Type: ${selectedTypes.task.join(', ')}`;
+                            filtersList.appendChild(li);
+                        }
+                        if (selectedTypes.content.length > 0) {
+                            const li = document.createElement('li');
+                            li.textContent = `Task Categories: ${selectedTypes.content.join(', ')}`;
+                            filtersList.appendChild(li);
+                        }
+                        if (selectedTypes.question.length > 0) {
+                            const li = document.createElement('li');
+                            li.textContent = `Evaluation Genre: ${selectedTypes.question.join(', ')}`;
+                            filtersList.appendChild(li);
+                        }
+                    }
+                });
+
+                // Random button click handler
+                document.getElementById('randomButton').addEventListener('click', () => {
                     document.getElementById('noMatchSection').style.display = 'none';
                     document.getElementById('resultsSection').style.display = 'block';
-                    const randomTask = filteredTasks[Math.floor(Math.random() * filteredTasks.length)];
+                    const randomTask = allTasks[Math.floor(Math.random() * allTasks.length)];
                     displayTask(randomTask);
-                } else {
-                    // Show no match message in a card
-                    document.getElementById('resultsSection').style.display = 'none';
-                    const noMatchSection = document.getElementById('noMatchSection');
-                    noMatchSection.style.display = 'block';
-                    
-                    // Update the list of selected filters
-                    const selectedTypes = {
-                        task: Array.from(selectedFilters.task),
-                        content: Array.from(selectedFilters.content),
-                        question: Array.from(selectedFilters.question)
-                    };
-                    
-                    const filtersList = document.getElementById('selectedFiltersList');
-                    filtersList.innerHTML = '';
-                    
-                    if (selectedTypes.task.length > 0) {
-                        const li = document.createElement('li');
-                        li.textContent = `Task Type: ${selectedTypes.task.join(', ')}`;
-                        filtersList.appendChild(li);
-                    }
-                    if (selectedTypes.content.length > 0) {
-                        const li = document.createElement('li');
-                        li.textContent = `Task Categories: ${selectedTypes.content.join(', ')}`;
-                        filtersList.appendChild(li);
-                    }
-                    if (selectedTypes.question.length > 0) {
-                        const li = document.createElement('li');
-                        li.textContent = `Evaluation Genre: ${selectedTypes.question.join(', ')}`;
-                        filtersList.appendChild(li);
-                    }
-                }
-            });
-
-            // Random button click handler
-            document.getElementById('randomButton').addEventListener('click', () => {
-                document.getElementById('noMatchSection').style.display = 'none';
-                document.getElementById('resultsSection').style.display = 'block';
-                const randomTask = allTasks[Math.floor(Math.random() * allTasks.length)];
-                displayTask(randomTask);
-            });
+                });
+            } catch (error) {
+                console.error('Initialization error:', error);
+                alert('Error initializing the application. Please check the console for details.');
+            }
         });
     </script>
 </body>
