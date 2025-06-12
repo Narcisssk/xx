@@ -155,11 +155,11 @@
             font-weight: bold;
             margin: 5px;
         }
-        .status-correct {
+        .status-tag.correct {
             background-color: #48c774;
             color: white;
         }
-        .status-incorrect {
+        .status-tag.incorrect {
             background-color: #f14668;
             color: white;
         }
@@ -212,49 +212,6 @@
                     Below we show a subset of NeuSym-RAG tasks, which allows you to explore the tasks in detail.<br>
                     Tasks are categorized as either correct or incorrect based on their evaluation results.
                 </md-block>
-            </div>
-
-            <div class="columns">
-                <div class="column is-one-quarter categorycontainer" id="categoriesContainer">
-                    <!-- Categories will be populated by JavaScript -->
-                </div>
-                <div class="column is-three-quarter">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="content">
-                                <div class="box">
-                                    <div>
-                                        <b>Task id:</b>
-                                        <span class="taskid-label" id="taskid-text">uuid of the selected task</span>
-                                        
-                                        <h6 class="title is-6"></h6>
-                                        <div id="status-flag">
-                                            <b>Status:</b>
-                                            <span class="tag-success">success</span> or <span class="tag-failure">failure</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box">
-                                    <h5>Question</h5>
-                                    <div id="tag-list">
-                                        <b>Tags:</b>
-                                        <!-- Tags will be populated by JavaScript -->
-                                    </div>
-                                    <div class="highlight-quote">
-                                        <div class="highlight-quote-content" id="question-text">
-                                            Select a task on the left panel to view the question.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="box">
-                                    <h5>Trajectory</h5>
-                                    <pre class="line-numbers" data-language="python" style="max-width: 100%; max-height: 500px; overflow: auto; white-space: pre-wrap;"><code class="language-python" id="trajectory-text">Select a task on the left panel to view the trajectory.</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -353,7 +310,6 @@
             
             <!-- Filter Section -->
             <div class="box">
-                <h2 class="subtitle">Filter Tasks</h2>
                 
                 <!-- Task Type -->
                 <div class="tag-group">
@@ -387,7 +343,7 @@
                 </div>
 
                 <button id="filterButton" class="button is-primary">Filter Tasks</button>
-                <button id="randomButton" class="button is-info">Show Random Task</button>
+                <button id="randomButton" class="button is-info">Show a Random Task</button>
             </div>
 
             <!-- Results Section -->
@@ -547,7 +503,7 @@
             // Update status with styled tag
             const statusTag = document.getElementById('taskStatus');
             statusTag.textContent = task.status;
-            statusTag.className = `tag status-tag status-${task.status.toLowerCase()}`;
+            statusTag.className = `tag status-tag ${task.status.toLowerCase()}`;
             
             // Update tags with styled tags
             const tagList = document.getElementById('taskTags');
