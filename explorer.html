@@ -131,15 +131,72 @@
             background: #3273dc;
             color: white;
         }
-        .trajectory-step {
-            margin: 10px 0;
-            padding: 10px;
+        .trajectory-turn {
+            margin: 20px 0;
+            padding: 15px;
             background: #f8f9fa;
-            border-radius: 4px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .step-number {
+        .turn-header {
             font-weight: bold;
             color: #3273dc;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #3273dc;
+        }
+        .turn-content {
+            margin-left: 15px;
+        }
+        .status-tag {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+            margin: 5px;
+        }
+        .status-correct {
+            background-color: #48c774;
+            color: white;
+        }
+        .status-incorrect {
+            background-color: #f14668;
+            color: white;
+        }
+        .task-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            margin: 2px;
+            font-size: 0.9em;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+        }
+        .task-tag.task-type {
+            background-color: #3273dc;
+            color: white;
+        }
+        .task-tag.content-type {
+            background-color: #00d1b2;
+            color: white;
+        }
+        .task-tag.question-type {
+            background-color: #ffdd57;
+            color: #363636;
+        }
+        .highlight-quote {
+            background-color: #f9f9f9;
+            border-left: 4px solid #007BFF;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .task-id-display {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
         }
     </style>
 </head>
@@ -337,17 +394,30 @@
             <div class="box" id="resultsSection" style="display: none;">
                 <h2 class="subtitle">Task Details</h2>
                 <div class="content">
-                    <p><strong>Task ID:</strong> <span id="taskId"></span></p>
-                    <p><strong>Status:</strong> <span id="taskStatus"></span></p>
-                    <p><strong>Tags:</strong> <span id="taskTags"></span></p>
+                    <div class="field is-grouped is-grouped-multiline">
+                        <div class="control">
+                            <div class="tags has-addons">
+                                <span class="tag is-dark">Task ID</span>
+                                <span class="tag is-info task-id-display" id="taskId"></span>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <div class="tags has-addons">
+                                <span class="tag is-dark">Status</span>
+                                <span class="tag" id="taskStatus"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tags" id="taskTags"></div>
                     
                     <div class="highlight-quote">
-                        <p><strong>Question:</strong></p>
+                        <p class="has-text-weight-bold">Question:</p>
                         <p id="taskQuestion"></p>
                     </div>
 
                     <div class="highlight-quote">
-                        <p><strong>Trajectory:</strong></p>
+                        <p class="has-text-weight-bold">Trajectory:</p>
                         <div id="taskTrajectory"></div>
                     </div>
                 </div>
@@ -432,13 +502,33 @@
             try {
                 const response = await fetch(`./static/data/task_viewer/trajectory/${taskId}.jsonl`);
                 const text = await response.text();
-                const steps = text.trim().split('\n').map(line => JSON.parse(line));
+                const lines = text.trim().split('\n');
+                
+                // Skip the first two lines (environment prompts)
+                const steps = lines.slice(2).map(line => JSON.parse(line));
+                
+                // Group steps into turns (every two steps)
+                const turns = [];
+                for (let i = 0; i < steps.length; i += 2) {
+                    if (i + 1 < steps.length) {
+                        turns.push([steps[i], steps[i + 1]]);
+                    }
+                }
                 
                 const trajectoryDiv = document.getElementById('taskTrajectory');
-                trajectoryDiv.innerHTML = steps.map((step, index) => `
-                    <div class="trajectory-step">
-                        <span class="step-number">Step ${index + 1}:</span>
-                        <pre><code class="language-json">${JSON.stringify(step, null, 2)}</code></pre>
+                trajectoryDiv.innerHTML = turns.map((turn, index) => `
+                    <div class="trajectory-turn">
+                        <div class="turn-header">Turn ${index + 1}</div>
+                        <div class="turn-content">
+                            <div class="mb-3">
+                                <strong>Action:</strong>
+                                <pre><code class="language-json">${JSON.stringify(turn[0], null, 2)}</code></pre>
+                            </div>
+                            <div>
+                                <strong>Observation:</strong>
+                                <pre><code class="language-json">${JSON.stringify(turn[1], null, 2)}</code></pre>
+                            </div>
+                        </div>
                     </div>
                 `).join('');
                 
@@ -453,8 +543,26 @@
         // Display task details
         async function displayTask(task) {
             document.getElementById('taskId').textContent = task.uuid;
-            document.getElementById('taskStatus').textContent = task.status;
-            document.getElementById('taskTags').textContent = task.tags.join(', ');
+            
+            // Update status with styled tag
+            const statusTag = document.getElementById('taskStatus');
+            statusTag.textContent = task.status;
+            statusTag.className = `tag status-tag status-${task.status.toLowerCase()}`;
+            
+            // Update tags with styled tags
+            const tagList = document.getElementById('taskTags');
+            tagList.innerHTML = task.tags.map(tag => {
+                let tagClass = 'task-tag';
+                if (['single', 'multiple', 'retrieval'].includes(tag)) {
+                    tagClass += ' task-type';
+                } else if (['text', 'table', 'image', 'formula', 'metadata'].includes(tag)) {
+                    tagClass += ' content-type';
+                } else if (['subjective', 'objective'].includes(tag)) {
+                    tagClass += ' question-type';
+                }
+                return `<span class="${tagClass}">${tag}</span>`;
+            }).join('');
+            
             document.getElementById('taskQuestion').textContent = task.question;
             
             await loadTrajectory(task.uuid);
