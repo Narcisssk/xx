@@ -373,7 +373,7 @@
                     </div>
 
                     <div class="highlight-quote" id="anchorPdfSection" style="display: none;">
-                        <p class="has-text-weight-bold">Reference PDFs:</p>
+                        <p class="has-text-weight-bold">Anchor PDFs:</p>
                         <div id="anchorPdfList"></div>
                     </div>
 
@@ -576,7 +576,7 @@
             // Handle anchor PDFs
             const anchorPdfSection = document.getElementById('anchorPdfSection');
             const anchorPdfList = document.getElementById('anchorPdfList');
-            if (task.anchor_pdf && task.anchor_pdf.length > 0) {
+            if (task.anchor_pdf && Array.isArray(task.anchor_pdf) && task.anchor_pdf.length > 0) {
                 anchorPdfSection.style.display = 'block';
                 const pdfPromises = task.anchor_pdf.map(async (pdfName) => {
                     const pdfUrl = await loadPdfMetadata(pdfName);
@@ -591,9 +591,11 @@
             // Handle conference information
             const conferenceSection = document.getElementById('conferenceSection');
             const conferenceInfo = document.getElementById('conferenceInfo');
-            if (task.conference) {
+            if (task.conference && (typeof task.conference === 'string' || 
+                (Array.isArray(task.conference) && task.conference.length > 0))) {
                 conferenceSection.style.display = 'block';
-                conferenceInfo.textContent = task.conference;
+                conferenceInfo.textContent = Array.isArray(task.conference) ? 
+                    task.conference.join(', ') : task.conference;
             } else {
                 conferenceSection.style.display = 'none';
             }
