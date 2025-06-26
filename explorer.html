@@ -608,18 +608,12 @@
                 keys.forEach(k => {
                     let v = row[k];
                     if (typeof v === 'object' && v !== null) v = JSON.stringify(v);
-                    if (k === 'text' && typeof v === 'string' && v.length > 80) v = v.slice(0, 80) + '...';
+                    // Always show full value in the cell, no matter how long
                     html += `<td>${v === undefined ? '' : v}</td>`;
                 });
                 html += '</tr>';
             });
             html += '</tbody></table></div></div>';
-            // If any row has a long 'text' field, show it below in a scrollable box
-            arr.forEach(row => {
-                if (row.text && typeof row.text === 'string' && row.text.length > 80) {
-                    html += `<div class="observation-scrollbox" style="margin-top:6px;">${row.text.replace(/\n/g, '<br>')}</div>`;
-                }
-            });
             if (extraText) {
                 html += `<div class=\"observation-extra\">${extraText}</div>`;
             }
