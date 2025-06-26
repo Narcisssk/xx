@@ -661,6 +661,56 @@
       }
     }
 </style>
+  <style>
+    .field-tag {
+      display: inline-block;
+      background: #e3eafc;
+      color: #2056a5;
+      border-radius: 6px;
+      padding: 2px 10px;
+      margin: 4px 8px 4px 0;
+      font-size: 0.98em;
+      font-weight: 500;
+      vertical-align: middle;
+    }
+    .field-desc {
+      display: inline-block;
+      margin-bottom: 6px;
+      color: #444;
+      font-size: 0.97em;
+      vertical-align: middle;
+    }
+    .prompt-tag {
+      display: inline-block;
+      background: #f3e9e3;
+      color: #a55b20;
+      border-radius: 6px;
+      padding: 2px 10px;
+      margin: 4px 8px 4px 0;
+      font-size: 0.98em;
+      font-weight: 500;
+      vertical-align: middle;
+    }
+    .prompt-block {
+      background: #f9f9f9;
+      border-left: 4px solid #e0c3a5;
+      border-radius: 4px;
+      margin: 12px 0 18px 0;
+      padding: 10px 18px 10px 14px;
+    }
+    .prompt-desc {
+      color: #666;
+      font-size: 0.97em;
+      margin-bottom: 4px;
+      margin-top: 2px;
+    }
+    .prompt-content {
+      color: #222;
+      font-size: 0.97em;
+      margin-top: 2px;
+      white-space: pre-line;
+    }
+  </style>
 </head>
 
 <body>
@@ -954,54 +1004,87 @@
 
       <div class="lib_examples" title="Data Format">
         <md-block>
-          <b>AirQA-Real Data Format Overview</b>
-          <ul>
-            <li><b>uuid</b>: Unique identifier for each question instance.</li>
-            <li><b>question</b>: The natural language question about a PDF or set of PDFs.</li>
-            <li><b>answer_format</b>: Specifies the required format for the answer (e.g., list, string, number).</li>
-            <li><b>tags</b>: Labels describing the question type, content modality, and evaluation genre.</li>
-            <li><b>anchor_pdf</b>: The PDF(s) that must be referenced to answer the question.</li>
-            <li><b>reference_pdf</b>: Additional PDF(s) that may be used for context.</li>
-            <li><b>conference</b>: Conference(s) and year(s) related to the question or source paper(s).</li>
-            <li><b>evaluator</b>: The evaluation function and parameters used to assess the answer.</li>
-            <li><b>state</b>: Tracks the status of the question in different agent runs.</li>
-            <li><b>annotator</b>: The human annotator who created or verified the question.</li>
-          </ul>
-          <p>Each field is designed to support robust, multi-modal question answering and evaluation in the AirQA-Real benchmark.</p>
+          <div>
+            <span class="field-tag">uuid</span>
+            <span class="field-desc">Unique identifier for each question instance.</span>
+          </div>
+          <div>
+            <span class="field-tag">question</span>
+            <span class="field-desc">The natural language question about a PDF or set of PDFs.</span>
+          </div>
+          <div>
+            <span class="field-tag">answer_format</span>
+            <span class="field-desc">Specifies the required format for the answer (e.g., list, string, number).</span>
+          </div>
+          <div>
+            <span class="field-tag">tags</span>
+            <span class="field-desc">Labels describing the question type, content modality, and evaluation genre.</span>
+          </div>
+          <div>
+            <span class="field-tag">anchor_pdf</span>
+            <span class="field-desc">The PDF(s) that must be referenced to answer the question.</span>
+          </div>
+          <div>
+            <span class="field-tag">reference_pdf</span>
+            <span class="field-desc">Additional PDF(s) that may be used for context.</span>
+          </div>
+          <div>
+            <span class="field-tag">conference</span>
+            <span class="field-desc">Conference(s) and year(s) related to the question or source paper(s).</span>
+          </div>
+          <div>
+            <span class="field-tag">evaluator</span>
+            <span class="field-desc">The evaluation function and parameters used to assess the answer.</span>
+          </div>
+          <div>
+            <span class="field-tag">state</span>
+            <span class="field-desc">Tracks the status of the question in different agent runs.</span>
+          </div>
+          <div>
+            <span class="field-tag">annotator</span>
+            <span class="field-desc">The human annotator who created or verified the question.</span>
+          </div>
+          <div style="margin-top:10px;color:#555;font-size:0.97em;">Each field is designed to support robust, multi-modal question answering and evaluation in the AirQA-Real benchmark.</div>
         </md-block>
       </div>
 
       <div class="lib_examples" title="Prompt">
         <md-block>
-          <b>Prompt Structure</b>
-          <div class="prompt-card">
-            <div class="highlight-box"><b>[System Prompt]</b><br>
-            Defines the agent's role and describes the task to tackle, clarifying the context of the task.<br>
-            <span style="font-size:0.95em; color:#555;">You are an intelligent agent with expertise in retrieving useful context from both the DuckDB database and the Milvus vectorstore through SQL execution and similarity search and answering user questions. ...</span>
-            </div>
-            <div class="highlight-box"><b>[Action and Observation Space Prompt]</b><br>
-            Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type.<br>
-            <span style="font-size:0.95em; color:#555;">- RetrieveFromDatabase: SQL-based symbolic retrieval<br>- ClassicRetrieve: Neural retrieval from vectorstore<br>- GenerateAnswer: Output the final answer</span>
-            </div>
-            <div class="highlight-box"><b>[Interaction Framework Prompt]</b><br>
-            Outlines the main interaction procedure and template.<br>
-            <span style="font-size:0.95em; color:#555;">The agent iteratively predicts [Thought] → [Action] → receives [Observation], until it can confidently GenerateAnswer.</span>
-            </div>
-            <div class="highlight-box"><b>[Hint Prompt]</b><br>
-            Provides hints or suggestions to help the agent refine its planning and reasoning process.<br>
-            <span style="font-size:0.95em; color:#555;">- Explore multiple retrieval strategies<br>- Combine structured and unstructured data<br>- Iterate and refine<br>- Ensure confidence before answering</span>
-            </div>
-            <div class="highlight-box"><b>[Task Prompt]</b><br>
-            Defines the task input, including the input question, required answer format, and relevant schemas.<br>
-            <span style="font-size:0.95em; color:#555;">[Question], [Answer Format], [Anchor PDF], [Reference PDF], [Conference], [Database Schema], [Vectorstore Schema]</span>
-            </div>
+          <div class="prompt-block">
+            <span class="prompt-tag">[System Prompt]</span>
+            <div class="prompt-desc">Defines the agent's role and describes the task to tackle, clarifying the context of the task.</div>
+            <div class="prompt-content">You are an intelligent agent with expertise in retrieving useful context from both the DuckDB database and the Milvus vectorstore through SQL execution and similarity search and answering user questions. ...</div>
+          </div>
+          <div class="prompt-block">
+            <span class="prompt-tag">[Action and Observation Space Prompt]</span>
+            <div class="prompt-desc">Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type.</div>
+            <div class="prompt-content">- RetrieveFromDatabase: SQL-based symbolic retrieval
+- ClassicRetrieve: Neural retrieval from vectorstore
+- GenerateAnswer: Output the final answer</div>
+          </div>
+          <div class="prompt-block">
+            <span class="prompt-tag">[Interaction Framework Prompt]</span>
+            <div class="prompt-desc">Outlines the main interaction procedure and template.</div>
+            <div class="prompt-content">The agent iteratively predicts [Thought] → [Action] → receives [Observation], until it can confidently GenerateAnswer.</div>
+          </div>
+          <div class="prompt-block">
+            <span class="prompt-tag">[Hint Prompt]</span>
+            <div class="prompt-desc">Provides hints or suggestions to help the agent refine its planning and reasoning process.</div>
+            <div class="prompt-content">- Explore multiple retrieval strategies
+- Combine structured and unstructured data
+- Iterate and refine
+- Ensure confidence before answering</div>
+          </div>
+          <div class="prompt-block">
+            <span class="prompt-tag">[Task Prompt]</span>
+            <div class="prompt-desc">Defines the task input, including the input question, required answer format, and relevant schemas.</div>
+            <div class="prompt-content">[Question], [Answer Format], [Anchor PDF], [Reference PDF], [Conference], [Database Schema], [Vectorstore Schema]</div>
           </div>
         </md-block>
       </div>
 
       <div class="lib_examples" title="Interaction">
         <md-block>
-          <b>Agent Interaction Overview</b>
           <ul>
             <li>The agent receives a question and relevant context (schemas, PDFs, etc.).</li>
             <li>It enters a loop of <b>Thought → Action → Observation</b>:</li>
