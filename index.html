@@ -1004,6 +1004,7 @@
 
       <div class="lib_examples" title="Data Format">
         <md-block>
+          <b>The data format of AirQA-Real is as follows:</b>
           <div>
             <span class="field-tag">uuid</span>
             <span class="field-desc">Unique identifier for each question instance.</span>
@@ -1038,13 +1039,12 @@
           </div>
           <div>
             <span class="field-tag">state</span>
-            <span class="field-desc">Tracks the status of the question in different agent runs.</span>
+            <span class="field-desc">The status of the question if directly answered by some LLM services.</span>
           </div>
           <div>
             <span class="field-tag">annotator</span>
-            <span class="field-desc">The human annotator who created or verified the question.</span>
+            <span class="field-desc">The human annotator who created the question or the source dataset of the question.</span>
           </div>
-          <div style="margin-top:10px;color:#555;font-size:0.97em;">Each field is designed to support robust, multi-modal question answering and evaluation in the AirQA-Real benchmark.</div>
         </md-block>
       </div>
 
@@ -1053,27 +1053,22 @@
           <div class="prompt-block">
             <span class="prompt-tag">[System Prompt]</span>
             <div class="prompt-desc">Defines the agent's role and describes the task to tackle, clarifying the context of the task.</div>
-            <div class="prompt-content">You are an intelligent agent with expertise in retrieving useful context from both the DuckDB database and the Milvus vectorstore through SQL execution and similarity search and answering user questions. ...</div>
+            <div class="prompt-content">You are an intelligent agent with expertise in **retrieving useful context from both the DuckDB database and the Milvus vectorstore through SQL execution and similarity search** and **answering user questions**. You will be given a natural language question concerning PDF files, along with the schema of both the database and the vectorstore. Your ultimate goal is to answer the input question with pre-defined answer format. The DuckDB database contains all parsed content of raw PDF files, while the Milvus vectorstore encodes specific column cells from the database as vectors. You can predict executable actions, interact with the hybrid environment (including database and vectorstore) across multiple turns, and retrieve necessary context until you are confident in resolving the question.</div>
           </div>
           <div class="prompt-block">
             <span class="prompt-tag">[Action and Observation Space Prompt]</span>
             <div class="prompt-desc">Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type.</div>
-            <div class="prompt-content">- RetrieveFromDatabase: SQL-based symbolic retrieval
-- ClassicRetrieve: Neural retrieval from vectorstore
-- GenerateAnswer: Output the final answer</div>
+            <div class="prompt-content">All allowable action types include ['RetrieveFromDatabase', 'RetrieveFromVectorstore', 'CalculateExpr', 'ViewImage', 'GenerateAnswer']. Here is the detailed specification in MARKDOWN format...</div>
           </div>
           <div class="prompt-block">
             <span class="prompt-tag">[Interaction Framework Prompt]</span>
             <div class="prompt-desc">Outlines the main interaction procedure and template.</div>
-            <div class="prompt-content">The agent iteratively predicts [Thought] → [Action] → receives [Observation], until it can confidently GenerateAnswer.</div>
+            <div class="prompt-content">The main interaction procedure proceeds like this:\n\n----\n\n[Thought]: ... reasoning process, why to take this action ...\n[Action]: ... which action to take, please strictly conform to the action specification ...\n[Observation]: ... execution results or error message after taking the action ...\n\n... # more interleaved triplets of ([Thought], [Action], [Observation])\n\n[Thought]: ... reasoning process to produce the final answer ...\n[Action]: ... the terminate action `GenerateAnswer`, there is no further observation ...\n\n----\n\nIn general, the main interaction loop consists of an interleaved of triplets ([Thought], [Action], [Observation]), except the last `GenerateAnswer` action which does not have \"[Observation]:\". You need to predict the \"[Thought]: ...\" followed by the \"[Action]: ...\" for each turn, and we will execute your action in the environment and provide the \"[Observation]: ...\" for the previous action.</div>
           </div>
           <div class="prompt-block">
             <span class="prompt-tag">[Hint Prompt]</span>
             <div class="prompt-desc">Provides hints or suggestions to help the agent refine its planning and reasoning process.</div>
-            <div class="prompt-content">- Explore multiple retrieval strategies
-- Combine structured and unstructured data
-- Iterate and refine
-- Ensure confidence before answering</div>
+            <div class="prompt-content">1. Explore multiple retrieval strategies. For example:\n- Experiment with different (table, column) pairs to extract diverse types of information.\n- Query various embedding models (collections) to find the most relevant context.\n\n2. Combine both structured and unstructured data. Concretely:\n- Use SQL queries to retrieve precise facts and structured data. Pay special attention to morphological variations in cell values.\n- Perform similarity searches in the vectorstore to capture semantic relationships and hidden insights.\n\n3. Iterate and refine:\n- If SQL execution result is not satisfactory, try alternative SQL queries to explore the database content carefully.\n- If the vector-based neural retrieval is insufficient, try alternative approaches or parameter settings.\n- Use your findings to validate or enrich the final response.\n\n4. Ensure confidence. That is, only make a final decision when you are confident that the retrieved information fully addresses the user’s query.\n\n\nRemember that, for each question, you only have 20 interaction turns at most. Now, let's start!</div>
           </div>
           <div class="prompt-block">
             <span class="prompt-tag">[Task Prompt]</span>
