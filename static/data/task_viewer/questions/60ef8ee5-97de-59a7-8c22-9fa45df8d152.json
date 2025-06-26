@@ -28,6 +28,7 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "wangye",
-    "status": "success"
+    "annotator": "human",
+    "status": "success",
+    "test_result": "[Observation]: Subtask 3"
 }

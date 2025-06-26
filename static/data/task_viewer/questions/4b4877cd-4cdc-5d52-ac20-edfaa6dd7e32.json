@@ -1,6 +1,6 @@
 {
     "uuid": "4b4877cd-4cdc-5d52-ac20-edfaa6dd7e32",
-    "question": "Is there any paper leverages knowledge distillation of language models for textual out-of-distribution detection or anomaly detection?",
+    "question": "Is there any paper leveraging knowledge distillation of language models for textual out-of-distribution detection or anomaly detection?",
     "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
     "tags": [
         "retrieval",
@@ -22,5 +22,6 @@
     },
     "state": {},
     "annotator": "litsearch_manual",
-    "status": "success"
+    "status": "success",
+    "test_result": "[Observation]: Multi-Level Knowledge Distillation for Out-of-Distribution Detection in Text"
 }

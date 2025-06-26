@@ -22,5 +22,6 @@
     },
     "state": {},
     "annotator": "litsearch_manual",
-    "status": "success"
+    "status": "success",
+    "test_result": "[Observation]: Large-Scale Correlation Analysis of Automated Metrics for Topic Models"
 }

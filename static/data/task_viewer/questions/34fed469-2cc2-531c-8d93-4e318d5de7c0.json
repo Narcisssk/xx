@@ -32,5 +32,6 @@
         "d6b892b8-cf43-5b62-bde9-48c070c2e5dc"
     ],
     "reference_pdf": [],
-    "status": "failure"
+    "status": "success",
+    "test_result": "[Observation]: ['HotpotQA', '2WikiMultihopQA', 'MuSiQue', 'DuReader']"
 }

@@ -22,5 +22,6 @@
     },
     "state": {},
     "annotator": "litsearch_manual",
-    "status": "success"
+    "status": "success",
+    "test_result": "[Observation]: Learning to Relax: Setting Solver Parameters Across a Sequence of Linear System Instances"
 }

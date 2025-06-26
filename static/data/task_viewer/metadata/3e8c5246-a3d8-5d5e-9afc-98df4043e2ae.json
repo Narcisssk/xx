@@ -14,5 +14,13 @@
     "pdf_url": "https://aclanthology.org/2024.bionlp-1.67.pdf",
     "pdf_path": "data/dataset/airqa/papers/acl2024/3e8c5246-a3d8-5d5e-9afc-98df4043e2ae.pdf",
     "abstract": "This paper presents our approaches for the BioLaySumm 2024 Shared Task. We evaluate two methods for generating lay summaries based on biomedical articles: (1) fine-tuning the Longformer-Encoder-Decoder (LED) model, and (2) zero-shot and few-shot prompting on GPT-4. In the fine-tuning approach, we individually fine-tune the LED model using two datasets: PLOS and eLife. This process is conducted under two different settings: one utilizing 50% of the training dataset, and the other utilizing the entire 100% of the training dataset. We compare the results of both methods with GPT-4 in zero-shot and few-shot prompting. The experiment results demonstrate that fine-tuning with 100% of the training data achieves better performance than prompting with GPT-4. However, under data scarcity circumstances, prompting GPT-4 seems to be a better solution.",
-    "num_pages": 7
+    "num_pages": 7,
+    "tldr": "Evaluates fine-tuning LED vs. GPT-4 prompting for biomedical lay summaries.",
+    "tags": [
+        "Biomedical lay summarization",
+        "Longformer fine-tuning",
+        "GPT-4 prompting",
+        "data scarcity evaluation",
+        "model performance comparison"
+    ]
 }

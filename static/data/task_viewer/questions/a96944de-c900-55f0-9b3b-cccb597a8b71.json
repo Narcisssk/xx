@@ -1,6 +1,6 @@
 {
     "uuid": "a96944de-c900-55f0-9b3b-cccb597a8b71",
-    "question": "Which category of website takes up the most proportion in the dataset MC2?",
+    "question": "Which category of website takes up the most proportion in the dataset MC2 according to this paper?",
     "answer_format": "Your answer should be a phrase indicating the category DIRECTLY FROM THE PDF WITHOUT ANY MODIFICATION OR EXPLANATION.",
     "tags": [
         "image",
@@ -26,5 +26,6 @@
         "16142be2-ac28-58e5-9271-8af299b18d91"
     ],
     "reference_pdf": [],
-    "status": "success"
+    "status": "success",
+    "test_result": "[Observation]: News"
 }

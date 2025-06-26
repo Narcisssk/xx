@@ -33,5 +33,6 @@
         "47f98c9d-038d-5a81-a0ac-e28c5c3bee9a"
     ],
     "reference_pdf": [],
-    "status": "success"
+    "status": "success",
+    "test_result": "[Observation]: ['Retrieval Enhancement', 'Aspect Enhancement', 'Joint Enhancement Transformers']"
 }

@@ -46,6 +46,7 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "miaoyuxun",
-    "status": "success"
+    "annotator": "human",
+    "status": "success",
+    "test_result": "[Observation]: {'datasets': ['Cars', 'DTD', 'EuroSAT', 'GTSRB', 'MNIST', 'RESISC45', 'SVHN', 'SUN397'], 'same_datasets': True}"
 }

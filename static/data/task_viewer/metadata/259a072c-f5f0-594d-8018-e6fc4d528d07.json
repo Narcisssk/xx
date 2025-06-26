@@ -16,5 +16,13 @@
     "pdf_url": "https://aclanthology.org/2024.acl-long.149.pdf",
     "pdf_path": "data/dataset/airqa/papers/acl2024/259a072c-f5f0-594d-8018-e6fc4d528d07.pdf",
     "abstract": "Conversational search utilizes muli-turn natural language contexts to retrieve relevant passages. Existing conversational dense retrieval models mostly view a conversation as a fixed sequence of questions and responses, overlooking the severe data sparsity problem – that is, users can perform a conversation in various ways, and these alternate conversations are unrecorded. Consequently, they often struggle to generalize to diverse conversations in real-world scenarios. In this work, we propose a framework for generalizing Conversational dense retrieval via LLM-cognition data Augmentation (ConvAug). We first generate multi-level augmented conversations to capture the diverse nature of conversational contexts. Inspired by human cognition, we devise a cognition-aware prompting process to mitigate the generation of false positives, false negatives, and hallucinations. Moreover, we develop a difficulty-adaptive sample filter that selects challenging samples for complex conversations, thereby giving the model a larger learning space. A contrastive learning objective is then employed to train a better conversational context encoder. Extensive experiments conducted on four public datasets, under both normal and zero-shot settings, demonstrate the effectiveness, generalizability, and applicability of ConvAug. The code is released at https://github.com/haon-chen/ConvAug.",
-    "num_pages": 19
+    "num_pages": 19,
+    "tldr": "Framework improves conversational dense retrieval using LLM-based data augmentation.",
+    "tags": [
+        "Conversational search",
+        "Dense retrieval",
+        "Data augmentation",
+        "Contrastive learning",
+        "Generalization"
+    ]
 }

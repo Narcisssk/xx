@@ -15,5 +15,13 @@
     "pdf_url": "https://aclanthology.org/2024.acl-long.407.pdf",
     "pdf_path": "data/dataset/airqa/papers/acl2024/7d6f212e-3d4c-5cb2-877c-5d233ae46f3b.pdf",
     "abstract": "Large Language Models (LLMs) have driven substantial progress in artificial intelligence in recent years, exhibiting impressive capabilities across a wide range of tasks, including mathematical problem-solving. Inspired by the success of subgoal-based methods, we propose a novel framework called SEquential subGoal Optimization (SEGO) to enhance LLMs’ ability to solve mathematical problems. By establishing a connection between the subgoal breakdown process and the probability of solving problems, SEGO aims to identify better subgoals with theoretical guarantees. Addressing the challenge of identifying suitable subgoals in a large solution space, our framework generates problem-specific subgoals and adjusts them according to carefully designed criteria. Incorporating these optimized subgoals into the policy model training leads to significant improvements in problem-solving performance. We validate SEGO’s efficacy through experiments on two benchmarks, GSM8K and MATH, where our approach outperforms existing methods, highlighting the potential of SEGO in AI-driven mathematical problem-solving.",
-    "num_pages": 22
+    "num_pages": 22,
+    "tldr": "SEGO improves LLMs' math-solving by optimizing sequential subgoals.",
+    "tags": [
+        "Large Language Models",
+        "Mathematical Problem-Solving",
+        "Subgoal Optimization",
+        "AI Framework",
+        "Benchmark Evaluation"
+    ]
 }

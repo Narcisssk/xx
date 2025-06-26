@@ -41,6 +41,7 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "kangzhangyi",
-    "status": "success"
+    "annotator": "human",
+    "status": "success",
+    "test_result": "[Observation]: ['QLoRA', '4-bit NormalFloat (NF4) representation, double quantization, and paged optimizers']"
 }

@@ -17,5 +17,13 @@
     "pdf_url": "https://aclanthology.org/2023.acl-long.691.pdf",
     "pdf_path": "data/dataset/airqa/papers/acl2023/30aea0d7-d2e5-58e4-ada8-4f4bf479edd9.pdf",
     "abstract": "Biographical event detection is a relevant task that allows for the exploration and comparison of the ways in which people’s lives are told and represented. This may support several real-life applications in digital humanities and in works aimed at exploring bias about minoritized groups. Despite that, there are no corpora and models specifically designed for this task. In this paper we fill this gap by presenting a new corpus annotated for biographical event detection. The corpus, which includes 20 Wikipedia biographies, was aligned with 5 existing corpora in order to train a model for the biographical event detection task. The model was able to detect all mentions of the target-entity in a biography with an F-score of 0.808 and the entity-related events with an F-score of 0.859. Finally, the model was used for performing an analysis of biases about women and non-Western people in Wikipedia biographies.",
-    "num_pages": 15
+    "num_pages": 15,
+    "tldr": "New corpus and model enable biographical event detection and bias analysis in bios.",
+    "tags": [
+        "biographical event detection",
+        "digital humanities",
+        "bias analysis",
+        "annotated corpus",
+        "Wikipedia biographies"
+    ]
 }

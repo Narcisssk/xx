@@ -15,5 +15,13 @@
     "pdf_url": "https://aclanthology.org/2024.acl-short.48.pdf",
     "pdf_path": "data/dataset/airqa/papers/acl2024/5e692b45-81a3-5edc-a464-5025866db42a.pdf",
     "abstract": "We analysed a sample of NLP research papers archived in ACL Anthology as an attempt to quantify the degree of openness and the benefit of such an open culture in the NLP community. We observe that papers published in different NLP venues show different patterns related to artefact reuse. We also note that more than 30% of the papers we analysed do not release their artefacts publicly. Further, we observe a wide language-wise disparity in publicly available NLP-related artefacts.",
-    "num_pages": 11
+    "num_pages": 11,
+    "tldr": "Examines openness and artefact reuse in NLP research, noting significant disparities.",
+    "tags": [
+        "Openness in NLP",
+        "Artefact Reuse",
+        "Language Disparity",
+        "ACL Anthology",
+        "Research Transparency"
+    ]
 }

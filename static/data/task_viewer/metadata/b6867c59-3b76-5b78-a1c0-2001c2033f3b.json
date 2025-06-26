@@ -15,5 +15,13 @@
     "pdf_url": "https://aclanthology.org/2023.findings-acl.466.pdf",
     "pdf_path": "data/dataset/airqa/papers/acl2023/b6867c59-3b76-5b78-a1c0-2001c2033f3b.pdf",
     "abstract": "In the deployment of real-world text classification models, label scarcity is a common problem and as the number of classes increases, this problem becomes even more complex. An approach to addressing this problem is by applying text augmentation methods. One of the more prominent methods involves using the text-generation capabilities of language models. In this paper, we propose Text AUgmentation by Dataset Reconstruction (TAU-DR), a novel method of data augmentation for text classification. We conduct experiments on several multi-class datasets, showing that our approach improves the current state-of-the-art techniques for data augmentation.",
-    "num_pages": 14
+    "num_pages": 14,
+    "tldr": "Propose TAU-DR method to improve text augmentation for low-resource classification.",
+    "tags": [
+        "text augmentation",
+        "dataset reconstruction",
+        "low-resource classification",
+        "text classification",
+        "multi-class datasets"
+    ]
 }

@@ -1,6 +1,6 @@
 {
     "uuid": "0b1dbace-15fd-53b8-bf52-2bf158ceea33",
-    "question": "Which paper first propose to mask positions to pre-train multi-modal document transformer\uff1f",
+    "question": "Which paper first proposes to mask positions to pre-train multi-modal document transformer\uff1f",
     "answer_format": "Your answer should be the title of the paper WITHOUT ANY EXPLANATION.",
     "tags": [
         "retrieval",
@@ -22,5 +22,6 @@
     },
     "state": {},
     "annotator": "litsearch_manual",
-    "status": "success"
+    "status": "success",
+    "test_result": "[Observation]: LayoutMask: Enhance Text-Layout Interaction in Multi-modal Pre-training for Document Understanding"
 }

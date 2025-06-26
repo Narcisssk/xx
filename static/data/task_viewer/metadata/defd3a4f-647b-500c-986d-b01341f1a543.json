@@ -15,5 +15,13 @@
     "pdf_url": "https://aclanthology.org/2024.sighan-1.19.pdf",
     "pdf_path": "data/dataset/airqa/papers/acl2024/defd3a4f-647b-500c-986d-b01341f1a543.pdf",
     "abstract": "This paper describes the SIGHAN-2024 shared task for Chinese dimensional aspect-based sentiment analysis (ABSA), including task description, data preparation, performance metrics, and evaluation results. Compared to representing affective states as several discrete classes (i.e., sentiment polarity), the dimensional approach represents affective states as continuous numerical values (called sentiment intensity) in the valence-arousal space, providing more fine-grained affective states. Therefore, we organized a dimensional ABSA (shorted dimABSA) shared task, comprising three subtasks: 1) intensity prediction, 2) triplet extraction, and 3) quadruple extraction, receiving a total of 214 submissions from 61 registered participants during evaluation phase. A total of eleven teams provided selected submissions for each subtask and seven teams submitted technical reports for the subtasks. This shared task demonstrates current NLP techniques for dealing with Chinese dimensional ABSA. All data sets with gold standards and evaluation scripts used in this shared task are publicly available for future research.",
-    "num_pages": 10
+    "num_pages": 10,
+    "tldr": "SIGHAN-2024 showcased advancements in Chinese dimensional ABSA with 3 subtasks.",
+    "tags": [
+        "Chinese sentiment analysis",
+        "dimensional ABSA",
+        "valence-arousal model",
+        "NLP shared task",
+        "aspect-based sentiment analysis"
+    ]
 }

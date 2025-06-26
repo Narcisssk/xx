@@ -22,5 +22,6 @@
     },
     "state": {},
     "annotator": "litsearch_manual",
-    "status": "failure"
+    "status": "success",
+    "test_result": "[Observation]: MIR-GAN: Refining Frame-Level Modality-Invariant Representations with Adversarial Network for Audio-Visual Speech Recognition"
 }

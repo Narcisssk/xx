@@ -14,5 +14,13 @@
     "pdf_url": "https://aclanthology.org/2024.acl-long.10.pdf",
     "pdf_path": "data/dataset/airqa/papers/acl2024/6b99b0a2-fb28-5266-8c2d-6581334ccbbf.pdf",
     "abstract": "In this paper, we present CSCD-NS, the first Chinese spelling check (CSC) dataset designed for native speakers, containing 40,000 samples from a Chinese social platform. Compared with existing CSC datasets aimed at Chinese learners, CSCD-NS is ten times larger in scale and exhibits a distinct error distribution, with a significantly higher proportion of word-level errors. To further enhance the data resource, we propose a novel method that simulates the input process through an input method, generating large-scale and high-quality pseudo data that closely resembles the actual error distribution and outperforms existing methods. Moreover, we investigate the performance of various models in this scenario, including large language models (LLMs), such as ChatGPT. The result indicates that generative models underperform BERT-like classification models due to strict length and pronunciation constraints. The high prevalence of word-level errors also makes CSC for native speakers challenging enough, leaving substantial room for improvement.",
-    "num_pages": 14
+    "num_pages": 14,
+    "tldr": "CSCD-NS: A large Chinese spelling check dataset for native speakers with word errors.",
+    "tags": [
+        "Chinese spelling check",
+        "native speakers",
+        "error distribution",
+        "word-level errors",
+        "large language models"
+    ]
 }

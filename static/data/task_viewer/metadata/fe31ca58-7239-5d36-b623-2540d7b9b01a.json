@@ -15,5 +15,13 @@
     "pdf_url": "https://aclanthology.org/2024.smm4h-1.12.pdf",
     "pdf_path": "data/dataset/airqa/papers/acl2024/fe31ca58-7239-5d36-b623-2540d7b9b01a.pdf",
     "abstract": "This paper presents our system developed for the Social Media Mining for Health (SMM4H) 2024 Task 05. The task objective was binary classification of tweets provided in the dataset, distinguishing between those reporting medical disorders and those merely mentioning diseases. We address this challenge through the utilization of a 5-fold cross-validation approach, employing the RoBERTa-Large model. Evaluation results demonstrate an F1-score of 0.886 on the validation dataset and 0.823 on the test dataset.",
-    "num_pages": 3
+    "num_pages": 3,
+    "tldr": "5-fold cross-validation with RoBERTa-Large achieves 0.823 F1 in tweet classification.",
+    "tags": [
+        "Social Media Mining",
+        "Health Informatics",
+        "Tweet Classification",
+        "Cross Validation",
+        "RoBERTa-Large"
+    ]
 }

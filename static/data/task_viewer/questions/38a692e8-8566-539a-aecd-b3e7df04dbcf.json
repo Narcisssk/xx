@@ -32,5 +32,6 @@
         "2b003f7e-a995-57d1-af78-78432ed96561"
     ],
     "reference_pdf": [],
-    "status": "failure"
+    "status": "success",
+    "test_result": "[Observation]: ['B(\\\\nu,x_j)_{i}(h) = \\\\max_{k} B(\\\\nu,x_j,t_k)_{i}(h)', 'B(\\\\nu,D)_{i}(h) = \\\\sum_{j=1}^{N} \\\\alpha(\\\\nu,x_j) B(\\\\nu,x_j)_{i}(h) \\\\quad \\\\text{where} \\\\quad \\\\alpha(\\\\nu,x_j) = P(\\\\hat{y}_j|\\\\nu, x_j)', 'B(I,D)_{i}(h) = \\\\frac{1}{M} \\\\sum_{\\\\nu} B(\\\\nu,D)_{i}(h)']"
 }

@@ -15,5 +15,13 @@
     "pdf_url": "https://aclanthology.org/2024.sighan-1.20.pdf",
     "pdf_path": "data/dataset/airqa/papers/acl2024/cb0bc639-0d1f-5d72-b108-e8ffc5aefbef.pdf",
     "abstract": "This paper presents the winning system participating in the ACL 2024 workshop SIGHAN-10 shared task: Chinese dimensional aspect-based sentiment analysis (dimABSA). This task aims to identify four sentiment elements in restaurant reviews: aspect, category, opinion, and sentiment intensity evaluated in valence-arousal dimensions, providing a concise yet fine-grained sentiment description for user opinions. To tackle this task, we introduce a system that integrates BERT and large language models (LLM) to leverage their strengths. First, we explore their performance in entity extraction, relation classification, and intensity prediction. Based on preliminary experiments, we develop an integrated approach to fully utilize their advantages in different scenarios. Our system achieves first place in all subtasks and obtains a 41.7% F1-score in quadruple extraction.",
-    "num_pages": 11
+    "num_pages": 11,
+    "tldr": "BERT and LLM integration excels in Chinese dimABSA, winning SIGHAN-2024 task.",
+    "tags": [
+        "dimABSA",
+        "BERT",
+        "large language models",
+        "sentiment analysis",
+        "Chinese restaurant reviews"
+    ]
 }

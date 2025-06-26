@@ -31,5 +31,6 @@
         "ed5d7873-1891-50ad-a358-d976054e12f7"
     ],
     "reference_pdf": [],
-    "status": "success"
+    "status": "success",
+    "test_result": "[Observation]: ['ACL 2023', 'long paper']"
 }

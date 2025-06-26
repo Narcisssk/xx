@@ -28,5 +28,6 @@
         "32d1e04a-e87c-5179-8b13-4ad86585c55f"
     ],
     "reference_pdf": [],
-    "status": "failure"
+    "status": "success",
+    "test_result": "[Observation]: You can obtain $h_i$ or $h_j$ by initializing them as the feature representations of the corresponding utterances $u_i$ and $u_j$. These are derived using the RoBERTa model during the feature extraction step. Then, they are updated through message propagation in the DisGAT and SpkGAT modules, which aggregate information from neighboring nodes in the discourse dependency graph and speaker dependency graph respectively."
 }

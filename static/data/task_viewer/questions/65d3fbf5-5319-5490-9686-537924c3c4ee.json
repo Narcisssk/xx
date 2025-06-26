@@ -28,5 +28,6 @@
         "4f88e7de-b217-5d6b-a315-a872e927bdfe"
     ],
     "reference_pdf": [],
-    "status": "success"
+    "status": "success",
+    "test_result": "[Observation]: Datasets: 1. LogiQA (Liu et al., 2020) - 179 high-quality logical problems. 2. ProofWriter (Tafjord et al., 2020) - depth-5 subset with 600 cases. 3. FOLIO (Han et al., 2022) - validation set with 204 examples. 4. PrOntoQA (Saparov and He, 2022) - similar to ProofWriter. 5. LogicalDeduction (LD) - full test set with 300 examples. Baselines: 1. Standard prompting. 2. CoT (Wei et al., 2022). 3. CoT-SC (Wang et al., 2022b). 4. SI (Creswell et al., 2022b). 5. LAMBADA (Kazemi et al., 2022). 6. ToT (Yao et al., 2023). 7. CR (Zhang et al., 2023)."
 }

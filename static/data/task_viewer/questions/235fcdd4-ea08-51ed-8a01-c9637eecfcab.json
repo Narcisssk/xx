@@ -30,10 +30,11 @@
     "state": {
         "gpt-4o-2024-05-13": false
     },
-    "annotator": "kangzhangyi",
+    "annotator": "human",
     "anchor_pdf": [
         "2c222763-f33b-5cfa-8897-5d217aaf9142"
     ],
     "reference_pdf": [],
-    "status": "failure"
+    "status": "success",
+    "test_result": "[Observation]: ['DocVQA', 'ChartQA', 'InfographicVQA', 'WKVVQA']"
 }

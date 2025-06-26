@@ -26,6 +26,7 @@
     "state": {
         "gui-gpt-4o-2024-11-20": false
     },
-    "annotator": "zhangsituo",
-    "status": "failure"
+    "annotator": "human",
+    "status": "success",
+    "test_result": "[Observation]: 40"
 }

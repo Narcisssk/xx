@@ -12,5 +12,13 @@
     "pdf_url": "https://aclanthology.org/2024.arabicnlp-1.87.pdf",
     "pdf_path": "data/dataset/airqa/papers/acl2024/fcbfe144-254e-5c9f-942c-6f154c8363e0.pdf",
     "abstract": "LLMs such as GPT-4 and LLaMA excel in multiple natural language processing tasks, however, LLMs face challenges in delivering satisfactory performance on low-resource languages due to limited availability of training data. In this paper, LLaMA-3 with 8 Billion parameters is finetuned to translate among Egyptian, Emirati, Jordanian, Palestinian Arabic dialects, and Modern Standard Arabic (MSA). In the NADI 2024 Task on DA-MSA Machine Translation, the proposed method achieved a BLEU score of 21.44 when it was fine-tuned on thedevelopment dataset of the NADI 2024 Task on DA-MSA and a BLEU score of 16.09 when trained when it was fine-tuned using the OSACT dataset.",
-    "num_pages": 5
+    "num_pages": 5,
+    "tldr": "Fine-tuning LLaMA-3 improves translation from Arabic dialects to Modern Standard Arabic.",
+    "tags": [
+        "Arabic Dialects",
+        "Machine Translation",
+        "Fine-Tuning",
+        "Low-Resource Languages",
+        "LLaMA-3"
+    ]
 }
