@@ -210,6 +210,10 @@
             font-size: 0.98em;
             white-space: pre-wrap;
         }
+        .observation-table-wrap { overflow-x: auto; margin-bottom: 6px; }
+        .observation-table { border-collapse: collapse; width: 100%; font-size: 0.97em; background: #fff; }
+        .observation-table th, .observation-table td { border: 1px solid #e0e0e0; padding: 4px 8px; text-align: left; }
+        .observation-table th { background: #f5f7fa; font-weight: 600; }
     </style>
 </head>
 
@@ -562,6 +566,44 @@
             return result;
         }
 
+        // Helper to check if a string is a JSON object or array
+        function isJsonObject(str) {
+            try {
+                const obj = JSON.parse(str);
+                return typeof obj === 'object' && obj !== null;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        // Helper to render JSON object(s) as a table
+        function renderJsonTable(obj) {
+            let arr = Array.isArray(obj) ? obj : [obj];
+            // Collect all unique keys
+            let keys = Array.from(new Set(arr.flatMap(o => Object.keys(o))));
+            let html = '<div class="observation-table-wrap"><table class="observation-table"><thead><tr>';
+            keys.forEach(k => { html += `<th>${k}</th>`; });
+            html += '</tr></thead><tbody>';
+            arr.forEach(row => {
+                html += '<tr>';
+                keys.forEach(k => {
+                    let v = row[k];
+                    if (typeof v === 'object' && v !== null) v = JSON.stringify(v);
+                    if (k === 'text' && typeof v === 'string' && v.length > 80) v = v.slice(0, 80) + '...';
+                    html += `<td>${v === undefined ? '' : v}</td>`;
+                });
+                html += '</tr>';
+            });
+            html += '</tbody></table></div>';
+            // If any row has a long 'text' field, show it below in a scrollable box
+            arr.forEach(row => {
+                if (row.text && typeof row.text === 'string' && row.text.length > 80) {
+                    html += `<div class="observation-scrollbox" style="margin-top:6px;">${row.text.replace(/\n/g, '<br>')}</div>`;
+                }
+            });
+            return html;
+        }
+
         // Load trajectory for a task
         async function loadTrajectory(taskId) {
             try {
@@ -623,12 +665,24 @@
                     if (t1.observation) {
                         const obsDiv = document.createElement('div');
                         obsDiv.className = 'highlight-quote';
-                        obsDiv.innerHTML = `<p class="has-text-weight-bold">Observation:</p><div class="observation-scrollbox">${t1.observation}</div>`;
+                        let obsContent = t1.observation;
+                        if (typeof obsContent === 'string' && isJsonObject(obsContent)) {
+                            const obj = JSON.parse(obsContent);
+                            obsDiv.innerHTML = `<p class=\"has-text-weight-bold\">Observation:</p>` + renderJsonTable(obj);
+                        } else {
+                            obsDiv.innerHTML = `<p class=\"has-text-weight-bold\">Observation:</p><div class=\"observation-scrollbox\">${obsContent}</div>`;
+                        }
                         details.appendChild(obsDiv);
                     } else if (turn[1] && turn[1].content) {
                         const obsDiv = document.createElement('div');
                         obsDiv.className = 'highlight-quote';
-                        obsDiv.innerHTML = `<p class="has-text-weight-bold">Observation:</p><div class="observation-scrollbox">${turn[1].content}</div>`;
+                        let obsContent = turn[1].content;
+                        if (typeof obsContent === 'string' && isJsonObject(obsContent)) {
+                            const obj = JSON.parse(obsContent);
+                            obsDiv.innerHTML = `<p class=\"has-text-weight-bold\">Observation:</p>` + renderJsonTable(obj);
+                        } else {
+                            obsDiv.innerHTML = `<p class=\"has-text-weight-bold\">Observation:</p><div class=\"observation-scrollbox\">${obsContent}</div>`;
+                        }
                         details.appendChild(obsDiv);
                     }
                     content.appendChild(details);
