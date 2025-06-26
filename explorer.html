@@ -530,6 +530,26 @@
             });
         }
 
+        // Helper to extract [Thought], [Action], [Observation] from content string
+        function extractSections(content) {
+            // If content is an object with 'content' field, use that
+            if (typeof content === 'object' && content.content) {
+                content = content.content;
+            }
+            if (typeof content !== 'string') return {};
+            const result = {};
+            // Extract [Thought]
+            const thoughtMatch = content.match(/\[Thought\](.*?)(?=\[Action\]|$)/s);
+            if (thoughtMatch) result.thought = thoughtMatch[1].trim();
+            // Extract [Action]
+            const actionMatch = content.match(/\[Action\](.*?)(?=\[Observation\]|$)/s);
+            if (actionMatch) result.action = actionMatch[1].trim();
+            // Extract [Observation]
+            const obsMatch = content.match(/\[Observation\](.*)/s);
+            if (obsMatch) result.observation = obsMatch[1].trim();
+            return result;
+        }
+
         // Load trajectory for a task
         async function loadTrajectory(taskId) {
             try {
@@ -562,43 +582,44 @@
                 turns.forEach((turn, index) => {
                     const turnDiv = document.createElement('div');
                     turnDiv.className = 'timeline-item';
-                    
-                    // Create the turn marker
                     const marker = document.createElement('div');
                     marker.className = 'timeline-marker';
-                    
-                    // Create the turn content
                     const content = document.createElement('div');
                     content.className = 'timeline-content';
-                    
-                    // Add turn number
                     const header = document.createElement('p');
                     header.className = 'has-text-weight-bold';
                     header.textContent = `Turn ${index + 1}`;
                     content.appendChild(header);
-                    
-                    // Add turn details
                     const details = document.createElement('div');
                     details.className = 'content';
-                    
-                    // Add thought and action
-                    const thoughtDiv = document.createElement('div');
-                    thoughtDiv.className = 'highlight-quote';
-                    thoughtDiv.innerHTML = `
-                        <p class="has-text-weight-bold">Thought and Action:</p>
-                        <pre><code class="language-json">${JSON.stringify(turn[0], null, 2)}</code></pre>
-                    `;
-                    details.appendChild(thoughtDiv);
-                    
-                    // Add observation
-                    const observationDiv = document.createElement('div');
-                    observationDiv.className = 'highlight-quote';
-                    observationDiv.innerHTML = `
-                        <p class="has-text-weight-bold">Observation:</p>
-                        <pre><code class="language-json">${JSON.stringify(turn[1], null, 2)}</code></pre>
-                    `;
-                    details.appendChild(observationDiv);
-                    
+                    // Extract and display [Thought] and [Action] from turn[0]
+                    const t0 = extractSections(turn[0]);
+                    if (t0.thought) {
+                        const thoughtDiv = document.createElement('div');
+                        thoughtDiv.className = 'highlight-quote';
+                        thoughtDiv.innerHTML = `<p class="has-text-weight-bold">Thought:</p><div>${t0.thought}</div>`;
+                        details.appendChild(thoughtDiv);
+                    }
+                    if (t0.action) {
+                        const actionDiv = document.createElement('div');
+                        actionDiv.className = 'highlight-quote';
+                        actionDiv.innerHTML = `<p class="has-text-weight-bold">Action:</p><div>${t0.action}</div>`;
+                        details.appendChild(actionDiv);
+                    }
+                    // Extract and display [Observation] from turn[1]
+                    const t1 = extractSections(turn[1]);
+                    if (t1.observation) {
+                        const obsDiv = document.createElement('div');
+                        obsDiv.className = 'highlight-quote';
+                        obsDiv.innerHTML = `<p class="has-text-weight-bold">Observation:</p><div>${t1.observation}</div>`;
+                        details.appendChild(obsDiv);
+                    } else if (turn[1] && turn[1].content) {
+                        // fallback: show content if [Observation] not found
+                        const obsDiv = document.createElement('div');
+                        obsDiv.className = 'highlight-quote';
+                        obsDiv.innerHTML = `<p class="has-text-weight-bold">Observation:</p><div>${turn[1].content}</div>`;
+                        details.appendChild(obsDiv);
+                    }
                     content.appendChild(details);
                     turnDiv.appendChild(marker);
                     turnDiv.appendChild(content);
