@@ -709,6 +709,25 @@
       font-size: 0.97em;
       margin-top: 2px;
       white-space: pre-line;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      max-height: 2.8em;
+      position: relative;
+      transition: max-height 0.2s;
+    }
+    .prompt-content.expanded {
+      -webkit-line-clamp: unset;
+      max-height: 1000px;
+    }
+    .show-more-link {
+      color: #a55b20;
+      cursor: pointer;
+      font-size: 0.95em;
+      margin-left: 8px;
+      text-decoration: underline;
+      user-select: none;
     }
   </style>
 </head>
@@ -1068,7 +1087,7 @@
           <div class="prompt-block">
             <span class="prompt-tag">[Hint Prompt]</span>
             <div class="prompt-desc">Provides hints or suggestions to help the agent refine its planning and reasoning process.</div>
-            <div class="prompt-content">1. Explore multiple retrieval strategies. For example:\n- Experiment with different (table, column) pairs to extract diverse types of information.\n- Query various embedding models (collections) to find the most relevant context.\n\n2. Combine both structured and unstructured data. Concretely:\n- Use SQL queries to retrieve precise facts and structured data. Pay special attention to morphological variations in cell values.\n- Perform similarity searches in the vectorstore to capture semantic relationships and hidden insights.\n\n3. Iterate and refine:\n- If SQL execution result is not satisfactory, try alternative SQL queries to explore the database content carefully.\n- If the vector-based neural retrieval is insufficient, try alternative approaches or parameter settings.\n- Use your findings to validate or enrich the final response.\n\n4. Ensure confidence. That is, only make a final decision when you are confident that the retrieved information fully addresses the user’s query.\n\n\nRemember that, for each question, you only have 20 interaction turns at most. Now, let's start!</div>
+            <div class="prompt-content">1. Explore multiple retrieval strategies. For example:\n- Experiment with different (table, column) pairs to extract diverse types of information.\n- Query various embedding models (collections) to find the most relevant context.\n\n2. Combine both structured and unstructured data. Concretely:\n- Use SQL queries to retrieve precise facts and structured data. Pay special attention to morphological variations in cell values.\n- Perform similarity searches in the vectorstore to capture semantic relationships and hidden insights.\n\n3. Iterate and refine:\n- If SQL execution result is not satisfactory, try alternative SQL queries to explore the database content carefully.\n- If the vector-based neural retrieval is insufficient, try alternative approaches or parameter settings.\n- Use your findings to validate or enrich the final response.\n\n4. Ensure confidence. That is, only make a final decision when you are confident that the retrieved information fully addresses the user's query.\n\n\nRemember that, for each question, you only have 20 interaction turns at most. Now, let's start!</div>
           </div>
           <div class="prompt-block">
             <span class="prompt-tag">[Task Prompt]</span>
@@ -1540,6 +1559,27 @@
             targetContent.style.display = 'block';
           }
         });
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.prompt-content').forEach(function(block) {
+        // Only add show more if content is more than 2 lines
+        if (block.scrollHeight > block.clientHeight + 2) {
+          const showMore = document.createElement('span');
+          showMore.className = 'show-more-link';
+          showMore.textContent = 'Show more';
+          showMore.onclick = function() {
+            if (block.classList.contains('expanded')) {
+              block.classList.remove('expanded');
+              showMore.textContent = 'Show more';
+            } else {
+              block.classList.add('expanded');
+              showMore.textContent = 'Show less';
+            }
+          };
+          block.parentNode.appendChild(showMore);
+        }
       });
     });
   </script>
