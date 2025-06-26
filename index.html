@@ -954,183 +954,65 @@
 
       <div class="lib_examples" title="Data Format">
         <md-block>
-          AirQA-Real uses a structured JSON format to represent questions and their metadata. Each question entry contains core fields for the question content, reference fields for source papers, and evaluation fields for assessment.
+          <b>AirQA-Real Data Format Overview</b>
+          <ul>
+            <li><b>uuid</b>: Unique identifier for each question instance.</li>
+            <li><b>question</b>: The natural language question about a PDF or set of PDFs.</li>
+            <li><b>answer_format</b>: Specifies the required format for the answer (e.g., list, string, number).</li>
+            <li><b>tags</b>: Labels describing the question type, content modality, and evaluation genre.</li>
+            <li><b>anchor_pdf</b>: The PDF(s) that must be referenced to answer the question.</li>
+            <li><b>reference_pdf</b>: Additional PDF(s) that may be used for context.</li>
+            <li><b>conference</b>: Conference(s) and year(s) related to the question or source paper(s).</li>
+            <li><b>evaluator</b>: The evaluation function and parameters used to assess the answer.</li>
+            <li><b>state</b>: Tracks the status of the question in different agent runs.</li>
+            <li><b>annotator</b>: The human annotator who created or verified the question.</li>
+          </ul>
+          <p>Each field is designed to support robust, multi-modal question answering and evaluation in the AirQA-Real benchmark.</p>
         </md-block>
-        <div class="code-section">
-          <pre class="line-numbers"><code class="language-json">
-{
-  "uuid": "966deaf9-83fe-5f5b-8b30-06c8e350375a",
-  "question": "In the paper proposing Voila-A, which baselines do the main experimental results demonstrate that Voila-A outperform?",
-  "answer_format": "Your answer should be a single python list of strings, each string is a baseline name.e.g. [\"baseline1_name\", \"baseline2_name\"]. Note that for the names, the abbreviation is enough.",
-  "tags": [
-      "comprehensive",
-      "text",
-      "objective"
-  ],
-  "anchor_pdf": [
-      "Voila-A: Aligning Vision-Language Models with User's Gaze Attention"
-  ],
-  "reference_pdf": [],
-  "conference": [],
-  "reasoning_steps": [],
-  "evaluator": {
-      "eval_func": "eval_structured_object_exact_match",
-      "eval_kwargs": {
-          "gold": [
-              "Otter",
-              "Kosmos-2"
-          ],
-          "ignore_order": true,
-          "lowercase": true
-      }
-  },
-  "state": {
-      "gui-gpt-4o-2024-11-20": false
-  },
-  "annotator": "kangzhangyi"
-}
-          </code></pre>
-        </div>
       </div>
 
       <div class="lib_examples" title="Prompt">
         <md-block>
-          The system prompt defines the agent's capabilities and interaction framework for answering questions about PDF files through a hybrid retrieval approach.
+          <b>Prompt Structure</b>
+          <div class="prompt-card">
+            <div class="highlight-box"><b>[System Prompt]</b><br>
+            Defines the agent's role and describes the task to tackle, clarifying the context of the task.<br>
+            <span style="font-size:0.95em; color:#555;">You are an intelligent agent with expertise in retrieving useful context from both the DuckDB database and the Milvus vectorstore through SQL execution and similarity search and answering user questions. ...</span>
+            </div>
+            <div class="highlight-box"><b>[Action and Observation Space Prompt]</b><br>
+            Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type.<br>
+            <span style="font-size:0.95em; color:#555;">- RetrieveFromDatabase: SQL-based symbolic retrieval<br>- ClassicRetrieve: Neural retrieval from vectorstore<br>- GenerateAnswer: Output the final answer</span>
+            </div>
+            <div class="highlight-box"><b>[Interaction Framework Prompt]</b><br>
+            Outlines the main interaction procedure and template.<br>
+            <span style="font-size:0.95em; color:#555;">The agent iteratively predicts [Thought] → [Action] → receives [Observation], until it can confidently GenerateAnswer.</span>
+            </div>
+            <div class="highlight-box"><b>[Hint Prompt]</b><br>
+            Provides hints or suggestions to help the agent refine its planning and reasoning process.<br>
+            <span style="font-size:0.95em; color:#555;">- Explore multiple retrieval strategies<br>- Combine structured and unstructured data<br>- Iterate and refine<br>- Ensure confidence before answering</span>
+            </div>
+            <div class="highlight-box"><b>[Task Prompt]</b><br>
+            Defines the task input, including the input question, required answer format, and relevant schemas.<br>
+            <span style="font-size:0.95em; color:#555;">[Question], [Answer Format], [Anchor PDF], [Reference PDF], [Conference], [Database Schema], [Vectorstore Schema]</span>
+            </div>
+          </div>
         </md-block>
-        <div class="code-section">
-          <pre class="line-numbers"><code class="language-python"># [System Prompt]: Defines the agent's role and describes the task to tackle, clarifying the context of the task.
-"""
-You are an intelligent agent with expertise in **retrieving useful context from both the DuckDB database and the Milvus vectorstore through SQL execution and similarity search** and **answering user questions**. You will be given a natural language question concerning PDF files, along with the schema of both the database and the vectorstore. Your ultimate goal is to answer the input question with pre-defined answer format. The DuckDB database contains all parsed content of raw PDF files, while the Milvus vectorstore encodes specific column cells from the database as vectors. You can predict executable actions, interact with the hybrid environment (including database and vectorstore) across multiple turns, and retrieve necessary context until you are confident in resolving the question.
-"""
-
-# [Action and Observation Space Prompt]: Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type. The detailed specification varies depending on the action format.
-"""
-### Action Type
-RetrieveFromDatabase
-
-### Description
-Generate an SQL query to retrieve the desired information from the DuckDB database. Please refer to the concrete database schema to produce a valid and executable SQL.
-
-### Observation
-The observation space is the execution result of the SQL query. You do not need to worry about the actual execution, we will perform it for you. If the SQL failed to execute, we will return the error message. Extremely long SQL output will be truncated.
-
-### Syntax and Parameters (MARKDOWN Format)
-RetrieveFromDatabase(sql: str)
-- sql: str, required. The concrete DuckDB SQL query to execute and retrieve results.
-
-### Use Cases
-
-#### Case 1
-Get the abstract of the paper with paper_id '12345678' from the metadata table in the DuckDB database.
-
-[Action]: RetrieveFromDatabase(sql="SELECT abstract FROM metadata WHERE paper_id = '12345678';")
-
-...
-
-"""
-
-# [Interaction Framework Prompt]: Outlines the main interaction procedure and template.
-"""
-The main interaction procedure proceeds like this:
-
-----
-
-[Thought]: ... reasoning process, why to take this action ...
-[Action]: ... which action to take, please strictly conform to the action specification ...
-[Observation]: ... execution results or error message after taking the action ...
-
-... # more interleaved triplets of ([Thought], [Action], [Observation])
-
-[Thought]: ... reasoning process to produce the final answer ...
-[Action]: ... the terminate action `GenerateAnswer`, there is no further observation ...
-
-----
-
-In general, the main interaction loop consists of an interleaved of triplets ([Thought], [Action], [Observation]), except the last `GenerateAnswer` action which does not have "[Observation]:". You need to predict the "[Thought]: ..." followed by the "[Action]: ..." for each turn, and we will execute your action in the environment and provide the "[Observation]: ..." for the previous action.
-"""
-
-# [Hint Prompt]: Provides hints or suggestions to help the agent refine its planning and reasoning process.
-"""
-1. Explore multiple retrieval strategies. For example:
-    - Experiment with different (table, column) pairs to extract diverse types of information.
-    - Query various embedding models (collections) to find the most relevant context.
-
-...
-
-4. Ensure confidence. That is, only make a final decision when you are confident that the retrieved information fully addresses the user's query.
-"""
-
-# [Task Prompt]: Defines the task input, usually including the input question, required answer format, retrieved context, database schema, vectorstore schema and operators.
-"""
-Each task consists of the following parts:
-
-[Question]: User question regarding the PDF, e.g., Is there any ...?
-[Answer Format]: it describes the format of the final answer, e.g., the answer is "Yes" or "No" without punctuation.
-[Anchor PDF]: Optional, a python str or list, the PDF(s) you must use to answer the question.
-[Reference PDF]: Optional, a python str or list, the PDF(s) you may use to answer the question.
-[Conference]: Optional, a python str or list, the conference(s) and year(s) of the relevant papers for retrieval.
-[Database Schema]: A detailed serialized schema of the DuckDB database for reference when generating SQL queries. It includes 1) tables, 2) columns and their data types, 3) descriptions for these schema items, and 4) primary key and foreign key constraints.
-[Vectorstore Schema]: A detailed serialized schema of the Milvus vectorstore for reference when generating executable retrieval actions with specific parameters. It includes 1) collections, 2) fields, 3) encodable (table, column) pairs in the relational database where the vectorized content originates, and 4) grammar for valid filter rules.
-"""</code></pre>
-        </div>
       </div>
 
       <div class="lib_examples" title="Interaction">
         <md-block>
-          NeuSym-RAG follows a thought-action-observation loop for answering questions. The agent analyzes questions, retrieves relevant content from both vectorstore and database, and generates answers through iterative interactions.
+          <b>Agent Interaction Overview</b>
+          <ul>
+            <li>The agent receives a question and relevant context (schemas, PDFs, etc.).</li>
+            <li>It enters a loop of <b>Thought → Action → Observation</b>:</li>
+            <ul>
+              <li><b>Thought</b>: The agent reasons about what to do next.</li>
+              <li><b>Action</b>: The agent issues a retrieval or answer-generation command.</li>
+              <li><b>Observation</b>: The environment returns results or feedback.</li>
+            </ul>
+            <li>This loop continues, possibly across multiple turns, until the agent is confident enough to output the final answer using <b>GenerateAnswer</b>.</li>
+          </ul>
         </md-block>
-        <div class="code-section">
-          <pre class="line-numbers"><code class="language-python">
-# Turn 1:
-# Thought
-"""
-To answer the question, we need to find the paper that proposes Voila-A 
-and then extract the baselines it outperforms. We can start by retrieving 
-the metadata of the paper from the `metadata` table using the conference 
-and year information.
-"""
-
-# Action
-RetrieveFromDatabase(sql="SELECT paper_id, title FROM metadata WHERE conference_abbreviation = 'NeurIPS' AND pub_year = 2024 AND title LIKE '%Voila-A%';")
-
-# Observation
-{
-  "paper_id": "f2bf5d36-449a-5699-9a1b-15fb940376c1",
-  "title": "Voila-A: Aligning Vision-Language Models with User's Gaze Attention"
-}
-
-# Turn 2:
-# Thought
-"""
-Now that we have the `paper_id` of the paper proposing Voila-A, 
-we can retrieve the sections of the paper to find the baselines 
-it outperforms. We can start by looking at the `sections` table 
-for the relevant information.
-"""
-
-# Action
-RetrieveFromDatabase(sql="SELECT section_title, section_content FROM sections WHERE ref_paper_id = 'f2bf5d36-449a-5699-9a1b-15fb940376c1' AND section_title LIKE '%Experiment%';")
-
-# Observation
-{
-  "section_title": "Experiment",
-  "section_content": "... In Figure 5, we observe a notable superiority of VOILA over both Otter and Kosmos-2 on the VOILA-COCO-TESTSET. ... In real gaze scenarios, as illustrated in Figure 6, VOILA outperforms the two baseline models as well. ..."
-}
-
-# Turn 3:
-# Thought
-"""
-From the experiment section, we can see that Voila-A outperforms 
-several baselines. We can extract the names of these baselines 
-from the text. The relevant baselines mentioned are Otter and Kosmos-2.
-"""
-
-# Action
-GenerateAnswer(answer=['Otter', 'Kosmos-2'])
-
-# Observation
-['Otter', 'Kosmos-2']</code></pre>
-        </div>
       </div>
 
       <div class="lib_examples" title="Evaluation">
