@@ -198,6 +198,18 @@
             border-radius: 4px;
             border: 1px solid #ddd;
         }
+        .observation-scrollbox {
+            max-height: 240px;
+            max-width: 100%;
+            overflow: auto;
+            padding: 10px;
+            margin: 8px 0;
+            background: #f8f8f8;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            font-size: 0.98em;
+            white-space: pre-wrap;
+        }
     </style>
 </head>
 
@@ -539,13 +551,13 @@
             if (typeof content !== 'string') return {};
             const result = {};
             // Extract [Thought]
-            const thoughtMatch = content.match(/\[Thought\](.*?)(?=\[Action\]|$)/s);
+            const thoughtMatch = content.match(/\[Thought\]\s*:?[ \t]?(.*?)(?=\[Action\]|$)/s);
             if (thoughtMatch) result.thought = thoughtMatch[1].trim();
             // Extract [Action]
-            const actionMatch = content.match(/\[Action\](.*?)(?=\[Observation\]|$)/s);
+            const actionMatch = content.match(/\[Action\]\s*:?[ \t]?(.*?)(?=\[Observation\]|$)/s);
             if (actionMatch) result.action = actionMatch[1].trim();
             // Extract [Observation]
-            const obsMatch = content.match(/\[Observation\](.*)/s);
+            const obsMatch = content.match(/\[Observation\]\s*:?[ \t]?(.*)/s);
             if (obsMatch) result.observation = obsMatch[1].trim();
             return result;
         }
@@ -611,13 +623,12 @@
                     if (t1.observation) {
                         const obsDiv = document.createElement('div');
                         obsDiv.className = 'highlight-quote';
-                        obsDiv.innerHTML = `<p class="has-text-weight-bold">Observation:</p><div>${t1.observation}</div>`;
+                        obsDiv.innerHTML = `<p class="has-text-weight-bold">Observation:</p><div class="observation-scrollbox">${t1.observation}</div>`;
                         details.appendChild(obsDiv);
                     } else if (turn[1] && turn[1].content) {
-                        // fallback: show content if [Observation] not found
                         const obsDiv = document.createElement('div');
                         obsDiv.className = 'highlight-quote';
-                        obsDiv.innerHTML = `<p class="has-text-weight-bold">Observation:</p><div>${turn[1].content}</div>`;
+                        obsDiv.innerHTML = `<p class="has-text-weight-bold">Observation:</p><div class="observation-scrollbox">${turn[1].content}</div>`;
                         details.appendChild(obsDiv);
                     }
                     content.appendChild(details);
