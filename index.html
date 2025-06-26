@@ -708,7 +708,6 @@
       color: #222;
       font-size: 0.97em;
       margin-top: 2px;
-      white-space: pre-line;
       overflow: hidden;
       position: relative;
       transition: max-height 0.2s;
@@ -1557,39 +1556,91 @@
       });
     });
 
+    // Simple markdown to HTML: **bold**, - list, \n to <br>
+    function simpleMarkdownToHtml(md) {
+      let html = md
+        .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
+        .replace(/\n|\\n|\r\n/g, '<br>');
+      // unordered list: lines starting with -
+      if (/^- /m.test(md)) {
+        html = html.replace(/(?:^|<br>)- (.*?)(?=<br>|$)/g, function(_, item) {
+          return '<li>' + item + '</li>';
+        });
+        // wrap <li> in <ul>
+        html = html.replace(/(<li>[\s\S]*<\/li>)/g, '<ul>$1</ul>');
+      }
+      return html;
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.prompt-content').forEach(function(block) {
-        // Create a clone to measure two lines' height
-        const clone = block.cloneNode(true);
-        clone.style.visibility = 'hidden';
-        clone.style.position = 'absolute';
-        clone.style.height = 'auto';
-        clone.style.maxHeight = 'none';
-        clone.style.pointerEvents = 'none';
-        clone.style.whiteSpace = 'pre-line';
-        clone.style.width = block.offsetWidth + 'px';
-        clone.textContent = 'A\nA'; // two lines
-        document.body.appendChild(clone);
-        const twoLineHeight = clone.offsetHeight;
-        document.body.removeChild(clone);
-        // If content is more than two lines, add show more/less
-        if (block.scrollHeight > twoLineHeight + 2) {
-          block.style.maxHeight = twoLineHeight + 'px';
+        // Convert markdown to HTML
+        const raw = block.textContent;
+        const html = simpleMarkdownToHtml(raw);
+        block.innerHTML = html;
+        // Two-line truncation logic
+        // Split by <br> or auto line breaks
+        const temp = document.createElement('div');
+        temp.style.position = 'absolute';
+        temp.style.visibility = 'hidden';
+        temp.style.width = block.offsetWidth + 'px';
+        temp.innerHTML = html;
+        document.body.appendChild(temp);
+        // Get all line break positions
+        let lines = [];
+        let childNodes = Array.from(temp.childNodes);
+        let lineCount = 0;
+        let htmlSoFar = '';
+        for (let i = 0; i < childNodes.length && lineCount < 2; i++) {
+          const node = childNodes[i];
+          if (node.nodeType === 3) { // text
+            let text = node.textContent;
+            // Split by \n or wrap
+            let textLines = text.split(/\n/);
+            for (let j = 0; j < textLines.length && lineCount < 2; j++) {
+              htmlSoFar += textLines[j];
+              if (j < textLines.length - 1) {
+                htmlSoFar += '<br>';
+                lineCount++;
+              }
+            }
+          } else if (node.nodeType === 1 && node.tagName === 'BR') {
+            htmlSoFar += '<br>';
+            lineCount++;
+          } else if (node.nodeType === 1 && node.tagName === 'UL') {
+            // For lists, count each <li> as a line
+            let lis = node.querySelectorAll('li');
+            for (let k = 0; k < lis.length && lineCount < 2; k++) {
+              htmlSoFar += '<ul><li>' + lis[k].innerHTML + '</li></ul>';
+              lineCount++;
+            }
+          } else {
+            htmlSoFar += node.outerHTML;
+          }
+        }
+        document.body.removeChild(temp);
+        // If more than 2 lines, show truncated with Show more
+        if (lineCount >= 2 || html.length > htmlSoFar.length) {
+          block.innerHTML = htmlSoFar + '...';
           const showMore = document.createElement('span');
           showMore.className = 'show-more-link';
           showMore.textContent = 'Show more';
           showMore.onclick = function() {
             if (block.classList.contains('expanded')) {
               block.classList.remove('expanded');
-              block.style.maxHeight = twoLineHeight + 'px';
+              block.innerHTML = htmlSoFar + '...';
+              block.appendChild(showMore);
               showMore.textContent = 'Show more';
             } else {
               block.classList.add('expanded');
-              block.style.maxHeight = '1000px';
+              block.innerHTML = html;
+              block.appendChild(showMore);
               showMore.textContent = 'Show less';
             }
           };
-          block.parentNode.appendChild(showMore);
+          block.appendChild(showMore);
+        } else {
+          block.innerHTML = html;
         }
       });
     });
