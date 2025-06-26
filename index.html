@@ -1493,11 +1493,20 @@
         </table>
       </div>
       <h3 class="title is-4" style="margin-top: 40px;">Method Ablation Results</h3>
+      <div style="text-align:center;margin-bottom:1em;">
+        <img src="static/images/baseline.png" alt="Baselines Illustration" style="max-width:90%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:0.5em;">
+        <div style="color:#555;font-size:0.98em;">Illustration of all baseline agent methods compared in the ablation study. Each baseline differs in its retrieval paradigm (neural/symbolic), multi-view support, and whether it allows iterative interaction. See legend for details.</div>
+      </div>
       <div class="content has-text-justified" style="margin-bottom: 1em;">
-        <div style="text-align:center;margin-bottom:1em;">
-          <img src="static/images/baseline.png" alt="Baselines Illustration" style="max-width:90%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:0.5em;">
-          <div style="color:#555;font-size:0.98em;">Illustration of all baseline agent methods compared in the ablation study. Each baseline differs in its retrieval paradigm (neural/symbolic), multi-view support, and whether it allows iterative interaction. See legend for details.</div>
-        </div>
+        <p>
+          <b>Table: Method Ablation.</b> We further compare different RAG agent variants to analyze the contribution of each component:
+        </p>
+        <ul style="margin-left:1.2em;">
+          <li><b>1)</b> Two-stage Neu-RAG outperforms Classic-RAG, and Hybrid-RAG achieves further gains by combining neural and symbolic retrieval.</li>
+          <li><b>2)</b> Iterative retrieval (multi-turn) is superior to two-stage (single-turn), as agents can explore and adaptively select the most relevant context.</li>
+          <li><b>3)</b> As the number of interactions increases, objective scores rise faster than subjective scores, indicating more rational answer generation.</li>
+        </ul>
+        <p style="margin-top:0.5em;">Overall, NeuSym-RAG (ours) surpasses all baselines, verifying the effectiveness of multi-view and hybrid retrieval strategies.</p>
       </div>
     </div>
   </section>
