@@ -621,7 +621,7 @@
             try {
                 const response = await fetch(`./static/data/task_viewer/metadata/${pdfName}.json`);
                 const metadata = await response.json();
-                return metadata.pdf_url;
+                return metadata; // Return the full metadata object
             } catch (error) {
                 console.error(`Error loading PDF metadata for ${pdfName}:`, error);
                 return null;
@@ -659,8 +659,8 @@
             if (task.anchor_pdf && Array.isArray(task.anchor_pdf) && task.anchor_pdf.length > 0) {
                 anchorPdfSection.style.display = 'block';
                 const pdfPromises = task.anchor_pdf.map(async (pdfName) => {
-                    const pdfUrl = await loadPdfMetadata(pdfName);
-                    return pdfUrl ? `<a href="${pdfUrl}" target="_blank">${pdfName}</a>` : pdfName;
+                    const metadata = await loadPdfMetadata(pdfName);
+                    return metadata && metadata.pdf_url && metadata.title ? `<a href="${metadata.pdf_url}" target="_blank">${metadata.title}</a>` : pdfName;
                 });
                 const pdfLinks = await Promise.all(pdfPromises);
                 anchorPdfList.innerHTML = pdfLinks.join('<br>');
@@ -674,8 +674,8 @@
             if (task.reference_pdf && Array.isArray(task.reference_pdf) && task.reference_pdf.length > 0) {
                 referencePdfSection.style.display = 'block';
                 const pdfPromises = task.reference_pdf.map(async (pdfName) => {
-                    const pdfUrl = await loadPdfMetadata(pdfName);
-                    return pdfUrl ? `<a href="${pdfUrl}" target="_blank">${pdfName}</a>` : pdfName;
+                    const metadata = await loadPdfMetadata(pdfName);
+                    return metadata && metadata.pdf_url && metadata.title ? `<a href="${metadata.pdf_url}" target="_blank">${metadata.title}</a>` : pdfName;
                 });
                 const pdfLinks = await Promise.all(pdfPromises);
                 referencePdfList.innerHTML = pdfLinks.join('<br>');
