@@ -566,14 +566,27 @@
             return result;
         }
 
-        // Helper to check if a string is a JSON object or array
-        function isJsonObject(str) {
+        // Helper to check if a string is a JSON object or array, or lines of JSON objects
+        function parseObservationJson(str) {
+            // Try as a single JSON object/array
             try {
                 const obj = JSON.parse(str);
-                return typeof obj === 'object' && obj !== null;
-            } catch (e) {
-                return false;
+                if (typeof obj === 'object' && obj !== null) {
+                    return Array.isArray(obj) ? obj : [obj];
+                }
+            } catch (e) {}
+            // Try as multiple lines of JSON objects
+            const lines = str.split(/\r?\n/).map(l => l.trim()).filter(l => l.startsWith('{') && l.endsWith('}'));
+            if (lines.length > 0) {
+                let arr = [];
+                for (const line of lines) {
+                    try {
+                        arr.push(JSON.parse(line));
+                    } catch (e) {}
+                }
+                if (arr.length > 0) return arr;
             }
+            return null;
         }
 
         // Helper to render JSON object(s) as a table
@@ -666,9 +679,9 @@
                         const obsDiv = document.createElement('div');
                         obsDiv.className = 'highlight-quote';
                         let obsContent = t1.observation;
-                        if (typeof obsContent === 'string' && isJsonObject(obsContent)) {
-                            const obj = JSON.parse(obsContent);
-                            obsDiv.innerHTML = `<p class=\"has-text-weight-bold\">Observation:</p>` + renderJsonTable(obj);
+                        let parsed = typeof obsContent === 'string' ? parseObservationJson(obsContent) : null;
+                        if (parsed) {
+                            obsDiv.innerHTML = `<p class=\"has-text-weight-bold\">Observation:</p>` + renderJsonTable(parsed);
                         } else {
                             obsDiv.innerHTML = `<p class=\"has-text-weight-bold\">Observation:</p><div class=\"observation-scrollbox\">${obsContent}</div>`;
                         }
@@ -677,9 +690,9 @@
                         const obsDiv = document.createElement('div');
                         obsDiv.className = 'highlight-quote';
                         let obsContent = turn[1].content;
-                        if (typeof obsContent === 'string' && isJsonObject(obsContent)) {
-                            const obj = JSON.parse(obsContent);
-                            obsDiv.innerHTML = `<p class=\"has-text-weight-bold\">Observation:</p>` + renderJsonTable(obj);
+                        let parsed = typeof obsContent === 'string' ? parseObservationJson(obsContent) : null;
+                        if (parsed) {
+                            obsDiv.innerHTML = `<p class=\"has-text-weight-bold\">Observation:</p>` + renderJsonTable(parsed);
                         } else {
                             obsDiv.innerHTML = `<p class=\"has-text-weight-bold\">Observation:</p><div class=\"observation-scrollbox\">${obsContent}</div>`;
                         }
