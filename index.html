@@ -710,16 +710,11 @@
       margin-top: 2px;
       white-space: pre-line;
       overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      max-height: 2.8em;
       position: relative;
       transition: max-height 0.2s;
     }
     .prompt-content.expanded {
-      -webkit-line-clamp: unset;
-      max-height: 1000px;
+      max-height: 1000px !important;
     }
     .show-more-link {
       color: #a55b20;
@@ -1564,17 +1559,33 @@
 
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.prompt-content').forEach(function(block) {
-        // Only add show more if content is more than 2 lines
-        if (block.scrollHeight > block.clientHeight + 2) {
+        // Create a clone to measure two lines' height
+        const clone = block.cloneNode(true);
+        clone.style.visibility = 'hidden';
+        clone.style.position = 'absolute';
+        clone.style.height = 'auto';
+        clone.style.maxHeight = 'none';
+        clone.style.pointerEvents = 'none';
+        clone.style.whiteSpace = 'pre-line';
+        clone.style.width = block.offsetWidth + 'px';
+        clone.textContent = 'A\nA'; // two lines
+        document.body.appendChild(clone);
+        const twoLineHeight = clone.offsetHeight;
+        document.body.removeChild(clone);
+        // If content is more than two lines, add show more/less
+        if (block.scrollHeight > twoLineHeight + 2) {
+          block.style.maxHeight = twoLineHeight + 'px';
           const showMore = document.createElement('span');
           showMore.className = 'show-more-link';
           showMore.textContent = 'Show more';
           showMore.onclick = function() {
             if (block.classList.contains('expanded')) {
               block.classList.remove('expanded');
+              block.style.maxHeight = twoLineHeight + 'px';
               showMore.textContent = 'Show more';
             } else {
               block.classList.add('expanded');
+              block.style.maxHeight = '1000px';
               showMore.textContent = 'Show less';
             }
           };
