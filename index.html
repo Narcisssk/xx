@@ -1197,6 +1197,17 @@
 
       <!-- Experiment Results -->
       <h3 class="title is-4" style="margin-top: 40px;">Experiment Results</h3>
+      <div class="content has-text-justified" style="margin-bottom: 1em;">
+        <p>
+          <b>Table: Main Results.</b> We evaluate NeuSym-RAG and Classic-RAG on three full-PDF QA datasets using various LLMs. NeuSym-RAG consistently outperforms Classic-RAG across all datasets and models. Notably:
+        </p>
+        <ul style="margin-left:1.2em;">
+          <li><b>1)</b> NeuSym-RAG achieves significant improvements over Classic-RAG for all LLMs, benefiting from more flexible actions and iterative retrieval.</li>
+          <li><b>2)</b> Vision-language models (VLMs) excel in tasks requiring image understanding, such as M3SciQA.</li>
+          <li><b>3)</b> Strong open-source LLMs (e.g., Qwen2.5-VL-72B-Instruct) can even surpass closed-source models in this complex agentic QA setting.</li>
+        </ul>
+        <p style="margin-top:0.5em;">These results highlight the universality and robustness of NeuSym-RAG for PDF-based question answering.</p>
+      </div>
       <div class="table-container">
         <table class="results-table">
           <thead>
@@ -1436,12 +1447,19 @@
             </tr>
           </tbody>
         </table>
-        <div class="content" style="margin-top: 0.5em;">
-          <p style="font-size: 0.98em; color: #555;">Main results of different LLMs using Classic-RAG or NeuSym-RAG on three datasets.</p>
-        </div>
       </div>
-      <!-- 新增方法消融实验表格 -->
       <h3 class="title is-4" style="margin-top: 40px;">Method Ablation Results</h3>
+      <div class="content has-text-justified" style="margin-bottom: 1em;">
+        <p>
+          <b>Table: Method Ablation.</b> We further compare different RAG agent variants to analyze the contribution of each component:
+        </p>
+        <ul style="margin-left:1.2em;">
+          <li><b>1)</b> Two-stage Neu-RAG outperforms Classic-RAG, and Hybrid-RAG achieves further gains by combining neural and symbolic retrieval.</li>
+          <li><b>2)</b> Iterative retrieval (multi-turn) is superior to two-stage (single-turn), as agents can explore and adaptively select the most relevant context.</li>
+          <li><b>3)</b> As the number of interactions increases, objective scores rise faster than subjective scores, indicating more rational answer generation.</li>
+        </ul>
+        <p style="margin-top:0.5em;">Overall, NeuSym-RAG (ours) surpasses all baselines, verifying the effectiveness of multi-view and hybrid retrieval strategies.</p>
+      </div>
       <div class="table-container">
         <table class="results-table">
           <thead>
@@ -1474,9 +1492,6 @@
             <tr><td class="bold">Ours</td><td>~</td><td>~</td><td>~</td><td>&ge;2</td><td>28.3</td><td class="bold">32.3</td><td class="bold">58.2</td><td>27.1</td><td class="bold">42.6</td><td class="bold">39.6</td></tr>
           </tbody>
         </table>
-        <div class="content" style="margin-top: 0.5em;">
-          <p style="font-size: 0.98em; color: #555;">Performances of different RAG methods on AirQA-Real dataset, where "# Interaction(s)" denotes the number of LLM calls for a single question. See appendix for detailed introduction of each RAG baseline.</p>
-        </div>
       </div>
     </div>
   </section>
