@@ -342,113 +342,93 @@
 
     <section class="section">
         <div class="container is-fluid">
-            <div class="columns">
-                <!-- Left Column: Filter Panel -->
-                <div class="column is-4">
-                    <div class="box">
-                        <h1 class="title is-4">Task Explorer</h1>
-                        <p class="subtitle is-6">Filter and explore tasks</p>
-                        
-                        <div class="field">
-                            <label class="label">Task Type</label>
-                            <div class="buttons">
-                                <button class="button tag-button" data-type="task" data-value="single">Single</button>
-                                <button class="button tag-button" data-type="task" data-value="multiple">Multiple</button>
-                                <button class="button tag-button" data-type="task" data-value="retrieval">Retrieval</button>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label">Task Categories</label>
-                            <div class="buttons">
-                                <button class="button tag-button" data-type="content" data-value="text">Text</button>
-                                <button class="button tag-button" data-type="content" data-value="table">Table</button>
-                                <button class="button tag-button" data-type="content" data-value="image">Image</button>
-                                <button class="button tag-button" data-type="content" data-value="formula">Formula</button>
-                                <button class="button tag-button" data-type="content" data-value="metadata">Metadata</button>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label">Evaluation Genre</label>
-                            <div class="buttons">
-                                <button class="button tag-button" data-type="question" data-value="subjective">Subjective</button>
-                                <button class="button tag-button" data-type="question" data-value="objective">Objective</button>
-                            </div>
-                        </div>
-
-                        <div class="field is-grouped">
-                            <p class="control">
-                                <button class="button is-primary" id="filterButton">
-                                    <span class="icon">
-                                        <i class="fas fa-filter"></i>
-                                    </span>
-                                    <span>Filter</span>
-                                </button>
-                            </p>
-                            <p class="control">
-                                <button class="button is-info" id="randomButton">
-                                    <span class="icon">
-                                        <i class="fas fa-random"></i>
-                                    </span>
-                                    <span>Random</span>
-                                </button>
-                            </p>
-                        </div>
+            <!-- 上下布局：Task Explorer 在上，Task Details 在下 -->
+            <div class="box" style="margin-bottom: 2rem;">
+                <h1 class="title is-4">Task Explorer</h1>
+                <p class="subtitle is-6">Filter and explore tasks</p>
+                <div class="field">
+                    <label class="label">Task Type</label>
+                    <div class="buttons">
+                        <button class="button tag-button" data-type="task" data-value="single">Single</button>
+                        <button class="button tag-button" data-type="task" data-value="multiple">Multiple</button>
+                        <button class="button tag-button" data-type="task" data-value="retrieval">Retrieval</button>
                     </div>
                 </div>
-
-                <!-- Right Column: Task Details -->
-                <div class="column is-8">
-                    <div id="noMatchSection" class="box" style="display: none;">
-                        <h2 class="title is-4">No Matching Tasks Found</h2>
-                        <p class="subtitle is-6">Try adjusting your filters</p>
-                        <div class="content">
-                            <p>Selected filters:</p>
-                            <ul id="selectedFiltersList"></ul>
-                        </div>
+                <div class="field">
+                    <label class="label">Task Categories</label>
+                    <div class="buttons">
+                        <button class="button tag-button" data-type="content" data-value="text">Text</button>
+                        <button class="button tag-button" data-type="content" data-value="table">Table</button>
+                        <button class="button tag-button" data-type="content" data-value="image">Image</button>
+                        <button class="button tag-button" data-type="content" data-value="formula">Formula</button>
+                        <button class="button tag-button" data-type="content" data-value="metadata">Metadata</button>
                     </div>
-
-                    <div id="resultsSection" class="box" style="display: none;">
-                        <h2 class="title is-4">Task Details</h2>
-                        <div class="content">
-                            <p><strong>Task ID:</strong> <span id="taskId"></span></p>
-                            
-                            <div class="field">
-                                <p class="has-text-weight-bold">Status:</p>
-                                <span id="taskStatus" class="tag status-tag"></span>
-                            </div>
-                            
-                            <div class="field">
-                                <p class="has-text-weight-bold">Tags:</p>
-                                <div id="taskTags" class="tags"></div>
-                            </div>
-                            
-                            <div class="field">
-                                <p class="has-text-weight-bold">Question:</p>
-                                <div class="highlight-quote" id="taskQuestion"></div>
-                            </div>
-
-                            <div class="highlight-quote" id="anchorPdfSection" style="display: none;">
-                                <p class="has-text-weight-bold">Anchor PDFs:</p>
-                                <div id="anchorPdfList"></div>
-                            </div>
-
-                            <div class="highlight-quote" id="referencePdfSection" style="display: none;">
-                                <p class="has-text-weight-bold">Reference PDFs:</p>
-                                <div id="referencePdfList"></div>
-                            </div>
-
-                            <div class="highlight-quote" id="conferenceSection" style="display: none;">
-                                <p class="has-text-weight-bold">Conference:</p>
-                                <p id="conferenceInfo"></p>
-                            </div>
-                            
-                            <div class="field">
-                                <p class="has-text-weight-bold">Trajectory:</p>
-                                <div id="trajectoryList" class="trajectory-list"></div>
-                            </div>
-                        </div>
+                </div>
+                <div class="field">
+                    <label class="label">Evaluation Genre</label>
+                    <div class="buttons">
+                        <button class="button tag-button" data-type="question" data-value="subjective">Subjective</button>
+                        <button class="button tag-button" data-type="question" data-value="objective">Objective</button>
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <p class="control">
+                        <button class="button is-primary" id="filterButton">
+                            <span class="icon">
+                                <i class="fas fa-filter"></i>
+                            </span>
+                            <span>Filter</span>
+                        </button>
+                    </p>
+                    <p class="control">
+                        <button class="button is-info" id="randomButton">
+                            <span class="icon">
+                                <i class="fas fa-random"></i>
+                            </span>
+                            <span>Random</span>
+                        </button>
+                    </p>
+                </div>
+            </div>
+            <div id="noMatchSection" class="box" style="display: none;">
+                <h2 class="title is-4">No Matching Tasks Found</h2>
+                <p class="subtitle is-6">Try adjusting your filters</p>
+                <div class="content">
+                    <p>Selected filters:</p>
+                    <ul id="selectedFiltersList"></ul>
+                </div>
+            </div>
+            <div id="resultsSection" class="box" style="display: none;">
+                <h2 class="title is-4">Task Details</h2>
+                <div class="content">
+                    <p><strong>Task ID:</strong> <span id="taskId"></span></p>
+                    <div class="field">
+                        <p class="has-text-weight-bold">Status:</p>
+                        <span id="taskStatus" class="tag status-tag"></span>
+                    </div>
+                    <div class="field">
+                        <p class="has-text-weight-bold">Tags:</p>
+                        <div id="taskTags" class="tags"></div>
+                    </div>
+                    <div class="field">
+                        <p class="has-text-weight-bold">Question:</p>
+                        <div class="highlight-quote" id="taskQuestion"></div>
+                    </div>
+                    <div class="highlight-quote" id="anchorPdfSection" style="display: none;">
+                        <p class="has-text-weight-bold">Anchor PDFs:</p>
+                        <div id="anchorPdfList"></div>
+                    </div>
+                    <div class="highlight-quote" id="referencePdfSection" style="display: none;">
+                        <p class="has-text-weight-bold">Reference PDFs:</p>
+                        <div id="referencePdfList"></div>
+                    </div>
+                    <div class="highlight-quote" id="conferenceSection" style="display: none;">
+                        <p class="has-text-weight-bold">Conference:</p>
+                        <p id="conferenceInfo"></p>
+                    </div>
+                    <div class="field">
+                        <p class="has-text-weight-bold">Trajectory:</p>
+                        <div id="trajectoryList" class="trajectory-list"></div>
                     </div>
                 </div>
             </div>
