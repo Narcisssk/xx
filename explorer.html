@@ -210,15 +210,29 @@
             font-size: 0.98em;
             white-space: pre-wrap;
         }
-        .observation-table-wrap { overflow-x: auto; margin-bottom: 6px; }
-        .observation-table { border-collapse: collapse; width: 100%; font-size: 0.97em; background: #fff; }
-        .observation-table th, .observation-table td { border: 1px solid #e0e0e0; padding: 4px 8px; text-align: left; }
+        .observation-table-wrap { 
+            overflow-x: auto; 
+            margin-bottom: 6px; 
+            max-width: 100%;
+            min-width: 0;
+        }
+        .observation-table { 
+            border-collapse: collapse; 
+            width: 100%; 
+            font-size: 0.97em; 
+            background: #fff; 
+            table-layout: auto; 
+            min-width: fit-content;
+        }
+        .observation-table th, .observation-table td { 
+            border: 1px solid #e0e0e0; 
+            padding: 4px 8px; 
+            text-align: left; 
+            max-width: 320px; 
+            word-break: break-all; 
+        }
         .observation-table th { background: #f5f7fa; font-weight: 600; }
         .observation-table-outer { max-width: 100%; max-height: 320px; overflow-y: auto; margin-bottom: 6px; }
-        .observation-table-wrap { min-width: 400px; max-width: 900px; overflow-x: auto; }
-        .observation-table { border-collapse: collapse; width: 100%; font-size: 0.97em; background: #fff; table-layout: auto; }
-        .observation-table th, .observation-table td { border: 1px solid #e0e0e0; padding: 4px 8px; text-align: left; max-width: 320px; word-break: break-all; }
-        .observation-table th { background: #f5f7fa; font-weight: 600; }
         .observation-extra { margin-top: 8px; color: #555; font-size: 0.96em; background: #f8f8f8; border-radius: 4px; padding: 6px 10px; }
     </style>
 </head>
