@@ -1213,243 +1213,29 @@
         </ul>
         <p style="margin-top:0.5em;">These results highlight the universality and robustness of NeuSym-RAG for PDF-based question answering.</p>
       </div>
-      <div>
+      <div> 
         <table class="results-table">
           <thead>
-            <tr>
-              <th rowspan="2">Model</th>
-              <th colspan="6">AirQA-Real</th>
-              <th colspan="3">M3SciQA</th>
-              <th colspan="4">SciDQA</th>
-            </tr>
-            <tr>
-              <th>text</th>
-              <th>table</th>
-              <th>image</th>
-              <th>formula</th>
-              <th>metadata</th>
-              <th>AVG</th>
-              <th>table</th>
-              <th>image</th>
-              <th>AVG</th>
-              <th>table</th>
-              <th>image</th>
-              <th>formula</th>
-              <th>AVG</th>
-            </tr>
+            <tr><th rowspan="2">Model</th><th colspan="6">AirQA-Real</th><th colspan="3">M3SciQA</th><th colspan="4">SciDQA</th></tr>
+            <tr><th>text</th><th>table</th><th>image</th><th>formula</th><th>metadata</th><th>AVG</th><th>table</th><th>image</th><th>AVG</th><th>table</th><th>image</th><th>formula</th><th>AVG</th></tr>
           </thead>
           <tbody>
-            <!-- Classic-RAG Group -->
-            <tr class="model-group">
-              <td colspan="14">Classic-RAG</td>
-            </tr>
-            <!-- GPT-4o-mini -->
-            <tr>
-              <td>GPT-4o-mini</td>
-              <!-- AirQA-Real -->
-              <td>12.3</td>
-              <td>11.9</td>
-              <td>12.5</td>
-              <td>16.7</td>
-              <td>13.6</td>
-              <td>13.4</td>
-              <!-- M3SciQA -->
-              <td>17.9</td>
-              <td>10.6</td>
-              <td>15.6</td>
-              <!-- SciDQA -->
-              <td>59.4</td>
-              <td>60.4</td>
-              <td>59.3</td>
-              <td>59.8</td>
-            </tr>
-            <!-- GPT-4V -->
-            <tr>
-              <td>GPT-4V</td>
-              <!-- AirQA-Real -->
-              <td>13.2</td>
-              <td>13.9</td>
-              <td>10.0</td>
-              <td>13.9</td>
-              <td>13.6</td>
-              <td>14.7</td>
-              <!-- M3SciQA -->
-              <td>12.1</td>
-              <td>8.8</td>
-              <td>11.1</td>
-              <!-- SciDQA -->
-              <td>56.6</td>
-              <td>56.8</td>
-              <td>58.1</td>
-              <td>57.4</td>
-            </tr>
-            <!-- Llama-3.3-70B-Instruct -->
-            <tr>
-              <td>Llama-3.3-70B-Instruct</td>
-              <!-- AirQA-Real -->
-              <td>8.7</td>
-              <td>7.9</td>
-              <td>9.5</td>
-              <td>16.7</td>
-              <td>0.0</td>
-              <td>10.0</td>
-              <!-- M3SciQA -->
-              <td>12.7</td>
-              <td>8.1</td>
-              <td>11.3</td>
-              <!-- SciDQA -->
-              <td>56.8</td>
-              <td>58.8</td>
-              <td>58.9</td>
-              <td>58.0</td>
-            </tr>
-            <!-- Qwen2.5-VL-72B-Instruct -->
-            <tr>
-              <td>Qwen2.5-VL-72B-Instruct</td>
-              <!-- AirQA-Real -->
-              <td>9.6</td>
-              <td>5.9</td>
-              <td>11.9</td>
-              <td>11.1</td>
-              <td>13.6</td>
-              <td>10.5</td>
-              <!-- M3SciQA -->
-              <td>11.6</td>
-              <td>11.6</td>
-              <td>11.6</td>
-              <!-- SciDQA -->
-              <td>54.8</td>
-              <td>56.9</td>
-              <td>56.3</td>
-              <td>56.2</td>
-            </tr>
-            <!-- DeepSeek-R1 -->
-            <tr>
-              <td>DeepSeek-R1</td>
-              <!-- AirQA-Real -->
-              <td>11.7</td>
-              <td>13.9</td>
-              <td>9.5</td>
-              <td>30.6</td>
-              <td>9.1</td>
-              <td>13.9</td>
-              <!-- M3SciQA -->
-              <td>11.9</td>
-              <td>9.5</td>
-              <td>11.2</td>
-              <!-- SciDQA -->
-              <td>63.9</td>
-              <td>61.3</td>
-              <td>61.7</td>
-              <td>62.4</td>
-            </tr>
-            <!-- NeuSym-RAG Group -->
-            <tr class="model-group">
-              <td colspan="14">NeuSym-RAG</td>
-            </tr>
-            <!-- GPT-4o-mini -->
-            <tr>
-              <td>GPT-4o-mini</td>
-              <!-- AirQA-Real -->
-              <td>33.0</td>
-              <td>12.9</td>
-              <td>11.9</td>
-              <td>19.4</td>
-              <td>18.2</td>
-              <td>30.7</td>
-              <!-- M3SciQA -->
-              <td>18.7</td>
-              <td>16.6</td>
-              <td>18.0</td>
-              <!-- SciDQA -->
-              <td>63.0</td>
-              <td>63.6</td>
-              <td>62.5</td>
-              <td>63.0</td>
-            </tr>
-            <!-- GPT-4V -->
-            <tr>
-              <td>GPT-4V</td>
-              <!-- AirQA-Real -->
-              <td>38.9</td>
-              <td>18.8</td>
-              <td>23.8</td>
-              <td>38.9</td>
-              <td>27.3</td>
-              <td>37.3</td>
-              <!-- M3SciQA -->
-              <td>13.7</td>
-              <td>13.4</td>
-              <td>13.6</td>
-              <!-- SciDQA -->
-              <td>62.6</td>
-              <td>63.5</td>
-              <td>63.2</td>
-              <td>63.1</td>
-            </tr>
-            <!-- Llama-3.3-70B-Instruct -->
-            <tr>
-              <td>Llama-3.3-70B-Instruct</td>
-              <!-- AirQA-Real -->
-              <td>30.6</td>
-              <td>11.9</td>
-              <td>16.7</td>
-              <td>16.7</td>
-              <td>27.3</td>
-              <td>29.3</td>
-              <!-- M3SciQA -->
-              <td class="highlight">26.3</td>
-              <td>17.6</td>
-              <td class="highlight">23.6</td>
-              <!-- SciDQA -->
-              <td>55.5</td>
-              <td>57.3</td>
-              <td>56.6</td>
-              <td>56.4</td>
-            </tr>
-            <!-- Qwen2.5-VL-72B-Instruct -->
-            <tr>
-              <td>Qwen2.5-VL-72B-Instruct</td>
-              <!-- AirQA-Real -->
-              <td class="highlight">43.4</td>
-              <td>15.8</td>
-              <td>11.9</td>
-              <td>25.0</td>
-              <td>27.3</td>
-              <td class="highlight">39.6</td>
-              <!-- M3SciQA -->
-              <td>20.2</td>
-              <td class="highlight">22.7</td>
-              <td>21.1</td>
-              <!-- SciDQA -->
-              <td>60.2</td>
-              <td>60.6</td>
-              <td>61.8</td>
-              <td>60.5</td>
-            </tr>
-            <!-- DeepSeek-R1 -->
-            <tr>
-              <td>DeepSeek-R1</td>
-              <!-- AirQA-Real -->
-              <td>33.2</td>
-              <td>16.8</td>
-              <td>11.9</td>
-              <td>27.8</td>
-              <td>18.2</td>
-              <td>32.4</td>
-              <!-- M3SciQA -->
-              <td>19.0</td>
-              <td>13.7</td>
-              <td>17.4</td>
-              <!-- SciDQA -->
-              <td class="highlight">64.3</td>
-              <td class="highlight">64.6</td>
-              <td class="highlight">63.9</td>
-              <td class="highlight">64.5</td>
-            </tr>
+            <tr class="model-group"><td colspan="14">Classic-RAG</td></tr>
+            <tr><td>GPT-4o-mini</td><td>12.3</td><td>11.9</td><td>12.5</td><td>16.7</td><td>13.6</td><td>13.4</td><td>17.9</td><td>10.6</td><td>15.6</td><td>59.4</td><td>60.4</td><td>59.3</td><td>59.8</td></tr>
+            <tr><td>GPT-4V</td><td>13.2</td><td>13.9</td><td>10.0</td><td>13.9</td><td>13.6</td><td>14.7</td><td>12.1</td><td>8.8</td><td>11.1</td><td>56.6</td><td>56.8</td><td>58.1</td><td>57.4</td></tr>
+            <tr><td>Llama-3.3-70B-Instruct</td><td>8.7</td><td>7.9</td><td>9.5</td><td>16.7</td><td>0.0</td><td>10.0</td><td>12.7</td><td>8.1</td><td>11.3</td><td>56.8</td><td>58.8</td><td>58.9</td><td>58.0</td></tr>
+            <tr><td>Qwen2.5-VL-72B-Instruct</td><td>9.6</td><td>5.9</td><td>11.9</td><td>11.1</td><td>13.6</td><td>10.5</td><td>11.6</td><td>11.6</td><td>11.6</td><td>54.8</td><td>56.9</td><td>56.3</td><td>56.2</td></tr>
+            <tr><td>DeepSeek-R1</td><td>11.7</td><td>13.9</td><td>9.5</td><td>30.6</td><td>9.1</td><td>13.9</td><td>11.9</td><td>9.5</td><td>11.2</td><td>63.9</td><td>61.3</td><td>61.7</td><td>62.4</td></tr>
+            <tr class="model-group"><td colspan="14">NeuSym-RAG</td></tr>
+            <tr><td>GPT-4o-mini</td><td>33.0</td><td>12.9</td><td>11.9</td><td>19.4</td><td>18.2</td><td>30.7</td><td>18.7</td><td>16.6</td><td>18.0</td><td>63.0</td><td>63.6</td><td>62.5</td><td>63.0</td></tr>
+            <tr><td>GPT-4V</td><td>38.9</td><td>18.8</td><td>23.8</td><td>38.9</td><td>27.3</td><td>37.3</td><td>13.7</td><td>13.4</td><td>13.6</td><td>62.6</td><td>63.5</td><td>63.2</td><td>63.1</td></tr>
+            <tr><td>Llama-3.3-70B-Instruct</td><td>30.6</td><td>11.9</td><td>16.7</td><td>16.7</td><td>27.3</td><td>29.3</td><td class="highlight">26.3</td><td>17.6</td><td class="highlight">23.6</td><td>55.5</td><td>57.3</td><td>56.6</td><td>56.4</td></tr>
+            <tr><td>Qwen2.5-VL-72B-Instruct</td><td class="highlight">43.4</td><td>15.8</td><td>11.9</td><td>25.0</td><td>27.3</td><td class="highlight">39.6</td><td>20.2</td><td class="highlight">22.7</td><td>21.1</td><td>60.2</td><td>60.6</td><td>61.8</td><td>60.5</td></tr>
+            <tr><td>DeepSeek-R1</td><td>33.2</td><td>16.8</td><td>11.9</td><td>27.8</td><td>18.2</td><td>32.4</td><td>19.0</td><td>13.7</td><td>17.4</td><td class="highlight">64.3</td><td class="highlight">64.6</td><td class="highlight">63.9</td><td class="highlight">64.5</td></tr>
           </tbody>
         </table>
       </div>
+      
       <div class="content has-text-justified" style="margin:2.5em 0 1em 0;">
         <p>
           <b>Table: Method Ablation.</b> To further analyze the contribution of each component, we compare NeuSym-RAG with a series of structured agent baselines. The illustration below summarizes all baselines compared in the ablation study, differing in retrieval paradigm, multi-view support, and whether iterative interaction is allowed.
