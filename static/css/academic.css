@@ -410,3 +410,13 @@
   background: #fff;
   z-index: 2;
 } 
+
+/* 仅为三大块最后一列加右分隔线 */
+.results-table th.col-airqa-avg,
+.results-table td.col-airqa-avg,
+.results-table th.col-m3sciqa-avg,
+.results-table td.col-m3sciqa-avg,
+.results-table th.col-scidqa-avg,
+.results-table td.col-scidqa-avg {
+  border-right: 2.5px solid #bbb;
+} 
