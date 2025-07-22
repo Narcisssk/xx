@@ -296,17 +296,6 @@
 }
 
 /* Add shadow to indicate scroll */
-.results-table th:first-child::after,
-.results-table td:first-child::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -4px;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(to right, rgba(0,0,0,0.1), transparent);
-  pointer-events: none;
-}
 
 /* Ensure model group cells maintain background */
 .results-table tr.model-group td:first-child {
