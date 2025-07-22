@@ -404,3 +404,18 @@
     margin: 0 auto;
     padding: 2rem 4rem;
 } 
+
+/* 只固定表头第一行的第一列 */
+.results-table thead tr:first-child th[rowspan] {
+  position: sticky;
+  left: 0;
+  background: #fff;
+  z-index: 3;
+}
+/* 固定数据区的第一列 */
+.results-table tbody td:first-child {
+  position: sticky;
+  left: 0;
+  background: #fff;
+  z-index: 2;
+} 
