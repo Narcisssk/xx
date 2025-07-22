@@ -418,5 +418,5 @@
 .results-table td.col-m3sciqa-avg,
 .results-table th.col-scidqa-avg,
 .results-table td.col-scidqa-avg {
-  border-right: 2.5px solid #bbb;
+  border-right: 2px solid #e0e0e0; /* 颜色改浅，线条改细 */
 } 
