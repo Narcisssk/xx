@@ -268,17 +268,6 @@
   border-right: 2px solid #e2e8f0;
 }
 
-/* Add vertical separators between datasets */
-.results-table th:nth-child(7), /* After AirQA-Real */
-.results-table th:nth-child(10) { /* After M3SciQA */
-  border-left: 2px solid #e2e8f0;
-}
-
-.results-table td:nth-child(7), /* After AirQA-Real */
-.results-table td:nth-child(10) { /* After M3SciQA */
-  border-left: 2px solid #e2e8f0;
-}
-
 
 /* Ensure sticky header has proper background */
 .results-table th:first-child {
