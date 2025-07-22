@@ -1227,8 +1227,263 @@
       <h3 class="title is-4" style="margin-top: 40px;">Experiment Results</h3>
       <div class="content has-text-justified" style="margin-bottom: 1em;">
         <p>
-          <b>Table: Main Results.</b> We evaluate NeuSym-RAG and Classic-RAG on three full-PDF QA datasets using various LLMs. NeuSym-RAG consistently outperforms Classic-RAG across all datasets and models. Notably:
+          <b>Main Results.</b> We evaluate NeuSym-RAG and Classic-RAG on three full-PDF QA datasets using various LLMs. NeuSym-RAG consistently outperforms Classic-RAG across all datasets and models. Notably:
         </p>
+        <div>
+          <div class="table-wrapper">
+            <table class="results-table">
+              <colgroup>
+                <col class="col-model">
+                <col class="col-airqa-text">
+                <col class="col-airqa-table">
+                <col class="col-airqa-image">
+                <col class="col-airqa-formula">
+                <col class="col-airqa-metadata">
+                <col class="col-airqa-avg">
+                <col class="col-m3sciqa-table">
+                <col class="col-m3sciqa-image">
+                <col class="col-m3sciqa-avg">
+                <col class="col-scidqa-table">
+                <col class="col-scidqa-image">
+                <col class="col-scidqa-formula">
+                <col class="col-scidqa-avg">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="col-model" rowspan="2">Model</th>
+                  <th colspan="6">AirQA-Real</th>
+                  <th colspan="3">M3SciQA</th>
+                  <th colspan="4">SciDQA</th>
+                </tr>
+                <tr>
+                  <th class="col-airqa-text">text</th>
+                  <th class="col-airqa-table">table</th>
+                  <th class="col-airqa-image">image</th>
+                  <th class="col-airqa-formula">formula</th>
+                  <th class="col-airqa-metadata">metadata</th>
+                  <th class="col-airqa-avg">AVG</th>
+                  <th class="col-m3sciqa-table">table</th>
+                  <th class="col-m3sciqa-image">image</th>
+                  <th class="col-m3sciqa-avg">AVG</th>
+                  <th class="col-scidqa-table">table</th>
+                  <th class="col-scidqa-image">image</th>
+                  <th class="col-scidqa-formula">formula</th>
+                  <th class="col-scidqa-avg">AVG</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Classic-RAG Group -->
+                <tr class="model-group">
+                  <td class="col-model" colspan="14">Classic-RAG</td>
+                </tr>
+                <!-- GPT-4o-mini -->
+                <tr>
+                  <td class="col-model">GPT-4o-mini</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">12.3</td>
+                  <td class="col-airqa-table">11.9</td>
+                  <td class="col-airqa-image">12.5</td>
+                  <td class="col-airqa-formula">16.7</td>
+                  <td class="col-airqa-metadata">13.6</td>
+                  <td class="col-airqa-avg">13.4</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">17.9</td>
+                  <td class="col-m3sciqa-image">10.6</td>
+                  <td class="col-m3sciqa-avg">15.6</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">59.4</td>
+                  <td class="col-scidqa-image">60.4</td>
+                  <td class="col-scidqa-formula">59.3</td>
+                  <td class="col-scidqa-avg">59.8</td>
+                </tr>
+                <!-- GPT-4V -->
+                <tr>
+                  <td class="col-model">GPT-4V</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">13.2</td>
+                  <td class="col-airqa-table">13.9</td>
+                  <td class="col-airqa-image">10.0</td>
+                  <td class="col-airqa-formula">13.9</td>
+                  <td class="col-airqa-metadata">13.6</td>
+                  <td class="col-airqa-avg">14.7</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">12.1</td>
+                  <td class="col-m3sciqa-image">8.8</td>
+                  <td class="col-m3sciqa-avg">11.1</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">56.6</td>
+                  <td class="col-scidqa-image">56.8</td>
+                  <td class="col-scidqa-formula">58.1</td>
+                  <td class="col-scidqa-avg">57.4</td>
+                </tr>
+                <!-- Llama-3.3-70B-Instruct -->
+                <tr>
+                  <td class="col-model">Llama-3.3-70B-Instruct</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">8.7</td>
+                  <td class="col-airqa-table">7.9</td>
+                  <td class="col-airqa-image">9.5</td>
+                  <td class="col-airqa-formula">16.7</td>
+                  <td class="col-airqa-metadata">0.0</td>
+                  <td class="col-airqa-avg">10.0</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">12.7</td>
+                  <td class="col-m3sciqa-image">8.1</td>
+                  <td class="col-m3sciqa-avg">11.3</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">56.8</td>
+                  <td class="col-scidqa-image">58.8</td>
+                  <td class="col-scidqa-formula">58.9</td>
+                  <td class="col-scidqa-avg">58.0</td>
+                </tr>
+                <!-- Qwen2.5-VL-72B-Instruct -->
+                <tr>
+                  <td class="col-model">Qwen2.5-VL-72B-Instruct</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">9.6</td>
+                  <td class="col-airqa-table">5.9</td>
+                  <td class="col-airqa-image">11.9</td>
+                  <td class="col-airqa-formula">11.1</td>
+                  <td class="col-airqa-metadata">13.6</td>
+                  <td class="col-airqa-avg">10.5</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">11.6</td>
+                  <td class="col-m3sciqa-image">11.6</td>
+                  <td class="col-m3sciqa-avg">11.6</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">54.8</td>
+                  <td class="col-scidqa-image">56.9</td>
+                  <td class="col-scidqa-formula">56.3</td>
+                  <td class="col-scidqa-avg">56.2</td>
+                </tr>
+                <!-- DeepSeek-R1 -->
+                <tr>
+                  <td class="col-model">DeepSeek-R1</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">11.7</td>
+                  <td class="col-airqa-table">13.9</td>
+                  <td class="col-airqa-image">9.5</td>
+                  <td class="col-airqa-formula">30.6</td>
+                  <td class="col-airqa-metadata">9.1</td>
+                  <td class="col-airqa-avg">13.9</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">11.9</td>
+                  <td class="col-m3sciqa-image">9.5</td>
+                  <td class="col-m3sciqa-avg">11.2</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">63.9</td>
+                  <td class="col-scidqa-image">61.3</td>
+                  <td class="col-scidqa-formula">61.7</td>
+                  <td class="col-scidqa-avg">62.4</td>
+                </tr>
+                <!-- NeuSym-RAG Group -->
+                <tr class="model-group">
+                  <td class="col-model" colspan="14">NeuSym-RAG</td>
+                </tr>
+                <!-- GPT-4o-mini -->
+                <tr>
+                  <td class="col-model">GPT-4o-mini</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">33.0</td>
+                  <td class="col-airqa-table">12.9</td>
+                  <td class="col-airqa-image">11.9</td>
+                  <td class="col-airqa-formula">19.4</td>
+                  <td class="col-airqa-metadata">18.2</td>
+                  <td class="col-airqa-avg">30.7</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">18.7</td>
+                  <td class="col-m3sciqa-image">16.6</td>
+                  <td class="col-m3sciqa-avg">18.0</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">63.0</td>
+                  <td class="col-scidqa-image">63.6</td>
+                  <td class="col-scidqa-formula">62.5</td>
+                  <td class="col-scidqa-avg">63.0</td>
+                </tr>
+                <!-- GPT-4V -->
+                <tr>
+                  <td class="col-model">GPT-4V</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">38.9</td>
+                  <td class="col-airqa-table highlight">18.8</td>
+                  <td class="col-airqa-image highlight">23.8</td>
+                  <td class="col-airqa-formula highlight">38.9</td>
+                  <td class="col-airqa-metadata highlight">27.3</td>
+                  <td class="col-airqa-avg">37.3</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">13.7</td>
+                  <td class="col-m3sciqa-image">13.4</td>
+                  <td class="col-m3sciqa-avg">13.6</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">62.6</td>
+                  <td class="col-scidqa-image">63.5</td>
+                  <td class="col-scidqa-formula">63.2</td>
+                  <td class="col-scidqa-avg">63.1</td>
+                </tr>
+                <!-- Llama-3.3-70B-Instruct -->
+                <tr>
+                  <td class="col-model">Llama-3.3-70B-Instruct</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">30.6</td>
+                  <td class="col-airqa-table">11.9</td>
+                  <td class="col-airqa-image">16.7</td>
+                  <td class="col-airqa-formula">16.7</td>
+                  <td class="col-airqa-metadata highlight">27.3</td>
+                  <td class="col-airqa-avg">29.3</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table highlight">26.3</td>
+                  <td class="col-m3sciqa-image">17.6</td>
+                  <td class="col-m3sciqa-avg highlight">23.6</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">55.5</td>
+                  <td class="col-scidqa-image">57.3</td>
+                  <td class="col-scidqa-formula">56.6</td>
+                  <td class="col-scidqa-avg">56.4</td>
+                </tr>
+                <!-- Qwen2.5-VL-72B-Instruct -->
+                <tr>
+                  <td class="col-model">Qwen2.5-VL-72B-Instruct</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text highlight">43.4</td>
+                  <td class="col-airqa-table">15.8</td>
+                  <td class="col-airqa-image">11.9</td>
+                  <td class="col-airqa-formula">25.0</td>
+                  <td class="col-airqa-metadata highlight">27.3</td>
+                  <td class="col-airqa-avg highlight">39.6</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">20.2</td>
+                  <td class="col-m3sciqa-image highlight">22.7</td>
+                  <td class="col-m3sciqa-avg">21.1</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">60.2</td>
+                  <td class="col-scidqa-image">60.6</td>
+                  <td class="col-scidqa-formula">61.8</td>
+                  <td class="col-scidqa-avg">60.5</td>
+                </tr>
+                <!-- DeepSeek-R1 -->
+                <tr>
+                  <td class="col-model">DeepSeek-R1</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">33.2</td>
+                  <td class="col-airqa-table">16.8</td>
+                  <td class="col-airqa-image">11.9</td>
+                  <td class="col-airqa-formula">27.8</td>
+                  <td class="col-airqa-metadata">18.2</td>
+                  <td class="col-airqa-avg">32.4</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">19.0</td>
+                  <td class="col-m3sciqa-image">13.7</td>
+                  <td class="col-m3sciqa-avg">17.4</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table highlight">64.3</td>
+                  <td class="col-scidqa-image highlight">64.6</td>
+                  <td class="col-scidqa-formula highlight">63.9</td>
+                  <td class="col-scidqa-avg highlight">64.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
         <ul style="margin-left:1.2em;">
           <li><b>1)</b> NeuSym-RAG achieves significant improvements over Classic-RAG for all LLMs, benefiting from more flexible actions and iterative retrieval.</li>
           <li><b>2)</b> Vision-language models (VLMs) excel in tasks requiring image understanding, such as M3SciQA.</li>
@@ -1236,266 +1491,12 @@
         </ul>
         <p style="margin-top:0.5em;">These results highlight the universality and robustness of NeuSym-RAG for PDF-based question answering.</p>
       </div>
-      <div>
-        <div class="table-wrapper">
-          <table class="results-table">
-            <colgroup>
-              <col class="col-model">
-              <col class="col-airqa-text">
-              <col class="col-airqa-table">
-              <col class="col-airqa-image">
-              <col class="col-airqa-formula">
-              <col class="col-airqa-metadata">
-              <col class="col-airqa-avg">
-              <col class="col-m3sciqa-table">
-              <col class="col-m3sciqa-image">
-              <col class="col-m3sciqa-avg">
-              <col class="col-scidqa-table">
-              <col class="col-scidqa-image">
-              <col class="col-scidqa-formula">
-              <col class="col-scidqa-avg">
-            </colgroup>
-            <thead>
-              <tr>
-                <th class="col-model" rowspan="2">Model</th>
-                <th colspan="6">AirQA-Real</th>
-                <th colspan="3">M3SciQA</th>
-                <th colspan="4">SciDQA</th>
-              </tr>
-              <tr>
-                <th class="col-airqa-text">text</th>
-                <th class="col-airqa-table">table</th>
-                <th class="col-airqa-image">image</th>
-                <th class="col-airqa-formula">formula</th>
-                <th class="col-airqa-metadata">metadata</th>
-                <th class="col-airqa-avg">AVG</th>
-                <th class="col-m3sciqa-table">table</th>
-                <th class="col-m3sciqa-image">image</th>
-                <th class="col-m3sciqa-avg">AVG</th>
-                <th class="col-scidqa-table">table</th>
-                <th class="col-scidqa-image">image</th>
-                <th class="col-scidqa-formula">formula</th>
-                <th class="col-scidqa-avg">AVG</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Classic-RAG Group -->
-              <tr class="model-group">
-                <td class="col-model" colspan="14">Classic-RAG</td>
-              </tr>
-              <!-- GPT-4o-mini -->
-              <tr>
-                <td class="col-model">GPT-4o-mini</td>
-                <!-- AirQA-Real -->
-                <td class="col-airqa-text">12.3</td>
-                <td class="col-airqa-table">11.9</td>
-                <td class="col-airqa-image">12.5</td>
-                <td class="col-airqa-formula">16.7</td>
-                <td class="col-airqa-metadata">13.6</td>
-                <td class="col-airqa-avg">13.4</td>
-                <!-- M3SciQA -->
-                <td class="col-m3sciqa-table">17.9</td>
-                <td class="col-m3sciqa-image">10.6</td>
-                <td class="col-m3sciqa-avg">15.6</td>
-                <!-- SciDQA -->
-                <td class="col-scidqa-table">59.4</td>
-                <td class="col-scidqa-image">60.4</td>
-                <td class="col-scidqa-formula">59.3</td>
-                <td class="col-scidqa-avg">59.8</td>
-              </tr>
-              <!-- GPT-4V -->
-              <tr>
-                <td class="col-model">GPT-4V</td>
-                <!-- AirQA-Real -->
-                <td class="col-airqa-text">13.2</td>
-                <td class="col-airqa-table">13.9</td>
-                <td class="col-airqa-image">10.0</td>
-                <td class="col-airqa-formula">13.9</td>
-                <td class="col-airqa-metadata">13.6</td>
-                <td class="col-airqa-avg">14.7</td>
-                <!-- M3SciQA -->
-                <td class="col-m3sciqa-table">12.1</td>
-                <td class="col-m3sciqa-image">8.8</td>
-                <td class="col-m3sciqa-avg">11.1</td>
-                <!-- SciDQA -->
-                <td class="col-scidqa-table">56.6</td>
-                <td class="col-scidqa-image">56.8</td>
-                <td class="col-scidqa-formula">58.1</td>
-                <td class="col-scidqa-avg">57.4</td>
-              </tr>
-              <!-- Llama-3.3-70B-Instruct -->
-              <tr>
-                <td class="col-model">Llama-3.3-70B-Instruct</td>
-                <!-- AirQA-Real -->
-                <td class="col-airqa-text">8.7</td>
-                <td class="col-airqa-table">7.9</td>
-                <td class="col-airqa-image">9.5</td>
-                <td class="col-airqa-formula">16.7</td>
-                <td class="col-airqa-metadata">0.0</td>
-                <td class="col-airqa-avg">10.0</td>
-                <!-- M3SciQA -->
-                <td class="col-m3sciqa-table">12.7</td>
-                <td class="col-m3sciqa-image">8.1</td>
-                <td class="col-m3sciqa-avg">11.3</td>
-                <!-- SciDQA -->
-                <td class="col-scidqa-table">56.8</td>
-                <td class="col-scidqa-image">58.8</td>
-                <td class="col-scidqa-formula">58.9</td>
-                <td class="col-scidqa-avg">58.0</td>
-              </tr>
-              <!-- Qwen2.5-VL-72B-Instruct -->
-              <tr>
-                <td class="col-model">Qwen2.5-VL-72B-Instruct</td>
-                <!-- AirQA-Real -->
-                <td class="col-airqa-text">9.6</td>
-                <td class="col-airqa-table">5.9</td>
-                <td class="col-airqa-image">11.9</td>
-                <td class="col-airqa-formula">11.1</td>
-                <td class="col-airqa-metadata">13.6</td>
-                <td class="col-airqa-avg">10.5</td>
-                <!-- M3SciQA -->
-                <td class="col-m3sciqa-table">11.6</td>
-                <td class="col-m3sciqa-image">11.6</td>
-                <td class="col-m3sciqa-avg">11.6</td>
-                <!-- SciDQA -->
-                <td class="col-scidqa-table">54.8</td>
-                <td class="col-scidqa-image">56.9</td>
-                <td class="col-scidqa-formula">56.3</td>
-                <td class="col-scidqa-avg">56.2</td>
-              </tr>
-              <!-- DeepSeek-R1 -->
-              <tr>
-                <td class="col-model">DeepSeek-R1</td>
-                <!-- AirQA-Real -->
-                <td class="col-airqa-text">11.7</td>
-                <td class="col-airqa-table">13.9</td>
-                <td class="col-airqa-image">9.5</td>
-                <td class="col-airqa-formula">30.6</td>
-                <td class="col-airqa-metadata">9.1</td>
-                <td class="col-airqa-avg">13.9</td>
-                <!-- M3SciQA -->
-                <td class="col-m3sciqa-table">11.9</td>
-                <td class="col-m3sciqa-image">9.5</td>
-                <td class="col-m3sciqa-avg">11.2</td>
-                <!-- SciDQA -->
-                <td class="col-scidqa-table">63.9</td>
-                <td class="col-scidqa-image">61.3</td>
-                <td class="col-scidqa-formula">61.7</td>
-                <td class="col-scidqa-avg">62.4</td>
-              </tr>
-              <!-- NeuSym-RAG Group -->
-              <tr class="model-group">
-                <td class="col-model" colspan="14">NeuSym-RAG</td>
-              </tr>
-              <!-- GPT-4o-mini -->
-              <tr>
-                <td class="col-model">GPT-4o-mini</td>
-                <!-- AirQA-Real -->
-                <td class="col-airqa-text">33.0</td>
-                <td class="col-airqa-table">12.9</td>
-                <td class="col-airqa-image">11.9</td>
-                <td class="col-airqa-formula">19.4</td>
-                <td class="col-airqa-metadata">18.2</td>
-                <td class="col-airqa-avg">30.7</td>
-                <!-- M3SciQA -->
-                <td class="col-m3sciqa-table">18.7</td>
-                <td class="col-m3sciqa-image">16.6</td>
-                <td class="col-m3sciqa-avg">18.0</td>
-                <!-- SciDQA -->
-                <td class="col-scidqa-table">63.0</td>
-                <td class="col-scidqa-image">63.6</td>
-                <td class="col-scidqa-formula">62.5</td>
-                <td class="col-scidqa-avg">63.0</td>
-              </tr>
-              <!-- GPT-4V -->
-              <tr>
-                <td class="col-model">GPT-4V</td>
-                <!-- AirQA-Real -->
-                <td class="col-airqa-text">38.9</td>
-                <td class="col-airqa-table highlight">18.8</td>
-                <td class="col-airqa-image highlight">23.8</td>
-                <td class="col-airqa-formula highlight">38.9</td>
-                <td class="col-airqa-metadata highlight">27.3</td>
-                <td class="col-airqa-avg">37.3</td>
-                <!-- M3SciQA -->
-                <td class="col-m3sciqa-table">13.7</td>
-                <td class="col-m3sciqa-image">13.4</td>
-                <td class="col-m3sciqa-avg">13.6</td>
-                <!-- SciDQA -->
-                <td class="col-scidqa-table">62.6</td>
-                <td class="col-scidqa-image">63.5</td>
-                <td class="col-scidqa-formula">63.2</td>
-                <td class="col-scidqa-avg">63.1</td>
-              </tr>
-              <!-- Llama-3.3-70B-Instruct -->
-              <tr>
-                <td class="col-model">Llama-3.3-70B-Instruct</td>
-                <!-- AirQA-Real -->
-                <td class="col-airqa-text">30.6</td>
-                <td class="col-airqa-table">11.9</td>
-                <td class="col-airqa-image">16.7</td>
-                <td class="col-airqa-formula">16.7</td>
-                <td class="col-airqa-metadata highlight">27.3</td>
-                <td class="col-airqa-avg">29.3</td>
-                <!-- M3SciQA -->
-                <td class="col-m3sciqa-table highlight">26.3</td>
-                <td class="col-m3sciqa-image">17.6</td>
-                <td class="col-m3sciqa-avg highlight">23.6</td>
-                <!-- SciDQA -->
-                <td class="col-scidqa-table">55.5</td>
-                <td class="col-scidqa-image">57.3</td>
-                <td class="col-scidqa-formula">56.6</td>
-                <td class="col-scidqa-avg">56.4</td>
-              </tr>
-              <!-- Qwen2.5-VL-72B-Instruct -->
-              <tr>
-                <td class="col-model">Qwen2.5-VL-72B-Instruct</td>
-                <!-- AirQA-Real -->
-                <td class="col-airqa-text highlight">43.4</td>
-                <td class="col-airqa-table">15.8</td>
-                <td class="col-airqa-image">11.9</td>
-                <td class="col-airqa-formula">25.0</td>
-                <td class="col-airqa-metadata highlight">27.3</td>
-                <td class="col-airqa-avg highlight">39.6</td>
-                <!-- M3SciQA -->
-                <td class="col-m3sciqa-table">20.2</td>
-                <td class="col-m3sciqa-image highlight">22.7</td>
-                <td class="col-m3sciqa-avg">21.1</td>
-                <!-- SciDQA -->
-                <td class="col-scidqa-table">60.2</td>
-                <td class="col-scidqa-image">60.6</td>
-                <td class="col-scidqa-formula">61.8</td>
-                <td class="col-scidqa-avg">60.5</td>
-              </tr>
-              <!-- DeepSeek-R1 -->
-              <tr>
-                <td class="col-model">DeepSeek-R1</td>
-                <!-- AirQA-Real -->
-                <td class="col-airqa-text">33.2</td>
-                <td class="col-airqa-table">16.8</td>
-                <td class="col-airqa-image">11.9</td>
-                <td class="col-airqa-formula">27.8</td>
-                <td class="col-airqa-metadata">18.2</td>
-                <td class="col-airqa-avg">32.4</td>
-                <!-- M3SciQA -->
-                <td class="col-m3sciqa-table">19.0</td>
-                <td class="col-m3sciqa-image">13.7</td>
-                <td class="col-m3sciqa-avg">17.4</td>
-                <!-- SciDQA -->
-                <td class="col-scidqa-table highlight">64.3</td>
-                <td class="col-scidqa-image highlight">64.6</td>
-                <td class="col-scidqa-formula highlight">63.9</td>
-                <td class="col-scidqa-avg highlight">64.5</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+
       
       
       <div class="content has-text-justified" style="margin:2.5em 0 1em 0;">
         <p>
-          <b>Table: Method Ablation.</b> To further analyze the contribution of each component, we compare NeuSym-RAG with a series of structured agent baselines. The illustration below summarizes all baselines compared in the ablation study, differing in retrieval paradigm, multi-view support, and whether iterative interaction is allowed.
+          <b>Method Ablation.</b> To further analyze the contribution of each component, we compare NeuSym-RAG with a series of structured agent baselines. The illustration below summarizes all baselines compared in the ablation study, differing in retrieval paradigm, multi-view support, and whether iterative interaction is allowed.
         </p>
         <div style="text-align:center;margin:1em 0 1.5em 0;">
           <img src="static/images/baseline.png" alt="Baselines Illustration" style="max-width:90%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:0.5em;">
@@ -1506,43 +1507,45 @@
           <li><b>2)</b> Iterative retrieval (multi-turn) is superior to two-stage (single-turn), as agents can explore and adaptively select the most relevant context.</li>
           <li><b>3)</b> As the number of interactions increases, objective scores rise faster than subjective scores, indicating more rational answer generation.</li>
         </ul>
+        <p style="margin-top:0.5em;">The detailed results are shown in the table below.</p>
+        <div>
+          <div class="table-wrapper">
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th rowspan="2">Method</th>
+                  <th class="col-neural group-1">Neural</th>
+                  <th class="col-symbolic group-1">Symbolic</th>
+                  <th class="col-multiview group-1">Multi-view</th>
+                  <th class="col-interaction group-1"># Interaction(s)</th>
+                  <th class="group-2">sgl.</th>
+                  <th class="group-2">multi.</th>
+                  <th class="group-2">retr.</th>
+                  <th class="group-2">subj.</th>
+                  <th class="col-obj group-2">obj.</th>
+                  <th class="group-3">AVG</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Question only</td><td class="col-neural group-1">&#10060;</td><td class="col-symbolic group-1">&#10060;</td><td class="col-multiview group-1">&#10060;</td><td class="col-interaction group-1">1</td><td class="group-2">5.7</td><td class="group-2">8.0</td><td class="group-2">0.4</td><td class="group-2">9.4</td><td class="col-obj group-2">2.7</td><td class="group-3">4.0</td></tr>
+                <tr><td>Title + Abstract</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">1</td><td class="group-2">5.7</td><td class="group-2">14.0</td><td class="group-2">0.0</td><td class="group-2">13.1</td><td class="col-obj group-2">3.6</td><td class="group-3">5.4</td></tr>
+                <tr><td>Full-text w/. cutoff</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">1</td><td class="group-2">28.3</td><td class="group-2">10.7</td><td class="group-2">0.4</td><td class="group-2">26.2</td><td class="col-obj group-2">7.6</td><td class="group-3">11.2</td></tr>
+                <tr><td>Classic RAG</td><td class="col-neural group-1">&#10004;</td><td class="col-symbolic group-1">&#10060;</td><td class="col-multiview group-1">&#10060;</td><td class="col-interaction group-1">1</td><td class="group-2">18.2</td><td class="group-2">4.0</td><td class="group-2">9.4</td><td class="group-2">8.4</td><td class="col-obj group-2">11.0</td><td class="group-3">10.5</td></tr>
+                <tr><td>Iterative Classic RAG</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">&ge;2</td><td class="group-2">8.2</td><td class="group-2">10.0</td><td class="group-2">15.2</td><td class="group-2">5.6</td><td class="col-obj group-2">13.2</td><td class="group-3">11.8</td></tr>
+                <tr><td>Two-stage Neu-RAG</td><td class="col-neural group-1">&#10004;</td><td class="col-symbolic group-1">&#10060;</td><td class="col-multiview group-1">&#10004;</td><td class="col-interaction group-1">2</td><td class="group-2">19.5</td><td class="group-2">10.0</td><td class="group-2">5.3</td><td class="group-2">15.9</td><td class="col-obj group-2">9.4</td><td class="group-3">10.7</td></tr>
+                <tr><td>Iterative Neu-RAG</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">&ge;2</td><td class="bold group-2">37.7</td><td class="group-2">18.7</td><td class="group-2">48.4</td><td class="bold group-2">32.7</td><td class="col-obj group-2">38.3</td><td class="bold group-3">37.3</td></tr>
+                <tr><td>Two-stage Sym-RAG</td><td class="col-neural group-1">&#10060;</td><td class="col-symbolic group-1">&#10004;</td><td class="col-multiview group-1">&#10004;</td><td class="col-interaction group-1">2</td><td class="group-2">12.2</td><td class="group-2">5.4</td><td class="group-2">9.4</td><td class="group-2">10.6</td><td class="col-obj group-2">8.7</td><td class="group-3">9.1</td></tr>
+                <tr><td>Iterative Sym-RAG</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">&ge;2</td><td class="group-2">32.1</td><td class="group-2">14.7</td><td class="group-2">33.6</td><td class="group-2">27.1</td><td class="col-obj group-2">28.3</td><td class="group-3">28.0</td></tr>
+                <tr><td>Graph-RAG</td><td class="col-neural group-1">&#10004;</td><td class="col-symbolic group-1">&#10060;</td><td class="col-multiview group-1">&#10004;</td><td class="col-interaction group-1">2</td><td class="group-2">22.2</td><td class="group-2">11.1</td><td class="group-2">0.0</td><td class="group-2">21.1</td><td class="col-obj group-2">11.5</td><td class="group-3">15.6</td></tr>
+                <tr><td>Hybrid-RAG</td><td class="col-neural group-1">&#10004;</td><td class="col-symbolic group-1">&#10004;</td><td class="col-multiview group-1">&#10004;</td><td class="col-interaction group-1">2</td><td class="group-2">23.3</td><td class="group-2">9.3</td><td class="group-2">5.7</td><td class="group-2">16.8</td><td class="col-obj group-2">10.5</td><td class="group-3">11.8</td></tr>
+                <tr><td class="bold">Ours</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">&ge;2</td><td class="group-2">28.3</td><td class="bold group-2">32.3</td><td class="bold group-2">58.2</td><td class="group-2">27.1</td><td class="col-obj group-2">42.6</td><td class="bold group-3">39.6</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
         <p style="margin-top:0.5em;">Overall, NeuSym-RAG (ours) surpasses all baselines, verifying the effectiveness of multi-view and hybrid retrieval strategies.</p>
       </div>
-      <div>
-        <div class="table-wrapper">
-          <table class="results-table">
-            <thead>
-              <tr>
-                <th rowspan="2">Method</th>
-                <th class="col-neural group-1">Neural</th>
-                <th class="col-symbolic group-1">Symbolic</th>
-                <th class="col-multiview group-1">Multi-view</th>
-                <th class="col-interaction group-1"># Interaction(s)</th>
-                <th class="group-2">sgl.</th>
-                <th class="group-2">multi.</th>
-                <th class="group-2">retr.</th>
-                <th class="group-2">subj.</th>
-                <th class="col-obj group-2">obj.</th>
-                <th class="group-3">AVG</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Question only</td><td class="col-neural group-1">&#10060;</td><td class="col-symbolic group-1">&#10060;</td><td class="col-multiview group-1">&#10060;</td><td class="col-interaction group-1">1</td><td class="group-2">5.7</td><td class="group-2">8.0</td><td class="group-2">0.4</td><td class="group-2">9.4</td><td class="col-obj group-2">2.7</td><td class="group-3">4.0</td></tr>
-              <tr><td>Title + Abstract</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">1</td><td class="group-2">5.7</td><td class="group-2">14.0</td><td class="group-2">0.0</td><td class="group-2">13.1</td><td class="col-obj group-2">3.6</td><td class="group-3">5.4</td></tr>
-              <tr><td>Full-text w/. cutoff</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">1</td><td class="group-2">28.3</td><td class="group-2">10.7</td><td class="group-2">0.4</td><td class="group-2">26.2</td><td class="col-obj group-2">7.6</td><td class="group-3">11.2</td></tr>
-              <tr><td>Classic RAG</td><td class="col-neural group-1">&#10004;</td><td class="col-symbolic group-1">&#10060;</td><td class="col-multiview group-1">&#10060;</td><td class="col-interaction group-1">1</td><td class="group-2">18.2</td><td class="group-2">4.0</td><td class="group-2">9.4</td><td class="group-2">8.4</td><td class="col-obj group-2">11.0</td><td class="group-3">10.5</td></tr>
-              <tr><td>Iterative Classic RAG</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">&ge;2</td><td class="group-2">8.2</td><td class="group-2">10.0</td><td class="group-2">15.2</td><td class="group-2">5.6</td><td class="col-obj group-2">13.2</td><td class="group-3">11.8</td></tr>
-              <tr><td>Two-stage Neu-RAG</td><td class="col-neural group-1">&#10004;</td><td class="col-symbolic group-1">&#10060;</td><td class="col-multiview group-1">&#10004;</td><td class="col-interaction group-1">2</td><td class="group-2">19.5</td><td class="group-2">10.0</td><td class="group-2">5.3</td><td class="group-2">15.9</td><td class="col-obj group-2">9.4</td><td class="group-3">10.7</td></tr>
-              <tr><td>Iterative Neu-RAG</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">&ge;2</td><td class="bold group-2">37.7</td><td class="group-2">18.7</td><td class="group-2">48.4</td><td class="bold group-2">32.7</td><td class="col-obj group-2">38.3</td><td class="bold group-3">37.3</td></tr>
-              <tr><td>Two-stage Sym-RAG</td><td class="col-neural group-1">&#10060;</td><td class="col-symbolic group-1">&#10004;</td><td class="col-multiview group-1">&#10004;</td><td class="col-interaction group-1">2</td><td class="group-2">12.2</td><td class="group-2">5.4</td><td class="group-2">9.4</td><td class="group-2">10.6</td><td class="col-obj group-2">8.7</td><td class="group-3">9.1</td></tr>
-              <tr><td>Iterative Sym-RAG</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">&ge;2</td><td class="group-2">32.1</td><td class="group-2">14.7</td><td class="group-2">33.6</td><td class="group-2">27.1</td><td class="col-obj group-2">28.3</td><td class="group-3">28.0</td></tr>
-              <tr><td>Graph-RAG</td><td class="col-neural group-1">&#10004;</td><td class="col-symbolic group-1">&#10060;</td><td class="col-multiview group-1">&#10004;</td><td class="col-interaction group-1">2</td><td class="group-2">22.2</td><td class="group-2">11.1</td><td class="group-2">0.0</td><td class="group-2">21.1</td><td class="col-obj group-2">11.5</td><td class="group-3">15.6</td></tr>
-              <tr><td>Hybrid-RAG</td><td class="col-neural group-1">&#10004;</td><td class="col-symbolic group-1">&#10004;</td><td class="col-multiview group-1">&#10004;</td><td class="col-interaction group-1">2</td><td class="group-2">23.3</td><td class="group-2">9.3</td><td class="group-2">5.7</td><td class="group-2">16.8</td><td class="col-obj group-2">10.5</td><td class="group-3">11.8</td></tr>
-              <tr><td class="bold">Ours</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">&ge;2</td><td class="group-2">28.3</td><td class="bold group-2">32.3</td><td class="bold group-2">58.2</td><td class="group-2">27.1</td><td class="col-obj group-2">42.6</td><td class="bold group-3">39.6</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+
     </div>
   </section>
 
