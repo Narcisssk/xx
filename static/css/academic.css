@@ -410,19 +410,7 @@
   border-right: 2px solid #e0e0e0; /* 颜色改浅，线条改细 */
 } 
 
-/* Table: Method Ablation 分隔线 */
-.results-table th.col-neural,
-.results-table td.col-neural,
-.results-table th.col-symbolic,
-.results-table td.col-symbolic,
-.results-table th.col-multiview,
-.results-table td.col-multiview,
-.results-table th.col-interaction,
-.results-table td.col-interaction,
-.results-table th.col-obj,
-.results-table td.col-obj {
-  border-right: 2px solid #e0e0e0;
-} 
+
 
 /* Table: Method Ablation 分组分隔线 */
 .results-table th.group-1,
