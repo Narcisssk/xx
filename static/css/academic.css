@@ -423,3 +423,13 @@
 .results-table td.col-obj {
   border-right: 2px solid #e0e0e0;
 } 
+
+/* Table: Method Ablation 分组分隔线 */
+.results-table th.group-1,
+.results-table td.group-1 {
+  border-right: 2px solid #e0e0e0;
+}
+.results-table th.group-2,
+.results-table td.group-2 {
+  border-right: 2px solid #e0e0e0;
+} 

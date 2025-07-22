@@ -1514,31 +1514,31 @@
             <thead>
               <tr>
                 <th rowspan="2">Method</th>
-                <th class="col-neural">Neural</th>
-                <th class="col-symbolic">Symbolic</th>
-                <th class="col-multiview">Multi-view</th>
-                <th class="col-interaction"># Interaction(s)</th>
-                <th>sgl.</th>
-                <th>multi.</th>
-                <th>retr.</th>
-                <th>subj.</th>
-                <th class="col-obj">obj.</th>
-                <th>AVG</th>
+                <th class="col-neural group-1">Neural</th>
+                <th class="col-symbolic group-1">Symbolic</th>
+                <th class="col-multiview group-1">Multi-view</th>
+                <th class="col-interaction group-1"># Interaction(s)</th>
+                <th class="group-2">sgl.</th>
+                <th class="group-2">multi.</th>
+                <th class="group-2">retr.</th>
+                <th class="group-2">subj.</th>
+                <th class="col-obj group-2">obj.</th>
+                <th class="group-3">AVG</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Question only</td><td class="col-neural">&#10060;</td><td class="col-symbolic">&#10060;</td><td class="col-multiview">&#10060;</td><td class="col-interaction">1</td><td>5.7</td><td>8.0</td><td>0.4</td><td>9.4</td><td class="col-obj">2.7</td><td>4.0</td></tr>
-              <tr><td>Title + Abstract</td><td class="col-neural">~</td><td class="col-symbolic">~</td><td class="col-multiview">~</td><td class="col-interaction">1</td><td>5.7</td><td>14.0</td><td>0.0</td><td>13.1</td><td class="col-obj">3.6</td><td>5.4</td></tr>
-              <tr><td>Full-text w/. cutoff</td><td class="col-neural">~</td><td class="col-symbolic">~</td><td class="col-multiview">~</td><td class="col-interaction">1</td><td>28.3</td><td>10.7</td><td>0.4</td><td>26.2</td><td class="col-obj">7.6</td><td>11.2</td></tr>
-              <tr><td>Classic RAG</td><td class="col-neural">&#10003;</td><td class="col-symbolic">&#10060;</td><td class="col-multiview">&#10060;</td><td class="col-interaction">1</td><td>18.2</td><td>4.0</td><td>9.4</td><td>8.4</td><td class="col-obj">11.0</td><td>10.5</td></tr>
-              <tr><td>Iterative Classic RAG</td><td class="col-neural">~</td><td class="col-symbolic">~</td><td class="col-multiview">~</td><td class="col-interaction">&ge;2</td><td>8.2</td><td>10.0</td><td>15.2</td><td>5.6</td><td class="col-obj">13.2</td><td>11.8</td></tr>
-              <tr><td>Two-stage Neu-RAG</td><td class="col-neural">&#10003;</td><td class="col-symbolic">&#10060;</td><td class="col-multiview">&#10003;</td><td class="col-interaction">2</td><td>19.5</td><td>10.0</td><td>5.3</td><td>15.9</td><td class="col-obj">9.4</td><td>10.7</td></tr>
-              <tr><td>Iterative Neu-RAG</td><td class="col-neural">~</td><td class="col-symbolic">~</td><td class="col-multiview">~</td><td class="col-interaction">&ge;2</td><td class="bold">37.7</td><td>18.7</td><td>48.4</td><td class="bold">32.7</td><td class="col-obj">38.3</td><td class="bold">37.3</td></tr>
-              <tr><td>Two-stage Sym-RAG</td><td class="col-neural">&#10060;</td><td class="col-symbolic">&#10003;</td><td class="col-multiview">&#10003;</td><td class="col-interaction">2</td><td>12.2</td><td>5.4</td><td>9.4</td><td>10.6</td><td class="col-obj">8.7</td><td>9.1</td></tr>
-              <tr><td>Iterative Sym-RAG</td><td class="col-neural">~</td><td class="col-symbolic">~</td><td class="col-multiview">~</td><td class="col-interaction">&ge;2</td><td>32.1</td><td>14.7</td><td>33.6</td><td>27.1</td><td class="col-obj">28.3</td><td>28.0</td></tr>
-              <tr><td>Graph-RAG</td><td class="col-neural">&#10003;</td><td class="col-symbolic">&#10060;</td><td class="col-multiview">&#10003;</td><td class="col-interaction">2</td><td>22.2</td><td>11.1</td><td>0.0</td><td>21.1</td><td class="col-obj">11.5</td><td>15.6</td></tr>
-              <tr><td>Hybrid-RAG</td><td class="col-neural">&#10003;</td><td class="col-symbolic">&#10003;</td><td class="col-multiview">&#10003;</td><td class="col-interaction">2</td><td>23.3</td><td>9.3</td><td>5.7</td><td>16.8</td><td class="col-obj">10.5</td><td>11.8</td></tr>
-              <tr><td class="bold">Ours</td><td class="col-neural">~</td><td class="col-symbolic">~</td><td class="col-multiview">~</td><td class="col-interaction">&ge;2</td><td>28.3</td><td class="bold">32.3</td><td class="bold">58.2</td><td>27.1</td><td class="col-obj">42.6</td><td class="bold">39.6</td></tr>
+              <tr><td>Question only</td><td class="col-neural group-1">&#10060;</td><td class="col-symbolic group-1">&#10060;</td><td class="col-multiview group-1">&#10060;</td><td class="col-interaction group-1">1</td><td class="group-2">5.7</td><td class="group-2">8.0</td><td class="group-2">0.4</td><td class="group-2">9.4</td><td class="col-obj group-2">2.7</td><td class="group-3">4.0</td></tr>
+              <tr><td>Title + Abstract</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">1</td><td class="group-2">5.7</td><td class="group-2">14.0</td><td class="group-2">0.0</td><td class="group-2">13.1</td><td class="col-obj group-2">3.6</td><td class="group-3">5.4</td></tr>
+              <tr><td>Full-text w/. cutoff</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">1</td><td class="group-2">28.3</td><td class="group-2">10.7</td><td class="group-2">0.4</td><td class="group-2">26.2</td><td class="col-obj group-2">7.6</td><td class="group-3">11.2</td></tr>
+              <tr><td>Classic RAG</td><td class="col-neural group-1">&#10003;</td><td class="col-symbolic group-1">&#10060;</td><td class="col-multiview group-1">&#10060;</td><td class="col-interaction group-1">1</td><td class="group-2">18.2</td><td class="group-2">4.0</td><td class="group-2">9.4</td><td class="group-2">8.4</td><td class="col-obj group-2">11.0</td><td class="group-3">10.5</td></tr>
+              <tr><td>Iterative Classic RAG</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">&ge;2</td><td class="group-2">8.2</td><td class="group-2">10.0</td><td class="group-2">15.2</td><td class="group-2">5.6</td><td class="col-obj group-2">13.2</td><td class="group-3">11.8</td></tr>
+              <tr><td>Two-stage Neu-RAG</td><td class="col-neural group-1">&#10003;</td><td class="col-symbolic group-1">&#10060;</td><td class="col-multiview group-1">&#10003;</td><td class="col-interaction group-1">2</td><td class="group-2">19.5</td><td class="group-2">10.0</td><td class="group-2">5.3</td><td class="group-2">15.9</td><td class="col-obj group-2">9.4</td><td class="group-3">10.7</td></tr>
+              <tr><td>Iterative Neu-RAG</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">&ge;2</td><td class="bold group-2">37.7</td><td class="group-2">18.7</td><td class="group-2">48.4</td><td class="bold group-2">32.7</td><td class="col-obj group-2">38.3</td><td class="bold group-3">37.3</td></tr>
+              <tr><td>Two-stage Sym-RAG</td><td class="col-neural group-1">&#10060;</td><td class="col-symbolic group-1">&#10003;</td><td class="col-multiview group-1">&#10003;</td><td class="col-interaction group-1">2</td><td class="group-2">12.2</td><td class="group-2">5.4</td><td class="group-2">9.4</td><td class="group-2">10.6</td><td class="col-obj group-2">8.7</td><td class="group-3">9.1</td></tr>
+              <tr><td>Iterative Sym-RAG</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">&ge;2</td><td class="group-2">32.1</td><td class="group-2">14.7</td><td class="group-2">33.6</td><td class="group-2">27.1</td><td class="col-obj group-2">28.3</td><td class="group-3">28.0</td></tr>
+              <tr><td>Graph-RAG</td><td class="col-neural group-1">&#10003;</td><td class="col-symbolic group-1">&#10060;</td><td class="col-multiview group-1">&#10003;</td><td class="col-interaction group-1">2</td><td class="group-2">22.2</td><td class="group-2">11.1</td><td class="group-2">0.0</td><td class="group-2">21.1</td><td class="col-obj group-2">11.5</td><td class="group-3">15.6</td></tr>
+              <tr><td>Hybrid-RAG</td><td class="col-neural group-1">&#10003;</td><td class="col-symbolic group-1">&#10003;</td><td class="col-multiview group-1">&#10003;</td><td class="col-interaction group-1">2</td><td class="group-2">23.3</td><td class="group-2">9.3</td><td class="group-2">5.7</td><td class="group-2">16.8</td><td class="col-obj group-2">10.5</td><td class="group-3">11.8</td></tr>
+              <tr><td class="bold">Ours</td><td class="col-neural group-1">~</td><td class="col-symbolic group-1">~</td><td class="col-multiview group-1">~</td><td class="col-interaction group-1">&ge;2</td><td class="group-2">28.3</td><td class="bold group-2">32.3</td><td class="bold group-2">58.2</td><td class="group-2">27.1</td><td class="col-obj group-2">42.6</td><td class="bold group-3">39.6</td></tr>
             </tbody>
           </table>
         </div>
