@@ -1239,237 +1239,253 @@
       <div>
         <div class="table-wrapper">
           <table class="results-table">
+            <colgroup>
+              <col class="col-model">
+              <col class="col-airqa-text">
+              <col class="col-airqa-table">
+              <col class="col-airqa-image">
+              <col class="col-airqa-formula">
+              <col class="col-airqa-metadata">
+              <col class="col-airqa-avg">
+              <col class="col-m3sciqa-table">
+              <col class="col-m3sciqa-image">
+              <col class="col-m3sciqa-avg">
+              <col class="col-scidqa-table">
+              <col class="col-scidqa-image">
+              <col class="col-scidqa-formula">
+              <col class="col-scidqa-avg">
+            </colgroup>
             <thead>
               <tr>
-                <th rowspan="2">Model</th>
+                <th class="col-model" rowspan="2">Model</th>
                 <th colspan="6">AirQA-Real</th>
                 <th colspan="3">M3SciQA</th>
                 <th colspan="4">SciDQA</th>
               </tr>
               <tr>
-                <th>text</th>
-                <th>table</th>
-                <th>image</th>
-                <th>formula</th>
-                <th>metadata</th>
-                <th>AVG</th>
-                <th>table</th>
-                <th>image</th>
-                <th>AVG</th>
-                <th>table</th>
-                <th>image</th>
-                <th>formula</th>
-                <th>AVG</th>
+                <th class="col-airqa-text">text</th>
+                <th class="col-airqa-table">table</th>
+                <th class="col-airqa-image">image</th>
+                <th class="col-airqa-formula">formula</th>
+                <th class="col-airqa-metadata">metadata</th>
+                <th class="col-airqa-avg">AVG</th>
+                <th class="col-m3sciqa-table">table</th>
+                <th class="col-m3sciqa-image">image</th>
+                <th class="col-m3sciqa-avg">AVG</th>
+                <th class="col-scidqa-table">table</th>
+                <th class="col-scidqa-image">image</th>
+                <th class="col-scidqa-formula">formula</th>
+                <th class="col-scidqa-avg">AVG</th>
               </tr>
             </thead>
             <tbody>
               <!-- Classic-RAG Group -->
               <tr class="model-group">
-                <td colspan="14">Classic-RAG</td>
+                <td class="col-model" colspan="14">Classic-RAG</td>
               </tr>
               <!-- GPT-4o-mini -->
               <tr>
-                <td>GPT-4o-mini</td>
+                <td class="col-model">GPT-4o-mini</td>
                 <!-- AirQA-Real -->
-                <td>12.3</td>
-                <td>11.9</td>
-                <td>12.5</td>
-                <td>16.7</td>
-                <td>13.6</td>
-                <td>13.4</td>
+                <td class="col-airqa-text">12.3</td>
+                <td class="col-airqa-table">11.9</td>
+                <td class="col-airqa-image">12.5</td>
+                <td class="col-airqa-formula">16.7</td>
+                <td class="col-airqa-metadata">13.6</td>
+                <td class="col-airqa-avg">13.4</td>
                 <!-- M3SciQA -->
-                <td>17.9</td>
-                <td>10.6</td>
-                <td>15.6</td>
+                <td class="col-m3sciqa-table">17.9</td>
+                <td class="col-m3sciqa-image">10.6</td>
+                <td class="col-m3sciqa-avg">15.6</td>
                 <!-- SciDQA -->
-                <td>59.4</td>
-                <td>60.4</td>
-                <td>59.3</td>
-                <td>59.8</td>
+                <td class="col-scidqa-table">59.4</td>
+                <td class="col-scidqa-image">60.4</td>
+                <td class="col-scidqa-formula">59.3</td>
+                <td class="col-scidqa-avg">59.8</td>
               </tr>
               <!-- GPT-4V -->
               <tr>
-                <td>GPT-4V</td>
+                <td class="col-model">GPT-4V</td>
                 <!-- AirQA-Real -->
-                <td>13.2</td>
-                <td>13.9</td>
-                <td>10.0</td>
-                <td>13.9</td>
-                <td>13.6</td>
-                <td>14.7</td>
+                <td class="col-airqa-text">13.2</td>
+                <td class="col-airqa-table">13.9</td>
+                <td class="col-airqa-image">10.0</td>
+                <td class="col-airqa-formula">13.9</td>
+                <td class="col-airqa-metadata">13.6</td>
+                <td class="col-airqa-avg">14.7</td>
                 <!-- M3SciQA -->
-                <td>12.1</td>
-                <td>8.8</td>
-                <td>11.1</td>
+                <td class="col-m3sciqa-table">12.1</td>
+                <td class="col-m3sciqa-image">8.8</td>
+                <td class="col-m3sciqa-avg">11.1</td>
                 <!-- SciDQA -->
-                <td>56.6</td>
-                <td>56.8</td>
-                <td>58.1</td>
-                <td>57.4</td>
+                <td class="col-scidqa-table">56.6</td>
+                <td class="col-scidqa-image">56.8</td>
+                <td class="col-scidqa-formula">58.1</td>
+                <td class="col-scidqa-avg">57.4</td>
               </tr>
               <!-- Llama-3.3-70B-Instruct -->
               <tr>
-                <td>Llama-3.3-70B-Instruct</td>
+                <td class="col-model">Llama-3.3-70B-Instruct</td>
                 <!-- AirQA-Real -->
-                <td>8.7</td>
-                <td>7.9</td>
-                <td>9.5</td>
-                <td>16.7</td>
-                <td>0.0</td>
-                <td>10.0</td>
+                <td class="col-airqa-text">8.7</td>
+                <td class="col-airqa-table">7.9</td>
+                <td class="col-airqa-image">9.5</td>
+                <td class="col-airqa-formula">16.7</td>
+                <td class="col-airqa-metadata">0.0</td>
+                <td class="col-airqa-avg">10.0</td>
                 <!-- M3SciQA -->
-                <td>12.7</td>
-                <td>8.1</td>
-                <td>11.3</td>
+                <td class="col-m3sciqa-table">12.7</td>
+                <td class="col-m3sciqa-image">8.1</td>
+                <td class="col-m3sciqa-avg">11.3</td>
                 <!-- SciDQA -->
-                <td>56.8</td>
-                <td>58.8</td>
-                <td>58.9</td>
-                <td>58.0</td>
+                <td class="col-scidqa-table">56.8</td>
+                <td class="col-scidqa-image">58.8</td>
+                <td class="col-scidqa-formula">58.9</td>
+                <td class="col-scidqa-avg">58.0</td>
               </tr>
               <!-- Qwen2.5-VL-72B-Instruct -->
               <tr>
-                <td>Qwen2.5-VL-72B-Instruct</td>
+                <td class="col-model">Qwen2.5-VL-72B-Instruct</td>
                 <!-- AirQA-Real -->
-                <td>9.6</td>
-                <td>5.9</td>
-                <td>11.9</td>
-                <td>11.1</td>
-                <td>13.6</td>
-                <td>10.5</td>
+                <td class="col-airqa-text">9.6</td>
+                <td class="col-airqa-table">5.9</td>
+                <td class="col-airqa-image">11.9</td>
+                <td class="col-airqa-formula">11.1</td>
+                <td class="col-airqa-metadata">13.6</td>
+                <td class="col-airqa-avg">10.5</td>
                 <!-- M3SciQA -->
-                <td>11.6</td>
-                <td>11.6</td>
-                <td>11.6</td>
+                <td class="col-m3sciqa-table">11.6</td>
+                <td class="col-m3sciqa-image">11.6</td>
+                <td class="col-m3sciqa-avg">11.6</td>
                 <!-- SciDQA -->
-                <td>54.8</td>
-                <td>56.9</td>
-                <td>56.3</td>
-                <td>56.2</td>
+                <td class="col-scidqa-table">54.8</td>
+                <td class="col-scidqa-image">56.9</td>
+                <td class="col-scidqa-formula">56.3</td>
+                <td class="col-scidqa-avg">56.2</td>
               </tr>
               <!-- DeepSeek-R1 -->
               <tr>
-                <td>DeepSeek-R1</td>
+                <td class="col-model">DeepSeek-R1</td>
                 <!-- AirQA-Real -->
-                <td>11.7</td>
-                <td>13.9</td>
-                <td>9.5</td>
-                <td>30.6</td>
-                <td>9.1</td>
-                <td>13.9</td>
+                <td class="col-airqa-text">11.7</td>
+                <td class="col-airqa-table">13.9</td>
+                <td class="col-airqa-image">9.5</td>
+                <td class="col-airqa-formula">30.6</td>
+                <td class="col-airqa-metadata">9.1</td>
+                <td class="col-airqa-avg">13.9</td>
                 <!-- M3SciQA -->
-                <td>11.9</td>
-                <td>9.5</td>
-                <td>11.2</td>
+                <td class="col-m3sciqa-table">11.9</td>
+                <td class="col-m3sciqa-image">9.5</td>
+                <td class="col-m3sciqa-avg">11.2</td>
                 <!-- SciDQA -->
-                <td>63.9</td>
-                <td>61.3</td>
-                <td>61.7</td>
-                <td>62.4</td>
+                <td class="col-scidqa-table">63.9</td>
+                <td class="col-scidqa-image">61.3</td>
+                <td class="col-scidqa-formula">61.7</td>
+                <td class="col-scidqa-avg">62.4</td>
               </tr>
               <!-- NeuSym-RAG Group -->
               <tr class="model-group">
-                <td colspan="14">NeuSym-RAG</td>
+                <td class="col-model" colspan="14">NeuSym-RAG</td>
               </tr>
               <!-- GPT-4o-mini -->
               <tr>
-                <td>GPT-4o-mini</td>
+                <td class="col-model">GPT-4o-mini</td>
                 <!-- AirQA-Real -->
-                <td>33.0</td>
-                <td>12.9</td>
-                <td>11.9</td>
-                <td>19.4</td>
-                <td>18.2</td>
-                <td>30.7</td>
+                <td class="col-airqa-text">33.0</td>
+                <td class="col-airqa-table">12.9</td>
+                <td class="col-airqa-image">11.9</td>
+                <td class="col-airqa-formula">19.4</td>
+                <td class="col-airqa-metadata">18.2</td>
+                <td class="col-airqa-avg">30.7</td>
                 <!-- M3SciQA -->
-                <td>18.7</td>
-                <td>16.6</td>
-                <td>18.0</td>
+                <td class="col-m3sciqa-table">18.7</td>
+                <td class="col-m3sciqa-image">16.6</td>
+                <td class="col-m3sciqa-avg">18.0</td>
                 <!-- SciDQA -->
-                <td>63.0</td>
-                <td>63.6</td>
-                <td>62.5</td>
-                <td>63.0</td>
+                <td class="col-scidqa-table">63.0</td>
+                <td class="col-scidqa-image">63.6</td>
+                <td class="col-scidqa-formula">62.5</td>
+                <td class="col-scidqa-avg">63.0</td>
               </tr>
               <!-- GPT-4V -->
               <tr>
-                <td>GPT-4V</td>
+                <td class="col-model">GPT-4V</td>
                 <!-- AirQA-Real -->
-                <td>38.9</td>
-                <td>18.8</td>
-                <td>23.8</td>
-                <td>38.9</td>
-                <td>27.3</td>
-                <td>37.3</td>
+                <td class="col-airqa-text">38.9</td>
+                <td class="col-airqa-table">18.8</td>
+                <td class="col-airqa-image">23.8</td>
+                <td class="col-airqa-formula">38.9</td>
+                <td class="col-airqa-metadata">27.3</td>
+                <td class="col-airqa-avg">37.3</td>
                 <!-- M3SciQA -->
-                <td>13.7</td>
-                <td>13.4</td>
-                <td>13.6</td>
+                <td class="col-m3sciqa-table">13.7</td>
+                <td class="col-m3sciqa-image">13.4</td>
+                <td class="col-m3sciqa-avg">13.6</td>
                 <!-- SciDQA -->
-                <td>62.6</td>
-                <td>63.5</td>
-                <td>63.2</td>
-                <td>63.1</td>
+                <td class="col-scidqa-table">62.6</td>
+                <td class="col-scidqa-image">63.5</td>
+                <td class="col-scidqa-formula">63.2</td>
+                <td class="col-scidqa-avg">63.1</td>
               </tr>
               <!-- Llama-3.3-70B-Instruct -->
               <tr>
-                <td>Llama-3.3-70B-Instruct</td>
+                <td class="col-model">Llama-3.3-70B-Instruct</td>
                 <!-- AirQA-Real -->
-                <td>30.6</td>
-                <td>11.9</td>
-                <td>16.7</td>
-                <td>16.7</td>
-                <td>27.3</td>
-                <td>29.3</td>
+                <td class="col-airqa-text">30.6</td>
+                <td class="col-airqa-table">11.9</td>
+                <td class="col-airqa-image">16.7</td>
+                <td class="col-airqa-formula">16.7</td>
+                <td class="col-airqa-metadata">27.3</td>
+                <td class="col-airqa-avg">29.3</td>
                 <!-- M3SciQA -->
-                <td class="highlight">26.3</td>
-                <td>17.6</td>
-                <td class="highlight">23.6</td>
+                <td class="col-m3sciqa-table" class="highlight">26.3</td>
+                <td class="col-m3sciqa-image">17.6</td>
+                <td class="col-m3sciqa-avg" class="highlight">23.6</td>
                 <!-- SciDQA -->
-                <td>55.5</td>
-                <td>57.3</td>
-                <td>56.6</td>
-                <td>56.4</td>
+                <td class="col-scidqa-table">55.5</td>
+                <td class="col-scidqa-image">57.3</td>
+                <td class="col-scidqa-formula">56.6</td>
+                <td class="col-scidqa-avg">56.4</td>
               </tr>
               <!-- Qwen2.5-VL-72B-Instruct -->
               <tr>
-                <td>Qwen2.5-VL-72B-Instruct</td>
+                <td class="col-model">Qwen2.5-VL-72B-Instruct</td>
                 <!-- AirQA-Real -->
-                <td class="highlight">43.4</td>
-                <td>15.8</td>
-                <td>11.9</td>
-                <td>25.0</td>
-                <td>27.3</td>
-                <td class="highlight">39.6</td>
+                <td class="col-airqa-text" class="highlight">43.4</td>
+                <td class="col-airqa-table">15.8</td>
+                <td class="col-airqa-image">11.9</td>
+                <td class="col-airqa-formula">25.0</td>
+                <td class="col-airqa-metadata">27.3</td>
+                <td class="col-airqa-avg" class="highlight">39.6</td>
                 <!-- M3SciQA -->
-                <td>20.2</td>
-                <td class="highlight">22.7</td>
-                <td>21.1</td>
+                <td class="col-m3sciqa-table">20.2</td>
+                <td class="col-m3sciqa-image" class="highlight">22.7</td>
+                <td class="col-m3sciqa-avg">21.1</td>
                 <!-- SciDQA -->
-                <td>60.2</td>
-                <td>60.6</td>
-                <td>61.8</td>
-                <td>60.5</td>
+                <td class="col-scidqa-table">60.2</td>
+                <td class="col-scidqa-image">60.6</td>
+                <td class="col-scidqa-formula">61.8</td>
+                <td class="col-scidqa-avg">60.5</td>
               </tr>
               <!-- DeepSeek-R1 -->
               <tr>
-                <td>DeepSeek-R1</td>
+                <td class="col-model">DeepSeek-R1</td>
                 <!-- AirQA-Real -->
-                <td>33.2</td>
-                <td>16.8</td>
-                <td>11.9</td>
-                <td>27.8</td>
-                <td>18.2</td>
-                <td>32.4</td>
+                <td class="col-airqa-text">33.2</td>
+                <td class="col-airqa-table">16.8</td>
+                <td class="col-airqa-image">11.9</td>
+                <td class="col-airqa-formula">27.8</td>
+                <td class="col-airqa-metadata">18.2</td>
+                <td class="col-airqa-avg">32.4</td>
                 <!-- M3SciQA -->
-                <td>19.0</td>
-                <td>13.7</td>
-                <td>17.4</td>
+                <td class="col-m3sciqa-table">19.0</td>
+                <td class="col-m3sciqa-image">13.7</td>
+                <td class="col-m3sciqa-avg">17.4</td>
                 <!-- SciDQA -->
-                <td class="highlight">64.3</td>
-                <td class="highlight">64.6</td>
-                <td class="highlight">63.9</td>
-                <td class="highlight">64.5</td>
+                <td class="col-scidqa-table" class="highlight">64.3</td>
+                <td class="col-scidqa-image" class="highlight">64.6</td>
+                <td class="col-scidqa-formula" class="highlight">63.9</td>
+                <td class="col-scidqa-avg" class="highlight">64.5</td>
               </tr>
             </tbody>
           </table>
