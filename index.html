@@ -1502,11 +1502,6 @@
           <img src="static/images/baseline.png" alt="Baselines Illustration" style="max-width:90%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:0.5em;">
           <div style="color:#555;font-size:0.98em;">Illustration of all baseline agent methods compared in the ablation study. </div>
         </div>
-        <ul style="margin-left:1.2em;">
-          <li><b>1)</b> Two-stage Neu-RAG outperforms Classic-RAG, and Hybrid-RAG achieves further gains by combining neural and symbolic retrieval.</li>
-          <li><b>2)</b> Iterative retrieval (multi-turn) is superior to two-stage (single-turn), as agents can explore and adaptively select the most relevant context.</li>
-          <li><b>3)</b> As the number of interactions increases, objective scores rise faster than subjective scores, indicating more rational answer generation.</li>
-        </ul>
         <p style="margin-top:0.5em;">The detailed results are shown in the table below.</p>
         <div>
           <div class="table-wrapper">
@@ -1543,6 +1538,11 @@
             </table>
           </div>
         </div>
+        <ul style="margin-left:1.2em;">
+          <li><b>1)</b> Two-stage Neu-RAG outperforms Classic-RAG, and Hybrid-RAG achieves further gains by combining neural and symbolic retrieval.</li>
+          <li><b>2)</b> Iterative retrieval (multi-turn) is superior to two-stage (single-turn), as agents can explore and adaptively select the most relevant context.</li>
+          <li><b>3)</b> As the number of interactions increases, objective scores rise faster than subjective scores, indicating more rational answer generation.</li>
+        </ul>
         <p style="margin-top:0.5em;">Overall, NeuSym-RAG (ours) surpasses all baselines, verifying the effectiveness of multi-view and hybrid retrieval strategies.</p>
       </div>
 
