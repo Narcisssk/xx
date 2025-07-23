@@ -1147,6 +1147,61 @@
           NeuSym-RAG implements instance-specific, execution-based evaluation through 18 carefully designed evaluation functions with optional parameters. These functions are categorized as either subjective or objective, depending on whether they involve judgment from LLMs. For more details about the evaluation framework and available metrics, please visit our <a href="https://github.com/X-LANCE/NeuSym-RAG/tree/main/evaluation" target="_blank">evaluation repository</a>.
         </md-block>
       </div>
+
+      <!-- Agent Demo Videos: Start -->
+      <div class="card" style="margin-top:2.5em;">
+        <h3 class="title is-4" style="margin-bottom:1em;">Agent Demo Cases</h3>
+        <div class="tabs is-toggle is-centered" id="agent-demo-tabs">
+          <ul>
+            <li class="is-active"><a data-video="agent-demo-1">单文档复杂问题</a></li>
+            <li><a data-video="agent-demo-2">论文检索型问题</a></li>
+            <li><a data-video="agent-demo-3">多文档问题</a></li>
+          </ul>
+        </div>
+        <div id="agent-demo-1" class="agent-demo-video is-active">
+          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;">
+            <source src="static/videos/example1.mp4" type="video/mp4">
+            您的浏览器不支持视频播放。
+          </video>
+          <div style="margin-top:0.7em;color:#444;font-size:1.05em;">案例1：智能体回答一个复杂的单文档问题，展示了多步推理与多模态信息的检索与整合。</div>
+        </div>
+        <div id="agent-demo-2" class="agent-demo-video" style="display:none;">
+          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;">
+            <source src="static/videos/example2.mp4" type="video/mp4">
+            您的浏览器不支持视频播放。
+          </video>
+          <div style="margin-top:0.7em;color:#444;font-size:1.05em;">案例2：智能体回答一个检索论文型问题，展示了跨文献检索与筛选的能力。</div>
+        </div>
+        <div id="agent-demo-3" class="agent-demo-video" style="display:none;">
+          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;">
+            <source src="static/videos/example3.mp4" type="video/mp4">
+            您的浏览器不支持视频播放。
+          </video>
+          <div style="margin-top:0.7em;color:#444;font-size:1.05em;">案例3：智能体回答一个涉及多文档的问题，体现了多源信息整合与推理。</div>
+        </div>
+      </div>
+      <script>
+        // Agent Demo Tabs
+        document.addEventListener('DOMContentLoaded', function() {
+          const demoTabs = document.querySelectorAll('#agent-demo-tabs li');
+          const demoVideos = document.querySelectorAll('.agent-demo-video');
+          demoTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+              demoTabs.forEach(t => t.classList.remove('is-active'));
+              tab.classList.add('is-active');
+              const target = tab.querySelector('a').getAttribute('data-video');
+              demoVideos.forEach(v => v.style.display = 'none');
+              demoVideos.forEach(v => v.classList.remove('is-active'));
+              const show = document.getElementById(target);
+              if (show) {
+                show.style.display = 'block';
+                show.classList.add('is-active');
+              }
+            });
+          });
+        });
+      </script>
+      <!-- Agent Demo Videos: End -->
     </div>
   </section>
 
