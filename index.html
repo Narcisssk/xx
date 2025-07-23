@@ -1607,7 +1607,8 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">Citation</h2>
-      <pre><code>@inproceedings{cao-etal-2025-neusym,
+      <button id="copy-bibtex-btn" style="margin-bottom:10px;float:right;" class="button is-small is-link">Copy</button>
+      <pre id="bibtex-pre" style="max-height:180px;overflow:auto;background:#f8f8f8;border-radius:6px;padding:1em 1.2em 1em 1em;font-size:0.97em;"><code>@inproceedings{cao-etal-2025-neusym,
     title = "{N}eu{S}ym-{RAG}: Hybrid Neural Symbolic Retrieval with Multiview Structuring for {PDF} Question Answering",
     author = "Cao, Ruisheng  and
       Zhang, Hanchong  and
@@ -1634,6 +1635,21 @@
     ISBN = "979-8-89176-251-0"
 }
 </code></pre>
+      <script>
+        document.getElementById('copy-bibtex-btn').onclick = function() {
+          const bibtex = document.getElementById('bibtex-pre').innerText;
+          navigator.clipboard.writeText(bibtex).then(function() {
+            const btn = document.getElementById('copy-bibtex-btn');
+            const old = btn.textContent;
+            btn.textContent = 'Copied!';
+            btn.classList.add('is-success');
+            setTimeout(function(){
+              btn.textContent = old;
+              btn.classList.remove('is-success');
+            }, 1200);
+          });
+        };
+      </script>
     </div>
   </section>
 
