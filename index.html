@@ -1054,20 +1054,19 @@
               <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #bfc8c3;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
                 <div style="font-family:'Noto Sans',sans-serif;font-size:1.04em;font-weight:600;color:#2d2d2d;margin-top:0.2em;margin-bottom:0.3em;">RetrieveFromDatabase</div>
                 <div style="font-family:'Noto Sans',sans-serif;font-size:1em;color:#3a3a3a;margin-bottom:0.7em;">Generate an SQL query to retrieve the desired information from the DuckDB database.</div>
-                  <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
+                <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "RetrieveFromDatabase",
   "parameters": {
     "sql": "SELECT ..." // str, required
   }
 }</code></pre>
-                </div>
               </div>
             </div>
             <div class="column is-6">
               <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #bfc2cc;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
                 <div style="font-family:'Noto Sans',sans-serif;font-size:1.04em;font-weight:600;color:#2d2d2d;margin-top:0.2em;margin-bottom:0.3em;">RetrieveFromVectorstore</div>
                 <div style="font-family:'Noto Sans',sans-serif;font-size:1em;color:#3a3a3a;margin-bottom:0.7em;">Given a query text, retrieve relevant context from the Milvus vectorstore.</div>
-                  <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
+                <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "RetrieveFromVectorstore",
   "parameters": {
     "query": "...",           // str, required
@@ -1078,27 +1077,25 @@
     "limit": 5                 // int, optional
   }
 }</code></pre>
-                </div>
               </div>
             </div>
             <div class="column is-6">
               <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #c3bfc8;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
                 <div style="font-family:'Noto Sans',sans-serif;font-size:1.04em;font-weight:600;color:#2d2d2d;margin-top:0.2em;margin-bottom:0.3em;">CalculateExpr</div>
                 <div style="font-family:'Noto Sans',sans-serif;font-size:1em;color:#3a3a3a;margin-bottom:0.7em;">Calculate the expression and return the result.</div>
-                  <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
+                <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "CalculateExpr",
   "parameters": {
     "expr": "2 + 3 * 4" // str, required
   }
 }</code></pre>
-                </div>
               </div>
             </div>
             <div class="column is-6">
               <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #bfc3c8;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
                 <div style="font-family:'Noto Sans',sans-serif;font-size:1.04em;font-weight:600;color:#2d2d2d;margin-top:0.2em;margin-bottom:0.3em;">ViewImage</div>
                 <div style="font-family:'Noto Sans',sans-serif;font-size:1em;color:#3a3a3a;margin-bottom:0.7em;">Retrieve the visual information of the paper by specifying paper id, page number, and optional bounding box.</div>
-                  <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
+                <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "ViewImage",
   "parameters": {
     "paper_id": "...",         // str, required
@@ -1106,22 +1103,21 @@
     "bounding_box": []          // List[float], optional
   }
 }</code></pre>
-                </div>
               </div>
             </div>
             <div class="column is-6">
               <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #c8bfbf;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
                 <div style="font-family:'Noto Sans',sans-serif;font-size:1.04em;font-weight:600;color:#2d2d2d;margin-top:0.2em;margin-bottom:0.3em;">GenerateAnswer</div>
                 <div style="font-family:'Noto Sans',sans-serif;font-size:1em;color:#3a3a3a;margin-bottom:0.7em;">When you take this action, the retrieved results suffice to answer the user question.</div>
-                  <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
+                <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "GenerateAnswer",
   "parameters": {
     "answer": ... // Any, required
   }
 }</code></pre>
-                </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>
