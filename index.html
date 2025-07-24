@@ -665,7 +665,7 @@
         max-height: 300px;
       }
     }
-  </style>
+</style>
   <style>
     .field-tag {
       display: inline-block;
@@ -817,31 +817,31 @@
             <h1 class="title is-1 publication-title">
               NeuSym-RAG: Hybrid Neural Symbolic Retrieval with Multiview Structuring for PDF Question Answering
             </h1>
-<div class="is-size-5 publication-authors">
-  <span class="author-block">
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
     <a href="https://rhythmcao.github.io">Ruisheng Cao</a><sup>1,2</sup>,</span>
-  <span class="author-block">
+              <span class="author-block">
     <a href="https://scholar.google.com/citations?user=4xNsDNgAAAAJ&hl=en">Hanchong Zhang</a><sup>1,2</sup>,</span>
-  <span class="author-block">
+              <span class="author-block">
     <a href="https://github.com/htc981">Tiancheng Huang</a><sup>1,2</sup>,</span>
-  <span class="author-block">
+              <span class="author-block">
     <a href="https://github.com/Narcisssk">Zhangyi Kang</a><sup>1,2</sup>,</span>
-  <span class="author-block">
+              <span class="author-block">
     <a href="https://github.com/YuuXiin">Yuxin Zhang</a><sup>1,2</sup>,</span>
-  <br>
-  <span class="author-block">
+              <br>
+              <span class="author-block">
     <a href="https://scholar.google.com/citations?user=XCIZlWIAAAAJ&hl=en">Liangtai Sun</a><sup>1,2</sup>,</span>
-  <span class="author-block">
+              <span class="author-block">
     <a href="https://github.com/daqige">Hanqi Li</a><sup>1,2,4</sup>,</span>
-  <span class="author-block">
+              <span class="author-block">
     <a href="https://github.com/miaoyuxun">Yuxun Miao</a><sup>1,2</sup>,</span>
-  <span class="author-block">
+              <span class="author-block">
     Shuai Fan<sup>2,3</sup>,</span>
-  <span class="author-block">
+              <span class="author-block">
     <a href="https://coai-sjtu.github.io/">Lu Chen</a><sup>1,2,4</sup>,</span>
-  <span class="author-block">
+              <span class="author-block">
     <a href="https://x-lance.github.io/kaiyu/">Kai Yu</a><sup>1,2,4</sup></span>
-</div>
+            </div>
 
 <div class="is-size-5 publication-authors mt-3">
   <span class="author-block"><sup>1</sup>MoE Key Lab of Artificial Intelligence, Shanghai, China<br>
@@ -849,7 +849,7 @@
   <span class="author-block"><sup>2</sup>Jiangsu Key Lab of Language Computing, Suzhou, China</span><br>
   <span class="author-block"><sup>3</sup>AISpeech Co., Ltd., Suzhou, China</span>  <span class="author-block" style="margin-left:2em;"><sup>4</sup>Suzhou Laboratory, Suzhou, China</span>
   <div style="margin-top:0.2em; font-family:'Noto Sans',sans-serif;color:#4a4a4a;font-size:1em;"><b>Email to:</b> {htc981,narcisss,chenlusz,kai.yu}@sjtu.edu.cn</div>
-</div>
+            </div>
 
 
             <div class="column has-text-centered">
@@ -1037,11 +1037,18 @@
           </p>
         </div>
   
-
+  
         <div id="interaction" class="method-content">
           <p>
             The iterative agent interaction process enables dynamic interaction with both the database and vectorstore through five parameterized actions:
           </p>
+          <ul>
+            <li><strong>RetrieveFromVectorstore:</strong> Dynamic neural retrieval with customizable parameters (query, collection, filters) for semantic search</li>
+            <li><strong>RetrieveFromDatabase:</strong> Symbolic retrieval through SQL queries, enabling precise structured data access</li>
+            <li><strong>ViewImage:</strong> Extracting and analyzing specific regions of PDF pages using bounding box coordinates</li>
+            <li><strong>CalculateExpr:</strong> Mathematical computation for handling numerical questions and reducing hallucination</li>
+            <li><strong>GenerateAnswer:</strong> Terminal action that produces the final answer when sufficient context is gathered</li>
+          </ul>
           <div class="columns is-multiline" style="margin-top:2em;">
             <div class="column is-6">
               <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #bfc8c3;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
@@ -1115,8 +1122,8 @@
                 </div>
               </div>
             </div>
-          </div>
         </div>
+      </div>
     </div>
   </section>
 
