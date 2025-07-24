@@ -1092,7 +1092,7 @@
               </div>
             </div>
             <div class="column is-6">
-              <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #bfc7c8;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+              <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #bfc3c8;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
                 <div style="font-family:'Lato', Arial,sans-serif;font-size:1.04em;font-weight:600;color:#2d2d2d;margin-top:0.2em;margin-bottom:0.3em;">ViewImage</div>
                 <div style="font-family:'Lato', Arial,sans-serif;font-size:1em;color:#3a3a3a;margin-bottom:0.7em;">Retrieve the visual information of the paper by specifying paper id, page number, and optional bounding box.</div>
                 <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
@@ -1106,7 +1106,7 @@
               </div>
             </div>
             <div class="column is-6">
-              <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #c8c3bf;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+              <div style="height:100%;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);border-left:7px solid #c8bfbf;margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
                 <div style="font-family:'Lato', Arial,sans-serif;font-size:1.04em;font-weight:600;color:#2d2d2d;margin-top:0.2em;margin-bottom:0.3em;">GenerateAnswer</div>
                 <div style="font-family:'Lato', Arial,sans-serif;font-size:1em;color:#3a3a3a;margin-bottom:0.7em;">When you take this action, the retrieved results suffice to answer the user question.</div>
                 <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
@@ -1136,12 +1136,13 @@
         <ul>
           <li class="is-active"><a data-tab="Data Format">Data Format</a></li>
           <li><a data-tab="Prompt">Prompt</a></li>
-          <li><a data-tab="Interaction">Interaction</a></li>
-          <li><a data-tab="Evaluation">Evaluation</a></li>
+          <li><a data-tab="Example1">Example 1</a></li>
+          <li><a data-tab="Example2">Example 2</a></li>
+          <li><a data-tab="Example3">Example 3</a></li>
         </ul>
       </div>
 
-      <div class="lib_examples" title="Data Format">
+      <div class="lib_examples" title="Data Format" style="display:block;">
         <md-block>
           <b>The data format of AirQA-Real is as follows:</b>
           <div>
@@ -1187,21 +1188,21 @@
         </md-block>
       </div>
 
-      <div class="lib_examples" title="Prompt">
+      <div class="lib_examples" title="Prompt" style="display:none;">
         <md-block>
-          <div class="prompt-block">
-            <span class="prompt-tag">[System Prompt]</span>
-            <div class="prompt-desc">Defines the agent's role and describes the task to tackle, clarifying the context of the task.</div>
+          <div class="prompt-block" style="border-left:7px solid #bfc2cc;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+            <span class="prompt-tag" style="background:#bfc2cc;color:#fff;">[System Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#3a3a3a;">Defines the agent's role and describes the task to tackle, clarifying the context of the task.</div>
             <div class="prompt-content">You are an intelligent agent with expertise in retrieving useful context from both the DuckDB database and the Milvus vectorstore through SQL execution and similarity search and answering user questions. You will be given a natural language question concerning PDF files, along with the schema of both the database and the vectorstore. Your ultimate goal is to answer the input question with pre-defined answer format. The DuckDB database contains all parsed content of raw PDF files, while the Milvus vectorstore encodes specific column cells from the database as vectors. You can predict executable actions, interact with the hybrid environment (including database and vectorstore) across multiple turns, and retrieve necessary context until you are confident in resolving the question.</div>
           </div>
-          <div class="prompt-block">
-            <span class="prompt-tag">[Action and Observation Space Prompt]</span>
-            <div class="prompt-desc">Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type.</div>
+          <div class="prompt-block" style="border-left:7px solid #bfc8c3;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+            <span class="prompt-tag" style="background:#bfc8c3;color:#fff;">[Action and Observation Space Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#3a3a3a;">Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type.</div>
             <div class="prompt-content">All allowable action types include ['RetrieveFromDatabase', 'RetrieveFromVectorstore', 'CalculateExpr', 'ViewImage', 'GenerateAnswer']. Here is the detailed specification in MARKDOWN format...</div>
           </div>
-          <div class="prompt-block">
-            <span class="prompt-tag">[Interaction Framework Prompt]</span>
-            <div class="prompt-desc">Outlines the main interaction procedure and template.</div>
+          <div class="prompt-block" style="border-left:7px solid #c3bfc8;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+            <span class="prompt-tag" style="background:#c3bfc8;color:#fff;">[Interaction Framework Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#3a3a3a;">Outlines the main interaction procedure and template.</div>
             <div class="prompt-content">The main interaction procedure proceeds like this:
               <br>
               [Thought]: ... reasoning process, why to take this action ...
@@ -1212,94 +1213,63 @@
               <br>
               In general, the main interaction loop consists of an interleaved of triplets ([Thought], [Action], [Observation]), except the last GenerateAnswer action which does not have [Observation]. You need to predict the [Thought] followed by the [Action] for each turn, and we will execute your action in the environment and provide the [Observation] for the previous action.</div>
           </div>
-          <div class="prompt-block">
-            <span class="prompt-tag">[Hint Prompt]</span>
-            <div class="prompt-desc">Provides hints or suggestions to help the agent refine its planning and reasoning process.</div>
+          <div class="prompt-block" style="border-left:7px solid #bfc3c8;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+            <span class="prompt-tag" style="background:#bfc3c8;color:#fff;">[Hint Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#3a3a3a;">Provides hints or suggestions to help the agent refine its planning and reasoning process.</div>
             <div class="prompt-content">1. Explore multiple retrieval strategies. For example... 2. Combine both structured and unstructured data. Concretely... 3. Iterate and refine... 4. Ensure confidence. That is, only make a final decision when you are confident that the retrieved information fully addresses the user's query. Remember that, for each question, you only have 20 interaction turns at most. Now, let's start!</div>
           </div>
-          <div class="prompt-block">
-            <span class="prompt-tag">[Task Prompt]</span>
-            <div class="prompt-desc">Defines the task input, including the input question, required answer format, and relevant schemas.</div>
+          <div class="prompt-block" style="border-left:7px solid #c8bfbf;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
+            <span class="prompt-tag" style="background:#c8bfbf;color:#fff;">[Task Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#3a3a3a;">Defines the task input, including the input question, required answer format, and relevant schemas.</div>
             <div class="prompt-content">[Question], [Answer Format], [Anchor PDF], [Reference PDF], [Conference], [Database Schema], [Vectorstore Schema]</div>
           </div>
         </md-block>
       </div>
 
-      <div class="lib_examples" title="Interaction">
+      <div class="lib_examples" title="Example1" style="display:none;">
         <md-block>
-          <ul>
-            <li>The agent receives a question and relevant context (schemas, PDFs, etc.).</li>
-            <li>It enters a loop of <b>Thought → Action → Observation</b>:</li>
-            <ul>
-              <li><b>Thought</b>: The agent reasons about what to do next.</li>
-              <li><b>Action</b>: The agent issues a retrieval or answer-generation command.</li>
-              <li><b>Observation</b>: The environment returns results or feedback.</li>
-            </ul>
-            <li>This loop continues, possibly across multiple turns, until the agent is confident enough to output the final answer using <b>GenerateAnswer</b>.</li>
-          </ul>
+          <b>Example 1:</b> <br>
+          <span style="color:#3a3a3a;font-size:1em;">(请在此处插入Example 1的具体内容或交互演示)</span>
+        </md-block>
+      </div>
+      <div class="lib_examples" title="Example2" style="display:none;">
+        <md-block>
+          <b>Example 2:</b> <br>
+          <span style="color:#3a3a3a;font-size:1em;">(请在此处插入Example 2的具体内容或交互演示)</span>
+        </md-block>
+      </div>
+      <div class="lib_examples" title="Example3" style="display:none;">
+        <md-block>
+          <b>Example 3:</b> <br>
+          <span style="color:#3a3a3a;font-size:1em;">(请在此处插入Example 3的具体内容或交互演示)</span>
         </md-block>
       </div>
 
-      <div class="lib_examples" title="Evaluation">
-        <md-block>
-          NeuSym-RAG implements instance-specific, execution-based evaluation through 18 carefully designed evaluation functions with optional parameters. These functions are categorized as either subjective or objective, depending on whether they involve judgment from LLMs. For more details about the evaluation framework and available metrics, please visit our <a href="https://github.com/X-LANCE/NeuSym-RAG/tree/main/evaluation" target="_blank">evaluation repository</a>.
-        </md-block>
-      </div>
-
-      <!-- Agent Demo Videos: Start -->
-      <div style="margin-top:2.5em;">
-        <div style="margin-bottom:1.2em;font-size:1rem;color:#4a4a4a;">Below are three simulated agent demonstration cases, each showing how the agent solves a different type of question through multi-step reasoning and retrieval. For more examples, please refer to the <a href="explorer.html" target="_blank"><b>Task Viewer</b></a> page.</div>
-        <div class="tabs is-toggle is-centered" id="agent-demo-tabs" style="font-size:1rem;font-family:'Noto Sans',sans-serif;">
-          <ul>
-            <li class="is-active"><a data-video="agent-demo-1">Example 1</a></li>
-            <li><a data-video="agent-demo-2">Example 2</a></li>
-            <li><a data-video="agent-demo-3">Example 3</a></li>
-          </ul>
-        </div>
-        <div id="agent-demo-1" class="agent-demo-video is-active">
-          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;">
-            <source src="static/videos/example1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div style="margin-top:0.7em;font-size:1rem;font-family:'Noto Sans',sans-serif;color:#4a4a4a;">Case 1: The agent answers a complex single-document question, demonstrating multi-step reasoning and integration of multimodal information.</div>
-        </div>
-        <div id="agent-demo-2" class="agent-demo-video" style="display:none;">
-          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;">
-            <source src="static/videos/example2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div style="margin-top:0.7em;font-size:1rem;font-family:'Noto Sans',sans-serif;color:#4a4a4a;">Case 2: The agent answers a paper retrieval question, showing its ability to search and filter across multiple papers.</div>
-        </div>
-        <div id="agent-demo-3" class="agent-demo-video" style="display:none;">
-          <video controls style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);background:#000;">
-            <source src="static/videos/example3.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div style="margin-top:0.7em;font-size:1rem;font-family:'Noto Sans',sans-serif;color:#4a4a4a;">Case 3: The agent answers a multi-document question, highlighting its ability to integrate and reason over information from multiple sources.</div>
-        </div>
-      </div>
       <script>
-        // Agent Demo Tabs
+        // Task Demonstration Tabs
         document.addEventListener('DOMContentLoaded', function() {
-          const demoTabs = document.querySelectorAll('#agent-demo-tabs li');
-          const demoVideos = document.querySelectorAll('.agent-demo-video');
-          demoTabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-              demoTabs.forEach(t => t.classList.remove('is-active'));
-              tab.classList.add('is-active');
-              const target = tab.querySelector('a').getAttribute('data-video');
-              demoVideos.forEach(v => v.style.display = 'none');
-              demoVideos.forEach(v => v.classList.remove('is-active'));
-              const show = document.getElementById(target);
-              if (show) {
-                show.style.display = 'block';
-                show.classList.add('is-active');
+          const tabLinks = document.querySelectorAll('.tabs a[data-tab]');
+          const tabContents = document.querySelectorAll('.lib_examples');
+          tabLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+              e.preventDefault();
+              tabLinks.forEach(l => l.parentElement.classList.remove('is-active'));
+              link.parentElement.classList.add('is-active');
+              tabContents.forEach(content => content.style.display = 'none');
+              const targetId = link.getAttribute('data-tab');
+              const targetContent = document.querySelector(`.lib_examples[title="${targetId}"]`);
+              if (targetContent) {
+                targetContent.style.display = 'block';
               }
             });
           });
+          // 默认显示Example1
+          const defaultTab = document.querySelector('.tabs a[data-tab="Example1"]');
+          if (defaultTab) {
+            defaultTab.click();
+          }
         });
       </script>
-      <!-- Agent Demo Videos: End -->
     </div>
   </section>
 
