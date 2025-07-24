@@ -762,6 +762,14 @@
       background: #fff;
       z-index: 2;
     }
+    /*在表头第一行的第一列的右侧添加一个空格*/
+    .results-table thead tr:first-child th[rowspan]:first-child {
+      margin-right: 1em;
+    }
+    /*在数据区的第一列的右侧添加一个空格*/
+    .results-table tbody td:first-child {
+      margin-right: 1em;
+    }
   </style>
   <style>
     body {
@@ -859,7 +867,7 @@
     X-LANCE Lab, School of Computer Science, Shanghai Jiao Tong University, Shanghai, China</span><br>
   <span class="author-block"><sup>2</sup>Jiangsu Key Lab of Language Computing, Suzhou, China</span><br>
   <span class="author-block"><sup>3</sup>AISpeech Co., Ltd., Suzhou, China</span>  <span class="author-block" style="margin-left:2em;"><sup>4</sup>Suzhou Laboratory, Suzhou, China</span>
-  <div style="margin-top:0.2em; font-family:'Noto Sans',sans-serif;color:#4a4a4a;font-size:1em;"><b>Email to:</b> {htc981,narcisss,chenlusz,kai.yu}@sjtu.edu.cn</div>
+  <div style="margin-top:0.2em; font-family:'Lato',Arial,sans-serif;color:#4a4a4a;font-size:1em;"><b>Email to:</b> {htc981,narcisss,chenlusz,kai.yu}@sjtu.edu.cn</div>
             </div>
 
 
@@ -1372,7 +1380,7 @@
       <div class="content has-text-justified" style="margin-bottom: 1em;">
         <h3 class="title is-4">Main Results</h3>
         <p>
-          <b>Main Results.</b> We evaluate NeuSym-RAG and Classic-RAG on three full-PDF QA datasets using various LLMs. NeuSym-RAG consistently outperforms Classic-RAG across all datasets and models. Notably:
+          We evaluate NeuSym-RAG and Classic-RAG on three full-PDF QA datasets using various LLMs. NeuSym-RAG consistently outperforms Classic-RAG across all datasets and models. Notably:
         </p>
         <div>
           <div class="table-wrapper">
@@ -1639,7 +1647,7 @@
       <div class="content has-text-justified" style="margin:2.5em 0 1em 0;">
         <h3 class="title is-4">Method Ablation</h3>
         <p>
-          <b>Method Ablation.</b> To further analyze the contribution of each component, we compare NeuSym-RAG with a series of structured agent baselines. The illustration below summarizes all baselines compared in the ablation study, differing in retrieval paradigm, multi-view support, and whether iterative interaction is allowed.
+          To further analyze the contribution of each component, we compare NeuSym-RAG with a series of structured agent baselines. The illustration below summarizes all baselines compared in the ablation study, differing in retrieval paradigm, multi-view support, and whether iterative interaction is allowed.
         </p>
         <div style="text-align:center;margin:1em 0 1.5em 0;">
           <img src="static/images/baseline.png" alt="Baselines Illustration" style="max-width:90%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:0.5em;">
