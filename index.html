@@ -1191,18 +1191,18 @@
       <div class="lib_examples" title="Prompt" style="display:none;">
         <md-block>
           <div class="prompt-block" style="border-left:7px solid #bfc2cc;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
-            <span class="prompt-tag" style="background:#bfc2cc;color:#fff;">[System Prompt]</span>
-            <div class="prompt-desc" style="font-size:1em;color:#3a3a3a;">Defines the agent's role and describes the task to tackle, clarifying the context of the task.</div>
+            <span class="prompt-tag" style="background:#bfc2cc;color:#6b6e7a;">[System Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#888;">Defines the agent's role and describes the task to tackle, clarifying the context of the task.</div>
             <div class="prompt-content">You are an intelligent agent with expertise in retrieving useful context from both the DuckDB database and the Milvus vectorstore through SQL execution and similarity search and answering user questions. You will be given a natural language question concerning PDF files, along with the schema of both the database and the vectorstore. Your ultimate goal is to answer the input question with pre-defined answer format. The DuckDB database contains all parsed content of raw PDF files, while the Milvus vectorstore encodes specific column cells from the database as vectors. You can predict executable actions, interact with the hybrid environment (including database and vectorstore) across multiple turns, and retrieve necessary context until you are confident in resolving the question.</div>
           </div>
           <div class="prompt-block" style="border-left:7px solid #bfc8c3;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
-            <span class="prompt-tag" style="background:#bfc8c3;color:#fff;">[Action and Observation Space Prompt]</span>
-            <div class="prompt-desc" style="font-size:1em;color:#3a3a3a;">Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type.</div>
+            <span class="prompt-tag" style="background:#bfc8c3;color:#6b7a6b;">[Action and Observation Space Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#888;">Defines the list of all feasible actions that the agent can take, including the action description, observation space, syntax and parameters, and use cases for each type.</div>
             <div class="prompt-content">All allowable action types include ['RetrieveFromDatabase', 'RetrieveFromVectorstore', 'CalculateExpr', 'ViewImage', 'GenerateAnswer']. Here is the detailed specification in MARKDOWN format...</div>
           </div>
           <div class="prompt-block" style="border-left:7px solid #c3bfc8;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
-            <span class="prompt-tag" style="background:#c3bfc8;color:#fff;">[Interaction Framework Prompt]</span>
-            <div class="prompt-desc" style="font-size:1em;color:#3a3a3a;">Outlines the main interaction procedure and template.</div>
+            <span class="prompt-tag" style="background:#c3bfc8;color:#6b6b7a;">[Interaction Framework Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#888;">Outlines the main interaction procedure and template.</div>
             <div class="prompt-content">The main interaction procedure proceeds like this:
               <br>
               [Thought]: ... reasoning process, why to take this action ...
@@ -1214,13 +1214,13 @@
               In general, the main interaction loop consists of an interleaved of triplets ([Thought], [Action], [Observation]), except the last GenerateAnswer action which does not have [Observation]. You need to predict the [Thought] followed by the [Action] for each turn, and we will execute your action in the environment and provide the [Observation] for the previous action.</div>
           </div>
           <div class="prompt-block" style="border-left:7px solid #bfc3c8;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
-            <span class="prompt-tag" style="background:#bfc3c8;color:#fff;">[Hint Prompt]</span>
-            <div class="prompt-desc" style="font-size:1em;color:#3a3a3a;">Provides hints or suggestions to help the agent refine its planning and reasoning process.</div>
+            <span class="prompt-tag" style="background:#bfc3c8;color:#6b747a;">[Hint Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#888;">Provides hints or suggestions to help the agent refine its planning and reasoning process.</div>
             <div class="prompt-content">1. Explore multiple retrieval strategies. For example... 2. Combine both structured and unstructured data. Concretely... 3. Iterate and refine... 4. Ensure confidence. That is, only make a final decision when you are confident that the retrieved information fully addresses the user's query. Remember that, for each question, you only have 20 interaction turns at most. Now, let's start!</div>
           </div>
           <div class="prompt-block" style="border-left:7px solid #c8bfbf;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(60,60,60,0.07);margin-bottom:1.2em;padding:0.5em 1.2em 1.2em 1.2em;">
-            <span class="prompt-tag" style="background:#c8bfbf;color:#fff;">[Task Prompt]</span>
-            <div class="prompt-desc" style="font-size:1em;color:#3a3a3a;">Defines the task input, including the input question, required answer format, and relevant schemas.</div>
+            <span class="prompt-tag" style="background:#c8bfbf;color:#7a6b6b;">[Task Prompt]</span>
+            <div class="prompt-desc" style="font-size:1em;color:#888;">Defines the task input, including the input question, required answer format, and relevant schemas.</div>
             <div class="prompt-content">[Question], [Answer Format], [Anchor PDF], [Reference PDF], [Conference], [Database Schema], [Vectorstore Schema]</div>
           </div>
         </md-block>
