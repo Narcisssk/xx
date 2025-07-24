@@ -24,6 +24,9 @@
             max-width: 100%;
             box-sizing: border-box;
             border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(50,60,100,0.07);
+            border: none;
         }
         .category {
             background-color: #e9ecf3;
@@ -83,8 +86,8 @@
             font-size: 1rem;
         }
         .highlight-quote {
-            background-color: #f4f6fa;
-            border-left: 4px solid #3b6ea8;
+            background-color: #f7faff;
+            border-left: 4px solid #3273dc;
             padding: 10px 15px;
             margin: 15px 0;
             color: #333;
@@ -93,7 +96,7 @@
             font-weight: bold;
             margin-top: 0;
             margin-bottom: 10px;
-            color: #3b6ea8;
+            color: #3273dc;
         }
         .highlight-quote-content {
             font-style: italic;
@@ -116,14 +119,17 @@
         .tag-button {
             margin: 2px;
             padding: 5px 10px;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #dbeafe;
             border-radius: 15px;
-            background: #f4f6fa;
+            background: #eaf2fd;
+            color: #3273dc;
+            font-weight: 500;
             cursor: pointer;
         }
         .tag-button.selected {
             background: #3273dc;
-            color: white;
+            color: #fff;
+            border: 1px solid #3273dc;
         }
         .trajectory-turn {
             margin: 20px 0;
@@ -151,11 +157,11 @@
         }
         .status-tag.success {
             background-color: #3ba878;
-            color: white;
+            color: #fff;
         }
         .status-tag.failure {
             background-color: #d9534f;
-            color: white;
+            color: #fff;
         }
         .task-tag {
             display: inline-block;
@@ -167,16 +173,16 @@
             border: 1px solid #e5e7eb;
         }
         .task-tag.task-type {
-            background-color: #3b6ea8;
-            color: white;
+            background-color: #3273dc;
+            color: #fff;
         }
         .task-tag.content-type {
-            background-color: #7a8ba7;
-            color: white;
+            background-color: #e2c9a7;
+            color: #3273dc;
         }
         .task-tag.question-type {
-            background-color: #e2c9a7;
-            color: #363636;
+            background-color: #7a8ba7;
+            color: #fff;
         }
         .task-id-display {
             font-family: monospace;
@@ -191,7 +197,7 @@
             overflow: auto;
             padding: 10px;
             margin: 8px 0;
-            background: #f4f6fa;
+            background: #f7faff;
             border-radius: 4px;
             border: 1px solid #e5e7eb;
             font-size: 0.98em;
@@ -212,13 +218,13 @@
             min-width: fit-content;
         }
         .observation-table th, .observation-table td { 
-            border: 1px solid #e5e7eb; 
+            border: 1px solid #dbeafe; 
             padding: 4px 8px; 
             text-align: left; 
             max-width: 320px; 
             word-break: break-all; 
         }
-        .observation-table th { background: #e9ecf3; font-weight: 600; }
+        .observation-table th { background: #eaf2fd; font-weight: 600; }
         .observation-table-outer { max-width: 100%; max-height: 320px; overflow-y: auto; margin-bottom: 6px; }
         .observation-extra { margin-top: 8px; color: #555; font-size: 0.96em; background: #e9ecf3; border-radius: 4px; padding: 6px 10px; }
     </style>
@@ -330,7 +336,7 @@
     <section class="section">
         <div class="container is-fluid explorer-main-container" style="padding-left:32px; padding-right:32px;">
             <!-- 上下布局：Task Explorer 在上，Task Details 在下 -->
-            <div class="box explorer-panel" style="margin-bottom: 1rem; background:#f4f6fa; border:1px solid #e5e7eb; box-shadow:none;">
+            <div class="box explorer-panel" style="margin-bottom: 0.5rem; background:#fff; box-shadow:0 2px 8px rgba(50,60,100,0.07); border:none;">
                 <h1 class="title is-4">Task Explorer</h1>
                 <p class="subtitle is-6">Filter and explore tasks</p>
                 <div class="field">
@@ -360,7 +366,7 @@
                 </div>
                 <div class="field is-grouped">
                     <p class="control" style="width:100%;">
-                        <button class="button is-primary is-fullwidth" id="filterButton" style="display:flex;align-items:center;justify-content:center;">
+                        <button class="button is-primary is-fullwidth" id="filterButton" style="display:flex;align-items:center;justify-content:center;background:#3273dc;border:none;">
                             <span class="icon">
                                 <i class="fas fa-filter"></i>
                             </span>
@@ -377,7 +383,7 @@
                     <ul id="selectedFiltersList"></ul>
                 </div>
             </div>
-            <div id="resultsSection" class="box explorer-panel" style="display: none; background:#f4f6fa; border:1px solid #e5e7eb; box-shadow:none;">
+            <div id="resultsSection" class="box explorer-panel" style="display: none; background:#fff; box-shadow:0 2px 8px rgba(50,60,100,0.07); border:none;">
                 <h2 class="title is-4">Task Details</h2>
                 <div class="content">
                     <p><strong>Task ID:</strong> <span id="taskId"></span></p>
