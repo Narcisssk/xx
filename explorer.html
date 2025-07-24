@@ -16,9 +16,17 @@
             height: 50vh;
             overflow-y: scroll;
         }
-
+        .explorer-main-container {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .explorer-panel {
+            max-width: 100%;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
         .category {
-            background-color: #eee;
+            background-color: #e9ecf3;
             color: #444;
             cursor: pointer;
             padding: 10px;
@@ -29,24 +37,19 @@
             font-size: 15px;
             transition: 0.4s;
         }
-
         .task-list {
             border: none;
         }
-
         .task-list:hover {
-            background-color: #f2f0f0;
+            background-color: #f4f6fa;
         }
-
         .active,
         .category:hover {
-            background-color: #ccc;
+            background-color: #e5e7eb;
         }
-
         .task-active {
-            background-color: #f3f0f0;
+            background-color: #e5e7eb;
         }
-
         .category:after {
             content: "\002B";
             color: #000000;
@@ -54,62 +57,53 @@
             float: right;
             margin-left: 5px;
         }
-
         .active:after {
             content: "\2212";
         }
-
         .panel {
             padding: 0 18px;
-            background-color: white;
+            background-color: #fff;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.2s ease-out;
         }
-
         .categorycontainer {
             max-height: 180vh;
             overflow-y: scroll;
         }
-
         .taskid-container {
             display: flex;
             align-items: center;
         }
-
         .taskid-label {
             margin-left: 10px;
             padding: 5px 10px;
-            background-color: #f2f2f2;
+            background-color: #e5e7eb;
             border-radius: 4px;
             font-size: 1rem;
         }
-
         .highlight-quote {
-            background-color: #f9f9f9;
-            border-left: 4px solid #007BFF;
+            background-color: #f4f6fa;
+            border-left: 4px solid #3b6ea8;
             padding: 10px 15px;
             margin: 15px 0;
             color: #333;
         }
-
         .highlight-quote-title {
             font-weight: bold;
             margin-top: 0;
             margin-bottom: 10px;
-            color: #007BFF;
+            color: #3b6ea8;
         }
-
         .highlight-quote-content {
             font-style: italic;
             max-height: 180px;
             overflow: auto;
         }
-
         .tag-container {
             margin: 10px 0;
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #e5e7eb;
             border-radius: 4px;
         }
         .tag-group {
@@ -122,9 +116,9 @@
         .tag-button {
             margin: 2px;
             padding: 5px 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #e5e7eb;
             border-radius: 15px;
-            background: #f5f5f5;
+            background: #f4f6fa;
             cursor: pointer;
         }
         .tag-button.selected {
@@ -134,9 +128,9 @@
         .trajectory-turn {
             margin: 20px 0;
             padding: 15px;
-            background: #f8f9fa;
+            background: #f4f6fa;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: none;
         }
         .turn-header {
             font-weight: bold;
@@ -156,11 +150,11 @@
             margin: 5px;
         }
         .status-tag.success {
-            background-color: #48c774;
+            background-color: #3ba878;
             color: white;
         }
         .status-tag.failure {
-            background-color: #f14668;
+            background-color: #d9534f;
             color: white;
         }
         .task-tag {
@@ -169,34 +163,27 @@
             border-radius: 12px;
             margin: 2px;
             font-size: 0.9em;
-            background-color: #f5f5f5;
-            border: 1px solid #ddd;
+            background-color: #e9ecf3;
+            border: 1px solid #e5e7eb;
         }
         .task-tag.task-type {
-            background-color: #3273dc;
+            background-color: #3b6ea8;
             color: white;
         }
         .task-tag.content-type {
-            background-color: #00d1b2;
+            background-color: #7a8ba7;
             color: white;
         }
         .task-tag.question-type {
-            background-color: #ffdd57;
+            background-color: #e2c9a7;
             color: #363636;
-        }
-        .highlight-quote {
-            background-color: #f9f9f9;
-            border-left: 4px solid #007BFF;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 4px;
         }
         .task-id-display {
             font-family: monospace;
-            background-color: #f5f5f5;
+            background-color: #e9ecf3;
             padding: 5px 10px;
             border-radius: 4px;
-            border: 1px solid #ddd;
+            border: 1px solid #e5e7eb;
         }
         .observation-scrollbox {
             max-height: 240px;
@@ -204,9 +191,9 @@
             overflow: auto;
             padding: 10px;
             margin: 8px 0;
-            background: #f8f8f8;
+            background: #f4f6fa;
             border-radius: 4px;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #e5e7eb;
             font-size: 0.98em;
             white-space: pre-wrap;
         }
@@ -225,15 +212,15 @@
             min-width: fit-content;
         }
         .observation-table th, .observation-table td { 
-            border: 1px solid #e0e0e0; 
+            border: 1px solid #e5e7eb; 
             padding: 4px 8px; 
             text-align: left; 
             max-width: 320px; 
             word-break: break-all; 
         }
-        .observation-table th { background: #f5f7fa; font-weight: 600; }
+        .observation-table th { background: #e9ecf3; font-weight: 600; }
         .observation-table-outer { max-width: 100%; max-height: 320px; overflow-y: auto; margin-bottom: 6px; }
-        .observation-extra { margin-top: 8px; color: #555; font-size: 0.96em; background: #f8f8f8; border-radius: 4px; padding: 6px 10px; }
+        .observation-extra { margin-top: 8px; color: #555; font-size: 0.96em; background: #e9ecf3; border-radius: 4px; padding: 6px 10px; }
     </style>
 </head>
 
@@ -241,7 +228,7 @@
     <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 
     <section class="section is-max-desktop">
-        <div class="container is-fluid" style="max-width: 900px; margin: 0 auto;">
+        <div class="container is-fluid explorer-main-container" style="padding-left:32px; padding-right:32px;">
             <h2 class="title is-3" style="display: inline-block; vertical-align: middle;">NeuSym-RAG Task Explorer</h2>
             <div class="notification is-info">
                 <md-block>
@@ -341,9 +328,9 @@
     </script>
 
     <section class="section">
-        <div class="container is-fluid">
+        <div class="container is-fluid explorer-main-container" style="padding-left:32px; padding-right:32px;">
             <!-- 上下布局：Task Explorer 在上，Task Details 在下 -->
-            <div class="box" style="margin-bottom: 1rem; max-width: 1200px; margin-left: auto; margin-right: auto;">
+            <div class="box explorer-panel" style="margin-bottom: 1rem; background:#f4f6fa; border:1px solid #e5e7eb; box-shadow:none;">
                 <h1 class="title is-4">Task Explorer</h1>
                 <p class="subtitle is-6">Filter and explore tasks</p>
                 <div class="field">
@@ -390,7 +377,7 @@
                     <ul id="selectedFiltersList"></ul>
                 </div>
             </div>
-            <div id="resultsSection" class="box" style="display: none; max-width: 1200px; margin-left: auto; margin-right: auto;">
+            <div id="resultsSection" class="box explorer-panel" style="display: none; background:#f4f6fa; border:1px solid #e5e7eb; box-shadow:none;">
                 <h2 class="title is-4">Task Details</h2>
                 <div class="content">
                     <p><strong>Task ID:</strong> <span id="taskId"></span></p>
