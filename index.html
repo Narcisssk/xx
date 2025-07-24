@@ -1037,23 +1037,18 @@
           </p>
         </div>
   
-        // ... existing code ...
+
         <div id="interaction" class="method-content">
           <p>
             The iterative agent interaction process enables dynamic interaction with both the database and vectorstore through five parameterized actions:
           </p>
-          <ul>
-            <li><strong>RetrieveFromVectorstore:</strong> Dynamic neural retrieval with customizable parameters (query, collection, filters) for semantic search</li>
-            <li><strong>RetrieveFromDatabase:</strong> Symbolic retrieval through SQL queries, enabling precise structured data access</li>
-            <li><strong>ViewImage:</strong> Extracting and analyzing specific regions of PDF pages using bounding box coordinates</li>
-            <li><strong>CalculateExpr:</strong> Mathematical computation for handling numerical questions and reducing hallucination</li>
-            <li><strong>GenerateAnswer:</strong> Terminal action that produces the final answer when sufficient context is gathered</li>
-          </ul>
           <div class="columns is-multiline" style="margin-top:2em;">
             <div class="column is-6">
               <div class="card" style="height:100%;">
++               <header class="card-header" style="background: #f5f5f5; border-bottom: 1px solid #eee;">
++                 <p class="card-header-title" style="font-family:'Noto Sans',sans-serif;font-size:1.1em;">RetrieveFromDatabase</p>
++               </header>
                 <div class="card-content">
-                  <div class="title is-5" style="margin-bottom:0.2em;font-family:'Noto Sans',sans-serif;">RetrieveFromDatabase</div>
                   <div class="subtitle is-6" style="margin-bottom:0.7em;font-family:'Noto Sans',sans-serif;">Generate an SQL query to retrieve the desired information from the DuckDB database.</div>
                   <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "RetrieveFromDatabase",
@@ -1061,15 +1056,17 @@
     "sql": "SELECT ..." // str, required
   }
 }</code></pre>
-               </div>
-             </div>
-           </div>
-           <div class="column is-6">
-             <div class="card" style="height:100%;">
-               <div class="card-content">
-                 <div class="title is-5" style="margin-bottom:0.2em;font-family:'Noto Sans',sans-serif;">RetrieveFromVectorstore</div>
-                 <div class="subtitle is-6" style="margin-bottom:0.7em;font-family:'Noto Sans',sans-serif;">Given a query text, retrieve relevant context from the Milvus vectorstore.</div>
-                 <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="card" style="height:100%;">
++               <header class="card-header" style="background: #f5f5f5; border-bottom: 1px solid #eee;">
++                 <p class="card-header-title" style="font-family:'Noto Sans',sans-serif;font-size:1.1em;">RetrieveFromVectorstore</p>
++               </header>
+                <div class="card-content">
+                  <div class="subtitle is-6" style="margin-bottom:0.7em;font-family:'Noto Sans',sans-serif;">Given a query text, retrieve relevant context from the Milvus vectorstore.</div>
+                  <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "RetrieveFromVectorstore",
   "parameters": {
     "query": "...",           // str, required
@@ -1080,29 +1077,33 @@
     "limit": 5                 // int, optional
   }
 }</code></pre>
-               </div>
-             </div>
-           </div>
-           <div class="column is-6">
-             <div class="card" style="height:100%;">
-               <div class="card-content">
-                 <div class="title is-5" style="margin-bottom:0.2em;font-family:'Noto Sans',sans-serif;">CalculateExpr</div>
-                 <div class="subtitle is-6" style="margin-bottom:0.7em;font-family:'Noto Sans',sans-serif;">Calculate the expression and return the result.</div>
-                 <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="card" style="height:100%;">
++               <header class="card-header" style="background: #f5f5f5; border-bottom: 1px solid #eee;">
++                 <p class="card-header-title" style="font-family:'Noto Sans',sans-serif;font-size:1.1em;">CalculateExpr</p>
++               </header>
+                <div class="card-content">
+                  <div class="subtitle is-6" style="margin-bottom:0.7em;font-family:'Noto Sans',sans-serif;">Calculate the expression and return the result.</div>
+                  <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "CalculateExpr",
   "parameters": {
     "expr": "2 + 3 * 4" // str, required
   }
 }</code></pre>
-               </div>
-             </div>
-           </div>
-           <div class="column is-6">
-             <div class="card" style="height:100%;">
-               <div class="card-content">
-                 <div class="title is-5" style="margin-bottom:0.2em;font-family:'Noto Sans',sans-serif;">ViewImage</div>
-                 <div class="subtitle is-6" style="margin-bottom:0.7em;font-family:'Noto Sans',sans-serif;">Retrieve the visual information of the paper by specifying paper id, page number, and optional bounding box.</div>
-                 <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="card" style="height:100%;">
++               <header class="card-header" style="background: #f5f5f5; border-bottom: 1px solid #eee;">
++                 <p class="card-header-title" style="font-family:'Noto Sans',sans-serif;font-size:1.1em;">ViewImage</p>
++               </header>
+                <div class="card-content">
+                  <div class="subtitle is-6" style="margin-bottom:0.7em;font-family:'Noto Sans',sans-serif;">Retrieve the visual information of the paper by specifying paper id, page number, and optional bounding box.</div>
+                  <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "ViewImage",
   "parameters": {
     "paper_id": "...",         // str, required
@@ -1110,25 +1111,27 @@
     "bounding_box": []          // List[float], optional
   }
 }</code></pre>
-               </div>
-             </div>
-           </div>
-           <div class="column is-6">
-             <div class="card" style="height:100%;">
-               <div class="card-content">
-                 <div class="title is-5" style="margin-bottom:0.2em;font-family:'Noto Sans',sans-serif;">GenerateAnswer</div>
-                 <div class="subtitle is-6" style="margin-bottom:0.7em;font-family:'Noto Sans',sans-serif;">When you take this action, the retrieved results suffice to answer the user question.</div>
-                 <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="card" style="height:100%;">
++               <header class="card-header" style="background: #f5f5f5; border-bottom: 1px solid #eee;">
++                 <p class="card-header-title" style="font-family:'Noto Sans',sans-serif;font-size:1.1em;">GenerateAnswer</p>
++               </header>
+                <div class="card-content">
+                  <div class="subtitle is-6" style="margin-bottom:0.7em;font-family:'Noto Sans',sans-serif;">When you take this action, the retrieved results suffice to answer the user question.</div>
+                  <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "GenerateAnswer",
   "parameters": {
     "answer": ... // Any, required
   }
 }</code></pre>
-               </div>
-             </div>
-           </div>
-         </div>
-// ... existing code ...
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </section>
 
