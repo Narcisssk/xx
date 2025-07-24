@@ -1696,6 +1696,402 @@
   </section>
 
 
+  <!-- Datasets Section -->
+  <section class="section" id="datasets">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Datasets</h2>
+      <div class="dataset-card">
+        <div class="dataset-description">We employ three datasets to evaluate the performance of NeuSym-RAG. You can download them from our <a href="https://huggingface.co/datasets/x-lance/AirQA-Real">Hugging Face page</a>.</div>
+        <div class="dataset-header">
+          <h4 class="dataset-title">AirQA-Real</h4>
+          <md-block class="dataset-description">
+            We construct a human-labeled Q&A dataset on AI research papers, featuring complex questions that require understanding of text, tables, images, formulas, and metadata. The dataset includes 553 questions apanning across 3 types, annotated by 16 researchers.
+          </md-block>
+        </div>
+        <div class="dataset-stats">
+          <div class="stat-item">
+            <div class="stat-label">Total Questions</div>
+            <div class="stat-value">553</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Question Types</div>
+            <div class="stat-value">3</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Question Categories</div>
+            <div class="stat-value">5</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Evaluation functions</div>
+            <div class="stat-value">18</div>
+          </div>
+        </div>
+        <div class="task-types">
+          <span class="task-type">Single-doc details</span>
+          <span class="task-type">Multi-doc analysis</span>
+          <span class="task-type">Paper retrieval</span>
+        </div>
+        <div class="dataset-categories">
+          <span class="category-tag">Text</span>
+          <span class="category-tag">Table</span>
+          <span class="category-tag">Image</span>
+          <span class="category-tag">Formula</span>
+          <span class="category-tag">Metadata</span>
+        </div>
+        <div class="dataset-evaluation">
+          <div class="evaluation-item">
+            <div class="evaluation-genre">hard-coding objective metrics</div>
+            <div class="evaluation-genre">LLM-based subjective assessment</div>
+          </div>
+        </div>
+        <div class="dataset-header">
+          <h4 class="dataset-title">Other Benchmarks</h4>
+          <md-block class="dataset-description">
+            M3SciQA and SciDQA are two other benchmarks that we converted to the same format as AirQA-Real to evaluate the performance of NeuSym-RAG.
+          </md-block>
+        </div>
+        <div class="dataset-stats">
+          <div class="stat-item">
+            <div class="stat-label">452 test samples</div>
+            <div class="stat-value">M3SciQA</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">2,937 test samples</div>
+            <div class="stat-value">SciDQA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiment Section -->
+  <section class="section" id="experiment">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Experiment</h2>
+      <div class="content has-text-justified" style="margin-bottom: 1em;">
+        <h3 class="title is-4">Main Results</h3>
+        <p>
+          <b>Main Results.</b> We evaluate NeuSym-RAG and Classic-RAG on three full-PDF QA datasets using various LLMs. NeuSym-RAG consistently outperforms Classic-RAG across all datasets and models. Notably:
+        </p>
+        <div>
+          <div class="table-wrapper">
+            <table class="results-table">
+              <colgroup>
+                <col class="col-model">
+                <col class="col-airqa-text">
+                <col class="col-airqa-table">
+                <col class="col-airqa-image">
+                <col class="col-airqa-formula">
+                <col class="col-airqa-metadata">
+                <col class="col-airqa-avg">
+                <col class="col-m3sciqa-table">
+                <col class="col-m3sciqa-image">
+                <col class="col-m3sciqa-avg">
+                <col class="col-scidqa-table">
+                <col class="col-scidqa-image">
+                <col class="col-scidqa-formula">
+                <col class="col-scidqa-avg">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="col-model" rowspan="2">Model</th>
+                  <th colspan="6">AirQA-Real</th>
+                  <th colspan="3">M3SciQA</th>
+                  <th colspan="4">SciDQA</th>
+                </tr>
+                <tr>
+                  <th class="col-airqa-text">text</th>
+                  <th class="col-airqa-table">table</th>
+                  <th class="col-airqa-image">image</th>
+                  <th class="col-airqa-formula">formula</th>
+                  <th class="col-airqa-metadata">metadata</th>
+                  <th class="col-airqa-avg">AVG</th>
+                  <th class="col-m3sciqa-table">table</th>
+                  <th class="col-m3sciqa-image">image</th>
+                  <th class="col-m3sciqa-avg">AVG</th>
+                  <th class="col-scidqa-table">table</th>
+                  <th class="col-scidqa-image">image</th>
+                  <th class="col-scidqa-formula">formula</th>
+                  <th class="col-scidqa-avg">AVG</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Classic-RAG Group -->
+                <tr class="model-group">
+                  <td class="col-model" colspan="14">Classic-RAG</td>
+                </tr>
+                <!-- GPT-4o-mini -->
+                <tr>
+                  <td class="col-model">GPT-4o-mini</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">12.3</td>
+                  <td class="col-airqa-table">11.9</td>
+                  <td class="col-airqa-image">12.5</td>
+                  <td class="col-airqa-formula">16.7</td>
+                  <td class="col-airqa-metadata">13.6</td>
+                  <td class="col-airqa-avg">13.4</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">17.9</td>
+                  <td class="col-m3sciqa-image">10.6</td>
+                  <td class="col-m3sciqa-avg">15.6</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">59.4</td>
+                  <td class="col-scidqa-image">60.4</td>
+                  <td class="col-scidqa-formula">59.3</td>
+                  <td class="col-scidqa-avg">59.8</td>
+                </tr>
+                <!-- GPT-4V -->
+                <tr>
+                  <td class="col-model">GPT-4V</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">13.2</td>
+                  <td class="col-airqa-table">13.9</td>
+                  <td class="col-airqa-image">10.0</td>
+                  <td class="col-airqa-formula">13.9</td>
+                  <td class="col-airqa-metadata">13.6</td>
+                  <td class="col-airqa-avg">14.7</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">12.1</td>
+                  <td class="col-m3sciqa-image">8.8</td>
+                  <td class="col-m3sciqa-avg">11.1</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">56.6</td>
+                  <td class="col-scidqa-image">56.8</td>
+                  <td class="col-scidqa-formula">58.1</td>
+                  <td class="col-scidqa-avg">57.4</td>
+                </tr>
+                <!-- Llama-3.3-70B-Instruct -->
+                <tr>
+                  <td class="col-model">Llama-3.3-70B-Instruct</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">8.7</td>
+                  <td class="col-airqa-table">7.9</td>
+                  <td class="col-airqa-image">9.5</td>
+                  <td class="col-airqa-formula">16.7</td>
+                  <td class="col-airqa-metadata">0.0</td>
+                  <td class="col-airqa-avg">10.0</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">12.7</td>
+                  <td class="col-m3sciqa-image">8.1</td>
+                  <td class="col-m3sciqa-avg">11.3</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">56.8</td>
+                  <td class="col-scidqa-image">58.8</td>
+                  <td class="col-scidqa-formula">58.9</td>
+                  <td class="col-scidqa-avg">58.0</td>
+                </tr>
+                <!-- Qwen2.5-VL-72B-Instruct -->
+                <tr>
+                  <td class="col-model">Qwen2.5-VL-72B-Instruct</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">9.6</td>
+                  <td class="col-airqa-table">5.9</td>
+                  <td class="col-airqa-image">11.9</td>
+                  <td class="col-airqa-formula">11.1</td>
+                  <td class="col-airqa-metadata">13.6</td>
+                  <td class="col-airqa-avg">10.5</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">11.6</td>
+                  <td class="col-m3sciqa-image">11.6</td>
+                  <td class="col-m3sciqa-avg">11.6</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">54.8</td>
+                  <td class="col-scidqa-image">56.9</td>
+                  <td class="col-scidqa-formula">56.3</td>
+                  <td class="col-scidqa-avg">56.2</td>
+                </tr>
+                <!-- DeepSeek-R1 -->
+                <tr>
+                  <td class="col-model">DeepSeek-R1</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">11.7</td>
+                  <td class="col-airqa-table">13.9</td>
+                  <td class="col-airqa-image">9.5</td>
+                  <td class="col-airqa-formula">30.6</td>
+                  <td class="col-airqa-metadata">9.1</td>
+                  <td class="col-airqa-avg">13.9</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">11.9</td>
+                  <td class="col-m3sciqa-image">9.5</td>
+                  <td class="col-m3sciqa-avg">11.2</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">63.9</td>
+                  <td class="col-scidqa-image">61.3</td>
+                  <td class="col-scidqa-formula">61.7</td>
+                  <td class="col-scidqa-avg">62.4</td>
+                </tr>
+                <!-- NeuSym-RAG Group -->
+                <tr class="model-group">
+                  <td class="col-model" colspan="14">NeuSym-RAG</td>
+                </tr>
+                <!-- GPT-4o-mini -->
+                <tr>
+                  <td class="col-model">GPT-4o-mini</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">33.0</td>
+                  <td class="col-airqa-table">12.9</td>
+                  <td class="col-airqa-image">11.9</td>
+                  <td class="col-airqa-formula">19.4</td>
+                  <td class="col-airqa-metadata">18.2</td>
+                  <td class="col-airqa-avg">30.7</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">18.7</td>
+                  <td class="col-m3sciqa-image">16.6</td>
+                  <td class="col-m3sciqa-avg">18.0</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">63.0</td>
+                  <td class="col-scidqa-image">63.6</td>
+                  <td class="col-scidqa-formula">62.5</td>
+                  <td class="col-scidqa-avg">63.0</td>
+                </tr>
+                <!-- GPT-4V -->
+                <tr>
+                  <td class="col-model">GPT-4V</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">38.9</td>
+                  <td class="col-airqa-table highlight">18.8</td>
+                  <td class="col-airqa-image highlight">23.8</td>
+                  <td class="col-airqa-formula highlight">38.9</td>
+                  <td class="col-airqa-metadata highlight">27.3</td>
+                  <td class="col-airqa-avg">37.3</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">13.7</td>
+                  <td class="col-m3sciqa-image">13.4</td>
+                  <td class="col-m3sciqa-avg">13.6</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">62.6</td>
+                  <td class="col-scidqa-image">63.5</td>
+                  <td class="col-scidqa-formula">63.2</td>
+                  <td class="col-scidqa-avg">63.1</td>
+                </tr>
+                <!-- Llama-3.3-70B-Instruct -->
+                <tr>
+                  <td class="col-model">Llama-3.3-70B-Instruct</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">30.6</td>
+                  <td class="col-airqa-table">11.9</td>
+                  <td class="col-airqa-image">16.7</td>
+                  <td class="col-airqa-formula">16.7</td>
+                  <td class="col-airqa-metadata highlight">27.3</td>
+                  <td class="col-airqa-avg">29.3</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table highlight">26.3</td>
+                  <td class="col-m3sciqa-image">17.6</td>
+                  <td class="col-m3sciqa-avg highlight">23.6</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">55.5</td>
+                  <td class="col-scidqa-image">57.3</td>
+                  <td class="col-scidqa-formula">56.6</td>
+                  <td class="col-scidqa-avg">56.4</td>
+                </tr>
+                <!-- Qwen2.5-VL-72B-Instruct -->
+                <tr>
+                  <td class="col-model">Qwen2.5-VL-72B-Instruct</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text highlight">43.4</td>
+                  <td class="col-airqa-table">15.8</td>
+                  <td class="col-airqa-image">11.9</td>
+                  <td class="col-airqa-formula">25.0</td>
+                  <td class="col-airqa-metadata highlight">27.3</td>
+                  <td class="col-airqa-avg highlight">39.6</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">20.2</td>
+                  <td class="col-m3sciqa-image highlight">22.7</td>
+                  <td class="col-m3sciqa-avg">21.1</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table">60.2</td>
+                  <td class="col-scidqa-image">60.6</td>
+                  <td class="col-scidqa-formula">61.8</td>
+                  <td class="col-scidqa-avg">60.5</td>
+                </tr>
+                <!-- DeepSeek-R1 -->
+                <tr>
+                  <td class="col-model">DeepSeek-R1</td>
+                  <!-- AirQA-Real -->
+                  <td class="col-airqa-text">33.2</td>
+                  <td class="col-airqa-table">16.8</td>
+                  <td class="col-airqa-image">11.9</td>
+                  <td class="col-airqa-formula">27.8</td>
+                  <td class="col-airqa-metadata">18.2</td>
+                  <td class="col-airqa-avg">32.4</td>
+                  <!-- M3SciQA -->
+                  <td class="col-m3sciqa-table">19.0</td>
+                  <td class="col-m3sciqa-image">13.7</td>
+                  <td class="col-m3sciqa-avg">17.4</td>
+                  <!-- SciDQA -->
+                  <td class="col-scidqa-table highlight">64.3</td>
+                  <td class="col-scidqa-image highlight">64.6</td>
+                  <td class="col-scidqa-formula highlight">63.9</td>
+                  <td class="col-scidqa-avg highlight">64.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <ul style="margin-left:1.2em;">
+          <li><b>1)</b> NeuSym-RAG achieves significant improvements over Classic-RAG for all LLMs, benefiting from more flexible actions and iterative retrieval.</li>
+          <li><b>2)</b> Vision-language models (VLMs) excel in tasks requiring image understanding, such as M3SciQA.</li>
+          <li><b>3)</b> Strong open-source LLMs (e.g., Qwen2.5-VL-72B-Instruct) can even surpass closed-source models in this complex agentic QA setting.</li>
+        </ul>
+        <p style="margin-top:0.5em;">These results highlight the universality and robustness of NeuSym-RAG for PDF-based question answering.</p>
+      </div>
+      <div class="content has-text-justified" style="margin:2.5em 0 1em 0;">
+        <h3 class="title is-4">Method Ablation</h3>
+        <p>
+          <b>Method Ablation.</b> To further analyze the contribution of each component, we compare NeuSym-RAG with a series of structured agent baselines. The illustration below summarizes all baselines compared in the ablation study, differing in retrieval paradigm, multi-view support, and whether iterative interaction is allowed.
+        </p>
+        <div style="text-align:center;margin:1em 0 1.5em 0;">
+          <img src="static/images/baseline.png" alt="Baselines Illustration" style="max-width:90%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:0.5em;">
+          <div style="color:#555;font-size:0.98em;">Illustration of all baseline agent methods compared in the ablation study. </div>
+        </div>
+        <p style="margin-top:0.5em;">The detailed results are shown in the table below.</p>
+        <div>
+          <div class="table-wrapper">
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th rowspan="2">Method</th>
+                  <th class="col-neural group-1" style="min-width: 80px;">Neural</th>
+                  <th class="col-symbolic group-1">Symbolic</th>
+                  <th class="col-multiview group-1">Multi-view</th>
+                  <th class="col-interaction group-1"># Interaction(s)</th>
+                  <th class="group-2">sgl.</th>
+                  <th class="group-2">multi.</th>
+                  <th class="group-2">retr.</th>
+                  <th class="group-2">subj.</th>
+                  <th class="col-obj group-2">obj.</th>
+                  <th class="group-3">AVG</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Question only</td><td rowspan="3" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="3" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="3" class="group-1 group-1-end" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td>1</td><td>5.7</td><td>8.0</td><td>0.4</td><td>9.4</td><td class="col-obj group-2 group-2-end"  >2.7</td><td>4.0</td></tr>
+                <tr><td>Title + Abstract</td><td>1</td><td>5.7</td><td>14.0</td><td>0.0</td><td>13.1</td><td class="col-obj group-2 group-2-end">3.6</td><td>5.4</td></tr>
+                <tr><td>Full-text w/. cutoff</td><td>1</td><td>28.3</td><td>10.7</td><td>0.4</td><td>26.2</td><td class="col-obj group-2 group-2-end">7.6</td><td>11.2</td></tr>
+                <tr><td>Classic RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td>1</td><td>18.2</td><td>4.0</td><td>9.4</td><td>8.4</td><td class="col-obj group-2 group-2-end">11.0</td><td>10.5</td></tr>
+                <tr><td>Iterative Classic RAG</td><td>&ge;2</td><td>8.2</td><td>10.0</td><td>15.2</td><td>5.6</td><td class="col-obj group-2 group-2-end">13.2</td><td>11.8</td></tr>
+                <tr><td>Two-stage Neu-RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td>2</td><td>19.5</td><td>10.0</td><td>5.3</td><td>15.9</td><td class="col-obj group-2 group-2-end">9.4</td><td>10.7</td></tr>
+                <tr><td>Iterative Neu-RAG</td><td>&ge;2</td><td class="bold">37.7</td><td>18.7</td><td>48.4</td><td class="bold">32.7</td><td class="col-obj group-2 group-2-end">38.3</td><td>37.3</td></tr>
+                <tr><td>Graph-RAG</td><td class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td>2</td><td>22.2</td><td>11.1</td><td>0.0</td><td>21.1</td><td class="col-obj group-2 group-2-end">11.5</td><td>15.6</td></tr>
+                <tr><td>Two-stage Sym-RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #e74c3c; font-size: 1.3em;">&#10060;</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #27ae60; font-size: 1.3em;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td>2</td><td>12.2</td><td>5.4</td><td>9.4</td><td>10.6</td><td class="col-obj group-2 group-2-end">8.7</td><td>9.1</td></tr>
+                <tr><td>Iterative Sym-RAG</td><td>&ge;2</td><td>32.1</td><td>14.7</td><td>33.6</td><td>27.1</td><td class="col-obj group-2 group-2-end">28.3</td><td>28.0</td></tr>
+                <tr><td>Hybrid-RAG</td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1" style="vertical-align: middle; text-align: center; color: #27ae60; font-size: 1.3em;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td rowspan="2" class="group-1 group-1-end" style="vertical-align: middle; text-align: center;"> <svg width='20' height='20' style='vertical-align:middle' viewBox='0 0 20 20'><polyline points='4,11 9,16 16,5' style='fill:none;stroke:#27ae60;stroke-width:3;stroke-linecap:round;stroke-linejoin:round'/></svg> </td><td>2</td><td>23.3</td><td>9.3</td><td>5.7</td><td>16.8</td><td class="col-obj group-2 group-2-end">10.5</td><td>11.8</td></tr>
+                <tr><td class="bold">NeuSym-RAG(Ours)</td><td>&ge;2</td><td>28.3</td><td class="bold group-2">32.3</td><td class="bold group-2">58.2</td><td class="group-2">27.1</td><td class="bold col-obj group-2 group-2-end">42.6</td><td class="bold group-3">39.6</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <ul style="margin-left:1.2em;">
+          <li><b>1)</b> Two-stage Neu-RAG outperforms Classic-RAG, and Hybrid-RAG achieves further gains by combining neural and symbolic retrieval.</li>
+          <li><b>2)</b> Iterative retrieval (multi-turn) is superior to two-stage (single-turn), as agents can explore and adaptively select the most relevant context.</li>
+          <li><b>3)</b> As the number of interactions increases, objective scores rise faster than subjective scores, indicating more rational answer generation.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+
+
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">Citation</h2>
