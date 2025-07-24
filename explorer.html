@@ -241,7 +241,7 @@
     <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 
     <section class="section is-max-desktop">
-        <div class="container">
+        <div class="container is-fluid" style="max-width: 900px; margin: 0 auto;">
             <h2 class="title is-3" style="display: inline-block; vertical-align: middle;">NeuSym-RAG Task Explorer</h2>
             <div class="notification is-info">
                 <md-block>
@@ -343,7 +343,7 @@
     <section class="section">
         <div class="container is-fluid">
             <!-- 上下布局：Task Explorer 在上，Task Details 在下 -->
-            <div class="box" style="margin-bottom: 2rem;">
+            <div class="box" style="margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto;">
                 <h1 class="title is-4">Task Explorer</h1>
                 <p class="subtitle is-6">Filter and explore tasks</p>
                 <div class="field">
@@ -377,15 +377,7 @@
                             <span class="icon">
                                 <i class="fas fa-filter"></i>
                             </span>
-                            <span>Filter</span>
-                        </button>
-                    </p>
-                    <p class="control">
-                        <button class="button is-info" id="randomButton">
-                            <span class="icon">
-                                <i class="fas fa-random"></i>
-                            </span>
-                            <span>Random</span>
+                            <span>Filter & Explore</span>
                         </button>
                     </p>
                 </div>
@@ -832,6 +824,10 @@
                 }
                 initializeTagButtons();
 
+                // 页面加载时自动随机显示一个案例
+                const randomTask = allTasks[Math.floor(Math.random() * allTasks.length)];
+                displayTask(randomTask);
+
                 // Filter button click handler
                 document.getElementById('filterButton').addEventListener('click', () => {
                     const filteredTasks = filterTasks();
@@ -845,17 +841,14 @@
                         document.getElementById('resultsSection').style.display = 'none';
                         const noMatchSection = document.getElementById('noMatchSection');
                         noMatchSection.style.display = 'block';
-                        
                         // Update the list of selected filters
                         const selectedTypes = {
                             task: Array.from(selectedFilters.task),
                             content: Array.from(selectedFilters.content),
                             question: Array.from(selectedFilters.question)
                         };
-                        
                         const filtersList = document.getElementById('selectedFiltersList');
                         filtersList.innerHTML = '';
-                        
                         if (selectedTypes.task.length > 0) {
                             const li = document.createElement('li');
                             li.textContent = `Task Type: ${selectedTypes.task.join(', ')}`;
@@ -874,13 +867,9 @@
                     }
                 });
 
-                // Random button click handler
-                document.getElementById('randomButton').addEventListener('click', () => {
-                    document.getElementById('noMatchSection').style.display = 'none';
-                    document.getElementById('resultsSection').style.display = 'block';
-                    const randomTask = allTasks[Math.floor(Math.random() * allTasks.length)];
-                    displayTask(randomTask);
-                });
+                // 移除Random按钮和功能
+                const randomBtn = document.getElementById('randomButton');
+                if (randomBtn) randomBtn.parentElement.remove();
             } catch (error) {
                 console.error('Initialization error:', error);
                 alert('Error initializing the application. Please check the console for details.');
