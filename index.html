@@ -1003,9 +1003,9 @@
         </div>
   
         <div id="parsing" class="method-content is-active">
-+         <div style="text-align:center;margin-bottom:1em;">
-+           <img src="static/images/MultiviewDocumentParsing.png" alt="Multiview Document Parsing" style="max-width:90%;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
-+         </div>
+          <div style="text-align:center;margin-bottom:1em;">
+            <img src="static/images/MultiviewDocumentParsing.png" alt="Multiview Document Parsing" style="max-width:90%;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+          </div>
           <p>
             The multiview document parsing process transforms raw PDF files into a structured database (DuckDB) through a comprehensive pipeline:
           </p>
@@ -1021,9 +1021,9 @@
         </div>
   
         <div id="encoding" class="method-content">
-+         <div style="text-align:center;margin-bottom:1em;">
-+           <img src="static/images/MultimodalVectorEncoding.png" alt="Multimodal Vector Encoding" style="max-width:90%;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
-+         </div>
+          <div style="text-align:center;margin-bottom:1em;">
+            <img src="static/images/MultimodalVectorEncoding.png" alt="Multimodal Vector Encoding" style="max-width:90%;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+          </div>
           <p>
             The multimodal vector encoding process transforms structured database content into vector representations:
           </p>
@@ -1038,20 +1038,68 @@
         </div>
   
         <div id="interaction" class="method-content">
-          <p>
-            The iterative agent interaction process enables dynamic interaction with both the database and vectorstore through five parameterized actions:
-          </p>
-          <ul>
-            <li><strong>RetrieveFromVectorstore:</strong> Dynamic neural retrieval with customizable parameters (query, collection, filters) for semantic search</li>
-            <li><strong>RetrieveFromDatabase:</strong> Symbolic retrieval through SQL queries, enabling precise structured data access</li>
-            <li><strong>ViewImage:</strong> Extracting and analyzing specific regions of PDF pages using bounding box coordinates</li>
-            <li><strong>CalculateExpr:</strong> Mathematical computation for handling numerical questions and reducing hallucination</li>
-            <li><strong>GenerateAnswer:</strong> Terminal action that produces the final answer when sufficient context is gathered</li>
-          </ul>
-          <p>
-            The agent follows a thought, action, and observation loop until it can confidently generate an answer.
-          </p>
-        </div>
+            <p>
+              The iterative agent interaction process enables dynamic interaction with both the database and vectorstore through five parameterized actions:
+            </p>
+            <ul>
+              <li><strong>RetrieveFromVectorstore:</strong> Dynamic neural retrieval with customizable parameters (query, collection, filters) for semantic search</li>
+              <li><strong>RetrieveFromDatabase:</strong> Symbolic retrieval through SQL queries, enabling precise structured data access</li>
+              <li><strong>ViewImage:</strong> Extracting and analyzing specific regions of PDF pages using bounding box coordinates</li>
+              <li><strong>CalculateExpr:</strong> Mathematical computation for handling numerical questions and reducing hallucination</li>
+              <li><strong>GenerateAnswer:</strong> Terminal action that produces the final answer when sufficient context is gathered</li>
+            </ul>
+         <div style="margin-top:1.5em;">
+           <h4 style="font-size:1.1em;font-weight:bold;margin-bottom:0.7em;">Action Function Listing</h4>
+           <ol style="padding-left:1.2em;">
+             <li style="margin-bottom:1em;">
+              <b>RetrieveFromDatabase</b><br>
+               <span style="color:#555;">Generate an SQL query to retrieve the desired information from the DuckDB database. Please refer to the concrete database schema to produce a valid and executable SQL.</span><br>
+               <b>Parameters:</b>
+               <ul style="margin-top:0.2em;">
+                 <li><code>sql</code> (str, required): The concrete DuckDB SQL query to execute and retrieve results.</li>
+                 </ul>
+             </li>
+             <li style="margin-bottom:1em;">
+               <b>RetrieveFromVectorstore</b><br>
+               <span style="color:#555;">Given a query text, retrieve relevant context from the Milvus vectorstore. Please refer to the schema of different collections and fields for each stored data entry.</span><br>
+               <b>Parameters:</b>
+               <ul style="margin-top:0.2em;">
+                 <li><code>query</code> (str, required): The query text for semantic search.</li>
+                 <li><code>collection_name</code> (str, required): The name of the collection in the Milvus vectorstore.</li>
+                 <li><code>table_name</code> (str, required): The table name to narrow down the search space.</li>
+                 <li><code>column_name</code> (str, required): The column name to narrow down the search space.</li>
+                 <li><code>filter</code> (str, optional, default ""): The filter condition to refine search results.</li>
+                 <li><code>limit</code> (int, optional, default 5): The number of top-ranked context to retrieve.</li>
+               </ul>
+             </li>
+             <li style="margin-bottom:1em;">
+               <b>CalculateExpr</b><br>
+               <span style="color:#555;">Calculate the expression and return the result. The expression should be a Python-style arithmetic expression that can be correctly processed by <code>eval()</code>.</span><br>
+               <b>Parameters:</b>
+               <ul style="margin-top:0.2em;">
+                 <li><code>expr</code> (str, required): The expression to calculate.</li>
+               </ul>
+             </li>
+             <li style="margin-bottom:1em;">
+               <b>ViewImage</b><br>
+               <span style="color:#555;">You can retrieve the visual information of the paper by taking this action. Please provide the paper id, the page number, and the optional bounding box.</span><br>
+               <b>Parameters:</b>
+               <ul style="margin-top:0.2em;">
+                 <li><code>paper_id</code> (str, required): The paper id to retrieve the image.</li>
+                 <li><code>page_number</code> (int, required): The page number (starting from 1) of the paper.</li>
+                 <li><code>bounding_box</code> (List[float], optional, default []): The bounding box [x_min, y_min, delta_x, delta_y].</li>
+               </ul>
+             </li>
+             <li style="margin-bottom:1em;">
+               <b>GenerateAnswer</b><br>
+               <span style="color:#555;">When you take this action, the retrieved results suffice to answer the user question. PLEASE STRICTLY ADHERE TO THE ANSWER FORMAT FOR THE CURRENT QUESTION.</span><br>
+               <b>Parameters:</b>
+               <ul style="margin-top:0.2em;">
+                 <li><code>answer</code> (Any, required): The final answer to the user question. Please adhere to the answer format for the current question.</li>
+               </ul>
+             </li>
+           </ol>
+         </div>
       </div>
     </div>
   </section>
