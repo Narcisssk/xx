@@ -25,7 +25,7 @@
             box-sizing: border-box;
             border-radius: 10px;
             background: #fff;
-            box-shadow: 0 2px 8px rgba(50,60,100,0.07);
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
             border: none;
         }
         .category {
@@ -86,8 +86,8 @@
             font-size: 1rem;
         }
         .highlight-quote {
-            background-color: #f7faff;
-            border-left: 4px solid #3273dc;
+            background-color: #fafdff;
+            border-left: 4px solid #c8d3e0;
             padding: 10px 15px;
             margin: 15px 0;
             color: #333;
@@ -96,7 +96,7 @@
             font-weight: bold;
             margin-top: 0;
             margin-bottom: 10px;
-            color: #3273dc;
+            color: #2d3a4a;
         }
         .highlight-quote-content {
             font-style: italic;
@@ -119,17 +119,17 @@
         .tag-button {
             margin: 2px;
             padding: 5px 10px;
-            border: 1px solid #dbeafe;
+            border: 1.5px solid #c8d3e0;
             border-radius: 15px;
-            background: #eaf2fd;
-            color: #3273dc;
+            background: #fafdff;
+            color: #2d3a4a;
             font-weight: 500;
             cursor: pointer;
         }
         .tag-button.selected {
-            background: #3273dc;
-            color: #fff;
-            border: 1px solid #3273dc;
+            background: #c8d3e0;
+            color: #2d3a4a;
+            border: 1.5px solid #2d3a4a;
         }
         .trajectory-turn {
             margin: 20px 0;
@@ -173,16 +173,16 @@
             border: 1px solid #e5e7eb;
         }
         .task-tag.task-type {
-            background-color: #3273dc;
-            color: #fff;
+            background-color: #c8d3e0;
+            color: #2d3a4a;
         }
         .task-tag.content-type {
-            background-color: #e2c9a7;
-            color: #3273dc;
+            background-color: #d0e0d3;
+            color: #2d3a4a;
         }
         .task-tag.question-type {
-            background-color: #7a8ba7;
-            color: #fff;
+            background-color: #e0d6d0;
+            color: #2d3a4a;
         }
         .task-id-display {
             font-family: monospace;
@@ -197,7 +197,7 @@
             overflow: auto;
             padding: 10px;
             margin: 8px 0;
-            background: #f7faff;
+            background: #fafdff;
             border-radius: 4px;
             border: 1px solid #e5e7eb;
             font-size: 0.98em;
@@ -218,13 +218,13 @@
             min-width: fit-content;
         }
         .observation-table th, .observation-table td { 
-            border: 1px solid #dbeafe; 
+            border: 1px solid #c8d3e0; 
             padding: 4px 8px; 
             text-align: left; 
             max-width: 320px; 
             word-break: break-all; 
         }
-        .observation-table th { background: #eaf2fd; font-weight: 600; }
+        .observation-table th { background: #fafdff; font-weight: 600; }
         .observation-table-outer { max-width: 100%; max-height: 320px; overflow-y: auto; margin-bottom: 6px; }
         .observation-extra { margin-top: 8px; color: #555; font-size: 0.96em; background: #e9ecf3; border-radius: 4px; padding: 6px 10px; }
     </style>
@@ -234,7 +234,7 @@
     <script type="module" src="https://md-block.verou.me/md-block.js"></script>
 
     <section class="section is-max-desktop">
-        <div class="container is-fluid explorer-main-container" style="padding-left:32px; padding-right:32px;">
+        <div class="container is-fluid explorer-main-container" style="padding-left:32px; padding-right:32px; margin-bottom:0.2rem;">
             <h2 class="title is-3" style="display: inline-block; vertical-align: middle;">NeuSym-RAG Task Explorer</h2>
             <div class="notification is-info">
                 <md-block>
@@ -336,7 +336,7 @@
     <section class="section">
         <div class="container is-fluid explorer-main-container" style="padding-left:32px; padding-right:32px;">
             <!-- 上下布局：Task Explorer 在上，Task Details 在下 -->
-            <div class="box explorer-panel" style="margin-bottom: 0.5rem; background:#fff; box-shadow:0 2px 8px rgba(50,60,100,0.07); border:none;">
+            <div class="box explorer-panel" style="margin-bottom: 0.2rem; background:#fff; box-shadow:0 2px 8px rgba(44,62,80,0.08); border:none;">
                 <h1 class="title is-4">Task Explorer</h1>
                 <p class="subtitle is-6">Filter and explore tasks</p>
                 <div class="field">
@@ -383,7 +383,7 @@
                     <ul id="selectedFiltersList"></ul>
                 </div>
             </div>
-            <div id="resultsSection" class="box explorer-panel" style="display: none; background:#fff; box-shadow:0 2px 8px rgba(50,60,100,0.07); border:none;">
+            <div id="resultsSection" class="box explorer-panel" style="display: none; background:#fff; box-shadow:0 2px 8px rgba(44,62,80,0.08); border:none;">
                 <h2 class="title is-4">Task Details</h2>
                 <div class="content">
                     <p><strong>Task ID:</strong> <span id="taskId"></span></p>
