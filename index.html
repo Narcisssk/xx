@@ -1037,6 +1037,7 @@
           </p>
         </div>
   
+        // ... existing code ...
         <div id="interaction" class="method-content">
           <p>
             The iterative agent interaction process enables dynamic interaction with both the database and vectorstore through five parameterized actions:
@@ -1048,20 +1049,27 @@
             <li><strong>CalculateExpr:</strong> Mathematical computation for handling numerical questions and reducing hallucination</li>
             <li><strong>GenerateAnswer:</strong> Terminal action that produces the final answer when sufficient context is gathered</li>
           </ul>
-          <div style="margin-top:1.5em;">
-            <h4 style="font-size:1.1em;font-weight:bold;margin-bottom:0.7em;">Action Function JSON Specification</h4>
-            <div style="margin-bottom:1.2em;">
-              <div style="margin-bottom:0.3em;"><b>RetrieveFromDatabase</b>: Generate an SQL query to retrieve the desired information from the DuckDB database.</div>
-              <pre style="background:#f8f8f8;border-radius:6px;padding:1em 1.2em;font-size:0.97em;font-family:'Fira Mono','Consolas','Menlo',monospace;overflow:auto;"><code>{
+          <div class="columns is-multiline" style="margin-top:2em;">
+            <div class="column is-6">
+              <div class="card" style="height:100%;">
+                <div class="card-content">
+                  <div class="title is-5" style="margin-bottom:0.2em;font-family:'Noto Sans',sans-serif;">RetrieveFromDatabase</div>
+                  <div class="subtitle is-6" style="margin-bottom:0.7em;font-family:'Noto Sans',sans-serif;">Generate an SQL query to retrieve the desired information from the DuckDB database.</div>
+                  <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "RetrieveFromDatabase",
   "parameters": {
     "sql": "SELECT ..." // str, required
   }
 }</code></pre>
-            </div>
-            <div style="margin-bottom:1.2em;">
-              <div style="margin-bottom:0.3em;"><b>RetrieveFromVectorstore</b>: Given a query text, retrieve relevant context from the Milvus vectorstore.</div>
-              <pre style="background:#f8f8f8;border-radius:6px;padding:1em 1.2em;font-size:0.97em;font-family:'Fira Mono','Consolas','Menlo',monospace;overflow:auto;"><code>{
+               </div>
+             </div>
+           </div>
+           <div class="column is-6">
+             <div class="card" style="height:100%;">
+               <div class="card-content">
+                 <div class="title is-5" style="margin-bottom:0.2em;font-family:'Noto Sans',sans-serif;">RetrieveFromVectorstore</div>
+                 <div class="subtitle is-6" style="margin-bottom:0.7em;font-family:'Noto Sans',sans-serif;">Given a query text, retrieve relevant context from the Milvus vectorstore.</div>
+                 <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "RetrieveFromVectorstore",
   "parameters": {
     "query": "...",           // str, required
@@ -1072,19 +1080,29 @@
     "limit": 5                 // int, optional
   }
 }</code></pre>
-            </div>
-            <div style="margin-bottom:1.2em;">
-              <div style="margin-bottom:0.3em;"><b>CalculateExpr</b>: Calculate the expression and return the result.</div>
-              <pre style="background:#f8f8f8;border-radius:6px;padding:1em 1.2em;font-size:0.97em;font-family:'Fira Mono','Consolas','Menlo',monospace;overflow:auto;"><code>{
+               </div>
+             </div>
+           </div>
+           <div class="column is-6">
+             <div class="card" style="height:100%;">
+               <div class="card-content">
+                 <div class="title is-5" style="margin-bottom:0.2em;font-family:'Noto Sans',sans-serif;">CalculateExpr</div>
+                 <div class="subtitle is-6" style="margin-bottom:0.7em;font-family:'Noto Sans',sans-serif;">Calculate the expression and return the result.</div>
+                 <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "CalculateExpr",
   "parameters": {
     "expr": "2 + 3 * 4" // str, required
   }
 }</code></pre>
-            </div>
-            <div style="margin-bottom:1.2em;">
-              <div style="margin-bottom:0.3em;"><b>ViewImage</b>: Retrieve the visual information of the paper by specifying paper id, page number, and optional bounding box.</div>
-              <pre style="background:#f8f8f8;border-radius:6px;padding:1em 1.2em;font-size:0.97em;font-family:'Fira Mono','Consolas','Menlo',monospace;overflow:auto;"><code>{
+               </div>
+             </div>
+           </div>
+           <div class="column is-6">
+             <div class="card" style="height:100%;">
+               <div class="card-content">
+                 <div class="title is-5" style="margin-bottom:0.2em;font-family:'Noto Sans',sans-serif;">ViewImage</div>
+                 <div class="subtitle is-6" style="margin-bottom:0.7em;font-family:'Noto Sans',sans-serif;">Retrieve the visual information of the paper by specifying paper id, page number, and optional bounding box.</div>
+                 <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "ViewImage",
   "parameters": {
     "paper_id": "...",         // str, required
@@ -1092,19 +1110,25 @@
     "bounding_box": []          // List[float], optional
   }
 }</code></pre>
-            </div>
-            <div style="margin-bottom:1.2em;">
-              <div style="margin-bottom:0.3em;"><b>GenerateAnswer</b>: When you take this action, the retrieved results suffice to answer the user question.</div>
-              <pre style="background:#f8f8f8;border-radius:6px;padding:1em 1.2em;font-size:0.97em;font-family:'Fira Mono','Consolas','Menlo',monospace;overflow:auto;"><code>{
+               </div>
+             </div>
+           </div>
+           <div class="column is-6">
+             <div class="card" style="height:100%;">
+               <div class="card-content">
+                 <div class="title is-5" style="margin-bottom:0.2em;font-family:'Noto Sans',sans-serif;">GenerateAnswer</div>
+                 <div class="subtitle is-6" style="margin-bottom:0.7em;font-family:'Noto Sans',sans-serif;">When you take this action, the retrieved results suffice to answer the user question.</div>
+                 <pre class="code-section language-json" style="margin-bottom:0;"><code class="language-json">{
   "action_type": "GenerateAnswer",
   "parameters": {
     "answer": ... // Any, required
   }
 }</code></pre>
-            </div>
-          </div>
-        </div>
-      </div>
+               </div>
+             </div>
+           </div>
+         </div>
+// ... existing code ...
     </div>
   </section>
 
