@@ -882,7 +882,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://github.com/X-LANCE/NeuSym-RAG"
+                  <a href="https://github.com/OpenDFM/NeuSym-RAG"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -1029,13 +1029,13 @@
             The multiview document parsing process transforms raw PDF files into a structured database (DuckDB) through a comprehensive pipeline:
           </p>
           <ol style="list-style-type: decimal; padding-left: 1.5rem;">
-            <li>Querying scholar APIs (e.g., arXiv) to obtain paper metadata, enabling metadata-based filtering during retrieval</li>
-            <li>Using PyMuPDF to split text at different granularities (pages, sections, fixed-length tokens)</li>
+            <li>Querying scholar APIs (e.g., arXiv) to obtain the metadata such as the authors and published conference, such that we can support metadata-based filtering during retrieval.</li>
+            <li>Splitting the text based on different granularities with tool PyMuPDF (Artifex Software, 2023), e.g., pages, sections, and fixed-length continuous tokens.</li>
             <li>Leveraging OCR models (MinerU) to extract tables, figures, and other visual elements</li>
-            <li>Employing LLMs/VLMs to generate concise summaries of parsed texts, tables, and images</li>
+            <li>Asking large language models (LLMs) or vision language models (VLMs) to generate concise summaries of the parsed texts, tables, and images.</li>
           </ol>
           <p>
-            All extracted elements are populated into the symbolic DB. The DB schema is carefully designed in advance to capture the rich structure of PDF documents.
+            The retrieved metadata, parsed elements and predicted summaries will all be populated into the symbolic DB. We handcraft the DB schema in advance, which is carefully designed and universal for PDF documents.
           </p>
         </div>
   
@@ -1052,14 +1052,15 @@
             <li>Creating a one-to-one mapping between database cells and vector entries, supplemented with metadata for efficient retrieval</li>
           </ol>
           <p>
-            This stage enables semantic search capabilities while maintaining the connection to the structured database.
+            These data entries will be inserted into the VS, categorized into different collections based on the encoding model and modality.
           </p>
         </div>
   
   
         <div id="interaction" class="method-content" style="background:#f5f5f5;border-radius:10px;padding:2em 2em 1.5em 2em;margin-bottom:1.5em;box-shadow:none;">
           <p>
-            The iterative agent interaction process enables dynamic interaction with both the database and vectorstore through five parameterized actions:
+            After the population of the database and vectorstore, we can start the iterative agent interaction process. The RAG agent can proactively retrieves context from both the DB and VS. In each turn, agents predict one action to interact with the environment and obtain the real-time observa
+            tion. Five parameterized actions are supported during the interaction, including:
           </p>
           <div class="columns is-multiline" style="margin-top:2em;">
             <div class="column is-6">
@@ -1304,7 +1305,7 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3">Datasets</h2>
       <div class="dataset-card">
-        <div class="dataset-description">We employ three datasets to evaluate the performance of NeuSym-RAG. You can download them from our <a href="https://huggingface.co/datasets/x-lance/AirQA-Real">Hugging Face page</a>.</div>
+        <div class="dataset-description">We employ three Q&A datasets on AI research papers to evaluate the performance of NeuSym-RAG. You can download them from our <a href="https://huggingface.co/datasets/OpenDFM/AirQA-Real">Hugging Face page</a>.</div>
         <div class="dataset-header">
           <h4 class="dataset-title">AirQA-Real</h4>
           <md-block class="dataset-description">
@@ -1317,7 +1318,7 @@
             <div class="stat-value">553</div>
           </div>
           <div class="stat-item">
-            <div class="stat-label">Question Types</div>
+            <div class="stat-label">Task Types</div>
             <div class="stat-value">3</div>
           </div>
           <div class="stat-item">
@@ -1632,11 +1633,10 @@
           </div>
         </div>
         <ul style="margin-left:1.2em;">
-          <li><b>1)</b> NeuSym-RAG achieves significant improvements over Classic-RAG for all LLMs, benefiting from more flexible actions and iterative retrieval.</li>
-          <li><b>2)</b> Vision-language models (VLMs) excel in tasks requiring image understanding, such as M3SciQA.</li>
-          <li><b>3)</b> Strong open-source LLMs (e.g., Qwen2.5-VL-72B-Instruct) can even surpass closed-source models in this complex agentic QA setting.</li>
+          <li><b>1)</b> NeuSym-RAG remarkably outperforms the Classic-RAG baseline across all datasets, with a minimal 17.3% improvement on AIRQA-REAL for all LLMs, benefiting from more flexible actions and iterative retrieval.</li>
+          <li><b>2)</b> VLMs perform better in tasks that require vision capability, e.g., in M3SciQA where LLMs have to view an anchor image in the first place.</li>
+          <li><b>3)</b> Open-source LLMs are capable of handling this complicated interactive procedure in a zero-shot paradigm, and even better than closed-source LLMs.</li>
         </ul>
-        <p style="margin-top:0.5em;">These results highlight the universality and robustness of NeuSym-RAG for PDF-based question answering.</p>
       </div>
       <div class="content has-text-justified" style="margin:2.5em 0 1em 0;">
         <h3 class="title is-4">Method Ablation</h3>
@@ -1647,7 +1647,7 @@
           <img src="static/images/baseline.png" alt="Baselines Illustration" style="max-width:90%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:0.5em;">
           <div style="color:#555;font-size:0.98em;">Illustration of all baseline agent methods compared in the ablation study. </div>
         </div>
-        <p style="margin-top:0.5em;">The detailed results are shown in the table below.</p>
+        <p style="margin-top:0.5em;">On the whole, NeuSym-RAG defeats all adversaries. It verifies that multiple views and combining two retrieval strategies both contribute to the eventual performance. Notably:</p>
         <div>
           <div class="table-wrapper">
             <table class="results-table">
@@ -1684,9 +1684,9 @@
           </div>
         </div>
         <ul style="margin-left:1.2em;">
-          <li><b>1)</b> Two-stage Neu-RAG outperforms Classic-RAG, and Hybrid-RAG achieves further gains by combining neural and symbolic retrieval.</li>
-          <li><b>2)</b> Iterative retrieval (multi-turn) is superior to two-stage (single-turn), as agents can explore and adaptively select the most relevant context.</li>
-          <li><b>3)</b> As the number of interactions increases, objective scores rise faster than subjective scores, indicating more rational answer generation.</li>
+          <li><b>1)</b> Two-stage Neu-RAG outperforms Classic-RAG, while Hybrid-RAG achieves even further improvements, which can be attributed to the fact that agents can adaptively determine the parameters of actions.</li>
+          <li><b>2)</b> Iterative retrievals are superior to their two-stage variants. Through multi-turn interaction, the agent can explore the backend environment and select the most relevant information to answer the question.</li>  
+          <li><b>3)</b> As the number of interactions increases, objective scores rise faster than subjective scores, indicating that with more retrievals, LLMs generate more rational answers.</li>
         </ul>
       </div>
     </div>
